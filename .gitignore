@@ -1,2 +1,10 @@
 .claude/
 *.mov
+
+# Node
+node_modules/
+.env
+.env.local
+
+# Digital products — never commit; these are the actual goods we sell
+downloads/**/*.zip

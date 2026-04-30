@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You &mdash; Positiva Films</title>
+  <meta name="description" content="Payment received. Your Positiva Films LUT pack is on its way." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127916;</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0a0908;--ink-soft:#121110;--soil:#1a1816;
+  --linen:#e8e0d4;--linen-dim:rgba(232,224,212,0.55);--linen-faint:rgba(232,224,212,0.08);
+  --gold:#c9a84c;--gold-dim:#a08838;--gold-faint:rgba(201,168,76,0.12);
+  --clay:#b85c38;--sand:#c4a882;
+  --display:'Bebas Neue',sans-serif;--serif:'Playfair Display',serif;--body:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--linen);font-family:var(--body);font-weight:300;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.38}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:28px 48px}
+nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,9,8,0.95) 0%,rgba(10,9,8,0.4) 70%,transparent 100%);pointer-events:none}
+.nav-logo{display:flex;align-items:center;text-decoration:none;position:relative;z-index:1;opacity:0.9;transition:opacity 0.2s}
+.nav-logo:hover{opacity:1}
+.nav-back{position:relative;z-index:1;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.16em;color:var(--linen-dim);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.nav-back:hover{color:var(--gold)}
+
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:140px 48px 80px;position:relative}
+main::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 30%,rgba(201,168,76,0.10) 0%,transparent 60%),radial-gradient(ellipse at 15% 85%,rgba(184,92,56,0.06) 0%,transparent 50%);pointer-events:none}
+main::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none}
+
+.thanks{position:relative;z-index:1;max-width:720px;width:100%;text-align:center}
+.thanks-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.22em;color:var(--linen-dim);text-transform:uppercase;margin-bottom:32px}
+.thanks-eyebrow::before,.thanks-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold)}
+.thanks-eyebrow .num{font-family:var(--serif);font-style:italic;color:var(--gold);text-transform:none;letter-spacing:0.04em;font-size:13px}
+
+.thanks-mark{width:74px;height:74px;border:1px solid var(--gold-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 32px;background:radial-gradient(circle at center,var(--gold-faint) 0%,transparent 70%)}
+.thanks-mark svg{width:30px;height:30px;color:var(--gold)}
+
+.thanks-title{font-family:var(--display);font-size:clamp(56px,9vw,128px);line-height:0.86;letter-spacing:0.03em;color:var(--linen);text-transform:uppercase;margin-bottom:18px}
+.thanks-title em{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--gold);font-size:0.5em;display:block;letter-spacing:0.01em;text-transform:none;margin-top:10px}
+
+.thanks-lede{font-size:16px;font-weight:300;line-height:1.85;color:var(--linen-dim);max-width:520px;margin:0 auto 44px}
+.thanks-lede strong{color:var(--linen);font-weight:400}
+
+.thanks-card{background:var(--soil);border:1px solid var(--linen-faint);padding:32px 36px;text-align:left;margin-bottom:36px}
+.thanks-card-label{font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.thanks-card-name{font-family:var(--display);font-size:22px;letter-spacing:0.05em;color:var(--linen);text-transform:uppercase;line-height:1.1;margin-bottom:8px}
+.thanks-card-meta{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--linen-dim)}
+.thanks-card-meta code{font-family:'DM Mono',monospace;font-style:normal;color:var(--gold);font-size:12px}
+
+.next{text-align:left;margin-bottom:48px}
+.next-title{font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.22em;color:var(--linen-dim);text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.next-title::before{content:'';width:24px;height:1px;background:var(--gold)}
+.next-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px}
+.next-list li{display:flex;gap:16px;align-items:flex-start;font-size:14px;line-height:1.7;color:var(--linen-dim)}
+.next-list li::before{content:counter(step);counter-increment:step;flex-shrink:0;width:28px;height:28px;border:1px solid var(--gold-dim);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:13px;color:var(--gold);margin-top:-2px}
+.next-list{counter-reset:step}
+.next-list li strong{color:var(--linen);font-weight:400}
+
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta{display:inline-flex;align-items:center;gap:12px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;padding:18px 28px;text-decoration:none;transition:background .3s,color .3s,border-color .3s}
+.cta-primary{background:var(--gold);color:var(--ink);border:1px solid var(--gold)}
+.cta-primary:hover{background:#d4b255;border-color:#d4b255}
+.cta-primary::after{content:'\2192';font-size:15px}
+.cta-ghost{background:transparent;color:var(--linen);border:1px solid var(--linen-faint)}
+.cta-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+footer{background:var(--ink);padding:40px 48px;border-top:1px solid var(--linen-faint);position:relative;z-index:1}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.footer-copy{font-size:11px;color:rgba(232,224,212,0.25);letter-spacing:0.04em}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:11px;letter-spacing:0.12em;color:var(--linen-dim);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+
+@media(max-width:768px){
+  nav{padding:20px 24px}
+  main{padding:110px 24px 60px}
+  .thanks-card{padding:24px}
+  footer{padding:32px 24px}.footer-row{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="Positiva Films">
+    <svg height="26" xmlns="http://www.w3.org/2000/svg" viewBox="110 137 152 88" preserveAspectRatio="xMidYMid meet"><g fill="#e8e0d4"><g transform="translate(111.939314, 176.095419)"><path d="M 24.95 -19.07 C 27 -16.85 28.01 -14.13 28.01 -10.9 C 28.01 -7.68 27 -4.95 24.95 -2.71 C 22.92 -0.47 20.33 0.64 17.18 0.64 C 14.3 0.64 11.92 -0.26 10.06 -2.07 L 10.06 11.03 L 2.54 11.03 L 2.54 -21.78 L 9.96 -21.78 L 9.96 -19.31 L 10.06 -19.31 C 11.92 -21.38 14.3 -22.42 17.18 -22.42 C 20.33 -22.42 22.92 -21.3 24.95 -19.07 Z"/></g></g></svg>
+  </a>
+  <a href="luts.html" class="nav-back">&larr; Back to LUTs</a>
+</nav>
+
+<main>
+  <section class="thanks">
+    <div class="thanks-eyebrow"><span class="num">( 01 )</span> Payment Received</div>
+    <div class="thanks-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12.5l4 4L19 7"/>
+      </svg>
+    </div>
+    <h1 class="thanks-title">Thank You<em>Your color toolkit is on its way</em></h1>
+    <p class="thanks-lede">We&rsquo;ve received your payment for <strong id="pack-name">your LUT pack</strong>. A confirmation receipt has been issued by Razorpay, and your <strong>.cube</strong> files will land in your inbox shortly &mdash; sent to the email address you used at checkout.</p>
+
+    <div class="thanks-card">
+      <div class="thanks-card-label">Order Summary</div>
+      <div class="thanks-card-name" id="pack-name-card">LUT Pack</div>
+      <div class="thanks-card-meta">SKU&nbsp;<code id="pack-sku">&mdash;</code> &middot; Delivered as <code>.cube</code> files via email</div>
+    </div>
+
+    <div class="next">
+      <div class="next-title">What happens next</div>
+      <ol class="next-list">
+        <li><strong>Check your inbox.</strong> Within a few minutes you&rsquo;ll receive an email from <em>tally@positivafilms.com</em> with your secure download link.</li>
+        <li><strong>If you don&rsquo;t see it,</strong> check spam &mdash; or reply to your Razorpay receipt and we&rsquo;ll send it manually within hours.</li>
+        <li><strong>Drop the .cube files</strong> into Premiere, DaVinci Resolve, Final Cut, or your colour tool of choice. Detailed install steps are included in the README inside your download.</li>
+      </ol>
+    </div>
+
+    <div class="cta-row">
+      <a class="cta cta-primary" href="luts.html">Browse more packs</a>
+      <a class="cta cta-ghost" href="mailto:tally@positivafilms.com?subject=My%20LUT%20order">Need help? Email us</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-row">
+    <div class="footer-copy">&copy; <span id="yr">2026</span> Positiva Films. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="luts.html">LUTs</a>
+      <a href="products.html">Products</a>
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Pretty SKU -> human name map (mirrors the API catalog).
+  const PACK_NAMES = {
+    'luts-indian-wedding': 'Indian Wedding LUTs Pack',
+    'luts-creative':       'Creative LUTs Pack',
+    'luts-bundle':         'LUT Bundle (Both Packs)',
+  };
+  const params = new URLSearchParams(window.location.search);
+  const sku = params.get('sku') || '';
+  if (sku && PACK_NAMES[sku]) {
+    document.getElementById('pack-name').textContent      = PACK_NAMES[sku];
+    document.getElementById('pack-name-card').textContent = PACK_NAMES[sku];
+    document.getElementById('pack-sku').textContent       = sku;
+  }
+</script>
+</body>
+</html>

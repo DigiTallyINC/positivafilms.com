@@ -1,0 +1,12 @@
+{
+  "name": "positiva-films-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Positiva Films marketing site with Razorpay-powered LUT pack checkout (Vercel serverless).",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "razorpay": "^2.9.4"
+  }
+}
