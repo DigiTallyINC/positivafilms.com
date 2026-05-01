@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall &mdash; Positiva Films</title>
+  <meta name="description" content="That blown magenta band above the Arabian Sea isn't overexposure — it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame." />
+  <meta name="keywords" content="magenta sunset rec709, out of gamut sunset fix, gamut wall travel lut, s-log3 sunset goa, davinci resolve gamut compression, travel lut colour space" />
+  <meta name="author" content="Positiva Films" />
+  <link rel="canonical" href="https://positivafilms.com/posts/magenta-sunsets-goa-rec709-lut-gamut-wall.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall" />
+  <meta property="og:description" content="That blown magenta band above the Arabian Sea isn't overexposure — it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame." />
+  <meta property="og:image" content="https://positivafilms.com/Indian_Travel_Luts_pack.png" />
+  <meta property="og:url" content="https://positivafilms.com/posts/magenta-sunsets-goa-rec709-lut-gamut-wall.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall" />
+  <meta name="twitter:description" content="That blown magenta band above the Arabian Sea isn't overexposure — it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame." />
+  <meta name="twitter:image" content="https://positivafilms.com/Indian_Travel_Luts_pack.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall",
+    "description": "That blown magenta band above the Arabian Sea isn't overexposure — it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame.",
+    "image": "https://positivafilms.com/Indian_Travel_Luts_pack.png",
+    "datePublished": "2026-05-01",
+    "dateModified": "2026-05-01",
+    "author": { "@type": "Person", "name": "Positiva Films" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Positiva Films",
+      "logo": { "@type": "ImageObject", "url": "https://positivafilms.com/positiva-films-logo.svg" }
+    },
+    "mainEntityOfPage": "https://positivafilms.com/posts/magenta-sunsets-goa-rec709-lut-gamut-wall.html"
+  }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127916;</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0a0908;--ink-soft:#121110;--soil:#1a1816;
+  --linen:#e8e0d4;--linen-dim:rgba(232,224,212,0.55);--linen-faint:rgba(232,224,212,0.08);
+  --gold:#c9a84c;--gold-dim:#a08838;--gold-faint:rgba(201,168,76,0.12);
+  --clay:#b85c38;--clay-dim:#7a3d26;--sand:#c4a882;
+  --display:'Bebas Neue',sans-serif;--serif:'Playfair Display',serif;--body:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--linen);font-family:var(--body);font-weight:300;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.38}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;background:linear-gradient(to bottom,rgba(10,9,8,0.92) 0%,rgba(10,9,8,0.55) 70%,transparent 100%);backdrop-filter:blur(8px)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;opacity:.9;transition:opacity .2s}
+.nav-logo:hover{opacity:1}.nav-logo svg{height:26px;width:auto}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.16em;color:var(--linen-dim);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links .nav-cta{color:var(--gold);border-bottom:1px solid var(--gold-dim);padding-bottom:2px}
+.nav-hamburger{display:none;width:32px;height:24px;background:none;border:none;flex-direction:column;justify-content:space-between}
+.nav-hamburger span{display:block;width:100%;height:1.5px;background:var(--linen);transition:transform .3s,opacity .3s}
+.nav-hamburger.active span:nth-child(1){transform:translateY(11px) rotate(45deg)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:translateY(-11px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;inset:0;z-index:199;background:rgba(10,9,8,0.97);flex-direction:column;align-items:center;justify-content:center;gap:28px;list-style:none;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.mobile-nav.open{opacity:1;visibility:visible}
+.mobile-nav a{font-family:var(--display);font-size:34px;letter-spacing:0.1em;color:var(--linen);text-decoration:none;text-transform:uppercase}
+.mobile-nav .nav-cta{color:var(--gold);font-size:18px;font-family:var(--body);letter-spacing:0.16em}
+
+/* Article hero — text-only editorial */
+.article-hero{position:relative;min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 48px 80px;overflow:hidden;border-bottom:1px solid var(--linen-faint);background:var(--ink)}
+.article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(201,168,76,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
+.article-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none;z-index:0}
+.article-hero>*{position:relative;z-index:1}
+.crumb{display:flex;gap:14px;align-items:center;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--linen-dim);margin-bottom:32px}
+.crumb a{color:var(--linen-dim);text-decoration:none;transition:color .2s}
+.crumb a:hover{color:var(--gold)}
+.crumb .sep{color:var(--gold)}
+.crumb .cat{color:var(--gold)}
+.article-title{font-family:var(--display);font-size:clamp(44px,7.5vw,108px);line-height:0.92;letter-spacing:0.025em;color:var(--linen);text-transform:uppercase;max-width:1100px;margin-bottom:36px}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--linen-dim)}
+.article-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--linen-faint)}
+
+/* Article body */
+.article{padding:88px 48px 96px;background:var(--ink)}
+.article-inner{max-width:760px;margin:0 auto}
+.lede{font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);font-weight:300;font-style:italic;line-height:1.55;color:var(--linen);margin-bottom:48px;padding-left:22px;border-left:2px solid var(--gold)}
+.article-inner h2{font-family:var(--display);font-size:clamp(28px,3.2vw,40px);letter-spacing:0.04em;color:var(--linen);text-transform:uppercase;margin:64px 0 22px;line-height:1}
+.article-inner h2::before{content:'';display:inline-block;width:24px;height:1px;background:var(--gold);vertical-align:middle;margin-right:14px;transform:translateY(-4px)}
+.article-inner h3{font-family:var(--serif);font-size:22px;font-style:italic;font-weight:400;color:var(--gold);margin:42px 0 16px;line-height:1.3}
+.article-inner p{font-size:17px;font-weight:300;line-height:1.85;color:var(--linen);margin-bottom:22px}
+.article-inner p strong{color:var(--linen);font-weight:500}
+.article-inner a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim);transition:color .2s,border-color .2s}
+.article-inner a:hover{color:var(--linen);border-color:var(--linen)}
+.article-inner ul,.article-inner ol{margin:0 0 26px 22px;color:var(--linen)}
+.article-inner li{font-size:17px;font-weight:300;line-height:1.8;margin-bottom:8px}
+.article-inner li::marker{color:var(--gold)}
+.article-inner blockquote{border-left:2px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.6;color:var(--linen-dim)}
+.article-inner code{font-family:'DM Mono',monospace;font-size:13.5px;background:var(--soil);color:var(--gold);padding:2px 8px;border-radius:3px;border:1px solid var(--linen-faint)}
+.article-inner pre{background:var(--soil);border:1px solid var(--linen-faint);border-left:2px solid var(--gold);padding:22px 26px;overflow-x:auto;margin:28px 0;border-radius:3px}
+.article-inner pre code{background:none;border:none;padding:0;color:var(--linen);font-size:13.5px;line-height:1.7}
+.article-inner hr{border:none;height:1px;background:var(--linen-faint);margin:56px 0}
+.article-inner img,.article-inner figure{margin:38px 0;width:100%}
+.article-inner img{max-width:100%;border:1px solid var(--linen-faint)}
+.article-inner figcaption{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--linen-dim);margin-top:10px;text-align:center}
+
+/* Inline product CTA — drops into the body */
+.inline-cta{margin:48px 0;padding:32px 36px;background:var(--soil);border:1px solid var(--gold-faint);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.inline-cta-text{flex:1;min-width:240px}
+.inline-cta-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.inline-cta h4{font-family:var(--display);font-size:22px;letter-spacing:0.04em;color:var(--linen);text-transform:uppercase;margin-bottom:6px;line-height:1.05}
+.inline-cta p{font-size:14px;color:var(--linen-dim);line-height:1.6;margin:0}
+.inline-cta a.btn{flex-shrink:0;font-family:var(--body);font-size:11px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;border:1px solid var(--gold-dim);padding:14px 24px;text-decoration:none;border-bottom:1px solid var(--gold-dim);transition:background .2s,color .2s}
+.inline-cta a.btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+
+/* Footer LUT pack CTA */
+.post-cta{padding:96px 48px;background:var(--linen);color:var(--ink);position:relative}
+.post-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold)}
+.post-cta::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--gold)}
+.post-cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.post-cta-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);margin-bottom:18px}
+.post-cta h2{font-family:var(--display);font-size:clamp(38px,5vw,64px);letter-spacing:0.03em;line-height:0.95;text-transform:uppercase;color:var(--ink);margin-bottom:22px}
+.post-cta h2 em{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--clay);font-size:0.7em;display:block;margin-top:6px;text-transform:none;letter-spacing:0.01em}
+.post-cta p{font-size:16px;line-height:1.75;color:#3a342c;max-width:520px;margin-bottom:32px}
+.post-cta a.btn{display:inline-block;font-family:var(--body);font-size:12px;letter-spacing:0.2em;color:var(--ink);text-transform:uppercase;background:var(--gold);padding:18px 36px;text-decoration:none;border:1px solid var(--gold-dim);transition:background .2s,color .2s}
+.post-cta a.btn:hover{background:var(--ink);color:var(--gold)}
+.post-cta-image{position:relative;aspect-ratio:1/1;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--ink)}
+.post-cta-image.bundle{aspect-ratio:16/9}
+
+/* Footer */
+footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--linen-faint)}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:42px;padding-bottom:32px;border-bottom:1px solid var(--linen-faint)}
+.footer-brand{max-width:380px}
+.footer-logo{display:inline-block;margin-bottom:14px}
+.footer-tagline{font-size:13px;color:var(--linen-dim);line-height:1.7}
+.footer-social{display:flex;gap:14px}
+.footer-social a{width:40px;height:40px;border:1px solid var(--linen-faint);display:flex;align-items:center;justify-content:center;color:var(--linen-dim);transition:color .2s,border-color .2s}
+.footer-social a:hover{color:var(--gold);border-color:var(--gold-dim)}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--linen-dim)}
+.footer-bottom a{color:var(--linen-dim);text-decoration:none;margin-left:18px;transition:color .2s}
+.footer-bottom a:hover{color:var(--gold)}
+
+@media(max-width:900px){
+  nav{padding:18px 22px}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .mobile-nav{display:flex}
+  .article-hero{padding:130px 22px 48px}
+  .article{padding:64px 22px}
+  .article-inner{max-width:100%}
+  .post-cta{padding:64px 22px}
+  .post-cta-inner{grid-template-columns:1fr;gap:36px}
+  .author-block{padding:48px 22px}
+  footer{padding:52px 22px 28px}
+  .inline-cta{flex-direction:column;align-items:flex-start;padding:26px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo" aria-label="Positiva Films home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="110 137 152 88" preserveAspectRatio="xMidYMid meet"><g fill="#e8e0d4"><g transform="translate(111.939314, 176.095419)"><path d="M 24.953125 -19.078125 C 26.992188 -16.859375 28.015625 -14.132812 28.015625 -10.90625 C 28.015625 -7.6875 26.992188 -4.957031 24.953125 -2.71875 C 22.921875 -0.476562 20.332031 0.640625 17.1875 0.640625 C 14.300781 0.640625 11.925781 -0.265625 10.0625 -2.078125 L 10.0625 11.03125 L 2.546875 11.03125 L 2.546875 -21.78125 L 9.96875 -21.78125 L 9.96875 -19.3125 L 10.0625 -19.3125 C 11.925781 -21.382812 14.300781 -22.421875 17.1875 -22.421875 C 20.332031 -22.421875 22.921875 -21.304688 24.953125 -19.078125 Z M 18.5625 -7.21875 C 19.539062 -8.175781 20.03125 -9.40625 20.03125 -10.90625 C 20.03125 -12.40625 19.5625 -13.628906 18.625 -14.578125 C 17.695312 -15.523438 16.46875 -16 14.9375 -16 C 13.46875 -16 12.257812 -15.519531 11.3125 -14.5625 C 10.363281 -13.601562 9.890625 -12.382812 9.890625 -10.90625 C 9.890625 -9.40625 10.378906 -8.175781 11.359375 -7.21875 C 12.335938 -6.257812 13.53125 -5.78125 14.9375 -5.78125 C 16.382812 -6.257812 17.59375 -6.257812 18.5625 -7.21875 Z"/></g></g><text x="110" y="220" font-family="Bebas Neue,sans-serif" font-size="42" fill="#c9a84c" letter-spacing="2">POSITIVA</text><text x="110" y="248" font-family="Playfair Display,serif" font-size="14" fill="#e8e0d4" font-style="italic">films</text></svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../products.html">Products</a></li>
+    <li><a href="../luts.html">LUTs</a></li>
+    <li><a href="../blog.html" class="active">Blog</a></li>
+    <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<ul class="mobile-nav" id="mobileNav">
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../products.html">Products</a></li>
+  <li><a href="../luts.html">LUTs</a></li>
+  <li><a href="../blog.html">Blog</a></li>
+  <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+</ul>
+
+<header class="article-hero">
+  <div class="crumb">
+    <a href="../blog.html">Blog</a>
+    <span class="sep">/</span>
+    <span class="cat">Travel &amp; Place</span>
+  </div>
+  <h1 class="article-title">Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall</h1>
+  <div class="article-meta">
+    <span>May 01, 2026</span>
+    <span class="dot"></span>
+    <span>7 Min Read</span>
+  </div>
+</header>
+
+<article class="article">
+  <div class="article-inner">
+    <p class="lede">The magenta sunset over Candolim beach looked perfect on the FX3 monitor. On your graded timeline, it's a screaming, clipped band of neon that no LUT can save — because the LUT was never the problem. The gamut wall was.</p>
+    <p>Goa at golden hour is genuinely one of the most punishing grading situations in Indian travel cinematography. The sky does things that S-Gamut3.Cine handles beautifully and Rec.709 simply cannot contain. The magenta-to-orange gradient above the Arabian Sea between about 6:15 and 6:45 PM — in the dry season especially — sits in a region of colour space that exists in your sensor but evaporates the moment you apply a Rec.709 output transform. What remains isn't a soft clip. It's a hard, neon-violet smear that looks like a rendering artifact, because chromatically that's exactly what it is.</p>
+
+<p>This post is specifically about that problem: the <strong>gamut wall</strong> that your travel LUT hits on high-saturation, out-of-gamut skies. We'll work in DaVinci Resolve, the camera is a Sony FX3 shooting <code>S-Log3/S-Gamut3.Cine</code>, and the problem appears on every wide colour-gamut camera — A7S III, FX6, BMPCC 6K in Film mode, Canon R5 C in Cinema Gamut/Canon Log 3. The fix is the same across all of them.</p>
+
+<h2>Why the Neon Band Appears</h2>
+
+<p>Rec.709 has a colour gamut that is smaller than every professional capture gamut. That's by design — your wide-gamut log format records colours that a Rec.709 display cannot reproduce. The job of a colour space transform (or a good LUT) is to map those colours into the Rec.709 container in a way that looks natural.</p>
+
+<p>Most travel LUTs are designed and tested against typical daylight scenes: forests, buildings, people in open shade, moderate sunsets. They are <em>not</em> designed against the specific spectral energy of a coastal Indian sunset, where the magentas and crimsons push hard into the negative-green region of Rec.709's gamut boundary. When the transform reaches that boundary with no softening logic, it clips. Luminance keeps rendering because it's within range; chroma clips hard. The result is a band of maximum-saturation magenta with no tonal gradation — the gamut wall.</p>
+
+<p>You'll see it on Rec.709's waveform as a flat top on the red channel while green and blue are still varying. On a vectorscope, the magentas pile up tight against the boundary rather than spreading naturally. That's your diagnostic: if the magentas are hitting the fence, you have a gamut problem, not an exposure problem.</p>
+
+<h2>The Node Tree That Intercepts It</h2>
+
+<p>The correct fix happens <em>before</em> the LUT node, in the colour space, not after the gamut has already been violated. Here is the exact node order:</p>
+
+<ol>
+  <li><strong>Node 1 — CST In:</strong> <code>Color Space Transform</code>, S-Log3/S-Gamut3.Cine → Rec.709 (Scene). Tone mapping: <em>off</em>. Gamut mapping: <em>off</em>. You want a clean linear transform with no compression — you're about to handle that manually.</li>
+  <li><strong>Node 2 — Gamut Compression:</strong> This is the critical node. Use the <code>Gamut Mapping</code> tab inside the CST node on Node 1 — or, better for manual control, create a separate node and use a <code>Custom Curve</code> on the saturation-vs-saturation curve. Pull the shoulder of the curve down starting at around 65–70% saturation (on the input axis), rolling the output to a soft cap at 85%. This compresses extreme chromas before the LUT sees them.</li>
+  <li><strong>Node 3 — Your Travel LUT:</strong> Apply it here as a DCTL or <code>.cube</code>. Because Node 2 already pulled the gamut violations back inside the container, the LUT now sees legal Rec.709 values and renders correctly. The sunset gradient comes back.</li>
+  <li><strong>Node 4 — Sky Qualifier + Selective Saturation:</strong> Use an <code>HSL Qualifier</code> to isolate the magentas (hue roughly 290–330°, softness wide). Bring saturation back up by +15 to +25 — because your gamut compression in Node 2 desaturated everything in that range uniformly. This node recovers just the sky, giving you a compressed but still vivid sunset rather than a muddy one.</li>
+  <li><strong>Node 5 — Output CST or display LUT:</strong> If you're delivering to a Rec.709 master, close the loop here. If Node 1 already did a full output transform, skip this.</li>
+</ol>
+
+<p>The order matters absolutely. Compressing gamut <em>after</em> the LUT achieves nothing useful — by that point, chrominance has already been destroyed. The clip happened in Node 3 if you reversed the order. You cannot recover a gamut clip downstream.</p>
+
+<h2>Exact Values That Work for the Goa Sunset Case</h2>
+
+<p>These values are calibrated specifically against the magenta-heavy sky typical of Goa's west coast from November through March, when the atmosphere is dry and the hue skews violet rather than orange. Adjust for your material, but start here:</p>
+
+<ul>
+  <li><strong>Custom Curve, Sat vs Sat:</strong> Control point at Input 0.68 / Output 0.60. Control point at Input 0.85 / Output 0.72. Flat below 0.50 (don't touch the midrange). This creates a smooth shoulder — not a hard clip, a roll-off.</li>
+  <li><strong>HSL Qualifier for Node 4:</strong> Hue centre 305°, range ±35°. Saturation minimum 0.40 (ignore desaturated pixels — you only want to recover the vivid band). Luminance range 0.45–0.85 (ignore the dark foreground water and the overexposed sun disc).</li>
+  <li><strong>Selective Saturation boost in Node 4:</strong> +20 is almost always right for S-Gamut3.Cine material. For Cinema Gamut (Canon) or BM Film, you may need only +12 because those gamuts don't compress as aggressively.</li>
+  <li><strong>Feathering on the qualifier:</strong> Keep it wide — 0.35 on hue, 0.25 on saturation. A tight qualifier will give you a hard edge between the qualified sky and the unqualified foreground. You want a blend, especially where palm fronds or buildings break the skyline.</li>
+</ul>
+
+<p>After this node tree, check your vectorscope. The magentas should be sitting 8–12% inside the Rec.709 boundary — compressed, but not destroyed. The tonal gradation from deep violet near the horizon to warm orange higher in the frame should be continuous, with no flat band.</p>
+
+<h2>What About HDR Delivery?</h2>
+
+<p>If you're delivering HLG or PQ for an HDR exhibition or a high-end tourism client, the gamut wall issue largely goes away — Rec.2020 (the container for both HLG and PQ) is wide enough to hold S-Gamut3.Cine without violations. The tradeoff is that you then need to grade for an HDR viewer who may actually see those magentas at full intensity, which can still look garish on the wrong display. The compression logic from Node 2 still has aesthetic value in HDR — just loosen the shoulder (pull the Input 0.68 point to 0.78) so you're compressing less aggressively.</p>
+
+<p>For social delivery — Instagram Reels, YouTube — always target Rec.709. The platforms tone-map for you in unpredictable ways if you upload HDR without proper tagging, and an untagged HDR clip on Instagram will make your magentas look exactly like the gamut wall problem you started with, just now on the viewer's end instead of yours.</p>
+
+<div class="inline-cta">
+  <div class="inline-cta-text">
+    <div class="inline-cta-eyebrow">From the Positiva LUT Library</div>
+    <h4>Indian Travel LUTs</h4>
+    <p>Built and tested against high-saturation Indian light — coastal magentas, desert golds, monsoon greens — with gamut headroom baked into each transform so the sunset wall never appears.</p>
+  </div>
+  <a class="btn" href="../luts.html#travel" rel="noopener noreferrer">View Pack →</a>
+</div>
+
+<h2>The Wider Pattern: Any Saturated Indian Location</h2>
+
+<p>Goa is the case study, but the same gamut wall appears in a handful of other high-saturation Indian shooting situations:</p>
+
+<ul>
+  <li><strong>Varanasi at dawn:</strong> The saffron and flame-orange of the aarti against the river mist pushes into the positive-red / negative-cyan boundary of Rec.709. Same fix, different hue range — use an HSL qualifier centred around 30–55° instead of the magenta range.</li>
+  <li><strong>Rajasthan blue hour in Jodhpur:</strong> The blue city's indigo walls under twilight sky pile the blues into the negative-red boundary. Watch the vectorscope for blues hugging the fence on the blue/cyan axis.</li>
+  <li><strong>Spiti Valley in October:</strong> The combination of thin-atmosphere UV light and the ochre-red terrain at elevation pushes reds and oranges into violation on cloudy-bright days more than on direct-sun days — counterintuitively, because clouds diffuse the UV differently than visible light.</li>
+  <li><strong>Haldi ceremonies shot outdoors in afternoon light:</strong> The turmeric yellow against the deep green of a garden or courtyard will clip on the yellow-green axis. This one is less about sky gamut and more about pigment-on-skin combined with a fast-saturating LUT.</li>
+</ul>
+
+<p>The pattern is always the same: a narrow hue range pushed to maximum chroma, meeting a Rec.709 output transform with no roll-off. Diagnose it on the vectorscope, not the parade. The parade shows you luminance clipping; the vectorscope shows you chroma clipping. Train yourself to read both simultaneously.</p>
+
+<h2>One Thing to Check in Your LUT Purchase</h2>
+
+<p>When evaluating any travel or cinematic LUT pack, test it against a frame with deliberately out-of-gamut colour before you commit. Load a Goa sunset clip, or any clip where you can see the vectorscope magentas pressing the boundary. Apply the LUT directly with no pre-processing. If the sunset gradient disappears and a flat neon band replaces it, the LUT has no gamut compression baked in and you'll need the node tree above on every clip.</p>
+
+<p>If the gradient holds — if the magentas compress smoothly rather than clip — the LUT was built with gamut awareness. That's the difference between a LUT designed in a studio against controlled swatches and one tested against actual high-saturation field material from wide-gamut cameras.</p>
+
+<p>Good travel LUTs handle this internally. The Sat vs Sat shoulder is baked into their transform math before the creative grade even starts. You can still use the Node 2 approach above as a safety net, but you shouldn't need to pull it out on every clip if the LUT was built properly for the material you're shooting.</p>
+
+<p>The Armenian-coast light at 6:30 PM is not a problem to be avoided. It's one of the finest natural light conditions on earth for cinematography. The gamut wall is a technical constraint of the delivery format — understand it, work around it systematically, and then go shoot the sunset.</p>
+  </div>
+</article>
+
+<section class="post-cta">
+  <div class="post-cta-inner">
+    <div>
+      <div class="post-cta-eyebrow">&#10022; GRADE THE GOLDEN COAST</div>
+      <h2>GRADE THE GOLDEN COAST<em>LUTs built for Indian light extremes.</em></h2>
+      <p>The Indian Travel LUT pack was tested against coastal magentas, desert golds, and monsoon greens — the exact high-saturation conditions that expose a weak gamut transform. Each LUT ships with gamut compression baked in so your Goa sunsets render correctly from the first node.</p>
+      <a class="btn" href="../luts.html#travel">Browse Travel LUTs &rarr;</a>
+    </div>
+    <div class="post-cta-image" style="background-image:url('../Indian_Travel_Luts_pack.png')"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="../index.html" class="footer-logo" aria-label="Positiva Films">
+        <svg height="36" xmlns="http://www.w3.org/2000/svg" viewBox="110 137 152 88" preserveAspectRatio="xMidYMid meet"><text x="110" y="200" font-family="Bebas Neue,sans-serif" font-size="48" fill="#e8e0d4" letter-spacing="3">POSITIVA</text><text x="110" y="225" font-family="Playfair Display,serif" font-size="16" fill="#c9a84c" font-style="italic">films</text></svg>
+      </a>
+      <p class="footer-tagline">We craft cinematic stories that move people. From concept to final cut, we bring your vision to life.</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.youtube.com/@TallyTalwarOfficial" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://www.instagram.com/djtally/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>&copy; 2026 Positiva Films. All rights reserved.</div>
+    <div>
+      <a href="https://clipengineai.positivafilms.com/" target="_blank">ClipEngine AI</a>
+      <a href="../products.html">Products</a>
+      <a href="../luts.html">LUTs</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
+</script>
+</body>
+</html>
