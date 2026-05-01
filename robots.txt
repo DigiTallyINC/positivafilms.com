@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_archive/
+
+Sitemap: https://positivafilms.com/sitemap.xml

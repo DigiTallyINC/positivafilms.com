@@ -4,6 +4,7 @@
  */
 
 import type { QueuedTopic } from "./queue";
+import { sanitizeBody, sanitizeLede, assertNoDangerousMarkup } from "./sanitize";
 
 export type ToolOutput = {
   slug: string;
@@ -50,10 +51,22 @@ export function renderPost(opts: {
 }): string {
   const { template, topic, out, prettyDate, isoDate, readTime } = opts;
 
+  // Defense-in-depth: abort BEFORE sanitization if the model output is overtly hostile.
+  assertNoDangerousMarkup(out.body_html, "");
+
+  // Sanitize model output against an allowlist of safe tags/attrs/schemes.
+  const safeBody = sanitizeBody(out.body_html);
+  const safeLede = sanitizeLede(out.lede);
+
+  // Confirm the inline-cta block survived sanitization (the model is required to include one).
+  if (!safeBody.includes('class="inline-cta"')) {
+    throw new Error("Sanitization stripped the inline-cta block — model output was malformed");
+  }
+
   const ctaImageClass = out.cta.pack === "bundle" ? " bundle" : "";
 
   const replacements: Record<string, string> = {
-    "{{TITLE}}": topic.title,
+    "{{TITLE}}": escapeText(topic.title),
     "{{EXCERPT}}": escapeAttr(out.excerpt),
     "{{KEYWORDS}}": escapeAttr(out.keywords),
     "{{AUTHOR}}": "Positiva Films",
@@ -62,18 +75,18 @@ export function renderPost(opts: {
     "{{DATE_ISO}}": isoDate,
     "{{READ_TIME}}": String(readTime),
     "{{HERO_IMAGE}}": HERO_IMAGE[out.cta.pack],
-    "{{CATEGORY_LABEL}}": out.category_label,
-    "{{LEDE}}": escapeText(out.lede),
-    "{{BODY_HTML}}": out.body_html,
-    "{{CTA_EYEBROW}}": out.cta.headline,
-    "{{CTA_HEADLINE}}": out.cta.headline,
-    "{{CTA_SUB}}": out.cta.sub,
+    "{{CATEGORY_LABEL}}": escapeText(out.category_label),
+    "{{LEDE}}": safeLede,
+    "{{BODY_HTML}}": safeBody,
+    "{{CTA_EYEBROW}}": escapeText(out.cta.headline),
+    "{{CTA_HEADLINE}}": escapeText(out.cta.headline),
+    "{{CTA_SUB}}": escapeText(out.cta.sub),
     "{{CTA_BODY}}": escapeText(out.cta.body),
-    "{{CTA_BUTTON}}": out.cta.button,
+    "{{CTA_BUTTON}}": escapeText(out.cta.button),
     "{{CTA_LINK}}": `luts.html#${out.cta.pack}`,
     "{{CTA_IMAGE}}": PACK_IMAGE[out.cta.pack],
     "{{CTA_IMAGE_CLASS}}": ctaImageClass,
-    // Author block was removed from the template; if any leftover references exist they get a no-op:
+    // Author block was removed from the template; leftover refs get a no-op:
     "{{AUTHOR_INITIALS}}": "",
     "{{AUTHOR_BIO}}": "",
   };
