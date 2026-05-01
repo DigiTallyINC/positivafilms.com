@@ -2,6 +2,7 @@
   "name": "positivafilms-blog-cron",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Vercel-hosted serverless cron that publishes one blog post per fire to the static positivafilms.com repo. The static site itself remains zero-dependency — this package.json exists ONLY for the /api/ functions.",
   "engines": {
     "node": ">=20"
