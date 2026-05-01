@@ -89,46 +89,42 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .filter-search input::placeholder{color:rgba(232,224,212,0.3)}
 .filter-search svg{flex-shrink:0;color:var(--linen-dim)}
 
-/* Featured post */
-.featured-post{background:var(--ink);padding:88px 48px 64px}
-.fp-card{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;text-decoration:none;color:inherit;border-top:1px solid var(--linen-faint);border-bottom:1px solid var(--linen-faint);padding:48px 0;transition:padding .3s}
-.fp-card:hover{padding-left:8px;padding-right:8px}
-.fp-image{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--soil)}
-.fp-image-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.25,.46,.45,.94)}
-.fp-card:hover .fp-image-bg{transform:scale(1.04)}
-.fp-image::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,0.5) 0%,transparent 50%)}
-.fp-meta{display:flex;align-items:center;gap:16px;margin-bottom:18px;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--linen-dim)}
+/* Featured post — same shape as grid cards, slightly elevated */
+.featured-post{background:var(--ink);padding:88px 48px 24px}
+.fp-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:var(--ink-soft);border:1px solid var(--linen-faint);padding:48px 44px 44px;transition:background .3s,border-color .3s;position:relative;max-width:none}
+.fp-card::before{content:'';position:absolute;left:0;top:0;height:0;width:2px;background:var(--gold);transition:height .35s ease}
+.fp-card:hover::before{height:100%}
+.fp-card:hover{background:rgba(201,168,76,0.04);border-color:var(--gold-dim)}
+.fp-card-inner{display:contents}
+.fp-flag{font-family:'DM Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:inline-flex;align-items:center;gap:10px;align-self:flex-start}
+.fp-flag::before{content:'';width:18px;height:1px;background:var(--gold)}
+.fp-meta{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--linen-dim)}
 .fp-meta .cat{color:var(--gold)}
 .fp-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--linen-faint)}
-.fp-title{font-family:var(--display);font-size:clamp(40px,5vw,64px);letter-spacing:0.04em;line-height:0.95;color:var(--linen);text-transform:uppercase;margin-bottom:22px}
-.fp-excerpt{font-size:15px;font-weight:300;line-height:1.85;color:var(--linen-dim);margin-bottom:28px;max-width:520px}
-.fp-author{display:flex;align-items:center;gap:14px;font-size:12px;color:var(--linen-dim)}
-.fp-author-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold) 0%,var(--clay) 100%);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:14px;color:var(--ink);letter-spacing:0.04em}
-.fp-author strong{color:var(--linen);font-weight:400}
-.fp-cta{display:inline-flex;align-items:center;gap:12px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-top:24px;text-decoration:none}
-.fp-cta::after{content:'\2192';font-size:15px;transition:transform .3s}
+.fp-title{font-family:var(--display);font-size:clamp(30px,3.2vw,44px);letter-spacing:0.035em;line-height:1.02;color:var(--linen);text-transform:uppercase;margin-bottom:22px;max-width:780px}
+.fp-excerpt{font-family:var(--serif);font-style:italic;font-weight:300;font-size:17px;line-height:1.65;color:var(--linen-dim);margin-bottom:26px;max-width:680px}
+.fp-cta{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;align-self:flex-start;padding-top:18px;border-top:1px solid var(--linen-faint);width:100%;justify-content:flex-start}
+.fp-cta::after{content:'\2192';font-size:15px;transition:transform .3s;margin-left:auto}
 .fp-card:hover .fp-cta::after{transform:translateX(6px)}
 
-/* Posts grid */
+/* Posts grid — text-only literary cards */
 .posts{background:var(--ink-soft);padding:120px 48px}
-.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.post-card{background:var(--soil);border:1px solid var(--linen-faint);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:border-color .3s,background .3s;overflow:hidden}
-.post-card:hover{border-color:var(--gold-dim);background:rgba(201,168,76,0.03)}
-.post-thumb{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--ink)}
-.post-thumb-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.25,.46,.45,.94)}
-.post-card:hover .post-thumb-bg{transform:scale(1.04)}
-.post-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,0.7) 0%,rgba(10,9,8,0.05) 50%,transparent 100%)}
-.post-cat{position:absolute;top:18px;left:18px;font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:5px 10px;color:var(--gold);background:rgba(10,9,8,0.7);border:1px solid var(--gold-dim);z-index:2}
-.post-body{padding:28px 28px 30px;display:flex;flex-direction:column;flex:1}
-.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-family:'DM Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;color:var(--linen-dim)}
+.posts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--linen-faint)}
+.post-card{background:var(--ink-soft);border:none;text-decoration:none;color:inherit;display:flex;flex-direction:column;padding:44px 40px 40px;transition:background .3s;position:relative;min-height:280px}
+.post-card::before{content:'';position:absolute;left:0;top:0;height:0;width:2px;background:var(--gold);transition:height .35s ease}
+.post-card:hover::before{height:100%}
+.post-card:hover{background:rgba(201,168,76,0.04)}
+.post-cat{font-family:'DM Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:inline-flex;align-items:center;gap:10px;align-self:flex-start}
+.post-cat::before{content:'';width:18px;height:1px;background:var(--gold)}
+.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--linen-dim)}
 .post-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--linen-faint)}
-.post-title{font-family:var(--display);font-size:24px;letter-spacing:0.05em;color:var(--linen);text-transform:uppercase;line-height:1.05;margin-bottom:14px}
-.post-excerpt{font-size:13px;font-weight:300;color:var(--linen-dim);line-height:1.75;margin-bottom:20px;flex:1}
-.post-foot{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--linen-faint);gap:12px}
-.post-author{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--linen-dim)}
-.post-author-avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold) 0%,var(--clay) 100%);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:11px;color:var(--ink)}
-.post-arrow{width:32px;height:32px;flex-shrink:0;border:1px solid var(--linen-faint);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--linen);font-size:12px;transition:border-color .3s,color .3s,background .3s}
-.post-card:hover .post-arrow{border-color:var(--gold);color:var(--gold);background:var(--gold-faint)}
+.post-title{font-family:var(--display);font-size:clamp(26px,2.6vw,34px);letter-spacing:0.035em;color:var(--linen);text-transform:uppercase;line-height:1.05;margin-bottom:18px}
+.post-excerpt{font-family:var(--serif);font-style:italic;font-weight:300;font-size:16px;color:var(--linen-dim);line-height:1.65;margin-bottom:24px;flex:1}
+.post-foot{display:flex;align-items:center;justify-content:flex-end;padding-top:18px;border-top:1px solid var(--linen-faint);gap:12px}
+.post-arrow{width:34px;height:34px;flex-shrink:0;border:1px solid var(--linen-faint);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--linen-dim);font-size:13px;transition:border-color .3s,color .3s,background .3s,transform .3s}
+.post-card:hover .post-arrow{border-color:var(--gold);color:var(--gold);background:var(--gold-faint);transform:translateX(4px)}
+.post-card.is-hidden{display:none}
+.posts-empty{grid-column:1/-1;text-align:center;padding:64px 24px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--linen-dim)}
 
 .posts-foot{margin-top:64px;display:flex;justify-content:center}
 .btn-load{display:inline-flex;align-items:center;gap:14px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;border:1px solid var(--linen-faint);color:var(--linen);padding:18px 32px;text-decoration:none;background:transparent;transition:border-color .3s,background .3s;cursor:inherit}
@@ -175,9 +171,9 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
 .reveal.in{opacity:1;transform:translateY(0)}
 
 @media(max-width:980px){
-  .fp-card{grid-template-columns:1fr;gap:32px}
-  .posts-grid{grid-template-columns:1fr 1fr}
-  .newsletter-inner{grid-template-columns:1fr;min-height:auto}.newsletter-left{border-right:none;border-bottom:1px solid rgba(10,9,8,0.1);padding:56px 32px}.newsletter-right{padding:56px 32px}
+  .posts-grid{grid-template-columns:1fr}
+  .post-card{padding:36px 28px 32px;min-height:auto}
+  .fp-card{padding:48px 0}
 }
 @media(max-width:768px){
   nav{padding:20px 24px}.nav-links{display:none}.nav-hamburger{display:flex}.mobile-nav{display:flex}
@@ -236,11 +232,12 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
     <span class="filter-label">Filed under</span>
     <ul class="filter-list" id="filterList">
       <li><button class="is-active" data-filter="all">All Stories</button></li>
-      <li><button data-filter="field">Field Notes</button></li>
+      <li><button data-filter="wedding">Indian Wedding</button></li>
+      <li><button data-filter="travel">Travel &amp; Place</button></li>
       <li><button data-filter="craft">Craft &amp; Color</button></li>
-      <li><button data-filter="aerial">Aerial &amp; FPV</button></li>
       <li><button data-filter="gear">Gear</button></li>
-      <li><button data-filter="business">Business</button></li>
+      <li><button data-filter="aerial">Aerial &amp; FPV</button></li>
+      <li><button data-filter="field">Field Notes</button></li>
     </ul>
   </div>
   <label class="filter-search">
@@ -256,24 +253,17 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
   </div>
   <h2 class="section-title reveal">EDITOR'S PICK<em>The latest dispatch</em></h2>
 
-  <a href="#" class="fp-card reveal">
-    <div class="fp-image">
-      <div class="fp-image-bg" style="background-image:url('https://img.youtube.com/vi/kxM1EjsrciA/maxresdefault.jpg')"></div>
-    </div>
-    <div>
+  <a href="posts/color-matching-a7s3-fx3-wedding-multicam-resolve.html" class="fp-card reveal" data-cat="gear" data-search="color-matching a7s iii fx3 wedding multicam edit resolve sony group grade gear">
+    <div class="fp-card-inner">
       <div class="fp-meta">
-        <span class="cat">&#10022; Aerial &amp; FPV</span>
+        <span class="cat">&#10022; Gear</span>
         <span class="dot"></span>
-        <span>12 Min Read</span>
+        <span>May 01, 2026</span>
         <span class="dot"></span>
-        <span>April 22, 2026</span>
+        <span>6 Min Read</span>
       </div>
-      <h3 class="fp-title">FLYING DRIFT: SIX MONTHS BUILDING AN FPV CINEMA RIG</h3>
-      <p class="fp-excerpt">From parts list to first dive &mdash; what we learned building a custom 5-inch cinematic FPV platform for the Drift series. Frame choice, GoPro mounting, ND strategy, and the three crashes that taught us the most.</p>
-      <div class="fp-author">
-        <div class="fp-author-avatar">TT</div>
-        <div>By <strong>Tally Talwar</strong> &middot; Director of Photography</div>
-      </div>
+      <h3 class="fp-title">Color-Matching A7S III to FX3 on a Wedding Multicam Edit</h3>
+      <p class="fp-excerpt">Same sensor, same log profile &mdash; and the cameras still don't sit on the timeline. The drift, the offset, and the group-grade workflow that locks them up in Resolve.</p>
       <span class="fp-cta">Read the full piece</span>
     </div>
   </a>
@@ -284,128 +274,45 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
     <div class="section-tag">Recent Stories</div>
     <div class="section-num">( 03 )</div>
   </div>
-  <h2 class="section-title reveal">FROM THE ARCHIVE<em>15 years on the road</em></h2>
+  <h2 class="section-title reveal">FROM THE ARCHIVE</h2>
 
   <div class="posts-grid" id="postsGrid">
 
-    <a href="#" class="post-card reveal" data-cat="field">
-      <div class="post-thumb">
-        <div class="post-thumb-bg" style="background-image:url('https://img.youtube.com/vi/2Y0LmF0lWh0/maxresdefault.jpg')"></div>
-        <span class="post-cat">Field Notes</span>
-      </div>
-      <div class="post-body">
-        <div class="post-meta"><span>April 14, 2026</span><span class="dot"></span><span>8 min</span></div>
-        <h3 class="post-title">Three Weeks at Maha Kumbh: A Camera Operator's Diary</h3>
-        <p class="post-excerpt">Twenty million pilgrims, twelve cameras, and the only photo we got of the Naga Sadhus at sunrise. What we'd shoot differently next time.</p>
-        <div class="post-foot">
-          <div class="post-author"><div class="post-author-avatar">TT</div><span>Tally Talwar</span></div>
-          <div class="post-arrow">&#8599;</div>
-        </div>
-      </div>
+    <a href="posts/mandap-fire-mixed-lighting-wedding-reception-node-tree.html" class="post-card reveal" data-cat="wedding" data-search="mandap fire mixed tungsten led wedding reception node tree resolve indian wedding pheras hsl qualifier">
+      <span class="post-cat">Indian Wedding</span>
+      <div class="post-meta"><span>April 29, 2026</span><span class="dot"></span><span>6 Min Read</span></div>
+      <h3 class="post-title">Mixed Tungsten + LED + Mandap Fire: A Reception Node Tree That Actually Works</h3>
+      <p class="post-excerpt">Three light sources, three colour temperatures, one subject. The parallel-node tree we run on every pheras segment to keep skin where it should be.</p>
+      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
     </a>
 
-    <a href="#" class="post-card reveal" data-cat="craft">
-      <div class="post-thumb">
-        <div class="post-thumb-bg" style="background-image:url('https://img.youtube.com/vi/TcAmJT1mDuA/maxresdefault.jpg')"></div>
-        <span class="post-cat">Craft &amp; Color</span>
-      </div>
-      <div class="post-body">
-        <div class="post-meta"><span>April 02, 2026</span><span class="dot"></span><span>11 min</span></div>
-        <h3 class="post-title">The Editorial Look: How We Color Documentary in 2026</h3>
-        <p class="post-excerpt">Sony S-Log3 to a warm, filmic editorial finish. The exact node tree, our six base looks, and why we stopped chasing teal-and-orange a long time ago.</p>
-        <div class="post-foot">
-          <div class="post-author"><div class="post-author-avatar">PF</div><span>Positiva Color</span></div>
-          <div class="post-arrow">&#8599;</div>
-        </div>
-      </div>
+    <a href="posts/lut-crushing-blacks-pre-lut-exposure-workflow.html" class="post-card reveal" data-cat="craft" data-search="lut crushing blacks pre-lut exposure workflow offset middle grey resolve s-log3 craft color">
+      <span class="post-cat">Craft &amp; Color</span>
+      <div class="post-meta"><span>April 27, 2026</span><span class="dot"></span><span>6 Min Read</span></div>
+      <h3 class="post-title">Why Your LUT Crushes Blacks &mdash; A Pre-LUT Exposure Workflow</h3>
+      <p class="post-excerpt">Most "the LUT looks bad" calls aren't a LUT problem. They're an exposure-mismatch problem upstream. The four-node tree that fixes it for good.</p>
+      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
     </a>
 
-    <a href="#" class="post-card reveal" data-cat="aerial">
-      <div class="post-thumb">
-        <div class="post-thumb-bg" style="background-image:url('https://img.youtube.com/vi/uh_kx8Vxnjg/maxresdefault.jpg')"></div>
-        <span class="post-cat">Aerial &amp; FPV</span>
-      </div>
-      <div class="post-body">
-        <div class="post-meta"><span>March 18, 2026</span><span class="dot"></span><span>6 min</span></div>
-        <h3 class="post-title">DGCA, NPNT &amp; You: Drone Compliance in India, 2026 Edition</h3>
-        <p class="post-excerpt">The current law as of this April. What's changed for commercial operators, what hasn't, and the documentation we keep on every shoot.</p>
-        <div class="post-foot">
-          <div class="post-author"><div class="post-author-avatar">TT</div><span>Tally Talwar</span></div>
-          <div class="post-arrow">&#8599;</div>
-        </div>
-      </div>
+    <a href="posts/indian-skin-tones-orange-rec709-wedding-luts.html" class="post-card reveal" data-cat="wedding" data-search="indian skin tones orange rec709 wedding luts brown skin south asian vectorscope hsl qualifier indian wedding">
+      <span class="post-cat">Indian Wedding</span>
+      <div class="post-meta"><span>April 24, 2026</span><span class="dot"></span><span>6 Min Read</span></div>
+      <h3 class="post-title">Why Indian Skin Tones Go Orange Under Rec.709 Wedding LUTs</h3>
+      <p class="post-excerpt">Most cinematic LUTs are graded against pale Western skin. Apply them to brown skin and the bride goes pumpkin. Here's the qualifier-based fix.</p>
+      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
     </a>
 
-    <a href="#" class="post-card reveal" data-cat="gear">
-      <div class="post-thumb">
-        <div class="post-thumb-bg" style="background-image:url('https://img.youtube.com/vi/s2WyrcJ0I1o/maxresdefault.jpg')"></div>
-        <span class="post-cat">Gear</span>
-      </div>
-      <div class="post-body">
-        <div class="post-meta"><span>March 04, 2026</span><span class="dot"></span><span>9 min</span></div>
-        <h3 class="post-title">The Documentary Kit: What We Actually Pack for 30-Day Shoots</h3>
-        <p class="post-excerpt">Two cameras, four lenses, a Mavic 3, batteries for days, and the surprisingly small bag we carry it all in. Plus the three items we never travel without.</p>
-        <div class="post-foot">
-          <div class="post-author"><div class="post-author-avatar">PF</div><span>Positiva Crew</span></div>
-          <div class="post-arrow">&#8599;</div>
-        </div>
-      </div>
-    </a>
-
-    <a href="#" class="post-card reveal" data-cat="business">
-      <div class="post-thumb">
-        <div class="post-thumb-bg" style="background-image:url('https://img.youtube.com/vi/xIzlP_EFEs8/maxresdefault.jpg')"></div>
-        <span class="post-cat">Business</span>
-      </div>
-      <div class="post-body">
-        <div class="post-meta"><span>February 21, 2026</span><span class="dot"></span><span>14 min</span></div>
-        <h3 class="post-title">Why We Built ClipEngine AI (And Open-Sourced the Hardest Part)</h3>
-        <p class="post-excerpt">A decade of selling stock taught us metadata is the bottleneck. The story behind the app, the model choices, and what we learned from 50,000 contributor uploads.</p>
-        <div class="post-foot">
-          <div class="post-author"><div class="post-author-avatar">TT</div><span>Tally Talwar</span></div>
-          <div class="post-arrow">&#8599;</div>
-        </div>
-      </div>
-    </a>
-
-    <a href="#" class="post-card reveal" data-cat="field">
-      <div class="post-thumb">
-        <div class="post-thumb-bg" style="background-image:url('https://img.youtube.com/vi/kxM1EjsrciA/maxresdefault.jpg')"></div>
-        <span class="post-cat">Field Notes</span>
-      </div>
-      <div class="post-body">
-        <div class="post-meta"><span>February 09, 2026</span><span class="dot"></span><span>7 min</span></div>
-        <h3 class="post-title">Ladakh in October: The Coldest Edit We Ever Shot</h3>
-        <p class="post-excerpt">Pangong at -18&deg;C, batteries dying every nine minutes, and a sunrise we waited four days for. The trip that produced our most-licensed clip of 2025.</p>
-        <div class="post-foot">
-          <div class="post-author"><div class="post-author-avatar">PF</div><span>Positiva Crew</span></div>
-          <div class="post-arrow">&#8599;</div>
-        </div>
-      </div>
+    <a href="posts/why-s-log3-lut-looks-flat-cst-node.html" class="post-card reveal" data-cat="craft" data-search="s-log3 lut flat cst node color space transform resolve sony s-gamut3 cine rec709 craft color">
+      <span class="post-cat">Craft &amp; Color</span>
+      <div class="post-meta"><span>April 22, 2026</span><span class="dot"></span><span>6 Min Read</span></div>
+      <h3 class="post-title">Why Applying a LUT Directly to S-Log3 Looks Flat &mdash; The CST Node You're Missing</h3>
+      <p class="post-excerpt">S-Log3 isn't Rec.709. The LUT doesn't know that. Here's the Color Space Transform node every Sony shooter should have wired into their grade.</p>
+      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
     </a>
 
   </div>
 
-  <div class="posts-foot reveal">
-    <button class="btn-load" id="loadMore">Load More Stories <span class="arrow">&#8595;</span></button>
-  </div>
-</section>
-
-<section class="newsletter reveal">
-  <div class="newsletter-inner">
-    <div class="newsletter-left">
-      <div class="newsletter-tag">The Dispatch</div>
-      <h2 class="newsletter-title">A LETTER<br>EVERY MONTH<em>From the field, into your inbox.</em></h2>
-      <p class="newsletter-desc">One long-form post per month. New work, behind-the-scenes notes, and the occasional product release. No noise, no spam, easy unsubscribe.</p>
-    </div>
-    <div class="newsletter-right">
-      <form class="news-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscribed';">
-        <input type="email" placeholder="your@email.com" required />
-        <button type="submit">Subscribe</button>
-      </form>
-      <p class="news-note">Joining 4,200+ filmmakers, photographers, and producers. Read past issues in the archive above.</p>
-    </div>
-  </div>
+  <div class="posts-empty" id="postsEmpty" style="display:none">No posts match that search. Try another keyword.</div>
 </section>
 
 <footer>
@@ -466,19 +373,70 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // Category filter
+  // Filter + search — combined
   const filterButtons = document.querySelectorAll('#filterList button');
   const cards = document.querySelectorAll('#postsGrid .post-card');
+  const featured = document.querySelector('.fp-card');
+  const featuredSection = document.querySelector('.featured-post');
+  const searchInput = document.querySelector('.filter-search input');
+  const empty = document.getElementById('postsEmpty');
+  let currentFilter = 'all';
+  let currentQuery = '';
+
+  function buildHaystack(el){
+    return [
+      (el.dataset.search || ''),
+      (el.querySelector('.post-title, .fp-title')?.textContent || ''),
+      (el.querySelector('.post-excerpt, .fp-excerpt')?.textContent || ''),
+      (el.querySelector('.post-cat')?.textContent || ''),
+      (el.dataset.cat || '')
+    ].join(' ').toLowerCase();
+  }
+
+  function applyFilters(){
+    const q = currentQuery.trim().toLowerCase();
+    const isSearching = q.length > 0;
+    let visible = 0;
+
+    // Featured: hide whole featured section if searching or filtering away its category
+    if (featured) {
+      const fHay = buildHaystack(featured);
+      const fCatOk = currentFilter === 'all' || featured.dataset.cat === currentFilter;
+      const fQOk = !isSearching || fHay.includes(q);
+      if (fCatOk && fQOk) {
+        if (featuredSection) featuredSection.style.display = '';
+        visible++;
+      } else {
+        if (featuredSection) featuredSection.style.display = 'none';
+      }
+    }
+
+    cards.forEach(card => {
+      const hay = buildHaystack(card);
+      const catOk = currentFilter === 'all' || card.dataset.cat === currentFilter;
+      const qOk = !isSearching || hay.includes(q);
+      if (catOk && qOk) { card.classList.remove('is-hidden'); visible++; }
+      else { card.classList.add('is-hidden'); }
+    });
+
+    if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
+  }
+
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       filterButtons.forEach(b => b.classList.remove('is-active'));
       btn.classList.add('is-active');
-      const f = btn.dataset.filter;
-      cards.forEach(card => {
-        card.style.display = (f === 'all' || card.dataset.cat === f) ? '' : 'none';
-      });
+      currentFilter = btn.dataset.filter;
+      applyFilters();
     });
   });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      currentQuery = searchInput.value;
+      applyFilters();
+    });
+  }
 </script>
 </body>
 </html>

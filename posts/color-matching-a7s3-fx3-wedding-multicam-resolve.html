@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{TITLE}} &mdash; Positiva Films</title>
-  <meta name="description" content="{{EXCERPT}}" />
-  <meta name="keywords" content="{{KEYWORDS}}" />
-  <meta name="author" content="{{AUTHOR}}" />
-  <link rel="canonical" href="https://positivafilms.com/posts/{{SLUG}}.html" />
+  <title>Color-Matching A7S III to FX3 on a Wedding Multicam Edit (Resolve, 2026) &mdash; Positiva Films</title>
+  <meta name="description" content="A7S III as A-cam, FX3 as B-cam, and a slight magenta drift you cannot un-see. Here is the exact Resolve workflow we use to lock the two cameras together for a 200-clip wedding edit." />
+  <meta name="keywords" content="match a7s3 fx3 color, sony multicam color match, wedding multicam grade, a7s iii fx3 color science difference, resolve group grade sony, fx3 magenta cast" />
+  <meta name="author" content="Positiva Color" />
+  <link rel="canonical" href="https://positivafilms.com/posts/color-matching-a7s3-fx3-wedding-multicam-resolve.html" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="{{TITLE}}" />
-  <meta property="og:description" content="{{EXCERPT}}" />
-  <meta property="og:image" content="{{HERO_IMAGE}}" />
-  <meta property="og:url" content="https://positivafilms.com/posts/{{SLUG}}.html" />
+  <meta property="og:title" content="Color-Matching A7S III to FX3 on a Wedding Multicam Edit (Resolve, 2026)" />
+  <meta property="og:description" content="A7S III as A-cam, FX3 as B-cam, and a slight magenta drift you cannot un-see. Here is the exact Resolve workflow we use to lock the two cameras together for a 200-clip wedding edit." />
+  <meta property="og:image" content="https://img.youtube.com/vi/2Y0LmF0lWh0/maxresdefault.jpg" />
+  <meta property="og:url" content="https://positivafilms.com/posts/color-matching-a7s3-fx3-wedding-multicam-resolve.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{{TITLE}}" />
-  <meta name="twitter:description" content="{{EXCERPT}}" />
-  <meta name="twitter:image" content="{{HERO_IMAGE}}" />
+  <meta name="twitter:title" content="Color-Matching A7S III to FX3 on a Wedding Multicam Edit (Resolve, 2026)" />
+  <meta name="twitter:description" content="A7S III as A-cam, FX3 as B-cam, and a slight magenta drift you cannot un-see. Here is the exact Resolve workflow we use to lock the two cameras together for a 200-clip wedding edit." />
+  <meta name="twitter:image" content="https://img.youtube.com/vi/2Y0LmF0lWh0/maxresdefault.jpg" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "{{TITLE}}",
-    "description": "{{EXCERPT}}",
-    "image": "{{HERO_IMAGE}}",
-    "datePublished": "{{DATE_ISO}}",
-    "dateModified": "{{DATE_ISO}}",
-    "author": { "@type": "Person", "name": "{{AUTHOR}}" },
+    "headline": "Color-Matching A7S III to FX3 on a Wedding Multicam Edit (Resolve, 2026)",
+    "description": "A7S III as A-cam, FX3 as B-cam, and a slight magenta drift you cannot un-see. Here is the exact Resolve workflow we use to lock the two cameras together for a 200-clip wedding edit.",
+    "image": "https://img.youtube.com/vi/2Y0LmF0lWh0/maxresdefault.jpg",
+    "datePublished": "2026-05-01",
+    "dateModified": "2026-05-01",
+    "author": { "@type": "Person", "name": "Positiva Color" },
     "publisher": {
       "@type": "Organization",
       "name": "Positiva Films",
       "logo": { "@type": "ImageObject", "url": "https://positivafilms.com/positiva-films-logo.svg" }
     },
-    "mainEntityOfPage": "https://positivafilms.com/posts/{{SLUG}}.html"
+    "mainEntityOfPage": "https://positivafilms.com/posts/color-matching-a7s3-fx3-wedding-multicam-resolve.html"
   }
   </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127916;</text></svg>" />
@@ -69,7 +69,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .mobile-nav a{font-family:var(--display);font-size:34px;letter-spacing:0.1em;color:var(--linen);text-decoration:none;text-transform:uppercase}
 .mobile-nav .nav-cta{color:var(--gold);font-size:18px;font-family:var(--body);letter-spacing:0.16em}
 
-/* Article hero — text-only editorial */
 .article-hero{position:relative;min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 48px 80px;overflow:hidden;border-bottom:1px solid var(--linen-faint);background:var(--ink)}
 .article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(201,168,76,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
 .article-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none;z-index:0}
@@ -80,10 +79,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .crumb .sep{color:var(--gold)}
 .crumb .cat{color:var(--gold)}
 .article-title{font-family:var(--display);font-size:clamp(44px,7.5vw,108px);line-height:0.92;letter-spacing:0.025em;color:var(--linen);text-transform:uppercase;max-width:1100px;margin-bottom:36px}
-.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--linen-dim)}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--linen-dim)}
 .article-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--linen-faint)}
 
-/* Article body */
 .article{padding:88px 48px 96px;background:var(--ink)}
 .article-inner{max-width:760px;margin:0 auto}
 .lede{font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);font-weight:300;font-style:italic;line-height:1.55;color:var(--linen);margin-bottom:48px;padding-left:22px;border-left:2px solid var(--gold)}
@@ -106,7 +104,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .article-inner img{max-width:100%;border:1px solid var(--linen-faint)}
 .article-inner figcaption{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--linen-dim);margin-top:10px;text-align:center}
 
-/* Inline product CTA — drops into the body */
 .inline-cta{margin:48px 0;padding:32px 36px;background:var(--soil);border:1px solid var(--gold-faint);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .inline-cta-text{flex:1;min-width:240px}
 .inline-cta-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -115,7 +112,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .inline-cta a.btn{flex-shrink:0;font-family:var(--body);font-size:11px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;border:1px solid var(--gold-dim);padding:14px 24px;text-decoration:none;border-bottom:1px solid var(--gold-dim);transition:background .2s,color .2s}
 .inline-cta a.btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 
-/* Footer LUT pack CTA */
 .post-cta{padding:96px 48px;background:var(--linen);color:var(--ink);position:relative}
 .post-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold)}
 .post-cta::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--gold)}
@@ -129,7 +125,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .post-cta-image{position:relative;aspect-ratio:1/1;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--ink)}
 .post-cta-image.bundle{aspect-ratio:16/9}
 
-/* Footer */
+.author-block{padding:64px 48px;background:var(--ink-soft);border-top:1px solid var(--linen-faint);border-bottom:1px solid var(--linen-faint)}
+.author-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.author-inner .author-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold) 0%,var(--clay) 100%);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:22px;color:var(--ink);flex-shrink:0}
+.author-inner h4{font-family:var(--display);font-size:22px;letter-spacing:0.04em;text-transform:uppercase;color:var(--linen);margin-bottom:4px}
+.author-inner p{font-size:13.5px;color:var(--linen-dim);line-height:1.6}
+
 footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--linen-faint)}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:42px;padding-bottom:32px;border-bottom:1px solid var(--linen-faint)}
 .footer-brand{max-width:380px}
@@ -185,32 +186,123 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   <div class="crumb">
     <a href="../blog.html">Blog</a>
     <span class="sep">/</span>
-    <span class="cat">{{CATEGORY_LABEL}}</span>
+    <span class="cat">Gear</span>
   </div>
-  <h1 class="article-title">{{TITLE}}</h1>
+  <h1 class="article-title">Color-Matching A7S III to FX3 on a Wedding Multicam Edit (Resolve, 2026)</h1>
   <div class="article-meta">
-    <span>{{DATE}}</span>
+    <span>May 01, 2026</span>
     <span class="dot"></span>
-    <span>{{READ_TIME}} Min Read</span>
+    <span>6 Min Read</span>
   </div>
 </header>
 
 <article class="article">
   <div class="article-inner">
-    <p class="lede">{{LEDE}}</p>
-    {{BODY_HTML}}
+    <p class="lede">You cut the bidaai sequence together, A-cam to B-cam to A-cam, and the bride's lehenga shifts hue every time the edit returns to the FX3. The cameras are supposed to be twins. They are not behaving like twins.</p>
+
+    <p>This is the most common color complaint we hear from Indian wedding shooters in 2026, and it has a clean technical answer. The <code>A7S III</code> and the <code>FX3</code> share the same 12.1MP back-illuminated sensor and most of their image pipeline. On paper, they should match out of the camera. In a real edit, they don't &mdash; not catastrophically, but enough that a viewer who never thinks about color will still feel the cut.</p>
+
+    <p>What follows is the exact workflow our color desk runs on every Sony two-camera wedding job. It assumes you are in DaVinci Resolve, you are shooting <code>S-Log3/S-Gamut3.Cine</code> on both bodies, and you have a 200+ clip timeline you cannot afford to grade per-clip.</p>
+
+    <h2>Why two "identical" cameras drift</h2>
+
+    <p>The sensor is the same. The colour science branding is "the same." But the firmware paths are not. The <code>FX3</code> is positioned as a video-first body, and Sony's video-pipeline gamma processing &mdash; especially the way <code>Cinetone</code> influences the in-camera image even when you think you've bypassed it &mdash; nudges things slightly differently from the <code>A7S III</code>'s stills-leaning pipeline.</p>
+
+    <p>Even with both cameras locked to <code>S-Log3/S-Gamut3.Cine</code>, identical white balance, identical exposure index, identical lens, you will see two consistent drifts on a parade scope:</p>
+
+    <ul>
+      <li><strong>FX3</strong> sits a touch warmer and slightly magenta in the midtones &mdash; bride's skin reads pinker.</li>
+      <li><strong>A7S III</strong> sits a touch cooler with a green lean in the same midtones &mdash; the same skin reads more olive.</li>
+      <li>Luma reads marginally darker on the FX3 at the same metered exposure &mdash; not a stop, but enough for the scope to register half to one and a half <code>IRE</code>.</li>
+    </ul>
+
+    <p>None of this is broken. It's the cost of two different firmware teams shipping two different products. Your job in post is to neutralize the gap before the look LUT goes on, not after.</p>
+
+    <h2>The five-minute capture step that saves you hours in post</h2>
+
+    <p>Before the haldi starts, before the makeup tent gets crowded, get both cameras together for ninety seconds. We shoot a grey card and a <code>Macbeth</code> chart with both bodies, identical exposure, identical white balance target, lit by the same source. Three seconds of clean chart on each is enough.</p>
+
+    <p>This is your ground truth. You will use it twice &mdash; once to derive the offset, and once to validate the offset is dialled in correctly. If you skip this and try to match by eye on real footage later, you will spend an hour chasing a number you could have measured in two minutes.</p>
+
+    <p>Sync timecode while you're at it. Multicam without genlock is bad enough; multicam where you can't even auto-sync is worse.</p>
+
+    <h2>The Resolve match workflow</h2>
+
+    <p>The whole point of this pipeline is that it survives a 200-clip timeline. Group grades, not clip grades. We will say this twice because everyone learns it the hard way.</p>
+
+    <h3>Step 1 &mdash; Build the A-cam base grade</h3>
+
+    <p>Select every <code>A7S III</code> clip, group them as "A-CAM." On the group's <em>pre-clip</em> stage, build:</p>
+
+    <ul>
+      <li><strong>Node 1:</strong> <code>Color Space Transform</code> from <code>S-Log3/S-Gamut3.Cine</code> to <code>DaVinci WG/Intermediate</code> (or to <code>Rec.709</code> if you're going straight out, but we prefer working in a wide intermediate). If this part feels handwavy, our walkthrough on <a href="../posts/why-s-log3-lut-looks-flat-cst-node.html">why your S-Log3 LUT looks flat without a CST node</a> covers exactly why the order matters.</li>
+      <li><strong>Node 2:</strong> Exposure normalization &mdash; lift or pull until your skin tone hits the <code>IRE</code> range you want before the look goes on. Our <a href="../posts/lut-crushing-blacks-pre-lut-exposure-workflow.html">pre-LUT exposure workflow piece</a> goes deep on the trim values we use for Indian skin under tungsten and LED.</li>
+      <li><strong>Node 3:</strong> Look LUT or PowerGrade.</li>
+    </ul>
+
+    <h3>Step 2 &mdash; Apply the same group grade to B-cam</h3>
+
+    <p>Select every <code>FX3</code> clip. Group them as "B-CAM." On the B-CAM group's pre-clip stage, paste the identical three-node tree from A-CAM. Do not modify it.</p>
+
+    <p>Now park your playhead on a B-cam clip that cuts directly against an A-cam clip &mdash; ideally a wide of the mandap that has both cameras' angles in roughly the same light. Open your parade scope. You will see the drift clearly: the red trace on FX3 sits a hair higher, the green trace sits lower, the whole luma sits half an <code>IRE</code> south.</p>
+
+    <h3>Step 3 &mdash; Add the offset node, B-cam only</h3>
+
+    <p>On the B-CAM group's pre-clip stage, add a fourth node <em>before</em> the look LUT. This is your match node and its job is to make the FX3 pretend to be an A7S III.</p>
+
+    <p>Typical correction values, ballpark, for two bodies on default firmware:</p>
+
+    <ul>
+      <li>Hue offset: rotate the global hue wheel toward green, between +1 and +3 degrees. Counters the FX3 magenta lean.</li>
+      <li>Tint: -1 to -3 on the temperature/tint pair, biased on tint. Same job, finer control.</li>
+      <li>Gain or offset: lift luma by +0.5 to +1.5 <code>IRE</code> &mdash; whatever brings the FX3 trace level with A7S III on the parade scope.</li>
+      <li>Optional: a tiny saturation pull, -2 to -3, if your FX3's midtones feel slightly more aggressive in chroma.</li>
+    </ul>
+
+    <p>Those numbers are starting points, not gospel. Your two specific bodies will have their own offset, and that is what the chart you shot at the start of the day is for.</p>
+
+    <h3>Step 4 &mdash; Validate against the chart</h3>
+
+    <p>Drop the chart clips from both cameras onto the timeline, side by side, in the same group context. Use the picker on the same neutral grey chip on each. The RGB values you read out of the picker tell you exactly how far apart the bodies are, and you can dial your match node until the two readings collapse into the same number. This is the only objectively correct way to do this. Eyeballing it on a hero shot will get you 80% there; the chart gets you to 100%.</p>
+
+    <div class="inline-cta">
+      <div class="inline-cta-text">
+        <div class="inline-cta-eyebrow">From the Positiva LUT Library</div>
+        <h4>The Positiva Bundle</h4>
+        <p>We ship the A7S III &harr; FX3 match offset as a <code>PowerGrade</code> preset inside the Bundle. Drop it on the FX3 group, scopes lock up, you stop adjusting per-shot.</p>
+      </div>
+      <a class="btn" href="../luts.html#bundle">View Pack &rarr;</a>
+    </div>
+
+    <h2>Group grades, not clip grades</h2>
+
+    <p>The whole point of putting the match on the group's pre-clip stage is that you set it once and 200 clips inherit it. If you fix the magenta lean per-clip on a wedding edit, you will be fixing it for the rest of your life, and the next round of revisions will undo half of it.</p>
+
+    <p>Per-clip nodes exist for problems that are actually per-clip &mdash; a window light blew out one shot, a guest stepped in front of the lamp during the pheras. Camera-to-camera drift is not a per-clip problem. It's a per-camera problem. Solve it where it lives.</p>
+
+    <p>If you re-cut and the timeline grows from two cameras to three, your grouping survives. You add a third group, paste the base tree, derive its offset against the chart, done.</p>
+
+    <h2>What about the A7 IV in the same edit?</h2>
+
+    <p>This comes up on bigger weddings: the second shooter rolls in with an <code>A7 IV</code> for stills-and-clip duty and you end up with twenty B-roll clips on the timeline. Don't drag those into the FX3 group. The <code>A7 IV</code> is a different sensor with a meaningfully different colour pipeline, and Sony's Cine profiles bake more aggressively on that body. Build it its own group, derive its own offset against your chart, accept that it may need a slightly heavier hue rotation than the FX3 does. Trying to wedge it into the FX3 match will cost you more time than just giving it its own three-line group.</p>
+
+    <h2>Where this leaves you</h2>
+
+    <p>The match itself is small &mdash; one node, four to six values. The discipline is in doing it once at the group level instead of fighting it across 200 clips. Shoot the chart. Build the A-cam tree. Mirror it onto B-cam. Add the offset node. Validate on the parade scope using the chart. Move on to the actual creative grade, which is the part of the job worth your attention.</p>
+
+    <p>If you want a head start, the offset preset and the full base node tree are both inside <a href="../luts.html">our LUT library</a> &mdash; built specifically against the two-Sony wedding setup that runs most Indian weddings in 2026.</p>
   </div>
 </article>
 
 <section class="post-cta">
   <div class="post-cta-inner">
     <div>
-      <div class="post-cta-eyebrow">&#10022; {{CTA_EYEBROW}}</div>
-      <h2>{{CTA_HEADLINE}}<em>{{CTA_SUB}}</em></h2>
-      <p>{{CTA_BODY}}</p>
-      <a class="btn" href="../{{CTA_LINK}}">{{CTA_BUTTON}} &rarr;</a>
+      <div class="post-cta-eyebrow">&#10022; The Positiva Bundle</div>
+      <h2>One Library<em>every Sony body we use</em></h2>
+      <p>The Bundle ships with the A7S III to FX3 match offset as a ready-to-drop <code>PowerGrade</code>, plus the base CST node tree, plus our full Wedding and Travel LUT sets. One purchase, every camera in your kit handled.</p>
+      <a class="btn" href="../luts.html#bundle">Get The Bundle &rarr;</a>
     </div>
-    <div class="post-cta-image{{CTA_IMAGE_CLASS}}" style="background-image:url('../{{CTA_IMAGE}}')"></div>
+    <div class="post-cta-image bundle" style="background-image:url('../Bundle_Luts_pack.png')"></div>
   </div>
 </section>
 

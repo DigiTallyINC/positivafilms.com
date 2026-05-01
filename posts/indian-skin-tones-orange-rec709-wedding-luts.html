@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{TITLE}} &mdash; Positiva Films</title>
-  <meta name="description" content="{{EXCERPT}}" />
-  <meta name="keywords" content="{{KEYWORDS}}" />
-  <meta name="author" content="{{AUTHOR}}" />
-  <link rel="canonical" href="https://positivafilms.com/posts/{{SLUG}}.html" />
+  <title>Why Indian Skin Tones Go Orange Under Rec.709 Wedding LUTs (And the One Node That Fixes It) &mdash; Positiva Films</title>
+  <meta name="description" content="Brown skin pulls orange under stock cinematic LUTs because the I-line on a vectorscope was built for Caucasian skin. Here is the qualifier node that fixes it." />
+  <meta name="keywords" content="indian skin tone lut, brown skin orange after lut, wedding lut skin tone, why is my skin orange after color grade, davinci resolve hsl qualifier indian skin, rec 709 skin tone correction" />
+  <meta name="author" content="Tally Talwar" />
+  <link rel="canonical" href="https://positivafilms.com/posts/indian-skin-tones-orange-rec709-wedding-luts.html" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="{{TITLE}}" />
-  <meta property="og:description" content="{{EXCERPT}}" />
-  <meta property="og:image" content="{{HERO_IMAGE}}" />
-  <meta property="og:url" content="https://positivafilms.com/posts/{{SLUG}}.html" />
+  <meta property="og:title" content="Why Indian Skin Tones Go Orange Under Rec.709 Wedding LUTs (And the One Node That Fixes It)" />
+  <meta property="og:description" content="Brown skin pulls orange under stock cinematic LUTs because the I-line on a vectorscope was built for Caucasian skin. Here is the qualifier node that fixes it." />
+  <meta property="og:image" content="https://img.youtube.com/vi/xIzlP_EFEs8/maxresdefault.jpg" />
+  <meta property="og:url" content="https://positivafilms.com/posts/indian-skin-tones-orange-rec709-wedding-luts.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{{TITLE}}" />
-  <meta name="twitter:description" content="{{EXCERPT}}" />
-  <meta name="twitter:image" content="{{HERO_IMAGE}}" />
+  <meta name="twitter:title" content="Why Indian Skin Tones Go Orange Under Rec.709 Wedding LUTs (And the One Node That Fixes It)" />
+  <meta name="twitter:description" content="Brown skin pulls orange under stock cinematic LUTs because the I-line on a vectorscope was built for Caucasian skin. Here is the qualifier node that fixes it." />
+  <meta name="twitter:image" content="https://img.youtube.com/vi/xIzlP_EFEs8/maxresdefault.jpg" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "{{TITLE}}",
-    "description": "{{EXCERPT}}",
-    "image": "{{HERO_IMAGE}}",
-    "datePublished": "{{DATE_ISO}}",
-    "dateModified": "{{DATE_ISO}}",
-    "author": { "@type": "Person", "name": "{{AUTHOR}}" },
+    "headline": "Why Indian Skin Tones Go Orange Under Rec.709 Wedding LUTs (And the One Node That Fixes It)",
+    "description": "Brown skin pulls orange under stock cinematic LUTs because the I-line on a vectorscope was built for Caucasian skin. Here is the qualifier node that fixes it.",
+    "image": "https://img.youtube.com/vi/xIzlP_EFEs8/maxresdefault.jpg",
+    "datePublished": "2026-04-24",
+    "dateModified": "2026-04-24",
+    "author": { "@type": "Person", "name": "Tally Talwar" },
     "publisher": {
       "@type": "Organization",
       "name": "Positiva Films",
       "logo": { "@type": "ImageObject", "url": "https://positivafilms.com/positiva-films-logo.svg" }
     },
-    "mainEntityOfPage": "https://positivafilms.com/posts/{{SLUG}}.html"
+    "mainEntityOfPage": "https://positivafilms.com/posts/indian-skin-tones-orange-rec709-wedding-luts.html"
   }
   </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127916;</text></svg>" />
@@ -69,7 +69,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .mobile-nav a{font-family:var(--display);font-size:34px;letter-spacing:0.1em;color:var(--linen);text-decoration:none;text-transform:uppercase}
 .mobile-nav .nav-cta{color:var(--gold);font-size:18px;font-family:var(--body);letter-spacing:0.16em}
 
-/* Article hero — text-only editorial */
 .article-hero{position:relative;min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 48px 80px;overflow:hidden;border-bottom:1px solid var(--linen-faint);background:var(--ink)}
 .article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(201,168,76,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
 .article-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none;z-index:0}
@@ -80,10 +79,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .crumb .sep{color:var(--gold)}
 .crumb .cat{color:var(--gold)}
 .article-title{font-family:var(--display);font-size:clamp(44px,7.5vw,108px);line-height:0.92;letter-spacing:0.025em;color:var(--linen);text-transform:uppercase;max-width:1100px;margin-bottom:36px}
-.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--linen-dim)}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--linen-dim)}
 .article-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--linen-faint)}
 
-/* Article body */
 .article{padding:88px 48px 96px;background:var(--ink)}
 .article-inner{max-width:760px;margin:0 auto}
 .lede{font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);font-weight:300;font-style:italic;line-height:1.55;color:var(--linen);margin-bottom:48px;padding-left:22px;border-left:2px solid var(--gold)}
@@ -106,7 +104,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .article-inner img{max-width:100%;border:1px solid var(--linen-faint)}
 .article-inner figcaption{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--linen-dim);margin-top:10px;text-align:center}
 
-/* Inline product CTA — drops into the body */
 .inline-cta{margin:48px 0;padding:32px 36px;background:var(--soil);border:1px solid var(--gold-faint);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .inline-cta-text{flex:1;min-width:240px}
 .inline-cta-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -115,7 +112,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .inline-cta a.btn{flex-shrink:0;font-family:var(--body);font-size:11px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;border:1px solid var(--gold-dim);padding:14px 24px;text-decoration:none;border-bottom:1px solid var(--gold-dim);transition:background .2s,color .2s}
 .inline-cta a.btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 
-/* Footer LUT pack CTA */
 .post-cta{padding:96px 48px;background:var(--linen);color:var(--ink);position:relative}
 .post-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold)}
 .post-cta::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--gold)}
@@ -129,7 +125,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .post-cta-image{position:relative;aspect-ratio:1/1;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--ink)}
 .post-cta-image.bundle{aspect-ratio:16/9}
 
-/* Footer */
+.author-block{padding:64px 48px;background:var(--ink-soft);border-top:1px solid var(--linen-faint);border-bottom:1px solid var(--linen-faint)}
+.author-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.author-inner .author-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold) 0%,var(--clay) 100%);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:22px;color:var(--ink);flex-shrink:0}
+.author-inner h4{font-family:var(--display);font-size:22px;letter-spacing:0.04em;text-transform:uppercase;color:var(--linen);margin-bottom:4px}
+.author-inner p{font-size:13.5px;color:var(--linen-dim);line-height:1.6}
+
 footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--linen-faint)}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:42px;padding-bottom:32px;border-bottom:1px solid var(--linen-faint)}
 .footer-brand{max-width:380px}
@@ -185,32 +186,112 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   <div class="crumb">
     <a href="../blog.html">Blog</a>
     <span class="sep">/</span>
-    <span class="cat">{{CATEGORY_LABEL}}</span>
+    <span class="cat">Indian Wedding</span>
   </div>
-  <h1 class="article-title">{{TITLE}}</h1>
+  <h1 class="article-title">Why Indian Skin Tones Go Orange Under Rec.709 Wedding LUTs (And the One Node That Fixes It)</h1>
   <div class="article-meta">
-    <span>{{DATE}}</span>
+    <span>April 24, 2026</span>
     <span class="dot"></span>
-    <span>{{READ_TIME}} Min Read</span>
+    <span>6 Min Read</span>
   </div>
 </header>
 
 <article class="article">
   <div class="article-inner">
-    <p class="lede">{{LEDE}}</p>
-    {{BODY_HTML}}
+    <p class="lede">You drop the LUT. The bride lights up like a traffic cone. The groom looks like he was rendered in a citrus juicer. The dance floor that you remember as warm and golden in your viewfinder is now a uniform pumpkin smear on the timeline. Welcome to the most predictable problem in Indian wedding color.</p>
+
+    <p>We shot a Punjabi wedding in Chandigarh last December &mdash; tungsten chandeliers in the banquet hall, LED uplighters on the mandap, sparklers on the entry, the usual mid-grade venue lighting that promises chaos for any colorist. The footage looked clean on the FX3 monitor. The S-Log3 graded fine through a <code>Color Space Transform</code>. Then we slapped a popular cinematic <code>Rec.709</code> LUT on the timeline and everyone in the frame turned the colour of a Fanta bottle.</p>
+
+    <p>If you have been grading Indian weddings for any length of time, you have lived this exact moment. The fix is not your white balance, not your exposure, not your camera profile. The fix is in the LUT itself &mdash; or more honestly, in the assumption baked into it.</p>
+
+    <h2>The Root Cause Nobody Talks About</h2>
+
+    <p>Open any popular off-the-shelf wedding LUT in DaVinci Resolve and look at what it is doing to the <code>vectorscope</code>. Most "cinematic" LUTs are graded against a pale Caucasian skin reference. The skin-tone indicator on a vectorscope &mdash; the famous <code>I-line</code> running at roughly 123 degrees from the center &mdash; is treated as gospel. LUT designers chase that line. They pull mids warmer, push midtone saturation up, lift the orange channel, and call it cinematic.</p>
+
+    <p>Here is the part the LUT marketing never mentions: <strong>the I-line was calibrated against a particular skin chroma</strong>. Specifically, against the kind of skin that broadcast engineers in 1953 had access to in a New Jersey lab. South Asian and brown skin tones do not sit on that line. They sit lower in chroma &mdash; less saturated by nature &mdash; and slightly off in hue, leaning marginally redder than the line predicts.</p>
+
+    <p>So when a LUT says, "pull every face toward the I-line and then warm it," what it is really doing to brown skin is: take an already warm-leaning hue and yank it further into pure orange, while saturating the chroma past where it should ever sit. The result is the Fanta bottle. Plasticky highlights. A waxy mid that looks nothing like the actual person standing in front of your camera.</p>
+
+    <p>This is not a problem you grade out by reducing saturation globally. Global saturation kills the lehenga, dulls the marigolds, washes the gold. The LUT is wrong specifically about skin. The fix has to be specifically about skin.</p>
+
+    <h2>The Qualifier Node That Fixes It</h2>
+
+    <p>This is a single node added to your existing grade tree, placed <em>after</em> the look LUT, not before. The LUT does its cinematic job on the rest of the frame; this node walks back the damage on faces only.</p>
+
+    <p>In Resolve, on a serial node downstream of the LUT, open the <code>HSL Qualifier</code>. You are isolating the bride and groom's skin and nothing else.</p>
+
+    <pre><code>HSL Qualifier &mdash; brown skin isolation
+  Hue:        center ~18, width ~30  (range roughly 5 to 35)
+  Saturation: low ~12, high ~75       (kill the deep oranges of marigolds and lehengas)
+  Luminance:  low ~25, high ~92       (mids upward; ignore deep shadow + clipped specular)
+  Softness on all three: bring up until the matte breathes
+  Denoise:    2 to 4 to keep the matte clean on grain</code></pre>
+
+    <p>Pull the highlight on the qualifier's matte view (Alt+H in Resolve) to confirm you are catching faces, hands, arms, and not catching the marigold garlands, the haldi paste, or the copper trays. If you are catching marigolds, lift the saturation low end. If you are missing the bride's foundation-heavy cheek, drop the saturation low and widen the hue width by 4 to 6.</p>
+
+    <p>Now the correction. Inside that qualified region only:</p>
+
+    <ul>
+      <li><strong>Hue versus Hue curve, on the orange band:</strong> push +2 to +5 degrees back toward red. This is the single highest-impact move. You are unwinding the orange yank the LUT just did.</li>
+      <li><strong>Saturation:</strong> drop 4 to 8 points. Brown skin is naturally lower-chroma than the LUT assumes. You are letting it be.</li>
+      <li><strong>Luminance:</strong> nudge +2 on the gain wheel of the qualified node. Brown skin photographs best when there is a hint of internal glow on the highlight side &mdash; the "lit from within" quality you see in well-graded South Asian cinema. Without it, faces flatten.</li>
+      <li><strong>Optional, on Indian grooms with beards:</strong> a second small qualifier inside the same node group, narrower hue, slightly more desaturation. Beards eat warmth.</li>
+    </ul>
+
+    <p>That is the entire fix. One qualified node, three small moves, applied after the look LUT. Save it as a <code>PowerGrade</code> still and drop it on every clip in the timeline. We have been running variants of this exact node on every wedding we deliver for the better part of a decade.</p>
+
+    <div class="inline-cta">
+      <div class="inline-cta-text">
+        <div class="inline-cta-eyebrow">From the Positiva LUT Library</div>
+        <h4>Indian Wedding LUTs</h4>
+        <p>Every preset in our Wedding pack was graded directly against South Asian skin references, with the qualifier-based correction node already built into the PowerGrade &mdash; drop the LUT, your skin sits where it should.</p>
+      </div>
+      <a class="btn" href="../luts.html#wedding">View Pack &rarr;</a>
+    </div>
+
+    <h2>The Vectorscope Reference Is Wrong For Us &mdash; Build Your Own</h2>
+
+    <p>Once you accept the I-line was not built for our subjects, the next move is to stop chasing it. Build your own target.</p>
+
+    <p>Pick ten frames of well-graded brown-skin reference. Stills from Indian features that are widely respected for their color work, frame grabs from South Asian DPs whose grades you trust, and &mdash; this is the underrated source &mdash; carefully colorimetered footage of people standing under known light from your own past projects. Put each frame on a Resolve viewer, sample the cheek and the forehead with the picker, log the position on the vectorscope.</p>
+
+    <p>You will see a cluster. It will sit a few degrees clockwise from the engineering I-line, at noticeably lower chroma than the line traditionally targets. Take the average position and store it as a custom guide in your viewer. From now on, when you grade an Indian face, you are pulling toward your custom target, not the legacy one.</p>
+
+    <p>This is the single thing that will change your color work the most. It costs you one afternoon, one time, and pays back forever.</p>
+
+    <h2>Capture Discipline Magnifies Or Saves You</h2>
+
+    <p>The LUT cannot read your mind about white balance. If you shot the sangeet at 5600K when the room was actually 3100K tungsten with a 5400K LED top-light bleeding in from the stage, the LUT sees a mess and makes it worse. The qualifier node above will help, but it is a recovery, not a do-over.</p>
+
+    <p>On every venue setup, even the boring ones, do this:</p>
+
+    <ul>
+      <li>Pull a grey card under the dominant light for 3 seconds. Slate it. Move on.</li>
+      <li>Re-pull when you cross from indoor tungsten to LED uplighter zones &mdash; banquet halls almost always have two or three competing color temperatures within a 30-foot radius.</li>
+      <li>Tungsten venue light is the worst offender for brown skin under a Rec.709 LUT. The LUT magnifies any warm-side error in your WB. If you are off by 200K warm at capture, you are off by 600K warm after the LUT. Then the qualifier has to do twice the work.</li>
+    </ul>
+
+    <p>The LUT is a multiplier. It multiplies a clean capture into something cinematic, and it multiplies a dirty capture into something unrecoverable.</p>
+
+    <h2>What This All Adds Up To</h2>
+
+    <p>Three things, in this order. First, accept that the legacy <code>vectorscope</code> reference is wrong for our skin and build a custom target you trust. Second, add a qualified correction node downstream of any look LUT that walks the orange yank back &mdash; +2 to +5 degrees of hue toward red, 4 to 8 points off saturation, +2 on luminance gain. Third, hold the line on grey-card discipline at capture so the LUT has clean material to multiply.</p>
+
+    <p>We have been shooting weddings across India for fifteen years, and the orange-skin problem has been the single most common piece of post-production frustration we hear from DPs we cross paths with on circuit. It is solvable, it is mechanical, and once you have built the node and the custom guide, you stop thinking about it. You can browse <a href="../index.html">how we work</a> for context on the kind of weddings this approach has been tuned against, or jump straight to the <a href="../luts.html">LUT library</a> if you would rather skip the node-building afternoon.</p>
+
+    <p>The bride should never look like a Fanta bottle. Now she will not.</p>
   </div>
 </article>
 
 <section class="post-cta">
   <div class="post-cta-inner">
     <div>
-      <div class="post-cta-eyebrow">&#10022; {{CTA_EYEBROW}}</div>
-      <h2>{{CTA_HEADLINE}}<em>{{CTA_SUB}}</em></h2>
-      <p>{{CTA_BODY}}</p>
-      <a class="btn" href="../{{CTA_LINK}}">{{CTA_BUTTON}} &rarr;</a>
+      <div class="post-cta-eyebrow">&#10022; Built For Indian Weddings</div>
+      <h2>Skin Tones That Sit Right<em>the Wedding LUT pack</em></h2>
+      <p>Graded against brown skin from frame one. The qualifier correction node ships pre-built inside every PowerGrade. Drop the LUT on Punjabi tungsten, Tamil reception LED, or Gujarati outdoor noon &mdash; the bride looks like the bride, not a citrus fruit.</p>
+      <a class="btn" href="../luts.html#wedding">Explore The Wedding Pack &rarr;</a>
     </div>
-    <div class="post-cta-image{{CTA_IMAGE_CLASS}}" style="background-image:url('../{{CTA_IMAGE}}')"></div>
+    <div class="post-cta-image" style="background-image:url('../Indian_Wedding_Luts_pack.png')"></div>
   </div>
 </section>
 

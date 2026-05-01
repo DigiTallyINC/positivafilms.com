@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{TITLE}} &mdash; Positiva Films</title>
-  <meta name="description" content="{{EXCERPT}}" />
-  <meta name="keywords" content="{{KEYWORDS}}" />
-  <meta name="author" content="{{AUTHOR}}" />
-  <link rel="canonical" href="https://positivafilms.com/posts/{{SLUG}}.html" />
+  <title>Why Your LUT Crushes Blacks &mdash; A Pre-LUT Exposure Workflow That Saves Every Grade &mdash; Positiva Films</title>
+  <meta name="description" content="Your LUT isn't broken — your exposure is. The pre-LUT node tree that stops shadows from collapsing into pure black on S-Log3, Lumetri, and every grade in between." />
+  <meta name="keywords" content="lut crushing blacks, lut too contrasty, match exposure before lut, why is my lut so dark, s-log3 exposure workflow, davinci resolve offset node, pre-lut node tree" />
+  <meta name="author" content="Positiva Color" />
+  <link rel="canonical" href="https://positivafilms.com/posts/lut-crushing-blacks-pre-lut-exposure-workflow.html" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="{{TITLE}}" />
-  <meta property="og:description" content="{{EXCERPT}}" />
-  <meta property="og:image" content="{{HERO_IMAGE}}" />
-  <meta property="og:url" content="https://positivafilms.com/posts/{{SLUG}}.html" />
+  <meta property="og:title" content="Why Your LUT Crushes Blacks — A Pre-LUT Exposure Workflow That Saves Every Grade" />
+  <meta property="og:description" content="Your LUT isn't broken — your exposure is. The pre-LUT node tree that stops shadows from collapsing into pure black on S-Log3, Lumetri, and every grade in between." />
+  <meta property="og:image" content="https://img.youtube.com/vi/s2WyrcJ0I1o/maxresdefault.jpg" />
+  <meta property="og:url" content="https://positivafilms.com/posts/lut-crushing-blacks-pre-lut-exposure-workflow.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{{TITLE}}" />
-  <meta name="twitter:description" content="{{EXCERPT}}" />
-  <meta name="twitter:image" content="{{HERO_IMAGE}}" />
+  <meta name="twitter:title" content="Why Your LUT Crushes Blacks — A Pre-LUT Exposure Workflow That Saves Every Grade" />
+  <meta name="twitter:description" content="Your LUT isn't broken — your exposure is. The pre-LUT node tree that stops shadows from collapsing into pure black on S-Log3, Lumetri, and every grade in between." />
+  <meta name="twitter:image" content="https://img.youtube.com/vi/s2WyrcJ0I1o/maxresdefault.jpg" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "{{TITLE}}",
-    "description": "{{EXCERPT}}",
-    "image": "{{HERO_IMAGE}}",
-    "datePublished": "{{DATE_ISO}}",
-    "dateModified": "{{DATE_ISO}}",
-    "author": { "@type": "Person", "name": "{{AUTHOR}}" },
+    "headline": "Why Your LUT Crushes Blacks — A Pre-LUT Exposure Workflow That Saves Every Grade",
+    "description": "Your LUT isn't broken — your exposure is. The pre-LUT node tree that stops shadows from collapsing into pure black on S-Log3, Lumetri, and every grade in between.",
+    "image": "https://img.youtube.com/vi/s2WyrcJ0I1o/maxresdefault.jpg",
+    "datePublished": "2026-04-27",
+    "dateModified": "2026-04-27",
+    "author": { "@type": "Person", "name": "Positiva Color" },
     "publisher": {
       "@type": "Organization",
       "name": "Positiva Films",
       "logo": { "@type": "ImageObject", "url": "https://positivafilms.com/positiva-films-logo.svg" }
     },
-    "mainEntityOfPage": "https://positivafilms.com/posts/{{SLUG}}.html"
+    "mainEntityOfPage": "https://positivafilms.com/posts/lut-crushing-blacks-pre-lut-exposure-workflow.html"
   }
   </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127916;</text></svg>" />
@@ -69,7 +69,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .mobile-nav a{font-family:var(--display);font-size:34px;letter-spacing:0.1em;color:var(--linen);text-decoration:none;text-transform:uppercase}
 .mobile-nav .nav-cta{color:var(--gold);font-size:18px;font-family:var(--body);letter-spacing:0.16em}
 
-/* Article hero — text-only editorial */
 .article-hero{position:relative;min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 48px 80px;overflow:hidden;border-bottom:1px solid var(--linen-faint);background:var(--ink)}
 .article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(201,168,76,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
 .article-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none;z-index:0}
@@ -80,10 +79,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .crumb .sep{color:var(--gold)}
 .crumb .cat{color:var(--gold)}
 .article-title{font-family:var(--display);font-size:clamp(44px,7.5vw,108px);line-height:0.92;letter-spacing:0.025em;color:var(--linen);text-transform:uppercase;max-width:1100px;margin-bottom:36px}
-.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--linen-dim)}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--linen-dim)}
 .article-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--linen-faint)}
 
-/* Article body */
 .article{padding:88px 48px 96px;background:var(--ink)}
 .article-inner{max-width:760px;margin:0 auto}
 .lede{font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);font-weight:300;font-style:italic;line-height:1.55;color:var(--linen);margin-bottom:48px;padding-left:22px;border-left:2px solid var(--gold)}
@@ -106,7 +104,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .article-inner img{max-width:100%;border:1px solid var(--linen-faint)}
 .article-inner figcaption{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--linen-dim);margin-top:10px;text-align:center}
 
-/* Inline product CTA — drops into the body */
 .inline-cta{margin:48px 0;padding:32px 36px;background:var(--soil);border:1px solid var(--gold-faint);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .inline-cta-text{flex:1;min-width:240px}
 .inline-cta-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -115,7 +112,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .inline-cta a.btn{flex-shrink:0;font-family:var(--body);font-size:11px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;border:1px solid var(--gold-dim);padding:14px 24px;text-decoration:none;border-bottom:1px solid var(--gold-dim);transition:background .2s,color .2s}
 .inline-cta a.btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 
-/* Footer LUT pack CTA */
 .post-cta{padding:96px 48px;background:var(--linen);color:var(--ink);position:relative}
 .post-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold)}
 .post-cta::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--gold)}
@@ -129,7 +125,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .post-cta-image{position:relative;aspect-ratio:1/1;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--ink)}
 .post-cta-image.bundle{aspect-ratio:16/9}
 
-/* Footer */
+.author-block{padding:64px 48px;background:var(--ink-soft);border-top:1px solid var(--linen-faint);border-bottom:1px solid var(--linen-faint)}
+.author-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.author-inner .author-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold) 0%,var(--clay) 100%);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:22px;color:var(--ink);flex-shrink:0}
+.author-inner h4{font-family:var(--display);font-size:22px;letter-spacing:0.04em;text-transform:uppercase;color:var(--linen);margin-bottom:4px}
+.author-inner p{font-size:13.5px;color:var(--linen-dim);line-height:1.6}
+
 footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--linen-faint)}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:42px;padding-bottom:32px;border-bottom:1px solid var(--linen-faint)}
 .footer-brand{max-width:380px}
@@ -185,32 +186,115 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   <div class="crumb">
     <a href="../blog.html">Blog</a>
     <span class="sep">/</span>
-    <span class="cat">{{CATEGORY_LABEL}}</span>
+    <span class="cat">Craft &amp; Color</span>
   </div>
-  <h1 class="article-title">{{TITLE}}</h1>
+  <h1 class="article-title">Why Your LUT Crushes Blacks &mdash; A Pre-LUT Exposure Workflow That Saves Every Grade</h1>
   <div class="article-meta">
-    <span>{{DATE}}</span>
+    <span>April 27, 2026</span>
     <span class="dot"></span>
-    <span>{{READ_TIME}} Min Read</span>
+    <span>6 Min Read</span>
   </div>
 </header>
 
 <article class="article">
   <div class="article-inner">
-    <p class="lede">{{LEDE}}</p>
-    {{BODY_HTML}}
+    <p class="lede">You drop the LUT and the groom's sherwani turns into a black hole. The bride's hair fuses with the mandap drape behind her. The dark corner of the venue, where the family was sitting, is now a single flat slab of nothing. The LUT is not the villain here &mdash; the exposure handed to it is.</p>
+
+    <p>This is the most common email we get from editors who buy a LUT pack: "Your LUT crushes the blacks." And almost every time, when we ask them to send a frame and the node tree, the cause is the same. The LUT is being asked to grade a clip that was never lined up to the input it expects. It does its job &mdash; faithfully &mdash; on a signal that's already 1.5 stops too low. The shadows were already living near the floor before the LUT touched them. The LUT just sealed the lid.</p>
+
+    <p>This post is about the node tree we run on every Positiva grade, and why <strong>exposure normalization belongs <em>before</em> the LUT, not after</strong>. Once you wire it up this way, the same LUT that "crushed your blacks" yesterday will hold detail in the sherwani, the hair, and the dark corner today &mdash; without you touching the LUT itself.</p>
+
+    <h2>The diagnosis: every LUT assumes an input</h2>
+
+    <p>A look-up table is a fixed mathematical map. Input value X always becomes output value Y. There is no intelligence inside a <code>.cube</code> file &mdash; it doesn't know your scene was lit at f/2.0 in a candlelit haldi or at f/8 in noon Goa sun. It only sees code values.</p>
+
+    <p>Every well-built LUT is authored against a specific input exposure: usually <code>S-Log3</code> at the camera-correct exposure (Sony's spec puts middle grey at 41% IRE on the wave-form for <code>S-Log3</code>). The LUT's curve is sculpted around that anchor. When your dailies arrive at, say, 26 IRE for middle grey &mdash; because your DOP underexposed by 1.5 stops to keep the FX3 quiet in a low-light reception &mdash; the LUT bends an already-low value further down. Shadows that should have landed at 8 IRE instead land at 0. They don't crush. They <em>fall off the cliff</em>.</p>
+
+    <p>This is why the same LUT that looks gorgeous on a friend's correctly-exposed test footage looks like a coal mine on yours. The LUT didn't change. The signal you fed it did.</p>
+
+    <h2>The pre-LUT node tree</h2>
+
+    <p>In DaVinci Resolve, this is the order we use on every shot. Four nodes, no exceptions:</p>
+
+    <pre><code>Node 1  &rarr;  Color Space Transform   (log &rarr; Rec.709)
+Node 2  &rarr;  Exposure normalization  (Offset wheel &rarr; mid grey ~40 IRE)
+Node 3  &rarr;  LUT                     (the creative look)
+Node 4  &rarr;  Creative trim           (taste, per shot)</code></pre>
+
+    <h3>Node 1 &mdash; Color Space Transform</h3>
+
+    <p>The CST does the heavy lift of converting log to display gamma in a mathematically clean way. It is not a creative move &mdash; it is the unflattening. If you skip it and apply the LUT directly to log footage, you'll get a different flavor of broken (we wrote about that in a companion piece &mdash; see <a href="why-s-log3-lut-looks-flat-cst-node.html">Why Applying a LUT Directly to S-Log3 Looks Flat</a> for the long version). Set input as <code>S-Log3</code> / <code>S-Gamut3.Cine</code>, output as <code>Rec.709</code> Gamma 2.4, tone-mapping on Luminance Mapping, saturation mapping on. Done.</p>
+
+    <h3>Node 2 &mdash; Exposure normalization</h3>
+
+    <p>This is the node nobody talks about and the one that fixes 80% of "your LUT is too dark" complaints. Open the Primaries wheels. Find the <code>Offset</code> wheel (it's the fourth one, alone on the right). Pull up your Waveform on the scope panel. Look at where middle grey sits &mdash; usually a forehead, a grey wall, the bride's sari border that's neither black nor highlight. For <code>S-Log3</code> graded to <code>Rec.709</code>, you want that value sitting at <strong>around 40 IRE</strong> on the waveform <em>before</em> the LUT is applied.</p>
+
+    <p>Drag the <code>Offset</code> wheel's master slider until that mid-grey reading climbs to ~40. That's the entire move. No curves, no lift, no gain. Just a translation of the whole tonal range up the waveform until the LUT receives the input it was authored against.</p>
+
+    <h3>Node 3 &mdash; LUT</h3>
+
+    <p>Now drop the LUT here. With the input exposure in the right neighborhood, the LUT's contrast curve lands the shadows where the colorist who built it intended &mdash; not at zero. The sherwani holds texture. The hair separates from the drape. The dark corner of the mandap shows you the family.</p>
+
+    <h3>Node 4 &mdash; Creative trim</h3>
+
+    <p>Final taste &mdash; a touch of contrast, a slight warm push in highlights, whatever the shot wants. Keep this node small. If you're doing big moves here, the LUT was probably the wrong choice for the look, not a fix-it.</p>
+
+    <h2>Why offset, not lift or gain</h2>
+
+    <p>This is the part that trips up people who've been grading for a while. Why use <code>Offset</code> when Lift would also raise the shadows?</p>
+
+    <p>Because Lift, Gamma and Gain each pivot the curve around an anchor point. Lift raises shadows but barely touches highlights &mdash; which means it <em>squashes</em> the relationship between the two. Gamma pulls midtones independently. Gain stretches highlights. All three change the <em>shape</em> of the tonal response.</p>
+
+    <p>Your LUT is a fixed shape. Feed it a different shape and the LUT compounds the distortion. Feed it the original shape, just <em>moved</em>, and the LUT does its job. <code>Offset</code> is the only tool in the Primaries that performs a uniform translation across the entire range &mdash; shadows, mids, highlights all rise together by the same amount. The relationships between tones stay intact. You're not editorializing the image. You're handing the LUT what it expects.</p>
+
+    <p>Use Lift after the LUT, in node 4, if a specific shot needs its own shadow lift. Never before.</p>
+
+    <h2>The 3-frame test</h2>
+
+    <p>Before you set this up across an entire timeline, sanity-check it on three frames pulled from your dailies. Open them as stills in the Color page gallery.</p>
+
+    <ul>
+      <li><strong>One mid-grey frame.</strong> A wide of the venue at neutral light, or a clean medium of the bride at a steady exposure. Build your node tree on this one. Get mid grey to ~40 IRE before the LUT.</li>
+      <li><strong>One bright frame.</strong> Outdoor portico, a sun-flooded entry shot, the haldi yard at noon. Apply the same node tree. Look at your scope. If highlights are clipping at 100 IRE and clamping flat &mdash; dial the <code>Offset</code> back. The bright shot doesn't need as much push.</li>
+      <li><strong>One dark frame.</strong> The sangeet stage during a low-light dance, the candlelit phera. Apply the same tree. If the shadows <em>still</em> crush after the offset move, you have an exposure floor problem at <em>capture</em>, not a grading problem. No node tree saves underexposed footage when there's literally no information in the file. That's a conversation for the DOP, not the colorist.</li>
+    </ul>
+
+    <p>This test takes three minutes and tells you everything. If all three frames hold up, your node tree is sound and you can apply it as a group across the timeline (or save it as a PowerGrade for the next project).</p>
+
+    <div class="inline-cta">
+      <div class="inline-cta-text">
+        <div class="inline-cta-eyebrow">From the Positiva LUT Library</div>
+        <h4>The Positiva Bundle</h4>
+        <p>Every LUT in our library ships with the exposure-normalization node pre-built into the PowerGrade. You load the grade, the <code>Offset</code> is already wired up &mdash; you adjust per shot instead of rebuilding the tree from scratch every time.</p>
+      </div>
+      <a class="btn" href="../luts.html#bundle">View Pack &rarr;</a>
+    </div>
+
+    <h2>Premiere users: do the same thing in Lumetri</h2>
+
+    <p>If you're not in Resolve, the principle is identical &mdash; the implementation is just a stack instead of a node graph. In <code>Lumetri</code>, the effect order on the clip determines the math order. Drag a <strong>Curves</strong> effect onto the clip <em>above</em> the Lumetri Color instance that contains the LUT. Or open Lumetri and put your exposure move in the Basic Correction tab while the LUT lives in the Creative tab &mdash; Basic runs first.</p>
+
+    <p>Use the master curve to lift midtones until the waveform shows mid grey near 40 IRE. Then let the LUT do its thing in the Creative tab. Same principle: normalize the input, then apply the look. If you ever drop a LUT in Premiere and the blacks slam shut, this is your fix.</p>
+
+    <h2>What this changes about your workflow</h2>
+
+    <p>Once you internalize the four-node order, "the LUT crushes my blacks" stops being a sentence you say. It becomes a diagnostic question: <em>what is mid grey reading on the waveform before node 3?</em> If the answer isn't around 40 IRE, you know exactly where to fix it. You stop blaming the LUT and you stop hunting for a "less crushy" LUT &mdash; which is a doomed search, because every LUT will crush footage that arrives 1.5 stops low.</p>
+
+    <p>You also stop fighting the grade in node 4 with desperate Lift moves trying to rescue shadow detail that, in many cases, is actually still in the file &mdash; just sitting in the wrong place on the waveform when the LUT runs. Move it first. Then run the LUT. Then taste it.</p>
+
+    <p>If you want to see how this fits into the larger LUT library and the rest of the post-production decisions we make on a wedding cut, our pack hub is at <a href="../luts.html">positivafilms.com/luts</a>. Each pack ships with the exact PowerGrade described above &mdash; CST in, Offset wired, LUT loaded, trim node empty and waiting for you.</p>
   </div>
 </article>
 
 <section class="post-cta">
   <div class="post-cta-inner">
     <div>
-      <div class="post-cta-eyebrow">&#10022; {{CTA_EYEBROW}}</div>
-      <h2>{{CTA_HEADLINE}}<em>{{CTA_SUB}}</em></h2>
-      <p>{{CTA_BODY}}</p>
-      <a class="btn" href="../{{CTA_LINK}}">{{CTA_BUTTON}} &rarr;</a>
+      <div class="post-cta-eyebrow">&#10022; The Positiva Bundle</div>
+      <h2>Five Packs<em>One workflow that holds up</em></h2>
+      <p>Every Positiva LUT pack ships inside one bundle &mdash; with the four-node PowerGrade pre-built so the <code>Offset</code> is already in front of the LUT. Load the grade, set mid grey, ship the cut. The pack is the look; the PowerGrade is the workflow that keeps it from breaking.</p>
+      <a class="btn" href="../luts.html#bundle">Explore The Bundle &rarr;</a>
     </div>
-    <div class="post-cta-image{{CTA_IMAGE_CLASS}}" style="background-image:url('../{{CTA_IMAGE}}')"></div>
+    <div class="post-cta-image bundle" style="background-image:url('../Bundle_Luts_pack.png')"></div>
   </div>
 </section>
 

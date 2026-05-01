@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{TITLE}} &mdash; Positiva Films</title>
-  <meta name="description" content="{{EXCERPT}}" />
-  <meta name="keywords" content="{{KEYWORDS}}" />
-  <meta name="author" content="{{AUTHOR}}" />
-  <link rel="canonical" href="https://positivafilms.com/posts/{{SLUG}}.html" />
+  <title>Why Applying a LUT Directly to S-Log3 Looks Flat — The CST Node You're Missing &mdash; Positiva Films</title>
+  <meta name="description" content="Your Rec.709 LUT looks washed out on Sony S-Log3 footage because it expects you to convert color space first. Here's the exact Resolve node tree that fixes it." />
+  <meta name="keywords" content="lut not working s-log3, lut washed out resolve, color space transform vs lut, why is my s-log3 footage flat after lut, sony s-log3 davinci resolve, cst node resolve" />
+  <meta name="author" content="Positiva Color" />
+  <link rel="canonical" href="https://positivafilms.com/posts/why-s-log3-lut-looks-flat-cst-node.html" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="{{TITLE}}" />
-  <meta property="og:description" content="{{EXCERPT}}" />
-  <meta property="og:image" content="{{HERO_IMAGE}}" />
-  <meta property="og:url" content="https://positivafilms.com/posts/{{SLUG}}.html" />
+  <meta property="og:title" content="Why Applying a LUT Directly to S-Log3 Looks Flat — The CST Node You're Missing" />
+  <meta property="og:description" content="Your Rec.709 LUT looks washed out on Sony S-Log3 footage because it expects you to convert color space first. Here's the exact Resolve node tree that fixes it." />
+  <meta property="og:image" content="https://img.youtube.com/vi/TcAmJT1mDuA/maxresdefault.jpg" />
+  <meta property="og:url" content="https://positivafilms.com/posts/why-s-log3-lut-looks-flat-cst-node.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{{TITLE}}" />
-  <meta name="twitter:description" content="{{EXCERPT}}" />
-  <meta name="twitter:image" content="{{HERO_IMAGE}}" />
+  <meta name="twitter:title" content="Why Applying a LUT Directly to S-Log3 Looks Flat — The CST Node You're Missing" />
+  <meta name="twitter:description" content="Your Rec.709 LUT looks washed out on Sony S-Log3 footage because it expects you to convert color space first. Here's the exact Resolve node tree that fixes it." />
+  <meta name="twitter:image" content="https://img.youtube.com/vi/TcAmJT1mDuA/maxresdefault.jpg" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "{{TITLE}}",
-    "description": "{{EXCERPT}}",
-    "image": "{{HERO_IMAGE}}",
-    "datePublished": "{{DATE_ISO}}",
-    "dateModified": "{{DATE_ISO}}",
-    "author": { "@type": "Person", "name": "{{AUTHOR}}" },
+    "headline": "Why Applying a LUT Directly to S-Log3 Looks Flat — The CST Node You're Missing",
+    "description": "Your Rec.709 LUT looks washed out on Sony S-Log3 footage because it expects you to convert color space first. Here's the exact Resolve node tree that fixes it.",
+    "image": "https://img.youtube.com/vi/TcAmJT1mDuA/maxresdefault.jpg",
+    "datePublished": "2026-04-22",
+    "dateModified": "2026-04-22",
+    "author": { "@type": "Person", "name": "Positiva Color" },
     "publisher": {
       "@type": "Organization",
       "name": "Positiva Films",
       "logo": { "@type": "ImageObject", "url": "https://positivafilms.com/positiva-films-logo.svg" }
     },
-    "mainEntityOfPage": "https://positivafilms.com/posts/{{SLUG}}.html"
+    "mainEntityOfPage": "https://positivafilms.com/posts/why-s-log3-lut-looks-flat-cst-node.html"
   }
   </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127916;</text></svg>" />
@@ -69,7 +69,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .mobile-nav a{font-family:var(--display);font-size:34px;letter-spacing:0.1em;color:var(--linen);text-decoration:none;text-transform:uppercase}
 .mobile-nav .nav-cta{color:var(--gold);font-size:18px;font-family:var(--body);letter-spacing:0.16em}
 
-/* Article hero — text-only editorial */
 .article-hero{position:relative;min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 48px 80px;overflow:hidden;border-bottom:1px solid var(--linen-faint);background:var(--ink)}
 .article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(201,168,76,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
 .article-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none;z-index:0}
@@ -80,10 +79,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .crumb .sep{color:var(--gold)}
 .crumb .cat{color:var(--gold)}
 .article-title{font-family:var(--display);font-size:clamp(44px,7.5vw,108px);line-height:0.92;letter-spacing:0.025em;color:var(--linen);text-transform:uppercase;max-width:1100px;margin-bottom:36px}
-.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--linen-dim)}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--linen-dim)}
 .article-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--linen-faint)}
 
-/* Article body */
 .article{padding:88px 48px 96px;background:var(--ink)}
 .article-inner{max-width:760px;margin:0 auto}
 .lede{font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);font-weight:300;font-style:italic;line-height:1.55;color:var(--linen);margin-bottom:48px;padding-left:22px;border-left:2px solid var(--gold)}
@@ -106,7 +104,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .article-inner img{max-width:100%;border:1px solid var(--linen-faint)}
 .article-inner figcaption{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--linen-dim);margin-top:10px;text-align:center}
 
-/* Inline product CTA — drops into the body */
 .inline-cta{margin:48px 0;padding:32px 36px;background:var(--soil);border:1px solid var(--gold-faint);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .inline-cta-text{flex:1;min-width:240px}
 .inline-cta-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -115,7 +112,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .inline-cta a.btn{flex-shrink:0;font-family:var(--body);font-size:11px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;border:1px solid var(--gold-dim);padding:14px 24px;text-decoration:none;border-bottom:1px solid var(--gold-dim);transition:background .2s,color .2s}
 .inline-cta a.btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 
-/* Footer LUT pack CTA */
 .post-cta{padding:96px 48px;background:var(--linen);color:var(--ink);position:relative}
 .post-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold)}
 .post-cta::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--gold)}
@@ -129,7 +125,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .post-cta-image{position:relative;aspect-ratio:1/1;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--ink)}
 .post-cta-image.bundle{aspect-ratio:16/9}
 
-/* Footer */
+.author-block{padding:64px 48px;background:var(--ink-soft);border-top:1px solid var(--linen-faint);border-bottom:1px solid var(--linen-faint)}
+.author-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:24px}
+.author-inner .author-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold) 0%,var(--clay) 100%);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:22px;color:var(--ink);flex-shrink:0}
+.author-inner h4{font-family:var(--display);font-size:22px;letter-spacing:0.04em;text-transform:uppercase;color:var(--linen);margin-bottom:4px}
+.author-inner p{font-size:13.5px;color:var(--linen-dim);line-height:1.6}
+
 footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--linen-faint)}
 .footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:42px;padding-bottom:32px;border-bottom:1px solid var(--linen-faint)}
 .footer-brand{max-width:380px}
@@ -185,32 +186,103 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   <div class="crumb">
     <a href="../blog.html">Blog</a>
     <span class="sep">/</span>
-    <span class="cat">{{CATEGORY_LABEL}}</span>
+    <span class="cat">Craft &amp; Color</span>
   </div>
-  <h1 class="article-title">{{TITLE}}</h1>
+  <h1 class="article-title">Why Applying a LUT Directly to S-Log3 Looks Flat &mdash; The CST Node You're Missing</h1>
   <div class="article-meta">
-    <span>{{DATE}}</span>
+    <span>April 22, 2026</span>
     <span class="dot"></span>
-    <span>{{READ_TIME}} Min Read</span>
+    <span>6 Min Read</span>
   </div>
 </header>
 
 <article class="article">
   <div class="article-inner">
-    <p class="lede">{{LEDE}}</p>
-    {{BODY_HTML}}
+    <p class="lede">You drop a Rec.709 LUT onto your Sony S-Log3 clip and the image goes milky. The blacks lift, the saturation flattens, the skin looks like it's been through a scanner. The LUT isn't broken &mdash; you just skipped the step it assumes you already did.</p>
+
+    <p>This trips up almost every working DP the first time they grade Sony log footage. You shoot a wedding on the FX3, bring it into Resolve, slap your favourite Rec.709 LUT on the first node, and the result looks worse than the raw log image. Saturation is anaemic, contrast is mush, the highlights have this weird plastic roll-off. Most people respond by stacking a Curves node and crushing the blacks until it "looks right." That works for one shot. Then you cut to the next angle and everything has shifted again.</p>
+
+    <p>The fix is one node. It's been sitting in the OpenFX panel the whole time. It's called <code>Color Space Transform</code>, and once you understand what it actually does, you'll never grade log footage without it again.</p>
+
+    <h2>What a LUT actually expects</h2>
+
+    <p>A LUT &mdash; a <code>.cube</code> file &mdash; is a lookup table. You give it an input pixel value, it gives you an output pixel value. That's the whole machine. It does not know what camera you shot on. It does not know what color space your footage is in. It just maps numbers.</p>
+
+    <p>When a colorist builds a "Rec.709 creative LUT" and exports it, they were grading against an image already in <code>Rec.709</code> gamma and <code>Rec.709</code> primaries on their monitor. The LUT's input/output table is calibrated to that assumption. So when you feed it a Rec.709-ready image, the math works and the look lands.</p>
+
+    <p>Your Sony footage is not that. An <code>.MP4</code> or <code>.MXF</code> recorded in S-Log3 mode is encoded in <code>S-Log3/S-Gamut3.Cine</code> &mdash; a logarithmic gamma curve sitting in a much wider color space than Rec.709. The whole point of S-Log3 is to compress more dynamic range into the available bits, which is why it looks washed out before grading. It's <em>supposed</em> to.</p>
+
+    <p>When you put a Rec.709 LUT on top of S-Log3 raw, you're asking a Rec.709 calculator to interpret log data. The LUT remaps numbers it was never calibrated for. Blacks lift because S-Log3 doesn't sit black at code value 64 the way Rec.709 does. Saturation drops because S-Gamut3.Cine's primaries are pulled inward when sampled by a Rec.709 LUT. The result is the milky, anaemic image you're staring at.</p>
+
+    <h2>The node tree that fixes it</h2>
+
+    <p>Here's the order of operations in DaVinci Resolve. Build it once, save it as a PowerGrade, drop it on every clip:</p>
+
+    <pre><code>Node 1  &rarr;  Color Space Transform   (S-Log3/S-Gamut3.Cine  &rarr;  Rec.709/Rec.709)
+Node 2  &rarr;  Creative LUT             (your Rec.709 .cube)
+Node 3  &rarr;  Trim                     (lift / gamma / gain, contrast, sat)</code></pre>
+
+    <p>Node 1 is the conversion step the LUT was assuming. In Resolve, right-click your first node, add an OpenFX, find <code>ResolveFX Color</code> &rarr; <code>Color Space Transform</code>. Set <strong>Input Color Space: S-Log3</strong>, <strong>Input Gamma: S-Log3</strong>, <strong>Output Color Space: Rec.709</strong>, <strong>Output Gamma: Rec.709</strong>. Tone Mapping: <code>DaVinci</code>. Gamut Mapping: <code>Saturation Compression</code>. Apply Forward <code>OOTF</code>: enabled.</p>
+
+    <p>That last toggle &mdash; Forward OOTF &mdash; is the one most tutorials skip. OOTF stands for "opto-optical transfer function." In plain language it's the tonal curve that broadcast standards apply when going from scene-referred light to display-referred light. Without it, your midtones will sit too low; with it, they land where Rec.709 broadcast intended. Turn it on. Always.</p>
+
+    <p>Now look at your image. It already looks like a normal video clip &mdash; punchy, saturated, broadcast-legal. You haven't even added the LUT yet. That's the giveaway: the CST is doing the work the LUT could never do alone.</p>
+
+    <p>Node 2 is the creative LUT. Drag your <code>.cube</code> onto it. Because the input is now genuinely Rec.709, the LUT sees what it was built to see and the look lands clean. Skin tones sit where they belong on the vectorscope. Contrast snaps to the curve the colorist intended.</p>
+
+    <p>Node 3 is your trim &mdash; per-shot lift/gamma/gain, a touch of saturation, maybe a hue-vs-hue tweak on the bridal red. This is where you adapt the canned look to <em>this</em> specific clip. Never trim inside Node 1 or Node 2. Keep transforms and looks pristine and editable.</p>
+
+    <h2>Why putting the LUT first breaks everything</h2>
+
+    <p>You might think: can I just put the LUT on Node 1 and the CST after it to "fix" the result? No. The order is load-bearing.</p>
+
+    <p>If the LUT runs first on log data, it has already mangled the values before any conversion happens. By the time the CST sees the image, you're not transforming S-Log3 anymore &mdash; you're transforming whatever the LUT made it. The CST's input setting (S-Log3) no longer describes the actual data, and you'll get a double-broken result. Saturation goes nuclear, highlights clip, skin tones drift orange.</p>
+
+    <p>The CST has to run on the original log values, untouched, before any creative pass. Think of it as translation: you have to translate the sentence into English before you can edit it for tone.</p>
+
+    <h2>The same logic in Premiere and FCP</h2>
+
+    <p>Resolve makes this explicit, but the principle is universal. If you cut in <strong>Premiere</strong>, Lumetri Color has a Color Space Override under the Master clip's Modify menu &mdash; set the input to <code>Rec. 2100 HLG</code> or interpret the footage through <code>Color Settings</code> on the sequence, then apply your LUT on a Lumetri instance below. Better yet, in modern Premiere builds, set the working color space on the sequence to Rec.709 and toggle <strong>Tone Mapping</strong> on, which performs the equivalent S-Log3 to Rec.709 transform internally before your effects chain runs.</p>
+
+    <p>In <strong>Final Cut Pro</strong>, set the Library color processing to <code>Wide Gamut HDR</code>, the project to <code>Standard - Rec. 709</code>, and apply a <code>Custom LUT</code> effect. FCP handles the input transform automatically based on the clip's tagged color space, which Sony cameras embed correctly &mdash; so the LUT lands on already-converted data. If your LUT still looks flat, check the clip's color space tag in the inspector; an incorrectly tagged file is the most common culprit.</p>
+
+    <h2>Why this matters across the Sony lineup</h2>
+
+    <p>If you're shooting in India right now, you're probably on one of these: <strong>FX3</strong>, <strong>A7S III</strong>, <strong>FX30</strong>, <strong>A7 IV</strong>, <strong>A7C II</strong>, or the older <strong>FS5/FS7</strong>. Every one of those records <code>S-Log3/S-Gamut3.Cine</code> when set to picture profile PP8 or PP9 (PP10 is HLG, different conversation). The CST workflow is identical across all of them. There is no "FX3 LUT" or "A7S III LUT" &mdash; there's a Rec.709 LUT, and there's the CST that gets your camera's log data into Rec.709 so the LUT can do its job.</p>
+
+    <p>This is why a single creative LUT pack works across a whole Sony kit. Once the CST is doing the heavy lifting on Node 1, the camera body becomes irrelevant. Your second-shooter's A7 IV and your FX3 will match in the timeline because they both got transformed to the same Rec.709 reference before the look got applied.</p>
+
+    <div class="inline-cta">
+      <div class="inline-cta-text">
+        <div class="inline-cta-eyebrow">From the Positiva LUT Library</div>
+        <h4>The Positiva Bundle</h4>
+        <p>Every LUT in our library ships pre-paired with a Resolve PowerGrade containing the exact CST node you just learned about &mdash; so you don't rebuild this tree per project, per camera, per wedding.</p>
+      </div>
+      <a class="btn" href="../luts.html#bundle">View Pack &rarr;</a>
+    </div>
+
+    <h2>One sanity check before you commit</h2>
+
+    <p>After you've built the three-node stack, throw a <code>Parade</code> scope on the viewer and check three things. First, blacks should sit at or just above 0 IRE on all three channels &mdash; if they're floating at 5-10 IRE, the CST didn't run or the OOTF is off. Second, a properly exposed face should land between 50 and 70 IRE on the luma trace. Third, a 100% white surface (a wedding sehra, a chef's coat, a temple wall in noon sun) should hit close to but not clip at 100 IRE.</p>
+
+    <p>If any of those are off by more than a stop, the problem is upstream of the LUT &mdash; either an exposure issue on set or a CST setting that doesn't match what the camera actually recorded. Don't fight it with the trim node. Go back, fix the transform, then re-evaluate.</p>
+
+    <p>This single node is the difference between "my LUTs never look like the YouTube tutorial" and "my LUTs always work." It's not the LUT's fault. It's not the camera's fault. It's a missing translation step that the entire color pipeline assumes you'll add. Add it once, save the node tree, and your S-Log3 grade becomes a one-click operation for the rest of your career.</p>
+
+    <p>If you want a head start &mdash; including the PowerGrade, the matching CST presets, and creative looks built specifically for Indian skin and venue lighting &mdash; have a look at <a href="../luts.html">the Positiva LUT packs</a>. Or browse <a href="../products.html">the full set of tools</a> we use on every wedding and travel project.</p>
+
   </div>
 </article>
 
 <section class="post-cta">
   <div class="post-cta-inner">
     <div>
-      <div class="post-cta-eyebrow">&#10022; {{CTA_EYEBROW}}</div>
-      <h2>{{CTA_HEADLINE}}<em>{{CTA_SUB}}</em></h2>
-      <p>{{CTA_BODY}}</p>
-      <a class="btn" href="../{{CTA_LINK}}">{{CTA_BUTTON}} &rarr;</a>
+      <div class="post-cta-eyebrow">&#10022; The Positiva Bundle</div>
+      <h2>Grades That Survive Every Camera<em>Built for log workflows</em></h2>
+      <p>Every pack in the bundle ships with a Resolve PowerGrade containing the Color Space Transform node, the OOTF setting, and the creative trim layout from this post. Drop it on your FX3, A7S III, FX30 or A7 IV log footage and the look lands on the first frame &mdash; no node-tree assembly required.</p>
+      <a class="btn" href="../luts.html#bundle">Open The Bundle &rarr;</a>
     </div>
-    <div class="post-cta-image{{CTA_IMAGE_CLASS}}" style="background-image:url('../{{CTA_IMAGE}}')"></div>
+    <div class="post-cta-image bundle" style="background-image:url('../Bundle_Luts_pack.png')"></div>
   </div>
 </section>
 
