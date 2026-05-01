@@ -13,13 +13,13 @@
  */
 
 import Anthropic from "@anthropic-ai/sdk";
-import { readFile, commitFiles } from "./_lib/github";
-import { parseQueue, markPublished } from "./_lib/queue";
+import { readFile, commitFiles } from "./_lib/github.js";
+import { parseQueue, markPublished } from "./_lib/queue.js";
 import {
   systemPrompt,
   userPrompt,
   PUBLISH_TOOL,
-} from "./_lib/prompt";
+} from "./_lib/prompt.js";
 import {
   renderPost,
   updateBlogHtml,
@@ -28,7 +28,7 @@ import {
   formatPrettyDate,
   formatRfc822,
   type ToolOutput,
-} from "./_lib/render";
+} from "./_lib/render.js";
 
 export const config = { maxDuration: 300 };
 

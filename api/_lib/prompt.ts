@@ -1,4 +1,4 @@
-import type { QueuedTopic, PublishedEntry } from "./queue";
+import type { QueuedTopic, PublishedEntry } from "./queue.js";
 
 /**
  * Build the system prompt — pulls voice/structure rules from the live AGENT.md

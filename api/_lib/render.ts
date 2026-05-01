@@ -3,8 +3,8 @@
  * Pure string operations — no I/O, no GitHub.
  */
 
-import type { QueuedTopic } from "./queue";
-import { sanitizeBody, sanitizeLede, assertNoDangerousMarkup } from "./sanitize";
+import type { QueuedTopic } from "./queue.js";
+import { sanitizeBody, sanitizeLede, assertNoDangerousMarkup } from "./sanitize.js";
 
 export type ToolOutput = {
   slug: string;
