@@ -12,6 +12,7 @@
  * Env: ANTHROPIC_API_KEY, GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO, GITHUB_BRANCH, CRON_SECRET
  */
 
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 import Anthropic from "@anthropic-ai/sdk";
 import { readFile, commitFiles } from "./_lib/github.js";
 import { parseQueue, markPublished } from "./_lib/queue.js";
@@ -34,21 +35,22 @@ export const config = { maxDuration: 300 };
 
 const MODEL = "claude-sonnet-4-6";
 
-export default async function handler(req: Request): Promise<Response> {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Auth — Vercel cron sends "Authorization: Bearer ${CRON_SECRET}"
-  const auth = req.headers.get("authorization");
+  const auth = req.headers.authorization;
   const expected = `Bearer ${process.env.CRON_SECRET}`;
   if (!process.env.CRON_SECRET || auth !== expected) {
-    return json(401, { error: "Unauthorized" });
+    res.status(401).json({ error: "Unauthorized" });
+    return;
   }
 
   try {
     const result = await runOnce();
-    return json(200, result);
+    res.status(200).json(result);
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     console.error("[blog-generate]", message, err);
-    return json(500, { error: message });
+    res.status(500).json({ error: message });
   }
 }
 
@@ -190,11 +192,4 @@ function validateOutput(out: ToolOutput): void {
   if (!out.cta || !["wedding", "travel", "bundle"].includes(out.cta.pack)) {
     throw new Error("CTA pack must be wedding|travel|bundle");
   }
-}
-
-function json(status: number, body: unknown): Response {
-  return new Response(JSON.stringify(body, null, 2), {
-    status,
-    headers: { "content-type": "application/json" },
-  });
 }
