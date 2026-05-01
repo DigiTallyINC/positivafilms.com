@@ -8,3 +8,9 @@ node_modules/
 
 # Digital products — never commit; these are the actual goods we sell
 downloads/**/*.zip
+
+# Source .cube LUT files — never commit; they're the product
+downloads/**/*.cube
+
+# Archive folder — kept locally as a "junk drawer", not tracked
+_archive/

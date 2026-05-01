@@ -1,12 +1,12 @@
 ================================================================
-  POSITIVA FILMS  ·  INDIAN WEDDING LUTs PACK
-  14 Cinematic .cube LUTs
+  POSITIVA FILMS  ·  INDIAN TRAVEL LUTs PACK
+  10 Cinematic .cube LUTs
 ================================================================
 
 
 WHAT'S INSIDE
 -------------
-- 14 .cube LUT files (industry standard, 33-point cubes)
+- 10 .cube LUT files (industry standard, 33-point cubes)
 - This README.txt
 
 The LUTs are designed for Rec.709 footage out of the camera —
@@ -57,8 +57,8 @@ HOW TO USE THESE LUTs
 1. White-balance and expose your shot first. LUTs are a finishing
    tool, not a fix for raw correction.
 2. Apply the LUT.
-3. Lower the LUT intensity / opacity to taste — most looks sit
-   beautifully at 60-85% on real wedding footage.
+3. Lower the LUT intensity / opacity to taste — most travel looks
+   sit beautifully at 60-85% on real footage.
 4. Layer with subtle grain, light contrast tweaks, and skin-tone
    protection for the most cinematic finish.
 

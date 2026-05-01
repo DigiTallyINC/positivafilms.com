@@ -60,11 +60,13 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .mobile-sub a::before{content:'\21B3 \00A0';color:var(--gold)}
 
 /* Hub product cards */
-.hub{background:var(--ink-soft);padding:120px 48px}
-.hub-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:48px}
-.hub-card{position:relative;background:var(--soil);border:1px solid var(--linen-faint);text-decoration:none;color:inherit;display:flex;flex-direction:column;justify-content:space-between;padding:56px 48px;min-height:420px;transition:border-color .3s,background .3s;overflow:hidden}
-.hub-card:hover{border-color:var(--gold-dim);background:rgba(201,168,76,0.03)}
-.hub-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 80% 100%,rgba(201,168,76,0.06) 0%,transparent 60%);pointer-events:none;opacity:0;transition:opacity .4s}
+.hub{background:var(--linen);padding:120px 48px;border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim)}
+.hub .section-tag{color:rgba(10,9,8,0.6)}
+.hub .section-title{color:var(--ink)}
+.hub-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.hub-card{position:relative;background:var(--soil);border:1px solid rgba(232,224,212,0.06);text-decoration:none;color:inherit;display:flex;flex-direction:column;justify-content:space-between;padding:56px 48px;min-height:420px;transition:border-color .35s ease,transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s ease;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,0.32);will-change:transform}
+.hub-card:hover{border-color:var(--gold);transform:translateY(-40px) scale(1.04);box-shadow:0 80px 120px rgba(0,0,0,0.7),0 30px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(201,168,76,0.5)}
+.hub-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 80% 100%,rgba(201,168,76,0.14) 0%,transparent 65%);pointer-events:none;opacity:0;transition:opacity .4s}
 .hub-card:hover::before{opacity:1}
 .hub-card-top{position:relative;z-index:1}
 .hub-num{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
@@ -75,8 +77,8 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .hub-desc{font-size:14px;font-weight:300;color:var(--linen-dim);line-height:1.85;max-width:440px}
 .hub-foot{display:flex;align-items:center;justify-content:space-between;margin-top:48px;padding-top:24px;border-top:1px solid var(--linen-faint);position:relative;z-index:1;gap:16px}
 .hub-meta{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--linen-dim)}
-.hub-arrow{width:48px;height:48px;flex-shrink:0;border:1px solid var(--linen-faint);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--linen);font-size:18px;transition:border-color .3s,color .3s,background .3s}
-.hub-card:hover .hub-arrow{border-color:var(--gold);color:var(--gold);background:var(--gold-faint)}
+.hub-arrow{width:48px;height:48px;flex-shrink:0;border:1px solid var(--linen-faint);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--linen);font-size:18px;transition:border-color .3s,color .3s,background .3s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.hub-card:hover .hub-arrow{border-color:var(--gold);color:var(--ink);background:var(--gold);transform:scale(1.1) rotate(-45deg)}
 
 /* Page hero */
 .page-hero{min-height:62vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:160px 48px 80px;border-bottom:1px solid var(--linen-faint);overflow:hidden}
@@ -100,13 +102,17 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 /* Featured product — ClipEngine AI brand */
 .featured{background:var(--ink);padding:120px 48px}
 .featured-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
-.featured-visual{position:relative;aspect-ratio:5/4;background:linear-gradient(135deg,#0e1116 0%,#232a34 100%);overflow:hidden;border:1px solid rgba(122,181,255,0.18);display:flex;align-items:center;justify-content:center;padding:48px}
+.featured-visual{position:relative;background:linear-gradient(135deg,#0e1116 0%,#232a34 100%);overflow:visible;border:1px solid rgba(122,181,255,0.18);display:flex;align-items:center;justify-content:center;padding:0;border-radius:6px}
 .featured-visual::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(122,181,255,0.18) 0%,rgba(83,157,255,0.05) 40%,transparent 70%);pointer-events:none}
 .featured-visual::after{content:'';position:absolute;bottom:-30%;right:-10%;width:380px;height:380px;background:radial-gradient(circle,rgba(83,157,255,0.14) 0%,transparent 60%);pointer-events:none}
 .featured-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.45) 45%,transparent 90%);pointer-events:none}
 .featured-logo-wrap{position:relative;z-index:2;width:100%;max-width:460px}
 .featured-logo-wrap svg{width:100%;height:auto;display:block;filter:drop-shadow(0 8px 32px rgba(122,181,255,0.25))}
-.featured-chips{position:absolute;bottom:32px;left:32px;display:flex;gap:8px;flex-wrap:wrap;z-index:3}
+.featured-mockup{position:relative;z-index:2;width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 32px 90px rgba(0,0,0,0.7),0 0 0 1px rgba(122,181,255,0.32),0 0 100px rgba(122,181,255,0.18);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.featured-visual:hover .featured-mockup{transform:translateY(-6px)}
+.featured-logo{display:block;width:100%;max-width:380px;height:auto;margin-bottom:18px}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.featured-chips{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:32px}
 .featured-chip{font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border-radius:4px;border:1px solid;color:#A8C8FF;background:rgba(83,157,255,0.12);border-color:rgba(122,181,255,0.28)}
 .featured-chip.solid{color:#E8EAED;background:linear-gradient(135deg,rgba(122,181,255,0.22),rgba(83,157,255,0.22));border-color:rgba(122,181,255,0.4)}
 .featured-eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
@@ -127,10 +133,12 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .btn-ghost:hover .arrow{transform:translateX(4px)}
 
 /* Products grid */
-.catalog{background:var(--ink-soft);padding:120px 48px}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.product-card{position:relative;background:var(--soil);padding:0;border:1px solid var(--linen-faint);transition:border-color .3s,background .3s;display:flex;flex-direction:column;text-decoration:none;color:inherit;overflow:hidden}
-.product-card:hover{border-color:var(--gold-dim);background:rgba(201,168,76,0.03)}
+.catalog{background:var(--linen);padding:120px 48px;border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim)}
+.catalog .section-tag{color:rgba(10,9,8,0.6)}
+.catalog .section-title{color:var(--ink)}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.product-card{position:relative;background:var(--soil);padding:0;border:1px solid rgba(232,224,212,0.06);transition:border-color .3s,background .3s,transform .3s,box-shadow .3s;display:flex;flex-direction:column;text-decoration:none;color:inherit;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,0.32)}
+.product-card:hover{border-color:var(--gold-dim);background:rgba(201,168,76,0.03);transform:translateY(-3px);box-shadow:0 26px 56px rgba(0,0,0,0.42)}
 .product-thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--ink)}
 .product-thumb-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.25,.46,.45,.94);filter:saturate(1.1)}
 .product-card:hover .product-thumb-bg{transform:scale(1.05)}
@@ -238,7 +246,7 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
 
 <header class="page-hero">
   <div class="page-eyebrow"><span class="num">( 01 )</span> &nbsp;Tools for Filmmakers</div>
-  <h1 class="page-title">Products<em>Built by us, for you.</em></h1>
+  <h1 class="page-title">Products<em>Built with love, for you.</em></h1>
   <p class="page-lede">A small, sharp catalog of tools we make and use ourselves. <strong>A Chrome extension for stock contributors</strong> and <strong>cinematic LUT packs</strong> for color grading &mdash; with DaVinci Resolve PowerGrades and more on the way.</p>
 </header>
 
@@ -286,36 +294,10 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
   <h2 class="section-title reveal">FLAGSHIP RELEASE<em>Built for stock contributors</em></h2>
 
   <div class="featured-grid">
-    <div class="featured-visual reveal">
-      <div class="featured-grid-bg"></div>
-      <div class="featured-logo-wrap">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120">
-          <defs>
-            <linearGradient id="ceAccent" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#7AB5FF"/>
-              <stop offset="100%" style="stop-color:#539dff"/>
-            </linearGradient>
-            <linearGradient id="ceFrame" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#232a34"/>
-              <stop offset="100%" style="stop-color:#0e1116"/>
-            </linearGradient>
-            <filter id="ceGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
-          <rect x="12" y="12" width="96" height="96" rx="18" fill="url(#ceFrame)" stroke="#2A323E" stroke-width="1.5"/>
-          <rect x="18" y="22" width="10" height="7" rx="2" fill="#0e1116"/><rect x="18" y="37" width="10" height="7" rx="2" fill="#0e1116"/><rect x="18" y="52" width="10" height="7" rx="2" fill="#0e1116"/><rect x="18" y="67" width="10" height="7" rx="2" fill="#0e1116"/><rect x="18" y="82" width="10" height="7" rx="2" fill="#0e1116"/><rect x="18" y="97" width="10" height="7" rx="2" fill="#0e1116"/>
-          <rect x="92" y="22" width="10" height="7" rx="2" fill="#0e1116"/><rect x="92" y="37" width="10" height="7" rx="2" fill="#0e1116"/><rect x="92" y="52" width="10" height="7" rx="2" fill="#0e1116"/><rect x="92" y="67" width="10" height="7" rx="2" fill="#0e1116"/><rect x="92" y="82" width="10" height="7" rx="2" fill="#0e1116"/><rect x="92" y="97" width="10" height="7" rx="2" fill="#0e1116"/>
-          <rect x="30" y="12" width="60" height="96" rx="0" fill="#1c222c"/>
-          <polygon points="50,42 50,78 80,60" fill="url(#ceAccent)" filter="url(#ceGlow)"/>
-          <circle cx="50" cy="42" r="3" fill="#7AB5FF" opacity="0.9"/><circle cx="50" cy="78" r="3" fill="#539dff" opacity="0.9"/><circle cx="80" cy="60" r="3.5" fill="#7AB5FF"/>
-          <line x1="50" y1="42" x2="65" y2="52" stroke="#7AB5FF" stroke-width="0.8" opacity="0.4"/>
-          <line x1="50" y1="78" x2="65" y2="68" stroke="#539dff" stroke-width="0.8" opacity="0.4"/>
-          <text x="126" y="56" font-family="'Syne','Arial Black',sans-serif" font-weight="700" font-size="36" letter-spacing="-0.5" fill="#E8EAED" textLength="205" lengthAdjust="spacingAndGlyphs">ClipEngine</text>
-          <rect x="343" y="31" width="34" height="19" rx="5" fill="url(#ceAccent)" opacity="0.15"/>
-          <rect x="343" y="31" width="34" height="19" rx="5" fill="none" stroke="url(#ceAccent)" stroke-width="1"/>
-          <text x="360" y="44" font-family="'DM Mono',monospace" font-weight="500" font-size="11" fill="url(#ceAccent)" text-anchor="middle" letter-spacing="1">AI</text>
-          <text x="126" y="79" font-family="'DM Mono',monospace" font-size="11" fill="#7A8290" letter-spacing="2" textLength="215" lengthAdjust="spacingAndGlyphs">GENERATE. REVIEW. SUBMIT.</text>
-          <line x1="126" y1="86" x2="381" y2="86" stroke="url(#ceAccent)" stroke-width="0.3" opacity="0.3"/>
-        </svg>
+    <div class="featured-col reveal">
+      <div class="featured-visual">
+        <div class="featured-grid-bg"></div>
+        <img src="clipengine-mockup.png" alt="ClipEngine AI extension mockup — BlackBox dashboard with auto-generated metadata" class="featured-mockup">
       </div>
       <div class="featured-chips">
         <span class="featured-chip solid">Chrome Extension</span>
@@ -325,7 +307,8 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
     </div>
     <div class="reveal">
       <div class="featured-eyebrow">Our Chrome Extension</div>
-      <h3 class="featured-name">CLIPENGINE <span>AI</span></h3>
+      <img src="clipengine-logo.svg" alt="ClipEngine AI" class="featured-logo">
+      <h3 class="featured-name visually-hidden">CLIPENGINE AI</h3>
       <p class="featured-desc">A <strong style="color:var(--linen);font-weight:400">Chrome extension built specifically for BlackBox Global contributors</strong>. Install it once, and AI-generated titles, descriptions, and keyword sets appear right inside your contributor dashboard &mdash; better metadata, more sales, less work.</p>
       <ul class="featured-bullets">
         <li>Auto-generate titles, descriptions, and keyword sets that actually convert on BlackBox</li>

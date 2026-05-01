@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LUT Packs &mdash; Positiva Films</title>
-  <meta name="description" content="Cinematic .cube LUT packs from Positiva Films. Indian Wedding LUTs, Creative LUTs, and bundle pricing &mdash; for Premiere, DaVinci Resolve, Final Cut, and more." />
+  <meta name="description" content="Cinematic .cube LUT packs from Positiva Films. Indian Wedding LUTs, Indian Travel LUTs, and bundle pricing &mdash; for Premiere, DaVinci Resolve, Final Cut, and more." />
   <meta property="og:title" content="LUT Packs — Positiva Films" />
   <meta property="og:description" content="Cinematic .cube LUT packs for wedding filmmakers, content creators, and colorists." />
   <meta property="og:image" content="https://img.youtube.com/vi/2Y0LmF0lWh0/maxresdefault.jpg" />
@@ -79,10 +79,12 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .section-title em{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--gold);font-size:0.62em;display:block;letter-spacing:0.02em;margin-top:6px}
 
 /* Pack grid */
-.packs{background:var(--ink-soft);padding:120px 48px}
-.packs-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px}
-.pack{position:relative;background:var(--soil);border:1px solid var(--linen-faint);display:flex;flex-direction:column;overflow:hidden;transition:border-color .3s}
-.pack:hover{border-color:var(--gold-dim)}
+.packs{background:var(--linen);padding:120px 48px;border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim)}
+.packs .section-tag{color:rgba(10,9,8,0.6)}
+.packs .section-title{color:var(--ink)}
+.packs-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.pack{position:relative;background:var(--soil);border:1px solid rgba(232,224,212,0.06);display:flex;flex-direction:column;overflow:hidden;transition:border-color .3s,transform .3s,box-shadow .3s;box-shadow:0 18px 44px rgba(0,0,0,0.32)}
+.pack:hover{border-color:var(--gold-dim);transform:translateY(-3px);box-shadow:0 26px 56px rgba(0,0,0,0.42)}
 .pack.featured{border-color:rgba(201,168,76,0.38);background:linear-gradient(180deg,rgba(201,168,76,0.04) 0%,var(--soil) 60%)}
 .pack-cover{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--ink)}
 .pack-cover-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.25,.46,.45,.94);filter:saturate(1.15)}
@@ -92,8 +94,9 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .pack-cover--product .pack-cover-bg{background-size:contain;background-repeat:no-repeat;filter:none;transform:scale(.92)}
 .pack:hover .pack-cover--product .pack-cover-bg{transform:scale(.98)}
 .pack-cover--product::after{background:linear-gradient(to top,rgba(10,9,8,0.45) 0%,transparent 50%)}
-.pack-tag{position:absolute;top:18px;left:18px;font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:5px 10px;color:var(--gold);background:rgba(10,9,8,0.7);border:1px solid var(--gold-dim);z-index:2}
-.pack-badge{position:absolute;top:18px;right:18px;font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:5px 10px;color:var(--ink);background:var(--gold);z-index:2}
+.pack-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.pack-tag{font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:5px 10px;color:var(--gold);background:transparent;border:1px solid var(--gold-dim)}
+.pack-badge{font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:5px 10px;color:var(--ink);background:var(--gold)}
 .pack-body{padding:32px 30px 30px;display:flex;flex-direction:column;flex:1}
 .pack-num{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .pack-num::after{content:'';flex:1;height:1px;background:var(--linen-faint);max-width:80px}
@@ -226,9 +229,9 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
     <article class="pack reveal">
       <div class="pack-cover pack-cover--product">
         <div class="pack-cover-bg" style="background-image:url('Indian_Wedding_Luts_pack.png')"></div>
-        <span class="pack-tag">14 LUTs &middot; .cube</span>
       </div>
       <div class="pack-body">
+        <div class="pack-meta"><span class="pack-tag">14 LUTs &middot; .cube</span></div>
         <div class="pack-num">(01)</div>
         <h3 class="pack-name">Indian Wedding LUTs Pack</h3>
         <div class="pack-by">by Positiva Films</div>
@@ -244,61 +247,26 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
           <span class="pack-price-old">&#8377;800</span>
           <span class="pack-price-off">40% Off</span>
         </div>
-        <button class="pack-buy"
-                data-rzp
-                data-sku="luts-indian-wedding"
-                data-name="Indian Wedding LUTs Pack &mdash; Positiva Films"
-                data-amount="48000"
-                data-currency="INR">Buy Now</button>
+        <a class="pack-buy"
+           href="https://superprofile.bio/vp/indian-wedding-lut-pack"
+           target="_blank" rel="noopener">Buy Now</a>
       </div>
     </article>
 
-    <!-- Bundle (featured) -->
-    <article class="pack featured reveal">
-      <div class="pack-cover">
-        <div class="pack-cover-bg" style="background-image:url('https://img.youtube.com/vi/TcAmJT1mDuA/maxresdefault.jpg')"></div>
-        <span class="pack-tag">28 LUTs &middot; Bundle</span>
-        <span class="pack-badge">Best Value</span>
-      </div>
-      <div class="pack-body">
-        <div class="pack-num">(02)</div>
-        <h3 class="pack-name">Both Packs Bundle</h3>
-        <div class="pack-by">Indian Wedding + Creative</div>
-        <p class="pack-desc">All 28 LUTs from both packs in one bundle. Save 25% versus buying them individually. The complete color toolkit for weddings, narrative, and content work.</p>
-        <ul class="pack-feat">
-          <li>All 14 Indian Wedding LUTs</li>
-          <li>All 14 Creative LUTs</li>
-          <li>Save &#8377;240 vs. individual purchase</li>
-          <li>Industry-standard .cube &middot; instant download</li>
-        </ul>
-        <div class="pack-price-row">
-          <span class="pack-price">&#8377;720</span>
-          <span class="pack-price-old">&#8377;960</span>
-          <span class="pack-price-off">Save 25%</span>
-        </div>
-        <button class="pack-buy"
-                data-rzp
-                data-sku="luts-bundle"
-                data-name="LUT Bundle (Both Packs) &mdash; Positiva Films"
-                data-amount="72000"
-                data-currency="INR">Buy the Bundle</button>
-      </div>
-    </article>
-
-    <!-- Creative -->
+    <!-- Indian Travel -->
     <article class="pack reveal">
-      <div class="pack-cover">
-        <div class="pack-cover-bg" style="background-image:url('https://img.youtube.com/vi/kxM1EjsrciA/maxresdefault.jpg')"></div>
-        <span class="pack-tag">14 LUTs &middot; .cube</span>
+      <div class="pack-cover pack-cover--product">
+        <div class="pack-cover-bg" style="background-image:url('Indian_Travel_Luts_pack.png')"></div>
       </div>
       <div class="pack-body">
-        <div class="pack-num">(03)</div>
-        <h3 class="pack-name">Creative LUTs Pack</h3>
+        <div class="pack-meta"><span class="pack-tag">10 LUTs &middot; .cube</span></div>
+        <div class="pack-num">(02)</div>
+        <h3 class="pack-name">Indian Travel LUTs Pack</h3>
         <div class="pack-by">by Positiva Films</div>
-        <p class="pack-desc">14 cinematic, content-ready LUTs for narrative, brand, and lifestyle work. Bold contrast, editorial warmth, and confident skin tones &mdash; same .cube workflow.</p>
+        <p class="pack-desc">10 unique, professional LUTs designed for travel filmmakers &mdash; built to make your travel films more cinematic than ever. Rich landscapes, vivid skies, and confident skin tones across every location.</p>
         <ul class="pack-feat">
-          <li>14 cinematic &amp; creator-focused looks</li>
-          <li>Tuned for narrative, brand &amp; lifestyle</li>
+          <li>10 cinematic &amp; travel-focused looks</li>
+          <li>Tuned for landscapes, streets &amp; portraits</li>
           <li>Industry-standard .cube format</li>
           <li>Instant download after payment</li>
         </ul>
@@ -307,12 +275,37 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
           <span class="pack-price-old">&#8377;800</span>
           <span class="pack-price-off">40% Off</span>
         </div>
-        <button class="pack-buy"
-                data-rzp
-                data-sku="luts-creative"
-                data-name="Creative LUTs Pack &mdash; Positiva Films"
-                data-amount="48000"
-                data-currency="INR">Buy Now</button>
+        <a class="pack-buy"
+           href="https://superprofile.bio/vp/indian-travel-lut-pack"
+           target="_blank" rel="noopener">Buy Now</a>
+      </div>
+    </article>
+
+    <!-- Bundle (featured) -->
+    <article class="pack featured reveal">
+      <div class="pack-cover pack-cover--product">
+        <div class="pack-cover-bg" style="background-image:url('Bundle_Luts_pack.png')"></div>
+      </div>
+      <div class="pack-body">
+        <div class="pack-meta"><span class="pack-tag">24 LUTs &middot; Bundle</span><span class="pack-badge">Best Value</span></div>
+        <div class="pack-num">(03)</div>
+        <h3 class="pack-name">Both Packs Bundle</h3>
+        <div class="pack-by">Indian Wedding + Indian Travel</div>
+        <p class="pack-desc">All 24 LUTs from both packs in one bundle. Save 25% versus buying them individually. The complete color toolkit for weddings, travel, and cinematic work.</p>
+        <ul class="pack-feat">
+          <li>All 14 Indian Wedding LUTs</li>
+          <li>All 10 Indian Travel LUTs</li>
+          <li>Save &#8377;240 vs. individual purchase</li>
+          <li>Industry-standard .cube &middot; instant download</li>
+        </ul>
+        <div class="pack-price-row">
+          <span class="pack-price">&#8377;720</span>
+          <span class="pack-price-old">&#8377;960</span>
+          <span class="pack-price-off">Save 25%</span>
+        </div>
+        <a class="pack-buy"
+           href="https://superprofile.bio/vp/lut-bundle"
+           target="_blank" rel="noopener">Buy the Bundle</a>
       </div>
     </article>
   </div>
@@ -380,7 +373,7 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
     </div>
     <div class="faq-item">
       <div class="faq-q">How do I receive the files after I pay? <span class="faq-q-icon">+</span></div>
-      <div class="faq-a">After successful payment via Razorpay, you'll receive a confirmation email with a secure download link to the .cube files. Delivery is automatic and instant. If you don't receive the email within 5 minutes, check your spam folder or email us.</div>
+      <div class="faq-a">After successful payment, you'll receive a confirmation email with a secure download link to the .cube files. Delivery is automatic and instant. If you don't receive the email within 5 minutes, check your spam folder or email us.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Do you offer refunds? <span class="faq-q-icon">+</span></div>
@@ -412,8 +405,6 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
   </div>
 </footer>
 
-<!-- Razorpay Standard Checkout SDK -->
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
   window.addEventListener('load', () => document.body.classList.add('loaded'));
 
@@ -455,85 +446,6 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
   // FAQ accordion
   document.querySelectorAll('.faq-item').forEach(item => {
     item.addEventListener('click', () => item.classList.toggle('open'));
-  });
-
-  /**
-   * Razorpay Standard Checkout — wired to Vercel serverless functions
-   *
-   * BACKEND REQUIRED (to be added):
-   *   POST /api/create-order   -> creates a Razorpay order (uses RAZORPAY_KEY_SECRET)
-   *   POST /api/verify-payment -> verifies the payment signature (uses RAZORPAY_KEY_SECRET)
-   *
-   * FRONTEND ENV (public, safe to expose):
-   *   window.RAZORPAY_KEY_ID = "rzp_live_xxxxxxxxxx"  // set in a small inline <script> or via env
-   *
-   * Until the backend + key are wired, clicking Buy Now alerts the user.
-   */
-  let RAZORPAY_KEY_ID = window.RAZORPAY_KEY_ID || '';
-  const keyReady = RAZORPAY_KEY_ID
-    ? Promise.resolve(RAZORPAY_KEY_ID)
-    : fetch('/api/config').then(r => r.ok ? r.json() : {}).then(c => {
-        RAZORPAY_KEY_ID = (c && c.razorpayKeyId) || '';
-        return RAZORPAY_KEY_ID;
-      }).catch(() => '');
-
-  document.querySelectorAll('[data-rzp]').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const sku      = btn.dataset.sku;
-      const name     = btn.dataset.name;
-      const amount   = parseInt(btn.dataset.amount, 10); // paise
-      const currency = btn.dataset.currency || 'INR';
-
-      await keyReady;
-      if (!RAZORPAY_KEY_ID) {
-        alert('Checkout is being set up — please email us to order this pack today, or check back shortly.');
-        return;
-      }
-
-      btn.classList.add('is-loading');
-      try {
-        const res = await fetch('/api/create-order', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ sku, amount, currency })
-        });
-        if (!res.ok) throw new Error('order_create_failed');
-        const order = await res.json();
-
-        const rzp = new Razorpay({
-          key: RAZORPAY_KEY_ID,
-          amount: order.amount,
-          currency: order.currency,
-          order_id: order.id,
-          name: 'Positiva Films',
-          description: name.replace(/&mdash;/g, '—'),
-          theme: { color: '#c9a84c' },
-          handler: async (response) => {
-            try {
-              const verify = await fetch('/api/verify-payment', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  razorpay_order_id:   response.razorpay_order_id,
-                  razorpay_payment_id: response.razorpay_payment_id,
-                  razorpay_signature:  response.razorpay_signature,
-                  sku
-                })
-              });
-              if (!verify.ok) throw new Error('verify_failed');
-              window.location.href = '/thank-you.html?sku=' + encodeURIComponent(sku);
-            } catch (e) {
-              alert('Payment received but verification failed. Email us with your payment ID and we\'ll send your files.');
-            }
-          },
-          modal: { ondismiss: () => btn.classList.remove('is-loading') }
-        });
-        rzp.open();
-      } catch (e) {
-        btn.classList.remove('is-loading');
-        alert('Could not start checkout. Please try again or email us.');
-      }
-    });
   });
 </script>
 </body>
