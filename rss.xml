@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Positiva Films &mdash; Field Notes &amp; Color Craft</title>
+    <link>https://positivafilms.com/blog.html</link>
+    <atom:link href="https://positivafilms.com/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Color grading, LUT craft, and field notes for filmmakers shooting weddings, travel, and aerial work across India.</description>
+    <language>en-in</language>
+    <copyright>&#169; 2026 Positiva Films</copyright>
+    <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
+  </channel>
+</rss>
