@@ -1,0 +1,13 @@
+{
+  "crons": [
+    {
+      "path": "/api/blog-generate",
+      "schedule": "7 4 * * 1,3,5"
+    }
+  ],
+  "functions": {
+    "api/blog-generate.ts": {
+      "maxDuration": 300
+    }
+  }
+}

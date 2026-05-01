@@ -1,10 +1,11 @@
 .claude/
 *.mov
 
-# Node
+# Node — only used by /api/ serverless functions, not the static site
 node_modules/
 .env
 .env.local
+.vercel/
 
 # Digital products — never commit; these are the actual goods we sell
 downloads/**/*.zip
