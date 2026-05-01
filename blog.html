@@ -23,6 +23,7 @@
   --display:'Bebas Neue',sans-serif;--serif:'Playfair Display',serif;--body:'DM Sans',sans-serif;
 }
 html{scroll-behavior:smooth}
+html{overflow-x:hidden}
 body{background:var(--ink);color:var(--linen);font-family:var(--body);font-weight:300;overflow-x:hidden}
 @media(hover:hover)and (pointer:fine){body{cursor:none}a,button,input,textarea{cursor:none}}
 #cur{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:exclusion;display:none}
@@ -163,7 +164,7 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
 .footer-social a:hover{border-color:var(--gold);color:var(--gold)}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px}
 .footer-copy{font-size:11px;color:rgba(232,224,212,0.25);letter-spacing:0.04em}
-.footer-links{display:flex;gap:24px}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
 .footer-links a{font-size:11px;letter-spacing:0.12em;color:var(--linen-dim);text-decoration:none;text-transform:uppercase;transition:color .2s}
 .footer-links a:hover{color:var(--gold)}
 
@@ -337,7 +338,7 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
   <div class="footer-bottom">
     <div class="footer-copy">&copy; 2026 Positiva Films. All rights reserved.</div>
     <div class="footer-links">
-      <a href="https://clipengineai.positivafilms.com/" target="_blank">ClipEngine AI</a>
+      <a href="https://clipengineai.positivafilms.com/" target="_blank" rel="noopener">ClipEngine AI</a>
       <a href="products.html">Products</a>
       <a href="luts.html">LUTs</a>
       <a href="blog.html">Blog</a>

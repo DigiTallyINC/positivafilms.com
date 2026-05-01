@@ -23,6 +23,7 @@
   --display:'Bebas Neue',sans-serif;--serif:'Playfair Display',serif;--body:'DM Sans',sans-serif;
 }
 html{scroll-behavior:smooth}
+html{overflow-x:hidden}
 body{background:var(--ink);color:var(--linen);font-family:var(--body);font-weight:300;overflow-x:hidden}
 @media(hover:hover)and (pointer:fine){body{cursor:none}a,button,input,textarea{cursor:none}}
 #cur{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:exclusion;display:none}
@@ -102,7 +103,7 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 /* Featured product — ClipEngine AI brand */
 .featured{background:var(--ink);padding:120px 48px}
 .featured-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
-.featured-visual{position:relative;background:linear-gradient(135deg,#0e1116 0%,#232a34 100%);overflow:visible;border:1px solid rgba(122,181,255,0.18);display:flex;align-items:center;justify-content:center;padding:0;border-radius:6px}
+.featured-visual{position:relative;background:linear-gradient(135deg,#0e1116 0%,#232a34 100%);overflow:hidden;border:1px solid rgba(122,181,255,0.18);display:flex;align-items:center;justify-content:center;padding:0;border-radius:6px}
 .featured-visual::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(122,181,255,0.18) 0%,rgba(83,157,255,0.05) 40%,transparent 70%);pointer-events:none}
 .featured-visual::after{content:'';position:absolute;bottom:-30%;right:-10%;width:380px;height:380px;background:radial-gradient(circle,rgba(83,157,255,0.14) 0%,transparent 60%);pointer-events:none}
 .featured-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.45) 45%,transparent 90%);pointer-events:none}
@@ -189,7 +190,7 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
 .footer-social a:hover{border-color:var(--gold);color:var(--gold)}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px}
 .footer-copy{font-size:11px;color:rgba(232,224,212,0.25);letter-spacing:0.04em}
-.footer-links{display:flex;gap:24px}
+.footer-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
 .footer-links a{font-size:11px;letter-spacing:0.12em;color:var(--linen-dim);text-decoration:none;text-transform:uppercase;transition:color .2s}
 .footer-links a:hover{color:var(--gold)}
 
@@ -338,7 +339,7 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
   <div class="footer-bottom">
     <div class="footer-copy">&copy; 2026 Positiva Films. All rights reserved.</div>
     <div class="footer-links">
-      <a href="https://clipengineai.positivafilms.com/" target="_blank">ClipEngine AI</a>
+      <a href="https://clipengineai.positivafilms.com/" target="_blank" rel="noopener">ClipEngine AI</a>
       <a href="products.html">Products</a>
       <a href="luts.html">LUTs</a>
       <a href="blog.html">Blog</a>
