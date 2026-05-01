@@ -243,9 +243,10 @@ export function updateRss(opts: {
       <category>${opts.categoryLabel}</category>
     </item>
 `;
-  // Insert after the comment marker
+  // Insert after the comment marker. Use [\s\S]*? (non-greedy any-char incl. newlines)
+  // because the marker text itself contains "<item>" which would trip a [^>] character class.
   let rss = opts.rss.replace(
-    /(<!-- ITEMS_BELOW[^>]*-->\n?)/,
+    /(<!-- ITEMS_BELOW[\s\S]*?-->\n?)/,
     `$1${item}`,
   );
 
