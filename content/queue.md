@@ -26,7 +26,6 @@ Internal-link targets the agent should weave into every post:
 ## Queued — Months 1–3 (LUT-heavy: 2 LUT + 1 broader per week)
 
 ### Week of May 4, 2026
-- [ ] category: wedding | type: LUT      | title: **Color-Grading Mandap Fire Without Blowing Out the Bride's Lehenga** | intent: "mandap fire highlights", "lehenga color saturation"
 - [ ] category: wedding | type: BROADER  | title: **Why Lavalier Mics Pop on Silk Lehengas (And the Tape Trick That Saves the Sangeet)** | intent: "lav mic silk lehenga", "wireless mic wedding bride placement"
 
 ### Week of May 11, 2026
@@ -258,6 +257,7 @@ Internal-link targets the agent should weave into every post:
 
 ## Published
 
+- [x] 2026-05-04 | slug: color-grading-mandap-fire-lehenga-highlights | category: wedding | title: **Color-Grading Mandap Fire Without Blowing Out the Bride's Lehenga**
 - [x] 2026-05-01 | slug: magenta-sunsets-goa-rec709-lut-gamut-wall | category: travel | title: **Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall**
 - [x] 2026-04-22 | slug: why-s-log3-lut-looks-flat-cst-node | category: craft | title: **Why Applying a LUT Directly to S-Log3 Looks Flat — The CST Node You're Missing**
 - [x] 2026-04-24 | slug: indian-skin-tones-orange-rec709-wedding-luts | category: wedding | title: **Why Indian Skin Tones Go Orange Under Rec.709 Wedding LUTs (And the One Node That Fixes It)**
