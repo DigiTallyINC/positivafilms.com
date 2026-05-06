@@ -26,7 +26,6 @@ Internal-link targets the agent should weave into every post:
 ## Queued — Months 1–3 (LUT-heavy: 2 LUT + 1 broader per week)
 
 ### Week of May 4, 2026
-- [ ] category: wedding | type: BROADER  | title: **Why Lavalier Mics Pop on Silk Lehengas (And the Tape Trick That Saves the Sangeet)** | intent: "lav mic silk lehenga", "wireless mic wedding bride placement"
 
 ### Week of May 11, 2026
 - [ ] category: gear    | type: LUT      | title: **Why FX30's Skin Tones Read Cooler Than FX3 — and the Single Node That Fixes It** | intent: "fx30 vs fx3 color", "match fx30 fx3"
@@ -257,6 +256,7 @@ Internal-link targets the agent should weave into every post:
 
 ## Published
 
+- [x] 2026-05-06 | slug: lav-mic-silk-lehenga-tape-trick-sangeet | category: wedding | title: **Why Lavalier Mics Pop on Silk Lehengas (And the Tape Trick That Saves the Sangeet)**
 - [x] 2026-05-04 | slug: color-grading-mandap-fire-lehenga-highlights | category: wedding | title: **Color-Grading Mandap Fire Without Blowing Out the Bride's Lehenga**
 - [x] 2026-05-01 | slug: magenta-sunsets-goa-rec709-lut-gamut-wall | category: travel | title: **Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall**
 - [x] 2026-04-22 | slug: why-s-log3-lut-looks-flat-cst-node | category: craft | title: **Why Applying a LUT Directly to S-Log3 Looks Flat — The CST Node You're Missing**
