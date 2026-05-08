@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why FX30's Skin Tones Read Cooler Than FX3 — and the Single Node That Fixes It &mdash; Positiva Films</title>
+  <meta name="description" content="The FX30 and FX3 share Sony's color science but their skin tones don't match out of the box. Here's exactly why — and the one node that bridges them." />
+  <meta name="keywords" content="fx30 vs fx3 skin tones, match fx30 fx3 color, sony fx30 color grade, fx30 s-log3 color correction, multicam camera matching davinci resolve, fx30 cyan skin tone fix" />
+  <meta name="author" content="Positiva Films" />
+  <link rel="canonical" href="https://positivafilms.com/posts/fx30-skin-tones-cooler-than-fx3-single-node-fix.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Why FX30's Skin Tones Read Cooler Than FX3 — and the Single Node That Fixes It" />
+  <meta property="og:description" content="The FX30 and FX3 share Sony's color science but their skin tones don't match out of the box. Here's exactly why — and the one node that bridges them." />
+  <meta property="og:image" content="https://positivafilms.com/Bundle_Luts_pack.png" />
+  <meta property="og:url" content="https://positivafilms.com/posts/fx30-skin-tones-cooler-than-fx3-single-node-fix.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why FX30's Skin Tones Read Cooler Than FX3 — and the Single Node That Fixes It" />
+  <meta name="twitter:description" content="The FX30 and FX3 share Sony's color science but their skin tones don't match out of the box. Here's exactly why — and the one node that bridges them." />
+  <meta name="twitter:image" content="https://positivafilms.com/Bundle_Luts_pack.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why FX30's Skin Tones Read Cooler Than FX3 — and the Single Node That Fixes It",
+    "description": "The FX30 and FX3 share Sony's color science but their skin tones don't match out of the box. Here's exactly why — and the one node that bridges them.",
+    "image": "https://positivafilms.com/Bundle_Luts_pack.png",
+    "datePublished": "2026-05-08",
+    "dateModified": "2026-05-08",
+    "author": { "@type": "Person", "name": "Positiva Films" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Positiva Films",
+      "logo": { "@type": "ImageObject", "url": "https://positivafilms.com/positiva-films-logo.svg" }
+    },
+    "mainEntityOfPage": "https://positivafilms.com/posts/fx30-skin-tones-cooler-than-fx3-single-node-fix.html"
+  }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127916;</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0a0908;--ink-soft:#121110;--soil:#1a1816;
+  --linen:#e8e0d4;--linen-dim:rgba(232,224,212,0.55);--linen-faint:rgba(232,224,212,0.08);
+  --gold:#c9a84c;--gold-dim:#a08838;--gold-faint:rgba(201,168,76,0.12);
+  --clay:#b85c38;--clay-dim:#7a3d26;--sand:#c4a882;
+  --display:'Bebas Neue',sans-serif;--serif:'Playfair Display',serif;--body:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--linen);font-family:var(--body);font-weight:300;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.38}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;background:linear-gradient(to bottom,rgba(10,9,8,0.92) 0%,rgba(10,9,8,0.55) 70%,transparent 100%);backdrop-filter:blur(8px)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;opacity:.9;transition:opacity .2s}
+.nav-logo:hover{opacity:1}.nav-logo svg{height:26px;width:auto}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.16em;color:var(--linen-dim);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links .nav-cta{color:var(--gold);border-bottom:1px solid var(--gold-dim);padding-bottom:2px}
+.nav-hamburger{display:none;width:32px;height:24px;background:none;border:none;flex-direction:column;justify-content:space-between}
+.nav-hamburger span{display:block;width:100%;height:1.5px;background:var(--linen);transition:transform .3s,opacity .3s}
+.nav-hamburger.active span:nth-child(1){transform:translateY(11px) rotate(45deg)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:translateY(-11px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;inset:0;z-index:199;background:rgba(10,9,8,0.97);flex-direction:column;align-items:center;justify-content:center;gap:28px;list-style:none;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.mobile-nav.open{opacity:1;visibility:visible}
+.mobile-nav a{font-family:var(--display);font-size:34px;letter-spacing:0.1em;color:var(--linen);text-decoration:none;text-transform:uppercase}
+.mobile-nav .nav-cta{color:var(--gold);font-size:18px;font-family:var(--body);letter-spacing:0.16em}
+
+/* Article hero — text-only editorial */
+.article-hero{position:relative;min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 48px 80px;overflow:hidden;border-bottom:1px solid var(--linen-faint);background:var(--ink)}
+.article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(201,168,76,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
+.article-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none;z-index:0}
+.article-hero>*{position:relative;z-index:1}
+.crumb{display:flex;gap:14px;align-items:center;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--linen-dim);margin-bottom:32px}
+.crumb a{color:var(--linen-dim);text-decoration:none;transition:color .2s}
+.crumb a:hover{color:var(--gold)}
+.crumb .sep{color:var(--gold)}
+.crumb .cat{color:var(--gold)}
+.article-title{font-family:var(--display);font-size:clamp(44px,7.5vw,108px);line-height:0.92;letter-spacing:0.025em;color:var(--linen);text-transform:uppercase;max-width:1100px;margin-bottom:36px}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--linen-dim)}
+.article-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--linen-faint)}
+
+/* Article body */
+.article{padding:88px 48px 96px;background:var(--ink)}
+.article-inner{max-width:760px;margin:0 auto}
+.lede{font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);font-weight:300;font-style:italic;line-height:1.55;color:var(--linen);margin-bottom:48px;padding-left:22px;border-left:2px solid var(--gold)}
+.article-inner h2{font-family:var(--display);font-size:clamp(28px,3.2vw,40px);letter-spacing:0.04em;color:var(--linen);text-transform:uppercase;margin:64px 0 22px;line-height:1}
+.article-inner h2::before{content:'';display:inline-block;width:24px;height:1px;background:var(--gold);vertical-align:middle;margin-right:14px;transform:translateY(-4px)}
+.article-inner h3{font-family:var(--serif);font-size:22px;font-style:italic;font-weight:400;color:var(--gold);margin:42px 0 16px;line-height:1.3}
+.article-inner p{font-size:17px;font-weight:300;line-height:1.85;color:var(--linen);margin-bottom:22px}
+.article-inner p strong{color:var(--linen);font-weight:500}
+.article-inner a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim);transition:color .2s,border-color .2s}
+.article-inner a:hover{color:var(--linen);border-color:var(--linen)}
+.article-inner ul,.article-inner ol{margin:0 0 26px 22px;color:var(--linen)}
+.article-inner li{font-size:17px;font-weight:300;line-height:1.8;margin-bottom:8px}
+.article-inner li::marker{color:var(--gold)}
+.article-inner blockquote{border-left:2px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.6;color:var(--linen-dim)}
+.article-inner code{font-family:'DM Mono',monospace;font-size:13.5px;background:var(--soil);color:var(--gold);padding:2px 8px;border-radius:3px;border:1px solid var(--linen-faint)}
+.article-inner pre{background:var(--soil);border:1px solid var(--linen-faint);border-left:2px solid var(--gold);padding:22px 26px;overflow-x:auto;margin:28px 0;border-radius:3px}
+.article-inner pre code{background:none;border:none;padding:0;color:var(--linen);font-size:13.5px;line-height:1.7}
+.article-inner hr{border:none;height:1px;background:var(--linen-faint);margin:56px 0}
+.article-inner img,.article-inner figure{margin:38px 0;width:100%}
+.article-inner img{max-width:100%;border:1px solid var(--linen-faint)}
+.article-inner figcaption{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--linen-dim);margin-top:10px;text-align:center}
+
+/* Inline product CTA — drops into the body */
+.inline-cta{margin:48px 0;padding:32px 36px;background:var(--soil);border:1px solid var(--gold-faint);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.inline-cta-text{flex:1;min-width:240px}
+.inline-cta-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.inline-cta h4{font-family:var(--display);font-size:22px;letter-spacing:0.04em;color:var(--linen);text-transform:uppercase;margin-bottom:6px;line-height:1.05}
+.inline-cta p{font-size:14px;color:var(--linen-dim);line-height:1.6;margin:0}
+.inline-cta a.btn{flex-shrink:0;font-family:var(--body);font-size:11px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;border:1px solid var(--gold-dim);padding:14px 24px;text-decoration:none;border-bottom:1px solid var(--gold-dim);transition:background .2s,color .2s}
+.inline-cta a.btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+
+/* Footer LUT pack CTA */
+.post-cta{padding:96px 48px;background:var(--linen);color:var(--ink);position:relative}
+.post-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold)}
+.post-cta::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--gold)}
+.post-cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.post-cta-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);margin-bottom:18px}
+.post-cta h2{font-family:var(--display);font-size:clamp(38px,5vw,64px);letter-spacing:0.03em;line-height:0.95;text-transform:uppercase;color:var(--ink);margin-bottom:22px}
+.post-cta h2 em{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--clay);font-size:0.7em;display:block;margin-top:6px;text-transform:none;letter-spacing:0.01em}
+.post-cta p{font-size:16px;line-height:1.75;color:#3a342c;max-width:520px;margin-bottom:32px}
+.post-cta a.btn{display:inline-block;font-family:var(--body);font-size:12px;letter-spacing:0.2em;color:var(--ink);text-transform:uppercase;background:var(--gold);padding:18px 36px;text-decoration:none;border:1px solid var(--gold-dim);transition:background .2s,color .2s}
+.post-cta a.btn:hover{background:var(--ink);color:var(--gold)}
+.post-cta-image{position:relative;aspect-ratio:1/1;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--ink)}
+.post-cta-image.bundle{aspect-ratio:16/9}
+
+/* Footer */
+footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--linen-faint)}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:42px;padding-bottom:32px;border-bottom:1px solid var(--linen-faint)}
+.footer-brand{max-width:380px}
+.footer-logo{display:inline-block;margin-bottom:14px}
+.footer-tagline{font-size:13px;color:var(--linen-dim);line-height:1.7}
+.footer-social{display:flex;gap:14px}
+.footer-social a{width:40px;height:40px;border:1px solid var(--linen-faint);display:flex;align-items:center;justify-content:center;color:var(--linen-dim);transition:color .2s,border-color .2s}
+.footer-social a:hover{color:var(--gold);border-color:var(--gold-dim)}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--linen-dim)}
+.footer-bottom a{color:var(--linen-dim);text-decoration:none;margin-left:18px;transition:color .2s}
+.footer-bottom a:hover{color:var(--gold)}
+
+@media(max-width:900px){
+  nav{padding:18px 22px}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .mobile-nav{display:flex}
+  .article-hero{padding:130px 22px 48px}
+  .article{padding:64px 22px}
+  .article-inner{max-width:100%}
+  .post-cta{padding:64px 22px}
+  .post-cta-inner{grid-template-columns:1fr;gap:36px}
+  .author-block{padding:48px 22px}
+  footer{padding:52px 22px 28px}
+  .inline-cta{flex-direction:column;align-items:flex-start;padding:26px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo" aria-label="Positiva Films home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="110 137 152 88" preserveAspectRatio="xMidYMid meet"><g fill="#e8e0d4"><g transform="translate(111.939314, 176.095419)"><path d="M 24.953125 -19.078125 C 26.992188 -16.859375 28.015625 -14.132812 28.015625 -10.90625 C 28.015625 -7.6875 26.992188 -4.957031 24.953125 -2.71875 C 22.921875 -0.476562 20.332031 0.640625 17.1875 0.640625 C 14.300781 0.640625 11.925781 -0.265625 10.0625 -2.078125 L 10.0625 11.03125 L 2.546875 11.03125 L 2.546875 -21.78125 L 9.96875 -21.78125 L 9.96875 -19.3125 L 10.0625 -19.3125 C 11.925781 -21.382812 14.300781 -22.421875 17.1875 -22.421875 C 20.332031 -22.421875 22.921875 -21.304688 24.953125 -19.078125 Z M 18.5625 -7.21875 C 19.539062 -8.175781 20.03125 -9.40625 20.03125 -10.90625 C 20.03125 -12.40625 19.5625 -13.628906 18.625 -14.578125 C 17.695312 -15.523438 16.46875 -16 14.9375 -16 C 13.46875 -16 12.257812 -15.519531 11.3125 -14.5625 C 10.363281 -13.601562 9.890625 -12.382812 9.890625 -10.90625 C 9.890625 -9.40625 10.378906 -8.175781 11.359375 -7.21875 C 12.335938 -6.257812 13.53125 -5.78125 14.9375 -5.78125 C 16.382812 -6.257812 17.59375 -6.257812 18.5625 -7.21875 Z"/></g></g><text x="110" y="220" font-family="Bebas Neue,sans-serif" font-size="42" fill="#c9a84c" letter-spacing="2">POSITIVA</text><text x="110" y="248" font-family="Playfair Display,serif" font-size="14" fill="#e8e0d4" font-style="italic">films</text></svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../products.html">Products</a></li>
+    <li><a href="../luts.html">LUTs</a></li>
+    <li><a href="../blog.html" class="active">Blog</a></li>
+    <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<ul class="mobile-nav" id="mobileNav">
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../products.html">Products</a></li>
+  <li><a href="../luts.html">LUTs</a></li>
+  <li><a href="../blog.html">Blog</a></li>
+  <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+</ul>
+
+<header class="article-hero">
+  <div class="crumb">
+    <a href="../blog.html">Blog</a>
+    <span class="sep">/</span>
+    <span class="cat">Gear</span>
+  </div>
+  <h1 class="article-title">Why FX30's Skin Tones Read Cooler Than FX3 — and the Single Node That Fixes It</h1>
+  <div class="article-meta">
+    <span>May 08, 2026</span>
+    <span class="dot"></span>
+    <span>7 Min Read</span>
+  </div>
+</header>
+
+<article class="article">
+  <div class="article-inner">
+    <p class="lede">Shoot a talking-head interview with the FX30 and FX3 side by side, cut them together, and skin tones will visibly drift — even when both cameras are on the same S-Log3 profile and the same white balance. This isn't a myth, and it isn't a calibration error. It's physics, sensor design, and a predictable color science gap you can correct in one node.</p>
+    <p>Pull up any multicam timeline where an FX3 and an FX30 are sharing the load — a corporate event, a documentary interview, a candid wedding second-camera setup — and you will see it the moment you slap on a standardized LUT. The FX30 renders skin about half a stop cooler, with a subtle cyan push in the upper-midrange and a slightly compressed yellow channel. The FX3 reads warmer, with more amber-gold in the flesh tones and a punchier highlight rolloff. Both cameras are shooting <code>S-Log3/S-Gamut3.Cine</code>. Both are set to 5600 K. Both are exposed at the same nominal value on a gray card. And yet.</p>
+
+<h2>Why the Gap Exists</h2>
+
+<p>The FX3 uses Sony's full-frame 12.1 MP back-illuminated Exmor R sensor — the same sensor architecture that lives in the A7S III. The FX30 uses a Super35 APS-C sensor derived from a different lineage, closer to the A6700. Different sensor pitch, different microlens geometry, different photosite architecture. Even when Sony maps both to the same <code>S-Gamut3.Cine</code> color gamut primaries, the actual spectral response curves of those two sensors are not identical. The color science pipeline compensates, but it cannot compensate perfectly, because the underlying spectral sensitivities diverge particularly in the 580–620 nm range — which is exactly where skin tone information lives.</p>
+
+<p>The practical result: the FX30's sensor is slightly less sensitive to the red-orange portion of the visible spectrum relative to the FX3. Sony's in-camera matrix tries to normalize this, but the normalization is optimized for technical accuracy across the full gamut, not for perceptual skin-tone parity under the warm, mixed-source light of a real shoot. So in grading, you inherit the gap.</p>
+
+<p>There is a second contributor: the APS-C crop means the FX30 sees a slightly different optical cross-section from most lenses compared to the FX3 at the same focal length and aperture. This changes the lens flare characteristics and the subtle chromatic fringing that large-format sensors tolerate differently — both of which shift the perceived warmth of the final image even at a pixel level.</p>
+
+<h2>Quantifying the Gap Before You Fix It</h2>
+
+<p>Before touching any node, measure. Open both clips in DaVinci Resolve. Go to the Color page, <code>Color &gt; Scopes</code>, set the scope to <strong>Parade (RGB)</strong>, and play a frame with a clean skin tone in frame — ideally the same subject, same light, same clothing. Read the midtone balance on both cameras. On a healthy FX3 grade, you will typically see the red channel sitting 5–8 IRE above the blue channel in the mid-skin register (around 50–60 IRE on Parade). On the FX30, that gap narrows to 1–3 IRE, sometimes with the blue channel even kissing the red channel. That is the cyan push made visible.</p>
+
+<p>Now switch the scope to <strong>Vectorscope (YUV)</strong> and place a node that does nothing — a neutral serial node — on each clip so you can use the qualifier without affecting the output. Hover over the skin region. On the FX3, skin dots cluster just inside the skin tone indicator line at roughly 2 o'clock. On the FX30, those same dots sit slightly counterclockwise — toward the cyan-green arc. Half a step. Consistent. Measurable.</p>
+
+<p>That vectorscope shift is your diagnostic. You are not imagining it. And it tells you exactly what the correction needs to do: rotate the skin cluster back clockwise — warmer, more red, less cyan — without touching the rest of the gamut.</p>
+
+<h2>The Single Node That Fixes It</h2>
+
+<p>One node, serial, placed <em>after</em> your <code>Color Space Transform</code> (so you are working in display-referred space, not log) and <em>before</em> any creative grade. Here is the exact build:</p>
+
+<ol>
+  <li><strong>Node type:</strong> Serial (standard corrector node)</li>
+  <li><strong>Tab:</strong> Open the <strong>Curves</strong> panel. Switch from Luma to <strong>Hue vs. Saturation</strong> — but you will not change saturation yet. First go to <strong>Hue vs. Hue</strong>.</li>
+  <li><strong>Hue vs. Hue — Red-Orange band:</strong> Add a control point at approximately <strong>25–30°</strong> (orange) with a tight bell. Drag it slightly clockwise — toward red. A shift of <strong>+4 to +6°</strong> is usually the full correction. Pull back to +3° if your subject has deeper skin. Watch the Vectorscope; stop when the skin cluster sits on the indicator line.</li>
+  <li><strong>Hue vs. Saturation — same band:</strong> After the Hue rotation, skin can desaturate very slightly because you've moved it off the sensor's native position. Boost saturation on that same orange band by <strong>+0.05 to +0.10</strong> (Resolve's 0–2 scale). Don't go further.</li>
+  <li><strong>Qualifier lock:</strong> On the same node, open the <strong>HSL Qualifier</strong>. Sample a midtone skin region. Expand the hue selection to cover the full skin range (typically 10°–55° hue range), keep luminance range between 0.25 and 0.75 to exclude deep shadows and hot highlights. Set <strong>Soft</strong> to 0.20. This confines the correction to skin without spilling into warm backgrounds, golden-hour skies, or wooden mandap decor.</li>
+  <li><strong>Matte finesse:</strong> Enable <strong>Blur Radius</strong> on the qualifier at <strong>0.5</strong>. Prevents edge fringing on hairlines.</li>
+</ol>
+
+<p>That is the entire correction. No secondary power windows. No group-level offsets. One node, six parameter touches.</p>
+
+<p>If you want to verify it is clean: temporarily enable the <strong>Highlight</strong> matte overlay (the dashed square icon in the qualifier panel). Your skin pixels should glow white; background walls, fabric, and foliage should read black or deep gray. If warm tungsten highlights in the background are bleeding into the matte, tighten your luminance ceiling — bring it down from 0.75 to 0.65.</p>
+
+<h2>Applying It as a Node Group So Both Cameras Live in the Same Timeline</h2>
+
+<p>If you are cutting FX30 and FX3 footage in the same project — which is the whole point — build this correction as a <strong>Remote Grade</strong> applied only to FX30 clips, not globally. The cleanest way:</p>
+
+<ul>
+  <li>In the Media Pool, select all FX30 clips. Right-click → <strong>Clip Attributes</strong> → confirm codec (<code>XAVC S-I</code> or <code>XAVC S</code>). You can also tag them with a marker color in the timeline — orange, say.</li>
+  <li>In the Color page, select one FX30 clip, build the node above, then right-click the node → <strong>Copy Grade</strong>. Select all other FX30 clips (Ctrl+click or filter by marker), right-click → <strong>Apply Grade</strong>.</li>
+  <li>Alternatively, if your project uses Shared Nodes: create the corrector node, right-click → <strong>Add Node as Shared Node</strong>. Name it <code>FX30_SkinMatch</code>. Now every FX30 clip in the project gets the same correction, and if you adjust it once, all clips update. This is the right workflow for a 500-clip wedding multicam project.</li>
+</ul>
+
+<p>The FX3 clips get no camera-matching node — they are your reference. Every creative grade builds on top of this foundation.</p>
+
+<div class="inline-cta">
+  <div class="inline-cta-text">
+    <div class="inline-cta-eyebrow">From the Positiva LUT Library</div>
+    <h4>The Positiva Bundle</h4>
+    <p>Built for multicam workflows — includes pre-matched grades for Sony S-Log3 that account for the FX30/FX3 sensor gap, so your starting point is already camera-neutral.</p>
+  </div>
+  <a class="btn" href="../luts.html#bundle" rel="noopener noreferrer">View Pack →</a>
+</div>
+
+<h2>Where This Shows Up Most Brutally on an Actual Shoot</h2>
+
+<p>The gap is most visible in two specific scenarios. The first is a <strong>bridal suite setup shot</strong> — FX3 on an 85mm wide for the getting-ready tableau, FX30 on a 35mm insert camera for detail shots. You cut them together in the edit, and the bride's face reads two different temperatures across the same five-minute sequence. Guests never consciously identify it, but it reads as wrong. Something feels off about the footage quality, and the client can't tell you why.</p>
+
+<p>The second is an <strong>interview or testimonial rig</strong> at a destination wedding — maybe a morning mehendi at a haveli in Jaisalmer, where the morning light is already warm and the subjects are wearing bright pinks and reds. Here the FX30's cyan tendency fights the warmer palette, and the mismatch is amplified by how much red and orange information is already in the scene. The FX3 handles it naturally. The FX30 needs your node.</p>
+
+<p>There is a third scenario worth naming: if you are shooting under LED panel lights tuned to a daylight preset (common at indoor corporate events and some modern wedding halls), the FX30's relative insensitivity to the 600 nm range intersects with LED's characteristic green spike and cyan push to compound the problem. In that environment, your Hue vs. Hue correction may need to go to +8° rather than +6°. Read your scopes. Don't memorize a static value — internalize the diagnosis.</p>
+
+<h2>What This Correction Does Not Fix</h2>
+
+<p>This single node handles the hue-level mismatch. It does not address three other gaps you may encounter:</p>
+
+<p><strong>Highlight rolloff character.</strong> The FX3 has a softer, more cinematic rolloff in the upper stops — a product of its full-frame sensor well depth. The FX30 clips more abruptly. A <code>Luma vs. Saturation</code> curve pulling saturation down as luminance exceeds 75 IRE will help on FX30 clips.</p>
+
+<p><strong>Noise character.</strong> The FX3 at ISO 12800 looks fundamentally different from the FX30 at ISO 12800. Noise reduction must be handled per-camera, not globally. DaVinci's <strong>Temporal NR</strong> at <em>Spatial Threshold 10, Temporal Threshold 15, Luma Mix 0.8</em> is a reasonable starting point for FX30 footage in mixed-light situations; the FX3 often needs no NR below ISO 6400.</p>
+
+<p><strong>Lens rendering.</strong> If your FX3 is on an A-mount or E-mount prime and your FX30 is on a kit zoom, the micro-contrast and chromatic aberration profiles will differ regardless of camera body. That is a lens problem, not a sensor problem, and it lives upstream of any node you build in Resolve.</p>
+
+<p>Correct for those separately, in their own nodes, in the right order. But the skin-tone correction described here is the foundation. Get that right first, and everything else becomes a much shorter conversation.</p>
+
+<hr />
+
+<p>The FX30 is an extraordinary camera for the price, and on its own terms it produces images that grade beautifully. The issue is never about the camera being inadequate — it is about understanding what its sensor sees differently, and knowing exactly where in your node tree to account for it. One qualifier, one hue rotation, six stops of matte refinement. That is all it takes to make two Sony bodies read as one.</p>
+  </div>
+</article>
+
+<section class="post-cta">
+  <div class="post-cta-inner">
+    <div>
+      <div class="post-cta-eyebrow">&#10022; MATCH ANY MULTICAM RIG</div>
+      <h2>MATCH ANY MULTICAM RIG<em>One starting point, every Sony body.</em></h2>
+      <p>The Positiva Bundle includes S-Log3 bases built with multicam parity in mind — calibrated so FX30 and FX3 footage starts from the same visual reference before your creative grade even begins.</p>
+      <a class="btn" href="../luts.html#bundle">Get the Bundle &rarr;</a>
+    </div>
+    <div class="post-cta-image bundle" style="background-image:url('../Bundle_Luts_pack.png')"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="../index.html" class="footer-logo" aria-label="Positiva Films">
+        <svg height="36" xmlns="http://www.w3.org/2000/svg" viewBox="110 137 152 88" preserveAspectRatio="xMidYMid meet"><text x="110" y="200" font-family="Bebas Neue,sans-serif" font-size="48" fill="#e8e0d4" letter-spacing="3">POSITIVA</text><text x="110" y="225" font-family="Playfair Display,serif" font-size="16" fill="#c9a84c" font-style="italic">films</text></svg>
+      </a>
+      <p class="footer-tagline">We craft cinematic stories that move people. From concept to final cut, we bring your vision to life.</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.youtube.com/@TallyTalwarOfficial" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://www.instagram.com/djtally/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>&copy; 2026 Positiva Films. All rights reserved.</div>
+    <div>
+      <a href="https://clipengineai.positivafilms.com/" target="_blank">ClipEngine AI</a>
+      <a href="../products.html">Products</a>
+      <a href="../luts.html">LUTs</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
+</script>
+</body>
+</html>

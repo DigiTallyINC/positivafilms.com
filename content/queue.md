@@ -28,7 +28,6 @@ Internal-link targets the agent should weave into every post:
 ### Week of May 4, 2026
 
 ### Week of May 11, 2026
-- [ ] category: gear    | type: LUT      | title: **Why FX30's Skin Tones Read Cooler Than FX3 — and the Single Node That Fixes It** | intent: "fx30 vs fx3 color", "match fx30 fx3"
 - [ ] category: travel  | type: LUT      | title: **Why Monsoon Greens in Kerala Look Radioactive on Sony Cameras** | intent: "kerala green color grade", "sony green saturation"
 - [ ] category: aerial  | type: BROADER  | title: **DGCA Drone Permissions in 2026: The Digital Sky Workflow That Actually Works** | intent: "dgca drone permission india", "digital sky uin"
 
@@ -256,6 +255,7 @@ Internal-link targets the agent should weave into every post:
 
 ## Published
 
+- [x] 2026-05-08 | slug: fx30-skin-tones-cooler-than-fx3-single-node-fix | category: gear | title: **Why FX30's Skin Tones Read Cooler Than FX3 — and the Single Node That Fixes It**
 - [x] 2026-05-06 | slug: lav-mic-silk-lehenga-tape-trick-sangeet | category: wedding | title: **Why Lavalier Mics Pop on Silk Lehengas (And the Tape Trick That Saves the Sangeet)**
 - [x] 2026-05-04 | slug: color-grading-mandap-fire-lehenga-highlights | category: wedding | title: **Color-Grading Mandap Fire Without Blowing Out the Bride's Lehenga**
 - [x] 2026-05-01 | slug: magenta-sunsets-goa-rec709-lut-gamut-wall | category: travel | title: **Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall**
