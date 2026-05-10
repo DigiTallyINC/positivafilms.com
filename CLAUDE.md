@@ -39,6 +39,8 @@ Any text the user will paste into a form/dashboard (page titles, descriptions, s
 - `downloads/` — working dir for product zips (gitignored zips, gitignored cubes, tracked READMEs).
 - `_archive/` — gitignored junk drawer for stale stuff. Don't put live assets here.
 
+**Shoot Bazaar** is a separate project in its own folder/repo (`studios.positivafilms.com`). It is not part of this repo. Do not add Shoot Bazaar code, pages, or assets here.
+
 ## Blog cron architecture
 
 ```

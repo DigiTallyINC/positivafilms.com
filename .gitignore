@@ -15,3 +15,9 @@ downloads/**/*.cube
 
 # Archive folder — kept locally as a "junk drawer", not tracked
 _archive/
+
+# Loose image exports / AI-generation dumps — keep them out of the repo root.
+# The site's actual image assets (Bundle_Luts_pack.png, Indian_*.png,
+# clipengine-mockup.png, *-logo.svg) are explicitly tracked via `git add`.
+/hf_*.png
+/*.MOV.*.jpg
