@@ -1,4 +1,5 @@
-.claude/
+.claude/*
+!.claude/settings.json
 *.mov
 
 # Node — only used by /api/ serverless functions, not the static site

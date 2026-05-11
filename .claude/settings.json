@@ -1,0 +1,52 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "if git pull --ff-only 2>&1; then echo '✓ Synced with GitHub'; else echo '⚠️  Could not pull from GitHub — offline, conflicts, or non-fast-forward. Run `git pull` manually when ready.'; fi",
+            "timeout": 30,
+            "statusMessage": "Pulling latest from GitHub..."
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "bash",
+            "command": "if git push 2>&1; then echo '✓ Pushed to GitHub'; else echo '⚠️  Could not push — offline or auth issue. Run `git push` manually when ready.'; fi",
+            "timeout": 30,
+            "statusMessage": "Pushing to GitHub..."
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git add index.html)",
+      "Bash(gh repo create positivafilms.com --public --source=. --remote=origin --push)",
+      "Read(//e/CLIPENGINE FILES/**)",
+      "Bash(ls -lh \"e:/CLIPENGINE FILES/POSITIVA FILMS WEBSITE/\"*logo*)",
+      "Bash(ls -lh \"e:/CLIPENGINE FILES/POSITIVA FILMS WEBSITE/\"*Logo*)",
+      "Bash(ls -lh \"e:/CLIPENGINE FILES/POSITIVA FILMS WEBSITE/\"*SMALL*)",
+      "Bash(/c/Users/TALLY/AppData/Local/Programs/Python/Python312/python -c \"print\\(''hello''\\)\")",
+      "Bash(/c/Users/TALLY/AppData/Local/Programs/Python/Python312/python:*)",
+      "Bash(start \"\" \"e:/CLIPENGINE FILES/POSITIVA FILMS WEBSITE/index.html\")",
+      "Bash(start \"\" \"http://localhost:8080\")",
+      "Bash(start /b /c/Users/TALLY/AppData/Local/Programs/Python/Python312/python -m http.server 8080)",
+      "WebFetch(domain:ai.positivafilms.com)",
+      "Bash(git add index.html .gitignore \"Mlogo Cinematic 2 04 Render 1 SMALL.mp4\")",
+      "Read(//c/Users/TALLY/.claude/projects/e--CLIPENGINE-FILES-POSITIVA-FILMS-WEBSITE/**)",
+      "Bash(python3 -c \":*)"
+    ],
+    "additionalDirectories": [
+      "e:\\CLIPENGINE FILES\\POSITIVA FILMS WEBSITE"
+    ]
+  }
+}
