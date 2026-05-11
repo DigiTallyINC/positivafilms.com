@@ -5,7 +5,8 @@
 # Node — only used by /api/ serverless functions, not the static site
 node_modules/
 .env
-.env.local
+.env.*
+!.env.example
 .vercel/
 
 # Digital products — never commit; these are the actual goods we sell
