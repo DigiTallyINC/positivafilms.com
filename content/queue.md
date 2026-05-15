@@ -30,7 +30,6 @@ Internal-link targets the agent should weave into every post:
 ### Week of May 11, 2026
 
 ### Week of May 18, 2026
-- [ ] category: wedding | type: LUT      | title: **Why Your Sangeet Footage Looks Yellow — Neutralizing Banquet Hall Tungsten** | intent: "yellow tungsten correction wedding", "banquet hall white balance"
 - [ ] category: craft   | type: LUT      | title: **Color Space Transform Order in Resolve: Why CST-Then-LUT Beats LUT-Then-CST** | intent: "cst node order resolve", "lut placement node tree"
 - [ ] category: field   | type: BROADER  | title: **Premiere vs Resolve for an Indian Wedding Edit: The Honest Speed Test on an M2 Pro** | intent: "premiere vs resolve wedding", "wedding edit speed test"
 
@@ -253,6 +252,7 @@ Internal-link targets the agent should weave into every post:
 
 ## Published
 
+- [x] 2026-05-15 | slug: sangeet-tungsten-correction-banquet-hall | category: wedding | title: **Why Your Sangeet Footage Looks Yellow — Neutralizing Banquet Hall Tungsten**
 - [x] 2026-05-13 | slug: dgca-drone-permissions-2026-digital-sky-workflow | category: aerial | title: **DGCA Drone Permissions in 2026: The Digital Sky Workflow That Actually Works**
 - [x] 2026-05-11 | slug: monsoon-greens-kerala-sony-color-grade | category: travel | title: **Why Monsoon Greens in Kerala Look Radioactive on Sony Cameras**
 - [x] 2026-05-08 | slug: fx30-skin-tones-cooler-than-fx3-single-node-fix | category: gear | title: **Why FX30's Skin Tones Read Cooler Than FX3 — and the Single Node That Fixes It**
