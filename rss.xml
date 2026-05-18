@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>Color Space Transform Order in Resolve: Why CST-Then-LUT Beats LUT-Then-CST</title>
+      <link>https://positivafilms.com/posts/color-space-transform-order-resolve-cst-then-lut.html</link>
+      <guid>https://positivafilms.com/posts/color-space-transform-order-resolve-cst-then-lut.html</guid>
+      <description>Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad — it breaks the math your LUT was built on. Here's exactly why, and how to fix it.</description>
+      <pubDate>Mon, 18 May 2026 09:58:24 +0530</pubDate>
+      <category>Craft & Color</category>
+    </item>
+    <item>
       <title>Why Your Sangeet Footage Looks Yellow — Neutralizing Banquet Hall Tungsten</title>
       <link>https://positivafilms.com/posts/sangeet-tungsten-correction-banquet-hall.html</link>
       <guid>https://positivafilms.com/posts/sangeet-tungsten-correction-banquet-hall.html</guid>
