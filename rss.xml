@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>Premiere vs Resolve for an Indian Wedding Edit: The Honest Speed Test on an M2 Pro</title>
+      <link>https://positivafilms.com/posts/premiere-vs-resolve-indian-wedding-edit-m2-pro-speed-test.html</link>
+      <guid>https://positivafilms.com/posts/premiere-vs-resolve-indian-wedding-edit-m2-pro-speed-test.html</guid>
+      <description>Cutting a 3-camera Indian wedding in Premiere vs Resolve on M2 Pro — render times, proxy workflows, color roundtrips, and which NLE actually ships the film faster.</description>
+      <pubDate>Wed, 20 May 2026 10:08:53 +0530</pubDate>
+      <category>Field Notes</category>
+    </item>
+    <item>
       <title>Color Space Transform Order in Resolve: Why CST-Then-LUT Beats LUT-Then-CST</title>
       <link>https://positivafilms.com/posts/color-space-transform-order-resolve-cst-then-lut.html</link>
       <guid>https://positivafilms.com/posts/color-space-transform-order-resolve-cst-then-lut.html</guid>

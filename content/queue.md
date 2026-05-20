@@ -30,7 +30,6 @@ Internal-link targets the agent should weave into every post:
 ### Week of May 11, 2026
 
 ### Week of May 18, 2026
-- [ ] category: field   | type: BROADER  | title: **Premiere vs Resolve for an Indian Wedding Edit: The Honest Speed Test on an M2 Pro** | intent: "premiere vs resolve wedding", "wedding edit speed test"
 
 ### Week of May 25, 2026
 - [ ] category: travel  | type: LUT      | title: **Grading Jaisalmer Desert Haze Without Killing the Gold** | intent: "jaisalmer color grade", "desert haze cinematic"
@@ -251,6 +250,7 @@ Internal-link targets the agent should weave into every post:
 
 ## Published
 
+- [x] 2026-05-20 | slug: premiere-vs-resolve-indian-wedding-edit-m2-pro-speed-test | category: field | title: **Premiere vs Resolve for an Indian Wedding Edit: The Honest Speed Test on an M2 Pro**
 - [x] 2026-05-18 | slug: color-space-transform-order-resolve-cst-then-lut | category: craft | title: **Color Space Transform Order in Resolve: Why CST-Then-LUT Beats LUT-Then-CST**
 - [x] 2026-05-15 | slug: sangeet-tungsten-correction-banquet-hall | category: wedding | title: **Why Your Sangeet Footage Looks Yellow — Neutralizing Banquet Hall Tungsten**
 - [x] 2026-05-13 | slug: dgca-drone-permissions-2026-digital-sky-workflow | category: aerial | title: **DGCA Drone Permissions in 2026: The Digital Sky Workflow That Actually Works**
