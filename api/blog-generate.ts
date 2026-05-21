@@ -192,4 +192,29 @@ function validateOutput(out: ToolOutput): void {
   if (!out.cta || !["wedding", "travel", "bundle"].includes(out.cta.pack)) {
     throw new Error("CTA pack must be wedding|travel|bundle");
   }
+
+  const emDashRe = /—|&mdash;|--/;
+  const checkFields: Array<[string, string | undefined]> = [
+    ["excerpt", out.excerpt],
+    ["lede", out.lede],
+    ["body_html", out.body_html],
+    ["cta.headline", out.cta?.headline],
+    ["cta.sub", out.cta?.sub],
+    ["cta.body", out.cta?.body],
+  ];
+  for (const [name, value] of checkFields) {
+    if (value && emDashRe.test(value)) {
+      throw new Error(`Em-dash detected in ${name}: replace with comma, colon, semicolon, period, or parentheses.`);
+    }
+  }
+
+  const imgRe = /<img\b[^>]*>/gi;
+  for (const tag of out.body_html.match(imgRe) || []) {
+    if (!/\balt\s*=/.test(tag)) {
+      throw new Error(`Image tag missing alt attribute: ${tag.slice(0, 120)}`);
+    }
+    if (!/\bloading\s*=\s*["']?lazy/i.test(tag)) {
+      throw new Error(`Image tag missing loading="lazy": ${tag.slice(0, 120)}`);
+    }
+  }
 }

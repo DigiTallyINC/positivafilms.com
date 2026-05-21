@@ -46,7 +46,7 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .nav-links a{font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.16em;color:var(--linen-dim);text-decoration:none;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover{color:var(--gold)}
 .nav-links .nav-cta{color:var(--gold);border-bottom:1px solid var(--gold-dim);padding-bottom:2px}
-.nav-hamburger{display:none;position:relative;z-index:201;width:32px;height:24px;background:none;border:none;padding:0;flex-direction:column;justify-content:space-between}
+.nav-hamburger{display:none;position:relative;z-index:201;width:44px;height:44px;background:none;border:none;padding:10px 6px;flex-direction:column;justify-content:space-between;align-items:stretch}
 .nav-hamburger span{display:block;width:100%;height:1.5px;background:var(--linen);transition:transform .3s,opacity .3s}
 .nav-hamburger.active span:nth-child(1){transform:translateY(11px) rotate(45deg)}
 .nav-hamburger.active span:nth-child(2){opacity:0}
@@ -189,8 +189,8 @@ body.loaded .scroll-hint{animation:fadeUp .8s ease 1.2s both}
 .ce-desc{font-size:14px;font-weight:300;color:#B8C0CC;max-width:520px;line-height:1.85}
 .ce-desc strong{color:#E8EAED;font-weight:400}
 .ce-chips{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap}
-.ce-chip{font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;border:1px solid;color:#A8C8FF;background:rgba(83,157,255,0.12);border-color:rgba(122,181,255,0.28)}
-.ce-chip--solid{color:#E8EAED;background:linear-gradient(135deg,rgba(122,181,255,0.22),rgba(83,157,255,0.22));border-color:rgba(122,181,255,0.42)}
+.ce-chip{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:7px 14px;border-radius:4px;border:1px solid;color:#E8EAED;background:rgba(83,157,255,0.18);border-color:rgba(122,181,255,0.45)}
+.ce-chip--solid{color:#fff;background:linear-gradient(135deg,rgba(122,181,255,0.32),rgba(83,157,255,0.32));border-color:rgba(122,181,255,0.6)}
 .ce-btn{display:inline-flex;align-items:center;gap:14px;flex-shrink:0;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;background:linear-gradient(135deg,#7AB5FF 0%,#539dff 100%);color:#0e1116;padding:18px 32px;text-decoration:none;border-radius:6px;border:none;transition:all .3s;position:relative;overflow:hidden}
 .ce-btn::after{content:'\2197';font-size:15px;transition:transform .3s}
 .ce-btn:hover{box-shadow:0 6px 28px rgba(122,181,255,0.35);transform:translateY(-1px)}
@@ -239,6 +239,18 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
 
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
+
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.nav-hamburger:focus-visible{outline-offset:-2px}
+.form-field input:focus-visible,.form-field textarea:focus-visible{outline:none;border-color:var(--gold)}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important;scroll-behavior:auto!important}
+  .marquee-track{animation:none}
+  .reveal{opacity:1;transform:none}
+  body.loaded .hero-section-num,body.loaded .hero-logo,body.loaded .hero-desc,body.loaded .hero-card,body.loaded .hero-actions,body.loaded .scroll-hint{animation:none;opacity:1;transform:none}
+  .scroll-line{animation:none}
+}
 
 @media(max-width:768px){
   nav{padding:20px 24px}.nav-links{display:none}.nav-hamburger{display:flex}.mobile-nav{display:flex}
@@ -591,9 +603,11 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
     document.body.classList.add('loaded');
   });
 
-  // Only load YouTube embed when served over HTTP (not file://)
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Only load YouTube embed when served over HTTP (not file://), and only when user has not requested reduced motion
   const heroIframe = document.getElementById('heroVideo');
-  if (heroIframe && location.protocol.startsWith('http')) {
+  if (heroIframe && location.protocol.startsWith('http') && !reducedMotion) {
     heroIframe.style.display = '';
     heroIframe.src = heroIframe.dataset.src;
     heroIframe.addEventListener('load', () => {
@@ -601,7 +615,7 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
     });
   }
 
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reducedMotion) {
     const cur = document.getElementById('cur');
     const ring = document.getElementById('cur-ring');
     let mx=0,my=0,rx=0,ry=0;
@@ -640,13 +654,17 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
         const el = entry.target;
         const target = parseInt(el.dataset.target);
         const suffix = el.dataset.suffix || '';
-        let current = 0;
-        const step = target / (1600 / 16);
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) { current = target; clearInterval(timer); }
-          el.textContent = Math.floor(current) + suffix;
-        }, 16);
+        if (reducedMotion) {
+          el.textContent = target + suffix;
+        } else {
+          let current = 0;
+          const step = target / (1600 / 16);
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = Math.floor(current) + suffix;
+          }, 16);
+        }
         statObs.unobserve(el);
       }
     });

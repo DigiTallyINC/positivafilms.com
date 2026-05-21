@@ -59,7 +59,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .nav-links a{font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.16em;color:var(--linen-dim);text-decoration:none;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--gold)}
 .nav-links .nav-cta{color:var(--gold);border-bottom:1px solid var(--gold-dim);padding-bottom:2px}
-.nav-hamburger{display:none;width:32px;height:24px;background:none;border:none;flex-direction:column;justify-content:space-between}
+.nav-hamburger{display:none;width:44px;height:44px;background:none;border:none;padding:10px 6px;flex-direction:column;justify-content:space-between;align-items:stretch}
 .nav-hamburger span{display:block;width:100%;height:1.5px;background:var(--linen);transition:transform .3s,opacity .3s}
 .nav-hamburger.active span:nth-child(1){transform:translateY(11px) rotate(45deg)}
 .nav-hamburger.active span:nth-child(2){opacity:0}
@@ -142,6 +142,13 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 .footer-bottom a{color:var(--linen-dim);text-decoration:none;margin-left:18px;transition:color .2s}
 .footer-bottom a:hover{color:var(--gold)}
 
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.article-inner a:focus-visible{outline-offset:2px}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important;scroll-behavior:auto!important}
+}
+
 @media(max-width:900px){
   nav{padding:18px 22px}
   .nav-links{display:none}
@@ -150,6 +157,8 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   .article-hero{padding:130px 22px 48px}
   .article{padding:64px 22px}
   .article-inner{max-width:100%}
+  .article-inner p{font-size:16px}
+  .article-inner li{font-size:16px}
   .post-cta{padding:64px 22px}
   .post-cta-inner{grid-template-columns:1fr;gap:36px}
   .author-block{padding:48px 22px}
@@ -189,8 +198,8 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   </div>
   <h1 class="article-title">{{TITLE}}</h1>
   <div class="article-meta">
-    <span>{{DATE}}</span>
-    <span class="dot"></span>
+    <time datetime="{{DATE_ISO}}">{{DATE}}</time>
+    <span class="dot" aria-hidden="true"></span>
     <span>{{READ_TIME}} Min Read</span>
   </div>
 </header>

@@ -7,9 +7,13 @@ import type { QueuedTopic, PublishedEntry } from "./queue.js";
  * `agentMd` is the full content of content/AGENT.md.
  */
 export function systemPrompt(agentMd: string): string {
-  return `You are a senior working filmmaker — a Director of Photography fluent across Indian wedding, documentary, travel, and aerial cinematography, and the technical craft of capture, color science, and post. You write for peers and serious learners with the authority of someone who has done the work hundreds of times. You are not a brand voice; you are not a startup. You are a craftsperson explaining craft.
+  return `You are a senior working filmmaker, a Director of Photography fluent across Indian wedding, documentary, travel, and aerial cinematography, and the technical craft of capture, color science, and post. You write for peers and serious learners with the authority of someone who has done the work hundreds of times. You are not a brand voice; you are not a startup. You are a craftsperson explaining craft.
 
 The site you are publishing to is positivafilms.com. The post you write must NEVER refer to "Positiva Films," "our team," "our studio," or any first-person-plural-as-brand framing inside the body. The bottom CTA box handles all brand reference.
+
+STRICT STYLE BAN: do not use em-dashes anywhere. Never write the character "—" (U+2014), never write the HTML entity "&mdash;", never write the bigram "--". Use commas, colons, semicolons, periods, or parentheses to break ideas. This rule applies to every field of the tool call (excerpt, lede, body_html, cta.body, etc.).
+
+If you include any <img> tags in body_html, every image must carry a descriptive alt attribute that names the actual subject (e.g. alt="DaVinci Resolve node graph showing CST In before creative LUT, before CST Out") and must include the attributes loading="lazy" decoding="async". Never ship an <img> without alt text.
 
 Below is the project's live runbook. Honor every rule. When the runbook conflicts with anything else, the runbook wins.
 
@@ -82,7 +86,7 @@ export const PUBLISH_TOOL = {
       body_html: {
         type: "string",
         description:
-          "The full post body as HTML. Allowed tags: <h2>, <h3>, <p>, <ul>, <ol>, <li>, <blockquote>, <pre>, <code>, <strong>, <em>, <a>, <hr>. MUST include exactly one inline-cta block at ~60–70% through the body, with this exact structure: <div class=\"inline-cta\"><div class=\"inline-cta-text\"><div class=\"inline-cta-eyebrow\">From the Positiva LUT Library</div><h4>PACK_NAME</h4><p>ONE_LINE_PITCH</p></div><a class=\"btn\" href=\"../luts.html#PACK_ANCHOR\">View Pack →</a></div>. PACK_NAME is one of: 'Indian Wedding LUTs', 'Indian Travel LUTs', 'The Positiva Bundle'. PACK_ANCHOR is one of: 'wedding', 'travel', 'bundle'. Pitch must connect to THIS post's specific problem.",
+          "The full post body as HTML. Allowed tags: <h2>, <h3>, <p>, <ul>, <ol>, <li>, <blockquote>, <pre>, <code>, <strong>, <em>, <a>, <hr>, <img>, <figure>, <figcaption>. STRICT BAN on em-dashes: never use '—' (U+2014) or '&mdash;' or the bigram '--'. Use commas, colons, semicolons, periods, or parentheses instead. Any <img> tag must include a descriptive alt attribute and loading=\"lazy\" decoding=\"async\". MUST include exactly one inline-cta block at ~60–70% through the body, with this exact structure: <div class=\"inline-cta\"><div class=\"inline-cta-text\"><div class=\"inline-cta-eyebrow\">From the Positiva LUT Library</div><h4>PACK_NAME</h4><p>ONE_LINE_PITCH</p></div><a class=\"btn\" href=\"../luts.html#PACK_ANCHOR\">View Pack →</a></div>. PACK_NAME is one of: 'Indian Wedding LUTs', 'Indian Travel LUTs', 'The Positiva Bundle'. PACK_ANCHOR is one of: 'wedding', 'travel', 'bundle'. Pitch must connect to THIS post's specific problem.",
       },
       keywords: {
         type: "string",
