@@ -32,7 +32,6 @@ Internal-link targets the agent should weave into every post:
 ### Week of May 18, 2026
 
 ### Week of May 25, 2026
-- [ ] category: wedding | type: LUT      | title: **Grading Haldi Yellow Without Turning Skin Into a Highlighter** | intent: "haldi color correction", "yellow saturation skin"
 - [ ] category: gear    | type: BROADER  | title: **Sony FX3 vs FX6 for a Two-Person Wedding Team: The Honest Trade-Off** | intent: "fx3 vs fx6 wedding", "compact wedding crew camera"
 
 ### Week of June 1, 2026
@@ -249,6 +248,7 @@ Internal-link targets the agent should weave into every post:
 
 ## Published
 
+- [x] 2026-05-27 | slug: grading-haldi-yellow-without-turning-skin-into-a-highlighter | category: wedding | title: **Grading Haldi Yellow Without Turning Skin Into a Highlighter**
 - [x] 2026-05-25 | slug: grading-jaisalmer-desert-haze-without-killing-the-gold | category: travel | title: **Grading Jaisalmer Desert Haze Without Killing the Gold**
 - [x] 2026-05-20 | slug: premiere-vs-resolve-indian-wedding-edit-m2-pro-speed-test | category: field | title: **Premiere vs Resolve for an Indian Wedding Edit: The Honest Speed Test on an M2 Pro**
 - [x] 2026-05-18 | slug: color-space-transform-order-resolve-cst-then-lut | category: craft | title: **Color Space Transform Order in Resolve: Why CST-Then-LUT Beats LUT-Then-CST**
