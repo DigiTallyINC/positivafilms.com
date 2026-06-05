@@ -34,7 +34,6 @@ Internal-link targets the agent should weave into every post:
 ### Week of May 25, 2026
 
 ### Week of June 1, 2026
-- [ ] category: travel  | type: LUT      | title: **Varanasi Ghats at Blue Hour: Grading Smoke, Fire, and Skin in One Frame** | intent: "varanasi color grade", "ghats blue hour"
 - [ ] category: wedding | type: BROADER  | title: **Framing the Seven Pheras: A Two-Camera Blocking Diagram for Hindu Mandaps** | intent: "saat phere coverage", "hindu wedding mandap shot list"
 
 ### Week of June 8, 2026
@@ -246,6 +245,7 @@ Internal-link targets the agent should weave into every post:
 
 ## Published
 
+- [x] 2026-06-05 | slug: varanasi-ghats-blue-hour-grading-smoke-fire-skin | category: travel | title: **Varanasi Ghats at Blue Hour: Grading Smoke, Fire, and Skin in One Frame**
 - [x] 2026-06-03 | slug: canon-r5-vs-sony-a7s3-lut-color-mismatch | category: gear | title: **Canon R5 vs Sony A7S III: Why the Same LUT Looks Different and What to Do About It**
 - [x] 2026-06-01 | slug: fx3-vs-fx6-two-person-wedding-team | category: gear | title: **Sony FX3 vs FX6 for a Two-Person Wedding Team: The Honest Trade-Off**
 - [x] 2026-05-27 | slug: grading-haldi-yellow-without-turning-skin-into-a-highlighter | category: wedding | title: **Grading Haldi Yellow Without Turning Skin Into a Highlighter**
