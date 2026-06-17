@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Drone Footage Looks Hazy at 400 Feet — A Dehaze + Contrast Recipe &mdash; Positiva Films</title>
+  <meta name="description" content="Altitude haze kills aerial footage before you even land. Here's the exact dehaze, contrast, and saturation recipe to cut through atmospheric scatter and restore depth." />
+  <meta name="keywords" content="drone footage hazy, aerial dehaze color grading, DaVinci Resolve aerial grade, D-Log M color correction, Mavic 3 log grading, atmospheric haze drone fix" />
+  <meta name="author" content="Positiva Films" />
+  <link rel="canonical" href="https://positivafilms.com/posts/drone-footage-hazy-dehaze-contrast-recipe.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Why Drone Footage Looks Hazy at 400 Feet — A Dehaze + Contrast Recipe" />
+  <meta property="og:description" content="Altitude haze kills aerial footage before you even land. Here's the exact dehaze, contrast, and saturation recipe to cut through atmospheric scatter and restore depth." />
+  <meta property="og:image" content="https://positivafilms.com/Bundle_Luts_pack.png" />
+  <meta property="og:url" content="https://positivafilms.com/posts/drone-footage-hazy-dehaze-contrast-recipe.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why Drone Footage Looks Hazy at 400 Feet — A Dehaze + Contrast Recipe" />
+  <meta name="twitter:description" content="Altitude haze kills aerial footage before you even land. Here's the exact dehaze, contrast, and saturation recipe to cut through atmospheric scatter and restore depth." />
+  <meta name="twitter:image" content="https://positivafilms.com/Bundle_Luts_pack.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why Drone Footage Looks Hazy at 400 Feet — A Dehaze + Contrast Recipe",
+    "description": "Altitude haze kills aerial footage before you even land. Here's the exact dehaze, contrast, and saturation recipe to cut through atmospheric scatter and restore depth.",
+    "image": "https://positivafilms.com/Bundle_Luts_pack.png",
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "author": { "@type": "Person", "name": "Positiva Films" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Positiva Films",
+      "logo": { "@type": "ImageObject", "url": "https://positivafilms.com/positiva-films-logo.svg" }
+    },
+    "mainEntityOfPage": "https://positivafilms.com/posts/drone-footage-hazy-dehaze-contrast-recipe.html"
+  }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127916;</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0a0908;--ink-soft:#121110;--soil:#1a1816;
+  --linen:#e8e0d4;--linen-dim:rgba(232,224,212,0.55);--linen-faint:rgba(232,224,212,0.08);
+  --gold:#c9a84c;--gold-dim:#a08838;--gold-faint:rgba(201,168,76,0.12);
+  --clay:#b85c38;--clay-dim:#7a3d26;--sand:#c4a882;
+  --display:'Bebas Neue',sans-serif;--serif:'Playfair Display',serif;--body:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--linen);font-family:var(--body);font-weight:300;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.38}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:24px 48px;background:linear-gradient(to bottom,rgba(10,9,8,0.92) 0%,rgba(10,9,8,0.55) 70%,transparent 100%);backdrop-filter:blur(8px)}
+.nav-logo{display:flex;align-items:center;text-decoration:none;opacity:.9;transition:opacity .2s}
+.nav-logo:hover{opacity:1}.nav-logo svg{height:26px;width:auto}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.16em;color:var(--linen-dim);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links .nav-cta{color:var(--gold);border-bottom:1px solid var(--gold-dim);padding-bottom:2px}
+.nav-hamburger{display:none;width:44px;height:44px;background:none;border:none;padding:10px 6px;flex-direction:column;justify-content:space-between;align-items:stretch}
+.nav-hamburger span{display:block;width:100%;height:1.5px;background:var(--linen);transition:transform .3s,opacity .3s}
+.nav-hamburger.active span:nth-child(1){transform:translateY(11px) rotate(45deg)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:translateY(-11px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;inset:0;z-index:199;background:rgba(10,9,8,0.97);flex-direction:column;align-items:center;justify-content:center;gap:28px;list-style:none;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.mobile-nav.open{opacity:1;visibility:visible}
+.mobile-nav a{font-family:var(--display);font-size:34px;letter-spacing:0.1em;color:var(--linen);text-decoration:none;text-transform:uppercase}
+.mobile-nav .nav-cta{color:var(--gold);font-size:18px;font-family:var(--body);letter-spacing:0.16em}
+
+/* Article hero — text-only editorial */
+.article-hero{position:relative;min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 48px 80px;overflow:hidden;border-bottom:1px solid var(--linen-faint);background:var(--ink)}
+.article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(201,168,76,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
+.article-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none;z-index:0}
+.article-hero>*{position:relative;z-index:1}
+.crumb{display:flex;gap:14px;align-items:center;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--linen-dim);margin-bottom:32px}
+.crumb a{color:var(--linen-dim);text-decoration:none;transition:color .2s}
+.crumb a:hover{color:var(--gold)}
+.crumb .sep{color:var(--gold)}
+.crumb .cat{color:var(--gold)}
+.article-title{font-family:var(--display);font-size:clamp(44px,7.5vw,108px);line-height:0.92;letter-spacing:0.025em;color:var(--linen);text-transform:uppercase;max-width:1100px;margin-bottom:36px}
+.article-meta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--linen-dim)}
+.article-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--linen-faint)}
+
+/* Article body */
+.article{padding:88px 48px 96px;background:var(--ink)}
+.article-inner{max-width:760px;margin:0 auto}
+.lede{font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);font-weight:300;font-style:italic;line-height:1.55;color:var(--linen);margin-bottom:48px;padding-left:22px;border-left:2px solid var(--gold)}
+.article-inner h2{font-family:var(--display);font-size:clamp(28px,3.2vw,40px);letter-spacing:0.04em;color:var(--linen);text-transform:uppercase;margin:64px 0 22px;line-height:1}
+.article-inner h2::before{content:'';display:inline-block;width:24px;height:1px;background:var(--gold);vertical-align:middle;margin-right:14px;transform:translateY(-4px)}
+.article-inner h3{font-family:var(--serif);font-size:22px;font-style:italic;font-weight:400;color:var(--gold);margin:42px 0 16px;line-height:1.3}
+.article-inner p{font-size:17px;font-weight:300;line-height:1.85;color:var(--linen);margin-bottom:22px}
+.article-inner p strong{color:var(--linen);font-weight:500}
+.article-inner a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-dim);transition:color .2s,border-color .2s}
+.article-inner a:hover{color:var(--linen);border-color:var(--linen)}
+.article-inner ul,.article-inner ol{margin:0 0 26px 22px;color:var(--linen)}
+.article-inner li{font-size:17px;font-weight:300;line-height:1.8;margin-bottom:8px}
+.article-inner li::marker{color:var(--gold)}
+.article-inner blockquote{border-left:2px solid var(--gold);padding:6px 0 6px 24px;margin:34px 0;font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.6;color:var(--linen-dim)}
+.article-inner code{font-family:'DM Mono',monospace;font-size:13.5px;background:var(--soil);color:var(--gold);padding:2px 8px;border-radius:3px;border:1px solid var(--linen-faint)}
+.article-inner pre{background:var(--soil);border:1px solid var(--linen-faint);border-left:2px solid var(--gold);padding:22px 26px;overflow-x:auto;margin:28px 0;border-radius:3px}
+.article-inner pre code{background:none;border:none;padding:0;color:var(--linen);font-size:13.5px;line-height:1.7}
+.article-inner hr{border:none;height:1px;background:var(--linen-faint);margin:56px 0}
+.article-inner img,.article-inner figure{margin:38px 0;width:100%}
+.article-inner img{max-width:100%;border:1px solid var(--linen-faint)}
+.article-inner figcaption{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--linen-dim);margin-top:10px;text-align:center}
+
+/* Inline product CTA — drops into the body */
+.inline-cta{margin:48px 0;padding:32px 36px;background:var(--soil);border:1px solid var(--gold-faint);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.inline-cta-text{flex:1;min-width:240px}
+.inline-cta-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.inline-cta h4{font-family:var(--display);font-size:22px;letter-spacing:0.04em;color:var(--linen);text-transform:uppercase;margin-bottom:6px;line-height:1.05}
+.inline-cta p{font-size:14px;color:var(--linen-dim);line-height:1.6;margin:0}
+.inline-cta a.btn{flex-shrink:0;font-family:var(--body);font-size:11px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;border:1px solid var(--gold-dim);padding:14px 24px;text-decoration:none;border-bottom:1px solid var(--gold-dim);transition:background .2s,color .2s}
+.inline-cta a.btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+
+/* Footer LUT pack CTA */
+.post-cta{padding:96px 48px;background:var(--linen);color:var(--ink);position:relative}
+.post-cta::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold)}
+.post-cta::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--gold)}
+.post-cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.post-cta-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);margin-bottom:18px}
+.post-cta h2{font-family:var(--display);font-size:clamp(38px,5vw,64px);letter-spacing:0.03em;line-height:0.95;text-transform:uppercase;color:var(--ink);margin-bottom:22px}
+.post-cta h2 em{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--clay);font-size:0.7em;display:block;margin-top:6px;text-transform:none;letter-spacing:0.01em}
+.post-cta p{font-size:16px;line-height:1.75;color:#3a342c;max-width:520px;margin-bottom:32px}
+.post-cta a.btn{display:inline-block;font-family:var(--body);font-size:12px;letter-spacing:0.2em;color:var(--ink);text-transform:uppercase;background:var(--gold);padding:18px 36px;text-decoration:none;border:1px solid var(--gold-dim);transition:background .2s,color .2s}
+.post-cta a.btn:hover{background:var(--ink);color:var(--gold)}
+.post-cta-image{position:relative;aspect-ratio:1/1;background-size:contain;background-position:center;background-repeat:no-repeat;background-color:var(--ink)}
+.post-cta-image.bundle{aspect-ratio:16/9}
+
+/* Footer */
+footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--linen-faint)}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;margin-bottom:42px;padding-bottom:32px;border-bottom:1px solid var(--linen-faint)}
+.footer-brand{max-width:380px}
+.footer-logo{display:inline-block;margin-bottom:14px}
+.footer-tagline{font-size:13px;color:var(--linen-dim);line-height:1.7}
+.footer-social{display:flex;gap:14px}
+.footer-social a{width:40px;height:40px;border:1px solid var(--linen-faint);display:flex;align-items:center;justify-content:center;color:var(--linen-dim);transition:color .2s,border-color .2s}
+.footer-social a:hover{color:var(--gold);border-color:var(--gold-dim)}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--linen-dim)}
+.footer-bottom a{color:var(--linen-dim);text-decoration:none;margin-left:18px;transition:color .2s}
+.footer-bottom a:hover{color:var(--gold)}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.article-inner a:focus-visible{outline-offset:2px}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important;scroll-behavior:auto!important}
+}
+
+@media(max-width:900px){
+  nav{padding:18px 22px}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .mobile-nav{display:flex}
+  .article-hero{padding:130px 22px 48px}
+  .article{padding:64px 22px}
+  .article-inner{max-width:100%}
+  .article-inner p{font-size:16px}
+  .article-inner li{font-size:16px}
+  .post-cta{padding:64px 22px}
+  .post-cta-inner{grid-template-columns:1fr;gap:36px}
+  .author-block{padding:48px 22px}
+  footer{padding:52px 22px 28px}
+  .inline-cta{flex-direction:column;align-items:flex-start;padding:26px}
+}
+@media(max-width:560px){
+  .article-title{font-size:24px;letter-spacing:0.015em;line-height:1.05}
+  .article-inner h2{font-size:22px;letter-spacing:0.02em;line-height:1.1}
+  .article-inner h2::before{display:none}
+  .lede{font-size:18px;padding-left:18px}
+  .post-cta h2{font-size:30px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo" aria-label="Positiva Films home">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="110 137 152 88" preserveAspectRatio="xMidYMid meet"><g fill="#e8e0d4"><g transform="translate(111.939314, 176.095419)"><path d="M 24.953125 -19.078125 C 26.992188 -16.859375 28.015625 -14.132812 28.015625 -10.90625 C 28.015625 -7.6875 26.992188 -4.957031 24.953125 -2.71875 C 22.921875 -0.476562 20.332031 0.640625 17.1875 0.640625 C 14.300781 0.640625 11.925781 -0.265625 10.0625 -2.078125 L 10.0625 11.03125 L 2.546875 11.03125 L 2.546875 -21.78125 L 9.96875 -21.78125 L 9.96875 -19.3125 L 10.0625 -19.3125 C 11.925781 -21.382812 14.300781 -22.421875 17.1875 -22.421875 C 20.332031 -22.421875 22.921875 -21.304688 24.953125 -19.078125 Z M 18.5625 -7.21875 C 19.539062 -8.175781 20.03125 -9.40625 20.03125 -10.90625 C 20.03125 -12.40625 19.5625 -13.628906 18.625 -14.578125 C 17.695312 -15.523438 16.46875 -16 14.9375 -16 C 13.46875 -16 12.257812 -15.519531 11.3125 -14.5625 C 10.363281 -13.601562 9.890625 -12.382812 9.890625 -10.90625 C 9.890625 -9.40625 10.378906 -8.175781 11.359375 -7.21875 C 12.335938 -6.257812 13.53125 -5.78125 14.9375 -5.78125 C 16.382812 -6.257812 17.59375 -6.257812 18.5625 -7.21875 Z"/></g></g><text x="110" y="220" font-family="Bebas Neue,sans-serif" font-size="42" fill="#c9a84c" letter-spacing="2">POSITIVA</text><text x="110" y="248" font-family="Playfair Display,serif" font-size="14" fill="#e8e0d4" font-style="italic">films</text></svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../products.html">Products</a></li>
+    <li><a href="../luts.html">LUTs</a></li>
+    <li><a href="../blog.html" class="active">Blog</a></li>
+    <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<ul class="mobile-nav" id="mobileNav">
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../products.html">Products</a></li>
+  <li><a href="../luts.html">LUTs</a></li>
+  <li><a href="../blog.html">Blog</a></li>
+  <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+</ul>
+
+<header class="article-hero">
+  <div class="crumb">
+    <a href="../blog.html">Blog</a>
+    <span class="sep">/</span>
+    <span class="cat">Aerial &amp; FPV</span>
+  </div>
+  <h1 class="article-title">Why Drone Footage Looks Hazy at 400 Feet — A Dehaze + Contrast Recipe</h1>
+  <div class="article-meta">
+    <time datetime="2026-06-17">Jun 17, 2026</time>
+    <span class="dot" aria-hidden="true"></span>
+    <span>8 Min Read</span>
+  </div>
+</header>
+
+<article class="article">
+  <div class="article-inner">
+    <p class="lede">Drone footage shot above 300 feet often arrives in the edit looking washed out and flat, even when exposure was perfect. Atmospheric scatter is the culprit, and fixing it is a specific sequence of moves, not a single slider.</p>
+    <h2>Why the Air Itself Is Wrecking Your Footage</h2>
+<p>You nailed the exposure. Your histogram was centered, your log profile was clean, your ND was dialed. You land, pull the card, and the clip looks like someone draped a gauze curtain over Rajasthan. The peaks and ridges of Spiti that looked razor-sharp through the live feed are now a muted blue-grey smear. This is not a camera problem. It is physics.</p>
+<p>At ground level, the column of air between your lens and your subject is short enough that its effect on light is negligible. At 400 feet, that column is 120 meters tall and loaded with water vapor, dust, and particulate scatter, especially in India where visibility above agricultural plains or near coastal cities can be genuinely poor even on a "clear" day. Light from distant objects travels through all of that before it hits your sensor. Short wavelengths (blue) scatter more than long ones (red and green), which is why haze reads as a blue-grey lift in the shadows and a compression of contrast across the whole frame. The effect compounds with distance inside the same frame: the lake in the foreground looks fine, the ridgeline 3 kilometers behind it looks like a watercolor.</p>
+<p>The fix is not one thing. It is a layered sequence that addresses scatter, contrast collapse, and the color cast separately and in the right order. Doing them out of sequence produces artifacts. Do them in the order below and your aerial grades will be sharper, more saturated, and still believable.</p>
+
+<h2>The Node Order That Actually Works</h2>
+<p>This recipe is built in DaVinci Resolve, but the logic transfers to any node-based grader or a Premiere/FCPX LUT-plus-effect stack. Assume your input is <code>D-Log M</code> (Mavic 3 or Mavic 3 Classic), <code>D-Log</code> (older Mavic 2 Pro), or <code>V-Log L</code> (Air 2S in its Flat profile). If you are shooting the DJI Inspire 2 with a Zenmuse X7 in <code>D-Log</code>, the same sequence applies.</p>
+
+<h3>Node 1: Color Space Transform In</h3>
+<p>Drop a <code>Color Space Transform</code> OFX node as your first serial node. Set Input Color Space to your log format (<code>DJI D-Log M</code>, <code>DJI D-Log</code>, or <code>Panasonic V-Log L</code>) and Input Gamma to match. Set Output Color Space to <code>DaVinci Wide Gamut</code>, Output Gamma to <code>DaVinci Intermediate</code>. This gets you into a known, well-behaved working space before you touch anything.</p>
+
+<h3>Node 2: Lift the Haze Floor with a Curves Move</h3>
+<p>Open a Custom Curves node. Look at your Parade scope. Haze manifests as a raised floor in all three channels, but almost always more pronounced in blue. Your blacks are not sitting at 0 IRE; they are floating between 8 and 20 IRE depending on severity.</p>
+<p>On the RGB curve (master), pull the black point input slider right until the darkest pixels in your frame sit just at or just below 4 IRE. Watch the Parade, not the image. Then switch to the Blue curve specifically and pull that black point in a touch further, since blue scatter lifts the blue channel disproportionately. A typical hazy Mavic 3 clip from a Rajasthan summer morning might need the master black point moved to around 0.06 on a 0-to-1 scale, and the blue black point to 0.09. Do not use a hard point; keep the curve gentle to avoid crushing midtones.</p>
+<p>At this stage the image looks punchier but also a little thin in the mids. That is correct. You have not touched contrast yet. Resist the urge to compensate here.</p>
+
+<h2>The Contrast and Saturation Sequence</h2>
+<p>Haze does two things: it lifts the floor (which you just addressed) and it compresses the tonal range so that highlights and shadows occupy a much narrower band than they should. Fixing contrast after correcting the floor gives you a much cleaner result than trying to do both at once.</p>
+
+<h3>Node 3: Pivot-Based Contrast</h3>
+<p>Add a serial node. Open <code>Lift / Gamma / Gain</code> (the Log wheels are fine here too). Set your contrast pivot to 0.435 in the Primary Controls panel, which roughly corresponds to middle grey in DaVinci Intermediate. Raise Contrast to between 1.08 and 1.15. This feels conservative but it is the right range for aerial: you are not grading a studio drama where you can afford to push contrast hard. Aerial footage always has broad skies and broad ground planes; push contrast too far and you blow the clouds or crush the shadow detail in the terrain below.</p>
+<p>Check your Waveform scope now. You want the sky highlights landing around 85 to 90 IRE and your deepest shadows (shaded valleys, shadow sides of buildings) landing around 5 to 10 IRE. If the sky is hitting 100+ already, bring Gain down slightly before going further.</p>
+
+<h3>Node 4: Saturation Shaping (Not a Global Push)</h3>
+<p>Global saturation is the wrong tool here. Haze desaturates the scene unevenly: greens (foliage) and blues (sky) go flat faster than warm tones (red soil in Rajasthan, terracotta rooftops in Goa, the orange of a haldi celebration seen from above). A global saturation push over-cooks the blues while barely recovering the earth tones.</p>
+<p>Instead, use the <code>Hue vs Saturation</code> curve. Pull up a control point at around 120 degrees (green-cyan range) and boost saturation there by 20 to 30 units. Add another point at around 210 degrees (blue range) and boost by 10 to 15 units. Add a third at roughly 30 degrees (orange-yellow) and boost by 15 to 20 units. The result is a targeted recovery that feels natural rather than the candy-colored look you get from pulling the global sat slider to 55.</p>
+<p>If the sky has gone too electric, add a <code>Qualifier</code> node: key the sky blue, invert the selection so you are only affecting the ground, and apply your saturation boost there exclusively. Clean aerial footage with a clear sky boundary usually qualifies well; hazy footage is trickier because the horizon blends sky and ground. Use the <code>Matte Finesse</code> softness controls to feather the edge.</p>
+
+<div class="inline-cta">
+  <div class="inline-cta-text">
+    <div class="inline-cta-eyebrow">From the Positiva LUT Library</div>
+    <h4>The Positiva Bundle</h4>
+    <p>Includes aerial-optimized LUTs built specifically for D-Log M and V-Log L, with pre-baked dehaze contrast curves for Mavic 3 and Air 2S footage shot in harsh Indian light.</p>
+  </div>
+  <a class="btn" href="../luts.html#bundle" rel="noopener noreferrer">View Pack →</a>
+</div>
+
+<h2>Dealing with Distance Haze Inside the Frame</h2>
+<p>Some of the hardest aerial shots to grade are the ones where foreground and background have completely different haze levels inside a single frame. Think of a Mavic 3 shot over the Chambal ravines or the tea gardens of Munnar: the terraced rows 200 meters below the drone are sharp and saturated, but the hills 4 kilometers beyond are a flat blue smudge. You cannot correct the whole frame with a global move without either over-processing the foreground or leaving the background untouched.</p>
+<p>The tool for this is a <code>Power Window</code> with a soft-edged linear gradient, oriented to cover the background horizon zone. Inside that window, apply an additional micro-contrast and saturation boost. A <code>Midtone Detail</code> value of 8 to 12 on the background zone alone can pull texture back out of a hazy ridgeline without making it look artificially sharpened. Feather the window edge generously, 30 to 40 percent, so it blends invisibly at the horizon transition. Track the window to the horizon if the camera tilts during the shot.</p>
+<p>For clips shot in the golden hour over coastal locations like Goa or Pondicherry, the haze often has a warm orange cast rather than blue, especially if there is sea spray or humidity. In those cases, dial your blue channel curve correction back and instead use the <code>Temperature</code> slider in your CST or a custom curve to cool the haze zone slightly before applying your contrast sequence.</p>
+
+<h2>Where a LUT Fits In, and Where It Does Not</h2>
+<p>A creative LUT applied directly to log footage will not fix haze. It will transform the tonal range according to a preset curve, but if your blacks are floating at 15 IRE, the LUT will simply map that lifted floor to its output curve and you will still have a flat, grey image, now with a color grade on top of it. LUTs are most useful as a starting point after your technical corrections are done, or as a final creative layer on top of a properly linearized and dehazed image.</p>
+<p>The correct application order in a Resolve serial node chain looks like this:</p>
+<pre><code>Node 1: CST In (Log → DaVinci Wide Gamut / DaVinci Intermediate)
+Node 2: Haze floor correction (Curves, black point)
+Node 3: Contrast (Lift/Gamma/Gain, pivot at 0.435)
+Node 4: Hue vs Saturation sculpt
+Node 5: Creative LUT (applied as a node using a .cube file)
+Node 6: CST Out (DaVinci Wide Gamut → Rec.709 / Gamma 2.4)
+</code></pre>
+<p>If you are applying a LUT in a flat-to-Rec.709 flavour (designed to be applied directly to log), skip Node 5 and instead apply the LUT between Node 1 and Node 2, so that your haze correction and contrast work happen on top of the LUT's output. Either approach is valid; the key is understanding that haze correction must happen in the technical correction phase, not inside the creative grade.</p>
+<p>One more thing on camera choice: the Mavic 3 Classic's D-Log M is a gentler curve than the original D-Log, and it handles this correction sequence very cleanly. The Mavic 2 Pro's D-Log can get noisy in the shadows when you pull the black point aggressively, so be more conservative with that camera and consider a slight <code>Noise Reduction</code> pass (Temporal NR, Radius 2, Threshold 8) before your curve work. The Air 2S in V-Log L sits between those two in terms of shadow latitude.</p>
+
+<h2>Before You Grade: Shoot Decisions That Help</h2>
+<p>No grade will fully recover footage shot into the worst haze. A few field habits cut down your grading workload significantly. Shoot into the sun when possible, or with the sun at a three-quarter angle, not with the sun directly behind the camera. Backlit haze is dramatically worse than sidelit or frontlit haze because you are shooting into the scatter. If you are in Spiti in June or in the Thar Desert at midday in May, haze is unavoidable, but scheduling your drone window for the first 45 minutes after sunrise nearly always gives you a cleaner image with lower atmospheric humidity and dust. The same shot at 11 AM versus 6:30 AM can require half the correction effort in post.</p>
+<p>Set a lower-thirds <code>ND</code> to keep your shutter at the 180-degree rule rather than stopping the aperture down. A stopped-down aperture on a drone camera often increases the relative effect of haze by reducing the optical micro-contrast that helps distinguish sharp edges from haze. Keep your aperture where the lens is sharpest (usually f/4 to f/5.6 on DJI glass) and use ND to manage exposure.</p>
+<p>Finally: always shoot log. The extra shadow detail retained in D-Log M or V-Log L is exactly what you need when pulling the black point in correction. A JPEG or a "vivid" preset bakes in a contrast curve that clips the very shadows you need to grade through.</p>
+
+<p>Atmospheric haze is a fixed reality of aerial work over the Indian subcontinent. The correction sequence above, done in the right order, consistently recovers footage that looks unworkable on first import. The key discipline is separating the technical correction (floor, contrast, saturation) from the creative grade, and not asking a LUT to do work that belongs in the correction phase. Get those steps in the right order and the footage will hold up at full-screen delivery, whether you are cutting it into a destination wedding film or a travel series on the Deccan plateau.</p>
+  </div>
+</article>
+
+<section class="post-cta">
+  <div class="post-cta-inner">
+    <div>
+      <div class="post-cta-eyebrow">&#10022; GRADE YOUR AERIALS CLEAN</div>
+      <h2>GRADE YOUR AERIALS CLEAN<em>LUTs built for log drone footage</em></h2>
+      <p>The Positiva Bundle includes aerial-tuned LUTs designed for D-Log M and V-Log L, tested against Indian haze conditions from Rajasthan plains to coastal Goa. Drop them after your technical correction nodes and the creative grade is largely done.</p>
+      <a class="btn" href="../luts.html#bundle">Get the Bundle &rarr;</a>
+    </div>
+    <div class="post-cta-image bundle" style="background-image:url('../Bundle_Luts_pack.png')"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="../index.html" class="footer-logo" aria-label="Positiva Films">
+        <svg height="36" xmlns="http://www.w3.org/2000/svg" viewBox="110 137 152 88" preserveAspectRatio="xMidYMid meet"><text x="110" y="200" font-family="Bebas Neue,sans-serif" font-size="48" fill="#e8e0d4" letter-spacing="3">POSITIVA</text><text x="110" y="225" font-family="Playfair Display,serif" font-size="16" fill="#c9a84c" font-style="italic">films</text></svg>
+      </a>
+      <p class="footer-tagline">We craft cinematic stories that move people. From concept to final cut, we bring your vision to life.</p>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.youtube.com/@TallyTalwarOfficial" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://www.instagram.com/djtally/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>&copy; 2026 Positiva Films. All rights reserved.</div>
+    <div>
+      <a href="https://clipengineai.positivafilms.com/" target="_blank">ClipEngine AI</a>
+      <a href="../products.html">Products</a>
+      <a href="../luts.html">LUTs</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
+</script>
+</body>
+</html>
