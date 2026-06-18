@@ -203,6 +203,28 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .hub-card:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 
+/* Plugins section — SuperGrade (colours from its own landing CSS: teal #1FA9C0, orange #E8832F, ink #0D0D0F) */
+.plugins{background:var(--ink);padding:120px 48px;border-top:1px solid var(--linen-faint)}
+.plugin-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:48px;max-width:920px}
+.plugin-card{position:relative;display:grid;grid-template-columns:1.1fr 1fr;background:linear-gradient(135deg,#101216 0%,#0A0A0C 100%);border:1px solid rgba(31,169,192,0.22);text-decoration:none;color:inherit;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.45);transition:border-color .35s ease,transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s ease}
+.plugin-card:hover{border-color:#1FA9C0;transform:translateY(-8px);box-shadow:0 50px 90px rgba(0,0,0,0.6),0 0 0 1px rgba(31,169,192,0.4),0 0 60px rgba(31,169,192,0.15)}
+.plugin-visual{position:relative;min-height:260px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse 90% 70% at 50% 40%,rgba(31,169,192,0.18) 0%,transparent 65%),linear-gradient(135deg,#0A0A0C,#141418);overflow:hidden}
+.plugin-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(232,131,47,0.1) 60%,transparent 80%);pointer-events:none}
+.plugin-node{position:relative;z-index:1;width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,rgba(31,169,192,0.35),rgba(10,10,12,0.6));border:1.5px solid #1FA9C0;box-shadow:0 0 0 8px rgba(31,169,192,0.08),0 0 40px rgba(31,169,192,0.4)}
+.plugin-node span{font-family:var(--display);font-size:30px;color:#d8eef3;letter-spacing:0.04em}
+.plugin-body{padding:48px 44px;display:flex;flex-direction:column;justify-content:center}
+.plugin-tag{display:inline-block;align-self:flex-start;font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:5px 10px;color:#1FA9C0;background:rgba(31,169,192,0.1);border:1px solid rgba(31,169,192,0.45);margin-bottom:22px}
+.plugin-name{font-family:var(--display);font-size:clamp(34px,4.5vw,48px);letter-spacing:0.04em;line-height:0.95;color:#F4F6F8;text-transform:uppercase;margin-bottom:8px}
+.plugin-name span{color:#E8832F}
+.plugin-sub{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#1FA9C0;margin-bottom:18px}
+.plugin-desc{font-size:14px;font-weight:300;color:rgba(232,238,240,0.62);line-height:1.8;margin-bottom:28px}
+.plugin-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;border-top:1px solid rgba(255,255,255,0.08)}
+.plugin-price{font-family:var(--display);font-size:30px;letter-spacing:0.02em;color:#F4F6F8;line-height:1}
+.plugin-price small{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.16em;color:rgba(232,238,240,0.5);text-transform:uppercase;margin-left:8px}
+.plugin-arrow{width:46px;height:46px;flex-shrink:0;border:1px solid rgba(31,169,192,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1FA9C0;font-size:17px;transition:background .3s,color .3s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.plugin-card:hover .plugin-arrow{background:#1FA9C0;color:#04222a;transform:scale(1.1) rotate(-45deg)}
+@media(max-width:760px){.plugin-card{grid-template-columns:1fr}.plugin-visual{min-height:180px}.plugin-body{padding:36px 28px}.plugins{padding:80px 24px}}
+
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
@@ -245,8 +267,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
       <ul class="nav-dropdown-menu">
         <li><a href="products.html#clipengine" class="is-active">ClipEngine AI</a></li>
         <li><a href="luts.html">LUTs</a></li>
+        <li><a href="supergrade.html">SuperGrade</a></li>
       </ul>
     </li>
+    <li><a href="apps.html">Apps</a></li>
     <li><a href="https://digitallyinc.positivafilms.com" target="_blank" rel="noopener">DigiTallyINC</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="index.html#about">About</a></li>
@@ -259,6 +283,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   <li><a href="products.html" class="mobile-nav-link">Products</a></li>
   <li class="mobile-sub"><a href="products.html#clipengine" class="mobile-nav-link">ClipEngine AI</a></li>
   <li class="mobile-sub"><a href="luts.html" class="mobile-nav-link">LUTs</a></li>
+  <li class="mobile-sub"><a href="supergrade.html" class="mobile-nav-link">SuperGrade</a></li>
+  <li><a href="apps.html" class="mobile-nav-link">Apps</a></li>
   <li><a href="https://digitallyinc.positivafilms.com" target="_blank" rel="noopener" class="mobile-nav-link">DigiTallyINC</a></li>
   <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
   <li><a href="index.html#about" class="mobile-nav-link">About</a></li>
@@ -345,6 +371,32 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   </div>
 </section>
 
+<section class="plugins" id="plugins">
+  <div class="section-header reveal">
+    <div class="section-tag">Plugins</div>
+    <div class="section-num">( 04 )</div>
+  </div>
+  <h2 class="section-title reveal">FOR YOUR GRADE<em>Engines &amp; finishing tools</em></h2>
+
+  <div class="plugin-grid">
+    <a href="supergrade.html" class="plugin-card reveal">
+      <div class="plugin-visual">
+        <div class="plugin-node"><span>SG</span></div>
+      </div>
+      <div class="plugin-body">
+        <span class="plugin-tag">DaVinci Resolve &middot; DCTL + OFX</span>
+        <h3 class="plugin-name">SUPER<span>GRADE</span></h3>
+        <div class="plugin-sub">Fifteen nodes, collapsed into one</div>
+        <p class="plugin-desc">A single-node cinematic base-grade engine for DaVinci Resolve. Built-in colour-space transform, a film-emulation core, and creative finishing &mdash; halation, grain, bloom, split-tone &mdash; built from first principles in real colour science.</p>
+        <div class="plugin-foot">
+          <div class="plugin-price">&#8377;2,999 <small>One-time</small></div>
+          <div class="plugin-arrow">&#8599;</div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
@@ -362,6 +414,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     <div class="footer-links">
       <a href="https://clipengineai.positivafilms.com/" target="_blank" rel="noopener">ClipEngine AI</a>
       <a href="products.html">Products</a>
+      <a href="apps.html">Apps</a>
       <a href="luts.html">LUTs</a>
       <a href="blog.html">Blog</a>
       <a href="index.html#contact">Contact</a>

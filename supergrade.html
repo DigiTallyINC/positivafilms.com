@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog &mdash; Positiva Films</title>
-  <meta name="description" content="Field notes, behind-the-lens stories, and craft writing from Positiva Films &mdash; aerial cinematography, documentary, and life on the road across India." />
-  <meta property="og:title" content="Blog — Positiva Films" />
-  <meta property="og:description" content="Field notes, behind-the-lens stories, and craft writing from Positiva Films." />
-  <meta property="og:image" content="https://img.youtube.com/vi/xIzlP_EFEs8/maxresdefault.jpg" />
-  <meta property="og:type" content="website" />
+  <title>SuperGrade &mdash; DaVinci Resolve Grade Plugin &mdash; Positiva Films</title>
+  <meta name="description" content="SuperGrade — a single-node cinematic base-grade engine for DaVinci Resolve. Built-in colour-space transform, film emulation, halation, grain and bloom. One-time ₹2,999." />
+  <meta property="og:title" content="SuperGrade — DaVinci Resolve Grade Plugin" />
+  <meta property="og:description" content="Fifteen nodes, collapsed into one. A cinematic base-grade engine for DaVinci Resolve — CST, film emulation, halation, grain, bloom. One-time ₹2,999." />
+  <meta property="og:type" content="product" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127916;</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -60,8 +59,30 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .mobile-sub a{font-size:18px!important;color:var(--linen-dim)!important;font-family:var(--body)!important;letter-spacing:0.18em!important}
 .mobile-sub a::before{content:'\21B3 \00A0';color:var(--gold)}
 
+/* Hub product cards */
+.hub{background:var(--linen);padding:120px 48px;border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim)}
+.hub .section-tag{color:rgba(10,9,8,0.6)}
+.hub .section-title{color:var(--ink)}
+.hub-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.hub-card{position:relative;background:var(--soil);border:1px solid rgba(232,224,212,0.06);text-decoration:none;color:inherit;display:flex;flex-direction:column;justify-content:space-between;padding:56px 48px;min-height:420px;transition:border-color .35s ease,transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s ease;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,0.32);will-change:transform}
+.hub-card:hover{border-color:var(--gold);transform:translateY(-40px) scale(1.04);box-shadow:0 80px 120px rgba(0,0,0,0.7),0 30px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(201,168,76,0.5)}
+.hub-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 80% 100%,rgba(201,168,76,0.14) 0%,transparent 65%);pointer-events:none;opacity:0;transition:opacity .4s}
+.hub-card:hover::before{opacity:1}
+.hub-card-top{position:relative;z-index:1}
+.hub-num{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.hub-num::after{content:'';flex:1;height:1px;background:var(--linen-faint);max-width:120px}
+.hub-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:5px 10px;color:var(--gold);background:var(--gold-faint);border:1px solid var(--gold-dim);margin-bottom:24px}
+.hub-name{font-family:var(--display);font-size:clamp(38px,5vw,56px);letter-spacing:0.04em;line-height:0.95;color:var(--linen);text-transform:uppercase;margin-bottom:18px}
+.hub-name span{color:#7AB5FF}
+.hub-desc{font-size:14px;font-weight:300;color:var(--linen-dim);line-height:1.85;max-width:440px}
+.hub-foot{display:flex;align-items:center;justify-content:space-between;margin-top:48px;padding-top:24px;border-top:1px solid var(--linen-faint);position:relative;z-index:1;gap:16px}
+.hub-meta{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--linen-dim)}
+.hub-arrow{width:48px;height:48px;flex-shrink:0;border:1px solid var(--linen-faint);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--linen);font-size:18px;transition:border-color .3s,color .3s,background .3s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.hub-card:hover .hub-arrow{border-color:var(--gold);color:var(--ink);background:var(--gold);transform:scale(1.1) rotate(-45deg)}
+
+/* Page hero */
 .page-hero{min-height:62vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:160px 48px 80px;border-bottom:1px solid var(--linen-faint);overflow:hidden}
-.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 30%,rgba(201,168,76,0.08) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(201,168,76,0.08) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none}
 .page-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none}
 .page-eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.22em;color:var(--linen-dim);text-transform:uppercase;margin-bottom:28px;position:relative;z-index:1}
 .page-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
@@ -78,79 +99,83 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .section-title{font-family:var(--display);font-size:clamp(38px,5.5vw,68px);line-height:0.92;letter-spacing:0.04em;color:var(--linen);text-transform:uppercase;margin-bottom:48px}
 .section-title em{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--gold);font-size:0.62em;display:block;letter-spacing:0.02em;margin-top:6px}
 
-/* Categories filter */
-.filter-bar{background:var(--ink);padding:32px 48px;border-bottom:1px solid var(--linen-faint);display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:space-between}
-.filter-label{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:14px}
-.filter-list{display:flex;gap:8px;flex-wrap:wrap;list-style:none}
-.filter-list button{font-family:'DM Mono',monospace;font-size:10.5px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:13px 18px;min-height:44px;color:var(--linen-dim);background:transparent;border:1px solid var(--linen-faint);transition:all .2s;text-decoration:none;cursor:pointer}
-.filter-list button:hover{color:var(--linen);border-color:var(--linen-dim)}
-.filter-list button.is-active{color:var(--gold);border-color:var(--gold-dim);background:var(--gold-faint)}
-.filter-search{display:flex;align-items:center;gap:10px;border:1px solid var(--linen-faint);padding:10px 16px;min-width:240px}
-.filter-search input{background:transparent;border:none;color:var(--linen);font-family:var(--body);font-size:12px;font-weight:300;outline:none;width:100%}
-.filter-search input::placeholder{color:rgba(232,224,212,0.3)}
-.filter-search svg{flex-shrink:0;color:var(--linen-dim)}
+/* Featured product — ClipEngine AI brand */
+.featured{background:var(--ink);padding:120px 48px}
+.featured-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.featured-visual{position:relative;background:linear-gradient(135deg,#0e1116 0%,#232a34 100%);overflow:hidden;border:1px solid rgba(122,181,255,0.18);display:flex;align-items:center;justify-content:center;padding:0;border-radius:6px}
+.featured-visual::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(122,181,255,0.18) 0%,rgba(83,157,255,0.05) 40%,transparent 70%);pointer-events:none}
+.featured-visual::after{content:'';position:absolute;bottom:-30%;right:-10%;width:380px;height:380px;background:radial-gradient(circle,rgba(83,157,255,0.14) 0%,transparent 60%);pointer-events:none}
+.featured-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.45) 45%,transparent 90%);pointer-events:none}
+.featured-logo-wrap{position:relative;z-index:2;width:100%;max-width:460px}
+.featured-logo-wrap svg{width:100%;height:auto;display:block;filter:drop-shadow(0 8px 32px rgba(122,181,255,0.25))}
+.featured-mockup{position:relative;z-index:2;width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 32px 90px rgba(0,0,0,0.7),0 0 0 1px rgba(122,181,255,0.32),0 0 100px rgba(122,181,255,0.18);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.featured-visual:hover .featured-mockup{transform:translateY(-6px)}
+.featured-logo{display:block;width:100%;max-width:380px;height:auto;margin-bottom:18px}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.featured-chips{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:32px}
+.featured-chip{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:7px 13px;border-radius:4px;border:1px solid;color:#E8EAED;background:rgba(83,157,255,0.2);border-color:rgba(122,181,255,0.5)}
+.featured-chip.solid{color:#fff;background:linear-gradient(135deg,rgba(122,181,255,0.34),rgba(83,157,255,0.34));border-color:rgba(122,181,255,0.65)}
+.featured-eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-bottom:20px}
+.featured-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.featured-name{font-family:var(--display);font-size:clamp(44px,6vw,72px);letter-spacing:0.04em;line-height:0.95;color:var(--linen);text-transform:uppercase;margin-bottom:18px}
+.featured-name span{color:#7AB5FF}
+.featured-desc{font-size:15px;font-weight:300;line-height:1.85;color:var(--linen-dim);max-width:520px;margin-bottom:24px}
+.featured-bullets{list-style:none;margin:0 0 36px;display:flex;flex-direction:column;gap:10px}
+.featured-bullets li{display:flex;align-items:flex-start;gap:14px;font-size:13px;color:var(--linen-dim);line-height:1.7}
+.featured-bullets li::before{content:'\2731';color:var(--gold);font-size:14px;flex-shrink:0;margin-top:2px}
+.featured-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:12px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:18px 30px;text-decoration:none;transition:background .3s}
+.btn-primary:hover{background:#d4b255}
+.btn-primary::after{content:'\2192';font-size:15px}
+.btn-ghost{display:inline-flex;align-items:center;gap:12px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;border:1px solid var(--linen-faint);color:var(--linen);padding:18px 28px;text-decoration:none;transition:border-color .3s,background .3s}
+.btn-ghost:hover{border-color:var(--gold-dim);background:rgba(201,168,76,0.06)}
+.btn-ghost .arrow{font-size:15px;color:var(--gold);transition:transform .3s}
+.btn-ghost:hover .arrow{transform:translateX(4px)}
 
-/* Featured post — visually larger than archive cards, slight gold tint */
-.featured-post{background:var(--ink);padding:88px 48px 24px}
-.fp-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:linear-gradient(180deg,rgba(201,168,76,0.045) 0%,var(--ink-soft) 70%);border:1px solid rgba(201,168,76,0.18);padding:56px 52px 52px;transition:background .3s,border-color .3s,transform .35s ease,box-shadow .35s ease;position:relative;max-width:none;box-shadow:0 18px 50px rgba(0,0,0,0.28)}
-.fp-card::before{content:'';position:absolute;left:0;top:0;height:0;width:2px;background:var(--gold);transition:height .35s ease}
-.fp-card:hover::before{height:100%}
-.fp-card:hover{background:linear-gradient(180deg,rgba(201,168,76,0.08) 0%,var(--ink-soft) 70%);border-color:var(--gold-dim);transform:translateY(-3px);box-shadow:0 26px 70px rgba(0,0,0,0.4)}
-.fp-card-inner{display:contents}
-.fp-flag{font-family:'DM Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:inline-flex;align-items:center;gap:10px;align-self:flex-start}
-.fp-flag::before{content:'';width:18px;height:1px;background:var(--gold)}
-.fp-meta{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--linen-dim)}
-.fp-meta .cat{color:var(--gold)}
-.fp-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--linen-faint)}
-.fp-title{font-family:var(--display);font-size:clamp(36px,4.2vw,60px);letter-spacing:0.03em;line-height:1;color:var(--linen);text-transform:uppercase;margin-bottom:26px;max-width:900px}
-.fp-excerpt{font-family:var(--serif);font-style:italic;font-weight:300;font-size:19px;line-height:1.6;color:var(--linen-dim);margin-bottom:30px;max-width:720px}
-.fp-cta{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;align-self:flex-start;padding-top:18px;border-top:1px solid var(--linen-faint);width:100%;justify-content:flex-start}
-.fp-cta::after{content:'\2192';font-size:15px;transition:transform .3s;margin-left:auto}
-.fp-card:hover .fp-cta::after{transform:translateX(6px)}
+/* Products grid */
+.catalog{background:var(--linen);padding:120px 48px;border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim)}
+.catalog .section-tag{color:rgba(10,9,8,0.6)}
+.catalog .section-title{color:var(--ink)}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.product-card{position:relative;background:var(--soil);padding:0;border:1px solid rgba(232,224,212,0.06);transition:border-color .3s,background .3s,transform .3s,box-shadow .3s;display:flex;flex-direction:column;text-decoration:none;color:inherit;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,0.32)}
+.product-card:hover{border-color:var(--gold-dim);background:rgba(201,168,76,0.03);transform:translateY(-3px);box-shadow:0 26px 56px rgba(0,0,0,0.42)}
+.product-thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--ink)}
+.product-thumb-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.25,.46,.45,.94);filter:saturate(1.1)}
+.product-card:hover .product-thumb-bg{transform:scale(1.05)}
+.product-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,0.85) 0%,rgba(10,9,8,0.2) 50%,transparent 100%)}
+.product-tag{position:absolute;top:18px;left:18px;font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:5px 10px;color:var(--gold);background:rgba(10,9,8,0.7);border:1px solid var(--gold-dim);z-index:2}
+.product-body{padding:28px 28px 32px;display:flex;flex-direction:column;flex:1}
+.product-num{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--gold);margin-bottom:14px}
+.product-name{font-family:var(--display);font-size:24px;letter-spacing:0.06em;color:var(--linen);text-transform:uppercase;line-height:1.05;margin-bottom:12px}
+.product-desc{font-size:12px;font-weight:300;color:var(--linen-dim);line-height:1.75;margin-bottom:20px;flex:1}
+.product-meta{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--linen-faint);gap:12px}
+.product-price{font-family:var(--display);font-size:18px;letter-spacing:0.06em;color:var(--gold)}
+.product-price span{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.18em;color:var(--linen-dim);text-transform:uppercase;margin-left:6px}
+.product-arrow{width:36px;height:36px;flex-shrink:0;border:1px solid var(--linen-faint);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--linen);font-size:14px;transition:border-color .3s,color .3s,background .3s}
+.product-card:hover .product-arrow{border-color:var(--gold);color:var(--gold);background:var(--gold-faint)}
 
-/* Posts grid — text-only literary cards */
-.posts{background:var(--ink-soft);padding:120px 48px}
-.posts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--linen-faint)}
-.post-card{background:var(--ink-soft);border:none;text-decoration:none;color:inherit;display:flex;flex-direction:column;padding:44px 40px 40px;transition:background .3s;position:relative;min-height:280px}
-.post-card::before{content:'';position:absolute;left:0;top:0;height:0;width:2px;background:var(--gold);transition:height .35s ease}
-.post-card:hover::before{height:100%}
-.post-card:hover{background:rgba(201,168,76,0.04)}
-.post-cat{font-family:'DM Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:inline-flex;align-items:center;gap:10px;align-self:flex-start}
-.post-cat::before{content:'';width:18px;height:1px;background:var(--gold)}
-.post-meta{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--linen-dim)}
-.post-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--linen-faint)}
-.post-title{font-family:var(--display);font-size:clamp(26px,2.6vw,34px);letter-spacing:0.035em;color:var(--linen);text-transform:uppercase;line-height:1.05;margin-bottom:18px}
-.post-excerpt{font-family:var(--serif);font-style:italic;font-weight:300;font-size:16px;color:var(--linen-dim);line-height:1.65;margin-bottom:24px;flex:1}
-.post-foot{display:flex;align-items:center;justify-content:flex-end;padding-top:18px;border-top:1px solid var(--linen-faint);gap:12px}
-.post-arrow{width:34px;height:34px;flex-shrink:0;border:1px solid var(--linen-faint);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--linen-dim);font-size:13px;transition:border-color .3s,color .3s,background .3s,transform .3s}
-.post-card:hover .post-arrow{border-color:var(--gold);color:var(--gold);background:var(--gold-faint);transform:translateX(4px)}
-.post-card.is-hidden{display:none}
-.posts-empty{grid-column:1/-1;text-align:center;padding:64px 24px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--linen-dim)}
+/* Stock partners band */
+.partners{background:var(--ink);padding:80px 48px;border-top:1px solid var(--linen-faint);border-bottom:1px solid var(--linen-faint)}
+.partners-label{font-family:var(--body);font-size:10px;font-weight:400;letter-spacing:0.28em;color:var(--linen-dim);text-transform:uppercase;text-align:center;margin-bottom:32px}
+.partners-list{display:flex;justify-content:center;align-items:center;gap:64px;flex-wrap:wrap}
+.partners-list span{font-family:var(--display);font-size:22px;letter-spacing:0.08em;color:rgba(232,224,212,0.4);text-transform:uppercase;transition:color .3s}
+.partners-list span:hover{color:var(--gold)}
 
-.posts-foot{margin-top:64px;display:flex;justify-content:center}
-.btn-load{display:inline-flex;align-items:center;gap:14px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;border:1px solid var(--linen-faint);color:var(--linen);padding:18px 32px;text-decoration:none;background:transparent;transition:border-color .3s,background .3s;cursor:inherit}
-.btn-load:hover{border-color:var(--gold-dim);background:rgba(201,168,76,0.06)}
-.btn-load .arrow{font-size:15px;color:var(--gold);transition:transform .3s}
-.btn-load:hover .arrow{transform:translateY(2px)}
-
-/* Newsletter */
-.newsletter{background:var(--gold);padding:0;overflow:hidden;position:relative}
-.newsletter::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(10,9,8,0.04) 59px,rgba(10,9,8,0.04) 60px);pointer-events:none;z-index:0}
-.newsletter-inner{display:grid;grid-template-columns:1fr 1fr;min-height:380px;position:relative;z-index:1}
-.newsletter-left{display:flex;flex-direction:column;justify-content:center;padding:80px 48px;border-right:1px solid rgba(10,9,8,0.1)}
-.newsletter-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-size:10px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(10,9,8,0.55);margin-bottom:24px}
-.newsletter-tag::before{content:'';width:24px;height:1px;background:rgba(10,9,8,0.4)}
-.newsletter-title{font-family:var(--display);font-size:clamp(40px,5.5vw,68px);line-height:0.92;letter-spacing:0.05em;color:var(--ink);text-transform:uppercase;margin-bottom:18px}
-.newsletter-title em{font-family:var(--serif);font-style:italic;font-weight:300;font-size:0.6em;display:block;letter-spacing:0.02em;text-transform:none;color:rgba(10,9,8,0.7);margin-top:8px}
-.newsletter-desc{font-size:15px;font-weight:300;line-height:1.85;color:rgba(10,9,8,0.6);max-width:460px}
-.newsletter-right{display:flex;flex-direction:column;justify-content:center;padding:80px 48px;gap:14px}
-.news-form{display:flex;gap:0;background:var(--ink);align-items:stretch;border:1px solid var(--ink)}
-.news-form input{flex:1;background:transparent;border:none;color:var(--linen);font-family:var(--body);font-size:14px;font-weight:300;padding:18px 20px;outline:none}
-.news-form input::placeholder{color:rgba(232,224,212,0.4)}
-.news-form button{font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;background:var(--gold);color:var(--ink);border:none;padding:0 28px;display:inline-flex;align-items:center;gap:10px;transition:background .3s}
-.news-form button:hover{background:#d4b255}
-.news-form button::after{content:'\2192';font-size:15px}
-.news-note{font-size:12px;color:rgba(10,9,8,0.55);max-width:380px;line-height:1.7}
+/* Licensing CTA */
+.cta{background:var(--gold);padding:0;overflow:hidden;position:relative}
+.cta::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(10,9,8,0.04) 59px,rgba(10,9,8,0.04) 60px);pointer-events:none;z-index:0}
+.cta-inner{display:grid;grid-template-columns:1fr 1fr;min-height:380px;position:relative;z-index:1}
+.cta-left{display:flex;flex-direction:column;justify-content:center;padding:80px 48px;border-right:1px solid rgba(10,9,8,0.1)}
+.cta-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-size:10px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(10,9,8,0.55);margin-bottom:24px}
+.cta-tag::before{content:'';width:24px;height:1px;background:rgba(10,9,8,0.4)}
+.cta-title{font-family:var(--display);font-size:clamp(40px,5.5vw,68px);line-height:0.92;letter-spacing:0.05em;color:var(--ink);text-transform:uppercase;margin-bottom:18px}
+.cta-title em{font-family:var(--serif);font-style:italic;font-weight:300;font-size:0.6em;display:block;letter-spacing:0.02em;text-transform:none;color:rgba(10,9,8,0.7);margin-top:8px}
+.cta-desc{font-size:15px;font-weight:300;line-height:1.85;color:rgba(10,9,8,0.6);max-width:460px}
+.cta-right{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:80px 48px;gap:18px}
+.cta-btn{display:inline-flex;align-items:center;gap:14px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;background:var(--ink);color:var(--linen);padding:20px 34px;text-decoration:none;transition:background .3s;border:1px solid var(--ink)}
+.cta-btn:hover{background:transparent;color:var(--ink)}
+.cta-btn::after{content:'\2192';font-size:15px;color:var(--gold)}
+.cta-note{font-size:12px;color:rgba(10,9,8,0.55);max-width:360px;line-height:1.7}
 
 footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--linen-faint)}
 .footer-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:40px;border-bottom:1px solid var(--linen-faint);gap:32px}
@@ -174,44 +199,115 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
 
-a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.post-card:focus-visible,.fp-card:focus-visible{outline:2px solid var(--gold);outline-offset:-1px}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.hub-card:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+
+/* ───── SuperGrade page theme — colours from its own landing CSS ───── */
+.sg{--sg-ink:#0D0D0F;--sg-plate:#0A0A0C;--sg-panel:#141418;--sg-panel2:#1B1B21;
+    --sg-teal:#1FA9C0;--sg-deepteal:#2E6E8E;--sg-orange:#E8832F;--sg-copper:#B85A2E;
+    --sg-fg:#EDEFF2;--sg-fg-dim:rgba(237,239,242,0.6);--sg-line:rgba(255,255,255,0.08);--sg-line2:rgba(255,255,255,0.14)}
+.sg{background:var(--sg-ink);color:var(--sg-fg)}
+.sg .page-hero{min-height:78vh;padding:170px 48px 90px}
+.sg .page-hero::before{background:radial-gradient(ellipse at 72% 28%,rgba(31,169,192,0.16) 0%,transparent 58%),radial-gradient(ellipse at 18% 86%,rgba(232,131,47,0.1) 0%,transparent 52%)}
+.sg .page-eyebrow{color:var(--sg-fg-dim)}
+.sg .page-eyebrow::before{background:var(--sg-teal)}
+.sg .page-eyebrow .num{color:var(--sg-teal)}
+.sg-spectrum{background:linear-gradient(100deg,var(--sg-teal) 8%,#d8eef3 36%,var(--sg-orange) 64%,var(--sg-teal) 92%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sg .page-title em{color:var(--sg-teal)}
+.sg .page-lede strong{color:var(--sg-fg)}
+.sg-tcode{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--sg-teal);border:1px solid var(--sg-line2);padding:6px 12px;border-radius:4px;display:inline-flex;align-items:center;gap:8px}
+.sg-tcode::before{content:'';width:7px;height:7px;border-radius:50%;background:#ff4d3d}
+
+/* hero node-collapse diagram */
+.sg-hero-nodes{display:flex;align-items:center;gap:10px;margin-top:48px;flex-wrap:wrap;position:relative;z-index:1}
+.sg-node{width:30px;height:30px;border-radius:6px;border:1px solid var(--sg-line2);background:rgba(31,169,192,0.06);flex:0 0 auto}
+.sg-node:nth-child(odd){background:rgba(232,131,47,0.07)}
+.sg-arrow-c{color:var(--sg-fg-dim);font-size:18px;margin:0 6px}
+.sg-node-one{width:64px;height:64px;border-radius:50%;border:1.5px solid var(--sg-teal);background:radial-gradient(circle at 50% 38%,rgba(31,169,192,0.4),rgba(10,10,12,0.5));box-shadow:0 0 0 8px rgba(31,169,192,0.08),0 0 44px rgba(31,169,192,0.45);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:20px;color:#d8eef3;flex:0 0 auto}
+
+/* sections */
+.sg-sec{padding:110px 48px;border-top:1px solid var(--sg-line)}
+.sg-sec .section-tag{color:var(--sg-fg-dim)}.sg-sec .section-tag::before{background:var(--sg-teal)}
+.sg-sec .section-num{color:var(--sg-teal)}
+.sg-sec .section-title{color:var(--sg-fg)}.sg-sec .section-title em{color:var(--sg-teal)}
+.sg-features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:16px}
+.sg-feat{background:var(--sg-panel);border:1px solid var(--sg-line);padding:32px 28px;transition:border-color .3s,transform .3s,box-shadow .3s}
+.sg-feat:hover{border-color:rgba(31,169,192,0.5);transform:translateY(-4px);box-shadow:0 24px 50px rgba(0,0,0,0.4)}
+.sg-feat-ic{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;color:var(--sg-teal);margin-bottom:16px}
+.sg-feat h3{font-family:var(--display);font-size:22px;letter-spacing:0.04em;text-transform:uppercase;color:var(--sg-fg);margin-bottom:10px}
+.sg-feat p{font-size:13px;font-weight:300;line-height:1.8;color:var(--sg-fg-dim)}
+
+/* pricing / buy */
+.sg-buy{background:linear-gradient(135deg,#0E1116 0%,#0A0A0C 100%);border-top:1px solid var(--sg-line)}
+.sg-buy-inner{max-width:760px;margin:0 auto;padding:120px 48px;text-align:center}
+.sg-buy .section-tag{justify-content:center;color:var(--sg-fg-dim)}.sg-buy .section-tag::before{background:var(--sg-orange)}
+.sg-price-card{margin-top:40px;background:var(--sg-panel);border:1px solid var(--sg-line2);border-radius:8px;padding:56px 48px;box-shadow:0 40px 90px rgba(0,0,0,0.5);position:relative;overflow:hidden}
+.sg-price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sg-teal),var(--sg-orange))}
+.sg-price{font-family:var(--display);font-size:clamp(56px,8vw,84px);letter-spacing:0.02em;color:var(--sg-fg);line-height:0.95}
+.sg-price small{font-family:var(--body);font-size:13px;font-weight:300;letter-spacing:0.18em;text-transform:uppercase;color:var(--sg-fg-dim);display:block;margin-top:14px}
+.sg-price-note{font-size:12px;color:var(--sg-fg-dim);margin-top:6px}
+.sg-incl{list-style:none;margin:34px 0;display:inline-flex;flex-direction:column;gap:12px;text-align:left}
+.sg-incl li{display:flex;align-items:flex-start;gap:13px;font-size:14px;color:var(--sg-fg-dim);line-height:1.6}
+.sg-incl li::before{content:'\2713';color:var(--sg-teal);font-weight:700;flex-shrink:0}
+.sg-buy-btn{display:inline-flex;align-items:center;gap:13px;font-family:var(--body);font-size:13px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;background:var(--sg-teal);color:#04222a;padding:22px 44px;text-decoration:none;border-radius:4px;transition:background .3s,transform .25s,box-shadow .3s;margin-top:8px}
+.sg-buy-btn:hover{background:#3bc0d6;transform:translateY(-2px);box-shadow:0 16px 40px rgba(31,169,192,0.35)}
+.sg-buy-btn::after{content:'\2192';font-size:17px}
+.sg-buy-sub{font-size:12px;color:var(--sg-fg-dim);margin-top:20px;letter-spacing:0.04em}
+.sg-req{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;color:var(--sg-fg-dim);margin-top:8px;line-height:1.9}
+@media(max-width:860px){.sg-features{grid-template-columns:1fr}.sg-sec,.sg .page-hero{padding-left:24px;padding-right:24px}.sg-buy-inner{padding:80px 24px}.sg-price-card{padding:44px 26px}}
+
+/* Plugins section — SuperGrade (colours from its own landing CSS: teal #1FA9C0, orange #E8832F, ink #0D0D0F) */
+.plugins{background:var(--ink);padding:120px 48px;border-top:1px solid var(--linen-faint)}
+.plugin-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:48px;max-width:920px}
+.plugin-card{position:relative;display:grid;grid-template-columns:1.1fr 1fr;background:linear-gradient(135deg,#101216 0%,#0A0A0C 100%);border:1px solid rgba(31,169,192,0.22);text-decoration:none;color:inherit;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,0.45);transition:border-color .35s ease,transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s ease}
+.plugin-card:hover{border-color:#1FA9C0;transform:translateY(-8px);box-shadow:0 50px 90px rgba(0,0,0,0.6),0 0 0 1px rgba(31,169,192,0.4),0 0 60px rgba(31,169,192,0.15)}
+.plugin-visual{position:relative;min-height:260px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse 90% 70% at 50% 40%,rgba(31,169,192,0.18) 0%,transparent 65%),linear-gradient(135deg,#0A0A0C,#141418);overflow:hidden}
+.plugin-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(232,131,47,0.1) 60%,transparent 80%);pointer-events:none}
+.plugin-node{position:relative;z-index:1;width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,rgba(31,169,192,0.35),rgba(10,10,12,0.6));border:1.5px solid #1FA9C0;box-shadow:0 0 0 8px rgba(31,169,192,0.08),0 0 40px rgba(31,169,192,0.4)}
+.plugin-node span{font-family:var(--display);font-size:30px;color:#d8eef3;letter-spacing:0.04em}
+.plugin-body{padding:48px 44px;display:flex;flex-direction:column;justify-content:center}
+.plugin-tag{display:inline-block;align-self:flex-start;font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:5px 10px;color:#1FA9C0;background:rgba(31,169,192,0.1);border:1px solid rgba(31,169,192,0.45);margin-bottom:22px}
+.plugin-name{font-family:var(--display);font-size:clamp(34px,4.5vw,48px);letter-spacing:0.04em;line-height:0.95;color:#F4F6F8;text-transform:uppercase;margin-bottom:8px}
+.plugin-name span{color:#E8832F}
+.plugin-sub{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#1FA9C0;margin-bottom:18px}
+.plugin-desc{font-size:14px;font-weight:300;color:rgba(232,238,240,0.62);line-height:1.8;margin-bottom:28px}
+.plugin-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;border-top:1px solid rgba(255,255,255,0.08)}
+.plugin-price{font-family:var(--display);font-size:30px;letter-spacing:0.02em;color:#F4F6F8;line-height:1}
+.plugin-price small{font-family:var(--body);font-size:10px;font-weight:300;letter-spacing:0.16em;color:rgba(232,238,240,0.5);text-transform:uppercase;margin-left:8px}
+.plugin-arrow{width:46px;height:46px;flex-shrink:0;border:1px solid rgba(31,169,192,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1FA9C0;font-size:17px;transition:background .3s,color .3s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.plugin-card:hover .plugin-arrow{background:#1FA9C0;color:#04222a;transform:scale(1.1) rotate(-45deg)}
+@media(max-width:760px){.plugin-card{grid-template-columns:1fr}.plugin-visual{min-height:180px}.plugin-body{padding:36px 28px}.plugins{padding:80px 24px}}
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
-  .fp-card:hover{transform:none}
+  .hub-card:hover{transform:none}
+  .featured-visual:hover .featured-mockup{transform:none}
 }
 
 @media(max-width:980px){
-  .posts-grid{grid-template-columns:1fr}
-  .post-card{padding:36px 28px 32px;min-height:auto}
-  .fp-card{padding:48px 0}
+  .featured-grid{grid-template-columns:1fr;gap:48px}
+  .hub-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   nav{padding:20px 24px}.nav-links{display:none}.nav-hamburger{display:flex}.mobile-nav{display:flex}
   .page-hero{padding:130px 24px 60px;min-height:auto}
-  .featured-post,.posts{padding:80px 24px}
-  .filter-bar{padding:24px;flex-direction:column;align-items:flex-start}
-  .filter-search{min-width:0;width:100%}
+  .featured,.hub{padding:80px 24px}
+  .hub-card{padding:48px 32px;min-height:360px}
   .section-header{flex-direction:column;gap:8px}
   footer{padding:48px 24px 24px}.footer-top{flex-direction:column;gap:24px;align-items:flex-start}.footer-bottom{flex-direction:column;gap:12px;text-align:center}
 }
 @media(max-width:560px){
-  .posts-grid{grid-template-columns:1fr}
-  .page-title{font-size:48px}
+  .page-title{font-size:48px;line-height:0.9}
   .page-title em{font-size:0.55em}
-  .fp-card{padding:40px 24px}
-  .fp-title{font-size:24px;letter-spacing:0.02em;line-height:1.08}
-  .fp-excerpt{font-size:15px}
-  .section-title{font-size:30px;letter-spacing:0.025em}
-  .section-title em{font-size:0.62em}
-  .post-card{padding:32px 22px 28px}
-  .post-title{font-size:21px;letter-spacing:0.025em}
+  .section-title{font-size:32px;letter-spacing:0.03em}
+  .section-title em{font-size:0.6em}
+  .hub-name{font-size:30px}
+  .featured-name{font-size:34px}
 }
 </style>
 </head>
-<body>
+<body class="sg">
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
@@ -220,16 +316,16 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
   <ul class="nav-links">
     <li><a href="index.html#work">Work</a></li>
     <li class="nav-dropdown">
-      <a href="products.html" class="nav-dropdown-trigger">Products <span class="dd-caret">&#9660;</span></a>
+      <a href="products.html" class="nav-dropdown-trigger active">Products <span class="dd-caret">&#9660;</span></a>
       <ul class="nav-dropdown-menu">
         <li><a href="products.html#clipengine">ClipEngine AI</a></li>
         <li><a href="luts.html">LUTs</a></li>
-        <li><a href="supergrade.html">SuperGrade</a></li>
+        <li><a href="supergrade.html" class="is-active">SuperGrade</a></li>
       </ul>
     </li>
     <li><a href="apps.html">Apps</a></li>
     <li><a href="https://digitallyinc.positivafilms.com" target="_blank" rel="noopener">DigiTallyINC</a></li>
-    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="index.html#about">About</a></li>
     <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
   </ul>
@@ -249,233 +345,64 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 </ul>
 
 <header class="page-hero">
-  <div class="page-eyebrow"><span class="num">( 01 )</span> &nbsp;Field Notes &amp; Stories</div>
-  <h1 class="page-title">Blog<em>Letters from the road</em></h1>
-  <p class="page-lede">Long-form writing from <strong>15+ years behind the lens</strong>. Field reports from Kumbh and Ladakh, craft notes on aerial color, gear teardowns, and the occasional unsolicited essay on why we still chase the light.</p>
+  <div class="page-eyebrow"><span class="num">( SG )</span> &nbsp;DaVinci Resolve &middot; DCTL + OFX Plugin</div>
+  <h1 class="page-title"><span class="sg-spectrum">SuperGrade</span><em>Fifteen nodes, collapsed into one.</em></h1>
+  <p class="page-lede">A single-node cinematic base-grade engine for DaVinci Resolve. A built-in <strong>colour-space transform</strong>, a <strong>film-emulation core</strong>, and creative finishing &mdash; halation, grain, bloom, split-tone &mdash; built from first principles in real colour science. Drop it on one node and grade.</p>
+  <div class="sg-hero-nodes" aria-hidden="true">
+    <span class="sg-node"></span><span class="sg-node"></span><span class="sg-node"></span><span class="sg-node"></span><span class="sg-node"></span><span class="sg-node"></span><span class="sg-node"></span>
+    <span class="sg-arrow-c">&#10230;</span>
+    <span class="sg-node-one">SG</span>
+  </div>
 </header>
 
-<div class="filter-bar">
-  <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-    <span class="filter-label">Filed under</span>
-    <ul class="filter-list" id="filterList">
-      <li><button class="is-active" data-filter="all">All Stories</button></li>
-      <li><button data-filter="wedding">Indian Wedding</button></li>
-      <li><button data-filter="travel">Travel &amp; Place</button></li>
-      <li><button data-filter="craft">Craft &amp; Color</button></li>
-      <li><button data-filter="gear">Gear</button></li>
-      <li><button data-filter="aerial">Aerial &amp; FPV</button></li>
-      <li><button data-filter="field">Field Notes</button></li>
-    </ul>
-  </div>
-  <label class="filter-search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="search" placeholder="Search the blog..." />
-  </label>
-</div>
-
-<section class="featured-post">
+<section class="sg-sec">
   <div class="section-header reveal">
-    <div class="section-tag">Featured</div>
-    <div class="section-num">( 02 )</div>
+    <div class="section-tag">What it does</div>
+    <div class="section-num">( 01 )</div>
   </div>
-  <h2 class="section-title reveal">EDITOR'S PICK<em>The latest dispatch</em></h2>
+  <h2 class="section-title reveal">ONE NODE, THE WHOLE GRADE<em>From log to look in a single step</em></h2>
 
-  <a href="posts/drone-footage-hazy-dehaze-contrast-recipe.html" class="fp-card reveal" data-cat="aerial" data-search="drone footage hazy aerial dehaze contrast recipe mavic 3 d-log m v-log l air 2s inspire 2 davinci resolve curves saturation haze spiti rajasthan goa munnar atmospheric scatter">
-    <div class="fp-card-inner">
-      <div class="fp-meta">
-        <span class="cat">&#10022; Aerial & FPV</span>
-        <span class="dot"></span>
-        <span>Jun 17, 2026</span>
-        <span class="dot"></span>
-        <span>8 Min Read</span>
-      </div>
-      <h3 class="fp-title">Why Drone Footage Looks Hazy at 400 Feet — A Dehaze + Contrast Recipe</h3>
-      <p class="fp-excerpt">Altitude haze kills aerial footage before you even land. Here's the exact dehaze, contrast, and saturation recipe to cut through atmospheric scatter and restore depth.</p>
-      <span class="fp-cta">Read the full piece</span>
-    </div>
-  </a>
+  <div class="sg-features">
+    <div class="sg-feat reveal"><div class="sg-feat-ic">/ CST</div><h3>Colour-Space Transform</h3><p>Built-in input and output transforms in DaVinci Wide Gamut / Intermediate. Feed it log from any camera; it lands in the right space &mdash; no extra CST nodes.</p></div>
+    <div class="sg-feat reveal"><div class="sg-feat-ic">/ FILM</div><h3>Film-Emulation Core</h3><p>A film-trait engine for tone, colour cross-talk, and density &mdash; the print-film character that makes digital footage feel shot, not rendered.</p></div>
+    <div class="sg-feat reveal"><div class="sg-feat-ic">/ SKIN</div><h3>Skin &amp; Primary</h3><p>Balance, exposure and skin-tone protection tuned in real colour science, so faces hold through the look instead of fighting it.</p></div>
+    <div class="sg-feat reveal"><div class="sg-feat-ic">/ HALATION</div><h3>Halation &amp; Bloom</h3><p>Highlight halation and bloom modelled on real lens and film behaviour &mdash; warm glow into the highlights without crushing detail.</p></div>
+    <div class="sg-feat reveal"><div class="sg-feat-ic">/ GRAIN</div><h3>Grain &amp; Texture</h3><p>Filmic grain and lens-FX finishing that sit under the image, adding texture and motion without the digital-noise look.</p></div>
+    <div class="sg-feat reveal"><div class="sg-feat-ic">/ SPLIT</div><h3>Split-Tone &amp; Look</h3><p>Creative split-toning and look controls for the final mood &mdash; teal-and-orange, warm cinema, or your own signature, all on the one node.</p></div>
+  </div>
 </section>
 
-<section class="posts">
+<section class="sg-sec" id="how">
   <div class="section-header reveal">
-    <div class="section-tag">Recent Stories</div>
-    <div class="section-num">( 03 )</div>
+    <div class="section-tag">Why one node</div>
+    <div class="section-num">( 02 )</div>
   </div>
-  <h2 class="section-title reveal">FROM THE ARCHIVE</h2>
+  <h2 class="section-title reveal">A 15-NODE CHAIN, REPLACED<em>Per-pixel, GPU, no spatial guesswork</em></h2>
+  <p class="page-lede reveal" style="max-width:680px">SOURCE CST &middot; balance &middot; exposure &middot; skin &middot; primary &middot; contrast &middot; saturation &middot; look &middot; split-tone &middot; film traits &middot; halation &middot; grain &middot; lens-FX &middot; bloom &middot; OUTPUT CST &mdash; the serial chain a clean grade usually needs, engineered into a single per-pixel DCTL you drop on one node. Works in DaVinci Resolve (free &amp; Studio) on Windows, macOS, and Linux.</p>
+</section>
 
-  <div class="posts-grid" id="postsGrid">
+<section class="sg-buy" id="buy">
+  <div class="sg-buy-inner">
+    <div class="section-header reveal" style="justify-content:center">
+      <div class="section-tag">Get SuperGrade</div>
+    </div>
+    <h2 class="section-title reveal" style="text-align:center">ONE PRICE, YOURS FOR GOOD<em>No subscription. Buy once.</em></h2>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <a href="posts/skin-tone-recovery-underexposed-indian-bride-closeups.html" class="post-card reveal" data-cat="wedding" data-search="underexposed indian bride closeup skin tone recovery denoise before grade s-log3 fx3 a7s iii resolve qualifier tungsten led wedding indoor grading">
-      <span class="post-cat">Indian Wedding</span>
-      <div class="post-meta"><span>Jun 10, 2026</span><span class="dot"></span><span>7 Min Read</span></div>
-      <h3 class="post-title">Skin Tone Recovery for Underexposed Indian Bride Closeups</h3>
-      <p class="post-excerpt">Underexposed bride closeups from tungsten-heavy wedding halls are fixable, but only if you attack them in the right order: denoise first, then lift, then qualify skin.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/framing-seven-pheras-two-camera-blocking-hindu-mandap.html" class="post-card reveal" data-cat="wedding" data-search="saat phere seven pheras hindu wedding mandap two camera blocking shot list sindoor agni kund sony fx3 fx6 canon r5 r5c c70 s-log3 wedding ceremony coverage india">
-      <span class="post-cat">Indian Wedding</span>
-      <div class="post-meta"><span>Jun 08, 2026</span><span class="dot"></span><span>7 Min Read</span></div>
-      <h3 class="post-title">Framing the Seven Pheras: A Two-Camera Blocking Diagram for Hindu Mandaps</h3>
-      <p class="post-excerpt">The seven pheras last six to eighteen minutes and happen once. Here is a two-camera blocking diagram that guarantees you never cross the axis, never block the fire, and never miss the vidaai moment buried inside.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/varanasi-ghats-blue-hour-grading-smoke-fire-skin.html" class="post-card reveal" data-cat="travel" data-search="varanasi ghats blue hour smoke fire skin tone color grade ganga aarti s-log3 clog3 braw resolve lut travel india dashashwamedh fx3 r5">
-      <span class="post-cat">Travel & Place</span>
-      <div class="post-meta"><span>Jun 05, 2026</span><span class="dot"></span><span>8 Min Read</span></div>
-      <h3 class="post-title">Varanasi Ghats at Blue Hour: Grading Smoke, Fire, and Skin in One Frame</h3>
-      <p class="post-excerpt">Blue hour on the Dashashwamedh Ghat gives you smoke, fire, tungsten, and Indian skin tones simultaneously. Here is how to grade all four without sacrificing any.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/canon-r5-vs-sony-a7s3-lut-color-mismatch.html" class="post-card reveal" data-cat="gear" data-search="canon r5 sony a7s iii lut color mismatch c-log 3 s-log3 s-gamut3 cine color space transform resolve multi-camera wedding match grade davinci intermediate">
-      <span class="post-cat">Gear</span>
-      <div class="post-meta"><span>Jun 03, 2026</span><span class="dot"></span><span>8 Min Read</span></div>
-      <h3 class="post-title">Canon R5 vs Sony A7S III: Why the Same LUT Looks Different and What to Do About It</h3>
-      <p class="post-excerpt">Apply the same LUT to Canon R5 and Sony A7S III footage and the cut will fall apart. Here is exactly why, and the node-level fix to make them match.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/fx3-vs-fx6-two-person-wedding-team.html" class="post-card reveal" data-cat="gear" data-search="fx3 fx6 sony wedding two person crew slog3 autofocus xlr timecode baraat sangeet mandap haldi compact camera gear india wedding video">
-      <span class="post-cat">Gear</span>
-      <div class="post-meta"><span>Jun 01, 2026</span><span class="dot"></span><span>7 Min Read</span></div>
-      <h3 class="post-title">Sony FX3 vs FX6 for a Two-Person Wedding Team: The Honest Trade-Off</h3>
-      <p class="post-excerpt">Running a two-person wedding crew with Sony glass? Here is the honest FX3 vs FX6 trade-off: sensor size, rigging, audio, timecode sync, and where each camera actually earns its price tag.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/grading-haldi-yellow-without-turning-skin-into-a-highlighter.html" class="post-card reveal" data-cat="wedding" data-search="haldi color correction yellow saturation skin tones indian wedding grade davinci resolve qualifier hsl fx3 a7s iii r5 bmpcc mavic turmeric ceremony log footage">
-      <span class="post-cat">Indian Wedding</span>
-      <div class="post-meta"><span>May 27, 2026</span><span class="dot"></span><span>7 Min Read</span></div>
-      <h3 class="post-title">Grading Haldi Yellow Without Turning Skin Into a Highlighter</h3>
-      <p class="post-excerpt">Haldi ceremonies blow out yellow saturation before you even touch a slider. Here's the node-by-node approach to protecting skin tones while keeping the ceremony's warmth intact.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/grading-jaisalmer-desert-haze-without-killing-the-gold.html" class="post-card reveal" data-cat="travel" data-search="jaisalmer desert haze color grade davinci resolve travel lut fx3 r5c bmpcc 6k s-log3 canon log 3 sandstone gold hsl qualifier india rajasthan travel film">
-      <span class="post-cat">Travel & Place</span>
-      <div class="post-meta"><span>May 25, 2026</span><span class="dot"></span><span>7 Min Read</span></div>
-      <h3 class="post-title">Grading Jaisalmer Desert Haze Without Killing the Gold</h3>
-      <p class="post-excerpt">Jaisalmer's golden sandstone turns ashy in haze without the right grade. Here's the exact node chain that preserves the warm glow while taming atmospheric veil.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/premiere-vs-resolve-indian-wedding-edit-m2-pro-speed-test.html" class="post-card reveal" data-cat="field" data-search="premiere resolve indian wedding edit speed test m2 pro multicam sync s-log3 cinema raw light proxy workflow color grade node tree fairlight lumetri cst lut field notes">
-      <span class="post-cat">Field Notes</span>
-      <div class="post-meta"><span>May 20, 2026</span><span class="dot"></span><span>8 Min Read</span></div>
-      <h3 class="post-title">Premiere vs Resolve for an Indian Wedding Edit: The Honest Speed Test on an M2 Pro</h3>
-      <p class="post-excerpt">Cutting a 3-camera Indian wedding in Premiere vs Resolve on M2 Pro — render times, proxy workflows, color roundtrips, and which NLE actually ships the film faster.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/color-space-transform-order-resolve-cst-then-lut.html" class="post-card reveal" data-cat="craft" data-search="color space transform cst lut node order davinci resolve s-log3 log-c3 braw fx3 c70 bmpcc 6k rec709 aces multicam color managed workflow craft">
-      <span class="post-cat">Craft & Color</span>
-      <div class="post-meta"><span>May 18, 2026</span><span class="dot"></span><span>7 Min Read</span></div>
-      <h3 class="post-title">Color Space Transform Order in Resolve: Why CST-Then-LUT Beats LUT-Then-CST</h3>
-      <p class="post-excerpt">Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad — it breaks the math your LUT was built on. Here's exactly why, and how to fix it.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/sangeet-tungsten-correction-banquet-hall.html" class="post-card reveal" data-cat="wedding" data-search="sangeet tungsten yellow banquet hall white balance color grade s-log3 fx3 a7s iii r5c c70 davinci resolve hsl qualifier hue saturation indian wedding reception">
-      <span class="post-cat">Indian Wedding</span>
-      <div class="post-meta"><span>May 15, 2026</span><span class="dot"></span><span>8 Min Read</span></div>
-      <h3 class="post-title">Why Your Sangeet Footage Looks Yellow — Neutralizing Banquet Hall Tungsten</h3>
-      <p class="post-excerpt">Banquet hall tungsten turns every sangeet into an amber swamp. Here's the node-level correction pipeline that pulls it back without destroying skin.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/dgca-drone-permissions-2026-digital-sky-workflow.html" class="post-card reveal" data-cat="aerial" data-search="dgca drone permission digital sky uin npnt india 2026 mavic 3 aerial filming green zone yellow zone rajasthan wedding drone rpc registration jaisalmer udaipur">
-      <span class="post-cat">Aerial & FPV</span>
-      <div class="post-meta"><span>May 13, 2026</span><span class="dot"></span><span>8 Min Read</span></div>
-      <h3 class="post-title">DGCA Drone Permissions in 2026: The Digital Sky Workflow That Actually Works</h3>
-      <p class="post-excerpt">DGCA's Digital Sky portal looks simple until it isn't. Here's the exact workflow — UIN registration, Green Zone checks, NPNT compliance — that gets your drone legal and in the air.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/monsoon-greens-kerala-sony-color-grade.html" class="post-card reveal" data-cat="travel" data-search="kerala monsoon green color grade sony s-gamut3 cine saturation fx3 a7s iii fx30 hsl qualifier munnar alleppey travel lut davinci resolve foliage india">
-      <span class="post-cat">Travel & Place</span>
-      <div class="post-meta"><span>May 11, 2026</span><span class="dot"></span><span>7 Min Read</span></div>
-      <h3 class="post-title">Why Monsoon Greens in Kerala Look Radioactive on Sony Cameras</h3>
-      <p class="post-excerpt">Sony's S-Gamut3.Cine renders Kerala's monsoon greens with a saturation spike that survives even a careful CST. Here's the exact node chain that tames them without draining the life from the scene.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/fx30-skin-tones-cooler-than-fx3-single-node-fix.html" class="post-card reveal" data-cat="gear" data-search="fx30 fx3 skin tone match color grade s-log3 s-gamut3 davinci resolve hsl qualifier hue vs hue node multicam sony wedding documentary">
-      <span class="post-cat">Gear</span>
-      <div class="post-meta"><span>May 08, 2026</span><span class="dot"></span><span>7 Min Read</span></div>
-      <h3 class="post-title">Why FX30's Skin Tones Read Cooler Than FX3 — and the Single Node That Fixes It</h3>
-      <p class="post-excerpt">The FX30 and FX3 share Sony's color science but their skin tones don't match out of the box. Here's exactly why — and the one node that bridges them.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/lav-mic-silk-lehenga-tape-trick-sangeet.html" class="post-card reveal" data-cat="wedding" data-search="lav mic silk lehenga wireless mic wedding bride placement lavalier sangeet tape trick rode sennheiser dpa fx3 r5c indian wedding audio rigging bridal microphone">
-      <span class="post-cat">Indian Wedding</span>
-      <div class="post-meta"><span>May 06, 2026</span><span class="dot"></span><span>8 Min Read</span></div>
-      <h3 class="post-title">Why Lavalier Mics Pop on Silk Lehengas (And the Tape Trick That Saves the Sangeet)</h3>
-      <p class="post-excerpt">Silk lehengas kill lav capsules with friction noise before you've hit record. Here's exactly where to place the mic, which tape holds, and how to rig a bride for a full sangeet.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/color-grading-mandap-fire-lehenga-highlights.html" class="post-card reveal" data-cat="wedding" data-search="mandap fire highlights lehenga saturation wedding color grading resolve fx3 a7s iii log qualification hsl qualifier crimson silk indian wedding lut rajasthan">
-      <span class="post-cat">Indian Wedding</span>
-      <div class="post-meta"><span>May 04, 2026</span><span class="dot"></span><span>7 Min Read</span></div>
-      <h3 class="post-title">Color-Grading Mandap Fire Without Blowing Out the Bride's Lehenga</h3>
-      <p class="post-excerpt">Mandap fire blows highlights before you can blink. Here's the exact node tree — qualifiers, HDR wheels, and saturation limiters — that holds the bride's lehenga while the flames stay alive.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/magenta-sunsets-goa-rec709-lut-gamut-wall.html" class="post-card reveal" data-cat="travel" data-search="magenta sunset goa rec709 gamut wall s-log3 s-gamut3 fx3 a7s iii resolve travel lut colour space transform hsl qualifier vectorscope candolim varanasi jodhpur spiti">
-      <span class="post-cat">Travel & Place</span>
-      <div class="post-meta"><span>May 01, 2026</span><span class="dot"></span><span>7 Min Read</span></div>
-      <h3 class="post-title">Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall</h3>
-      <p class="post-excerpt">That blown magenta band above the Arabian Sea isn't overexposure — it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/color-matching-a7s3-fx3-wedding-multicam-resolve.html" class="post-card reveal" data-cat="gear" data-search="color-matching a7s iii fx3 wedding multicam edit resolve sony group grade gear">
-      <span class="post-cat">Gear</span>
-      <div class="post-meta"><span>May 01, 2026</span><span class="dot"></span><span>6 Min Read</span></div>
-      <h3 class="post-title">Color-Matching A7S III to FX3 on a Wedding Multicam Edit</h3>
-      <p class="post-excerpt">Same sensor, same log profile &mdash; and the cameras still don't sit on the timeline. The drift, the offset, and the group-grade workflow that locks them up in Resolve.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-    <a href="posts/mandap-fire-mixed-lighting-wedding-reception-node-tree.html" class="post-card reveal" data-cat="wedding" data-search="mandap fire mixed tungsten led wedding reception node tree resolve indian wedding pheras hsl qualifier">
-      <span class="post-cat">Indian Wedding</span>
-      <div class="post-meta"><span>April 29, 2026</span><span class="dot"></span><span>6 Min Read</span></div>
-      <h3 class="post-title">Mixed Tungsten + LED + Mandap Fire: A Reception Node Tree That Actually Works</h3>
-      <p class="post-excerpt">Three light sources, three colour temperatures, one subject. The parallel-node tree we run on every pheras segment to keep skin where it should be.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-
-    <a href="posts/lut-crushing-blacks-pre-lut-exposure-workflow.html" class="post-card reveal" data-cat="craft" data-search="lut crushing blacks pre-lut exposure workflow offset middle grey resolve s-log3 craft color">
-      <span class="post-cat">Craft &amp; Color</span>
-      <div class="post-meta"><span>April 27, 2026</span><span class="dot"></span><span>6 Min Read</span></div>
-      <h3 class="post-title">Why Your LUT Crushes Blacks &mdash; A Pre-LUT Exposure Workflow</h3>
-      <p class="post-excerpt">Most "the LUT looks bad" calls aren't a LUT problem. They're an exposure-mismatch problem upstream. The four-node tree that fixes it for good.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-
-    <a href="posts/indian-skin-tones-orange-rec709-wedding-luts.html" class="post-card reveal" data-cat="wedding" data-search="indian skin tones orange rec709 wedding luts brown skin south asian vectorscope hsl qualifier indian wedding">
-      <span class="post-cat">Indian Wedding</span>
-      <div class="post-meta"><span>April 24, 2026</span><span class="dot"></span><span>6 Min Read</span></div>
-      <h3 class="post-title">Why Indian Skin Tones Go Orange Under Rec.709 Wedding LUTs</h3>
-      <p class="post-excerpt">Most cinematic LUTs are graded against pale Western skin. Apply them to brown skin and the bride goes pumpkin. Here's the qualifier-based fix.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-
-    <a href="posts/why-s-log3-lut-looks-flat-cst-node.html" class="post-card reveal" data-cat="craft" data-search="s-log3 lut flat cst node color space transform resolve sony s-gamut3 cine rec709 craft color">
-      <span class="post-cat">Craft &amp; Color</span>
-      <div class="post-meta"><span>April 22, 2026</span><span class="dot"></span><span>6 Min Read</span></div>
-      <h3 class="post-title">Why Applying a LUT Directly to S-Log3 Looks Flat &mdash; The CST Node You're Missing</h3>
-      <p class="post-excerpt">S-Log3 isn't Rec.709. The LUT doesn't know that. Here's the Color Space Transform node every Sony shooter should have wired into their grade.</p>
-      <div class="post-foot"><div class="post-arrow">&#8594;</div></div>
-    </a>
-
+    <div class="sg-price-card reveal">
+      <div class="sg-price">&#8377;2,999<small>One-time &middot; lifetime licence</small></div>
+      <div class="sg-price-note">GST included</div>
+      <ul class="sg-incl">
+        <li>The <strong style="color:var(--sg-fg)">SuperGrade</strong> single-node DCTL for DaVinci Resolve</li>
+        <li>Works in Resolve <strong style="color:var(--sg-fg)">free &amp; Studio</strong> &mdash; Windows, macOS, Linux</li>
+        <li>Built-in CST, film emulation, halation, grain, bloom &amp; split-tone</li>
+      </ul>
+      <div>
+        <a href="https://superprofile.bio/vp/supergrade" target="_blank" rel="noopener" class="sg-buy-btn">Buy SuperGrade</a>
+      </div>
+      <div class="sg-buy-sub">Secure checkout &amp; instant download via SuperProfile</div>
+      <div class="sg-req">Requires DaVinci Resolve 18+ &middot; GPU-accelerated DCTL &middot; Windows / macOS / Linux</div>
+    </div>
   </div>
-
-  <div class="posts-empty" id="postsEmpty" style="display:none">No posts match that search. Try another keyword.</div>
 </section>
 
 <footer>
@@ -538,71 +465,6 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  // Filter + search — combined
-  const filterButtons = document.querySelectorAll('#filterList button');
-  const cards = document.querySelectorAll('#postsGrid .post-card');
-  const featured = document.querySelector('.fp-card');
-  const featuredSection = document.querySelector('.featured-post');
-  const searchInput = document.querySelector('.filter-search input');
-  const empty = document.getElementById('postsEmpty');
-  let currentFilter = 'all';
-  let currentQuery = '';
-
-  function buildHaystack(el){
-    return [
-      (el.dataset.search || ''),
-      (el.querySelector('.post-title, .fp-title')?.textContent || ''),
-      (el.querySelector('.post-excerpt, .fp-excerpt')?.textContent || ''),
-      (el.querySelector('.post-cat')?.textContent || ''),
-      (el.dataset.cat || '')
-    ].join(' ').toLowerCase();
-  }
-
-  function applyFilters(){
-    const q = currentQuery.trim().toLowerCase();
-    const isSearching = q.length > 0;
-    let visible = 0;
-
-    // Featured: hide whole featured section if searching or filtering away its category
-    if (featured) {
-      const fHay = buildHaystack(featured);
-      const fCatOk = currentFilter === 'all' || featured.dataset.cat === currentFilter;
-      const fQOk = !isSearching || fHay.includes(q);
-      if (fCatOk && fQOk) {
-        if (featuredSection) featuredSection.style.display = '';
-        visible++;
-      } else {
-        if (featuredSection) featuredSection.style.display = 'none';
-      }
-    }
-
-    cards.forEach(card => {
-      const hay = buildHaystack(card);
-      const catOk = currentFilter === 'all' || card.dataset.cat === currentFilter;
-      const qOk = !isSearching || hay.includes(q);
-      if (catOk && qOk) { card.classList.remove('is-hidden'); visible++; }
-      else { card.classList.add('is-hidden'); }
-    });
-
-    if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
-  }
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('is-active'));
-      btn.classList.add('is-active');
-      currentFilter = btn.dataset.filter;
-      applyFilters();
-    });
-  });
-
-  if (searchInput) {
-    searchInput.addEventListener('input', () => {
-      currentQuery = searchInput.value;
-      applyFilters();
-    });
-  }
 </script>
 </body>
 </html>
