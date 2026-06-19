@@ -36,7 +36,6 @@ Internal-link targets the agent should weave into every post:
 ### Week of June 1, 2026
 
 ### Week of June 8, 2026
-- [ ] category: travel  | type: BROADER  | title: **Why You Cannot Fly a Drone at the Taj Mahal — And What You Can Shoot from Mehtab Bagh Instead** | intent: "drone taj mahal", "agra aerial alternatives"
 
 ### Week of June 15, 2026
 - [ ] category: travel  | type: LUT      | title: **Hill Station Fog (Munnar, Coorg, Ooty) Reads Grey — Adding Atmosphere Without Washing Out** | intent: "fog color grade", "hill station cinematic"
@@ -242,6 +241,7 @@ Internal-link targets the agent should weave into every post:
 
 ## Published
 
+- [x] 2026-06-19 | slug: drone-taj-mahal-ban-mehtab-bagh-alternatives | category: travel | title: **Why You Cannot Fly a Drone at the Taj Mahal — And What You Can Shoot from Mehtab Bagh Instead**
 - [x] 2026-06-17 | slug: drone-footage-hazy-dehaze-contrast-recipe | category: aerial | title: **Why Drone Footage Looks Hazy at 400 Feet — A Dehaze + Contrast Recipe**
 - [x] 2026-06-10 | slug: skin-tone-recovery-underexposed-indian-bride-closeups | category: wedding | title: **Skin Tone Recovery for Underexposed Indian Bride Closeups**
 - [x] 2026-06-08 | slug: framing-seven-pheras-two-camera-blocking-hindu-mandap | category: wedding | title: **Framing the Seven Pheras: A Two-Camera Blocking Diagram for Hindu Mandaps**
