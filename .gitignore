@@ -18,6 +18,9 @@ downloads/**/*.cube
 # Archive folder — kept locally as a "junk drawer", not tracked
 _archive/
 
+# Audit / review reports — kept locally, not part of the deployed site
+_audit/
+
 # Loose image exports / AI-generation dumps — keep them out of the repo root.
 # The site's actual image assets (Bundle_Luts_pack.png, Indian_*.png,
 # clipengine-mockup.png, *-logo.svg) are explicitly tracked via `git add`.

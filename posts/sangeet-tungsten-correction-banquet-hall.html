@@ -175,6 +175,8 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
     <li><a href="../index.html">Home</a></li>
     <li><a href="../products.html">Products</a></li>
     <li><a href="../luts.html">LUTs</a></li>
+    <li><a href="../supergrade.html">SuperGrade</a></li>
+    <li><a href="../apps.html">Apps</a></li>
     <li><a href="../blog.html" class="active">Blog</a></li>
     <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
   </ul>
@@ -184,6 +186,8 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   <li><a href="../index.html">Home</a></li>
   <li><a href="../products.html">Products</a></li>
   <li><a href="../luts.html">LUTs</a></li>
+  <li><a href="../supergrade.html">SuperGrade</a></li>
+  <li><a href="../apps.html">Apps</a></li>
   <li><a href="../blog.html">Blog</a></li>
   <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
 </ul>
@@ -268,7 +272,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
 <p>The approach: set your tungsten correction as a base on the timeline clip, then use <code>Remote Grades</code> in Resolve to create per-shot variations. For shots dominated by the tungsten wash, your base grade applies clean. For shots lit primarily by a green or blue DJ LED throw, add an adjustment clip or a node version switch that dials back your blue-channel lift (because you no longer need it) and pushes saturation back up slightly in the cool range. The principle is that your base grade is built for the dominant light source, and your per-shot adjustments handle the outliers — you're not building six separate pipelines, you're building one and patching exceptions.</p>
 
-<p>This is the same workflow described in detail for a related multi-source problem in the post on <a href="../posts/color-grading-mandap-fire-lehenga.html" rel="noopener noreferrer">grading mandap fire without blowing the lehenga</a> — worth reading in parallel if you're doing full-ceremony grading in a single session.</p>
+<p>This is the same workflow described in detail for a related multi-source problem in the post on <a href="../posts/color-grading-mandap-fire-lehenga-highlights.html" rel="noopener noreferrer">grading mandap fire without blowing the lehenga</a> — worth reading in parallel if you're doing full-ceremony grading in a single session.</p>
 
 <h2>The Camera Decisions That Make the Grade Easier</h2>
 
@@ -280,7 +284,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   <li><strong>Set your in-camera WB to 3200K.</strong> Not 2700K (even if the venue runs 2700K). The extra 500K headroom toward daylight reduces how hard you need to push the blue-channel lift in post, which in turn reduces noise amplification in the shadows. You're not trying to nail it in-camera; you're trying to land the raw data in a range your grade can work with cleanly.</li>
 </ul>
 
-<p>For a deeper look at how different Sony bodies handle skin tone bias before correction — including why the FX30 trends cooler than the FX3 under identical conditions — the post on <a href="../posts/fx30-skin-tones-vs-fx3.html" rel="noopener noreferrer">FX30 vs. FX3 skin tone behavior</a> is directly relevant to this workflow. The per-body baseline affects how much you'll need to adjust the HSL qualifier ranges above.</p>
+<p>For a deeper look at how different Sony bodies handle skin tone bias before correction — including why the FX30 trends cooler than the FX3 under identical conditions — the post on <a href="../posts/fx30-skin-tones-cooler-than-fx3-single-node-fix.html" rel="noopener noreferrer">FX30 vs. FX3 skin tone behavior</a> is directly relevant to this workflow. The per-body baseline affects how much you'll need to adjust the HSL qualifier ranges above.</p>
 
 <p>The sangeet is consistently the hardest technical environment in the Indian wedding day — harder than the mandap fire, harder than the haldi's flat overcast. It's hard not because the equipment fails but because the light source is designed for spectacle, not for cameras. Understanding exactly what the tungsten emission does to your sensor data is the prerequisite to fixing it. The pipeline above is your map through it.</p>
   </div>
@@ -305,6 +309,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
         <svg height="36" xmlns="http://www.w3.org/2000/svg" viewBox="110 137 152 88" preserveAspectRatio="xMidYMid meet"><text x="110" y="200" font-family="Bebas Neue,sans-serif" font-size="48" fill="#e8e0d4" letter-spacing="3">POSITIVA</text><text x="110" y="225" font-family="Playfair Display,serif" font-size="16" fill="#c9a84c" font-style="italic">films</text></svg>
       </a>
       <p class="footer-tagline">We craft cinematic stories that move people. From concept to final cut, we bring your vision to life.</p>
+      <p class="footer-parent" style="margin-top:10px;font-size:12px;opacity:0.6">A brand of <a href="https://digitallyinc.positivafilms.com" target="_blank" rel="noopener">DigiTallyINC</a></p>
     </div>
     <div class="footer-social">
       <a href="https://www.youtube.com/@TallyTalwarOfficial" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
@@ -314,9 +319,11 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   <div class="footer-bottom">
     <div>&copy; 2026 Positiva Films. All rights reserved.</div>
     <div>
-      <a href="https://clipengineai.positivafilms.com/" target="_blank">ClipEngine AI</a>
+      <a href="https://clipengineai.positivafilms.com/" target="_blank" rel="noopener">ClipEngine AI</a>
       <a href="../products.html">Products</a>
+      <a href="../apps.html">Apps</a>
       <a href="../luts.html">LUTs</a>
+      <a href="../supergrade.html">SuperGrade</a>
       <a href="../blog.html">Blog</a>
       <a href="../index.html#contact">Contact</a>
     </div>

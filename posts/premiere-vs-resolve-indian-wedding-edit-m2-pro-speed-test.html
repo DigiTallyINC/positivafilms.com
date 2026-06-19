@@ -175,6 +175,8 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
     <li><a href="../index.html">Home</a></li>
     <li><a href="../products.html">Products</a></li>
     <li><a href="../luts.html">LUTs</a></li>
+    <li><a href="../supergrade.html">SuperGrade</a></li>
+    <li><a href="../apps.html">Apps</a></li>
     <li><a href="../blog.html" class="active">Blog</a></li>
     <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
   </ul>
@@ -184,6 +186,8 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   <li><a href="../index.html">Home</a></li>
   <li><a href="../products.html">Products</a></li>
   <li><a href="../luts.html">LUTs</a></li>
+  <li><a href="../supergrade.html">SuperGrade</a></li>
+  <li><a href="../apps.html">Apps</a></li>
   <li><a href="../blog.html">Blog</a></li>
   <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
 </ul>
@@ -233,7 +237,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   ↓
 [05 Output Saturation / Contrast]
 </code></pre>
-<p>That node tree — with a <code>Color Space Transform</code> OFX at node 01 — handles the log-to-display transform cleanly before the LUT hits, which is exactly the CST-first principle covered in the <a href="../posts/color-space-transform-resolve-cst-then-lut.html" rel="noopener noreferrer">CST ordering post</a>. The skin qualifier at node 04 takes perhaps 90 seconds to pull on an Indian bride in a deep-red lehenga under tungsten mandap lighting. Doing the equivalent in Premiere with stacked Lumetri instances and a secondary Hue/Saturation Curves layer takes four or five times as long and gives you less precision.</p>
+<p>That node tree — with a <code>Color Space Transform</code> OFX at node 01 — handles the log-to-display transform cleanly before the LUT hits, which is exactly the CST-first principle covered in the <a href="../posts/color-space-transform-order-resolve-cst-then-lut.html" rel="noopener noreferrer">CST ordering post</a>. The skin qualifier at node 04 takes perhaps 90 seconds to pull on an Indian bride in a deep-red lehenga under tungsten mandap lighting. Doing the equivalent in Premiere with stacked Lumetri instances and a secondary Hue/Saturation Curves layer takes four or five times as long and gives you less precision.</p>
 <p>Export of the graded 20-minute film at <code>H.265 4K 50Mbps</code>: Resolve on M2 Pro using Metal GPU acceleration — <strong>14 minutes 22 seconds</strong>. Premiere exporting the same sequence via AME with Hardware Encoding enabled — <strong>11 minutes 08 seconds</strong>. Premiere is faster here, meaningfully so. But if you account for the extra time spent doing color in Lumetri versus Resolve's node page, Resolve saves roughly 2–3 hours on a full wedding color grade, which more than covers the export gap.</p>
 
 <div class="inline-cta"><div class="inline-cta-text"><div class="inline-cta-eyebrow">From the Positiva LUT Library</div><h4>Indian Wedding LUTs</h4><p>Node-ready .cube files built for S-Log3, C-Log3, and D-Log M — drop straight into the node tree structure above and your mixed-log multicam timeline is colour-matched before lunch.</p></div><a class="btn" href="../luts.html#wedding" rel="noopener noreferrer">View Pack →</a></div>
@@ -255,7 +259,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 <p>For a solo Indian wedding filmmaker delivering both a feature film and a reel: <strong>Resolve end-to-end is faster overall</strong>, primarily because the color page recovers the time the Edit page costs. The waveform sync, Source Tape view, and node-based grade add up to a meaningful advantage over the course of a full project. Premiere is faster at individual tasks — proxy generation, export, audio mixing — but slower at the thing that takes most of the hours: getting mixed-log, mixed-venue, mixed-lighting footage to look intentional.</p>
 <p>If you are a two-editor team where one person cuts and one person grades, Premiere on the edit seat and Resolve on the color seat is still a legitimate split — just keep your XML discipline tight and test the roundtrip before a real deadline, not during one.</p>
 <p>The M2 Pro handles both tools without complaint. The bottleneck is almost never the chip. It is always the workflow.</p>
-<p>See how these principles carry into codec selection at the capture stage in the <a href="../products.html" rel="noopener noreferrer">tools and resources section</a>, or revisit the colour pipeline fundamentals in the <a href="../posts/color-space-transform-resolve-cst-then-lut.html" rel="noopener noreferrer">CST ordering deep-dive</a>.</p>
+<p>See how these principles carry into codec selection at the capture stage in the <a href="../products.html" rel="noopener noreferrer">tools and resources section</a>, or revisit the colour pipeline fundamentals in the <a href="../posts/color-space-transform-order-resolve-cst-then-lut.html" rel="noopener noreferrer">CST ordering deep-dive</a>.</p>
   </div>
 </article>
 
@@ -278,6 +282,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
         <svg height="36" xmlns="http://www.w3.org/2000/svg" viewBox="110 137 152 88" preserveAspectRatio="xMidYMid meet"><text x="110" y="200" font-family="Bebas Neue,sans-serif" font-size="48" fill="#e8e0d4" letter-spacing="3">POSITIVA</text><text x="110" y="225" font-family="Playfair Display,serif" font-size="16" fill="#c9a84c" font-style="italic">films</text></svg>
       </a>
       <p class="footer-tagline">We craft cinematic stories that move people. From concept to final cut, we bring your vision to life.</p>
+      <p class="footer-parent" style="margin-top:10px;font-size:12px;opacity:0.6">A brand of <a href="https://digitallyinc.positivafilms.com" target="_blank" rel="noopener">DigiTallyINC</a></p>
     </div>
     <div class="footer-social">
       <a href="https://www.youtube.com/@TallyTalwarOfficial" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
@@ -287,9 +292,11 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   <div class="footer-bottom">
     <div>&copy; 2026 Positiva Films. All rights reserved.</div>
     <div>
-      <a href="https://clipengineai.positivafilms.com/" target="_blank">ClipEngine AI</a>
+      <a href="https://clipengineai.positivafilms.com/" target="_blank" rel="noopener">ClipEngine AI</a>
       <a href="../products.html">Products</a>
+      <a href="../apps.html">Apps</a>
       <a href="../luts.html">LUTs</a>
+      <a href="../supergrade.html">SuperGrade</a>
       <a href="../blog.html">Blog</a>
       <a href="../index.html#contact">Contact</a>
     </div>
