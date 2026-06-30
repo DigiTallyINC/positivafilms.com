@@ -9,6 +9,12 @@
   <meta property="og:description" content="Mobile and desktop apps from Positiva Films — PasteKaro smart clipboard, with more on the way." />
   <meta property="og:image" content="https://img.youtube.com/vi/xIzlP_EFEs8/maxresdefault.jpg" />
   <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://positivafilms.com/apps.html" />
+  <meta property="og:url" content="https://positivafilms.com/apps.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Apps — Positiva Films" />
+  <meta name="twitter:description" content="Mobile and desktop apps from Positiva Films — PasteKaro smart clipboard, with more on the way." />
+  <meta name="twitter:image" content="https://img.youtube.com/vi/xIzlP_EFEs8/maxresdefault.jpg" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127916;</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,10 +31,10 @@
 html{scroll-behavior:smooth}
 html{overflow-x:hidden}
 body{background:var(--ink);color:var(--linen);font-family:var(--body);font-weight:300;overflow-x:hidden}
-@media(hover:hover)and (pointer:fine){body{cursor:none}a,button,input,textarea{cursor:none}}
+@media(hover:hover)and (pointer:fine){body.cc{cursor:none}body.cc a,body.cc button,body.cc input,body.cc textarea{cursor:none}}
 #cur{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:exclusion;display:none}
 #cur-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(201,168,76,0.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);display:none}
-@media(hover:hover)and (pointer:fine){#cur,#cur-ring{display:block}}
+@media(hover:hover)and (pointer:fine){body.cc #cur,body.cc #cur-ring{display:block}}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.38}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:28px 48px}
@@ -192,7 +198,7 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
 .footer-social a{width:40px;height:40px;border:1px solid var(--linen-faint);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--linen-dim);transition:border-color .2s,color .2s;text-decoration:none}
 .footer-social a:hover{border-color:var(--gold);color:var(--gold)}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px}
-.footer-copy{font-size:11px;color:rgba(232,224,212,0.25);letter-spacing:0.04em}
+.footer-copy{font-size:11px;color:rgba(232,224,212,0.5);letter-spacing:0.04em}
 .footer-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
 .footer-links a{font-size:11px;letter-spacing:0.12em;color:var(--linen-dim);text-decoration:none;text-transform:uppercase;transition:color .2s}
 .footer-links a:hover{color:var(--gold)}
@@ -244,17 +250,82 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .app-sehatvault .hub-soon-pill{color:#FAF6EE;border-color:rgba(232,156,46,0.5)}
 .app-sehatvault .hub-soon-pill::before{background:#E89C2E;box-shadow:0 0 0 4px rgba(232,156,46,0.18)}
 
-/* NoteVault — constants/colors.ts dark: tint #ecff8e, accent #f5bb1b, bg #0E1210, card #1D2B18, text #E8EDE0 */
-.app-notevault{background:linear-gradient(152deg,#1D2B18 0%,#0E1210 100%);border-color:#2E3E26}
-.app-notevault .hub-num{color:#ecff8e}
-.app-notevault .hub-tag.soon-tag{color:#1A2010;background:#ecff8e;border-color:#ecff8e}
-.app-notevault .hub-name{color:#E8EDE0}
-.app-notevault .hub-name span{color:#ecff8e}
-.app-notevault .hub-desc{color:rgba(232,237,224,0.7)}
-.app-notevault .hub-foot{border-top-color:rgba(232,237,224,0.14)}
-.app-notevault .hub-meta{color:rgba(232,237,224,0.62)}
-.app-notevault .hub-soon-pill{color:#E8EDE0;border-color:rgba(245,187,27,0.5)}
-.app-notevault .hub-soon-pill::before{background:#f5bb1b;box-shadow:0 0 0 4px rgba(245,187,27,0.18)}
+/* Remind Karo — constants/colors.ts: primary #ecff8e, accent #f5bb1b, bg #0E1210, card #1D2B18, text #E8EDE0 */
+.app-remindkaro{background:linear-gradient(152deg,#1D2B18 0%,#0E1210 100%);border-color:#2E3E26}
+.app-remindkaro .hub-num{color:#ecff8e}
+.app-remindkaro .hub-tag.soon-tag{color:#1A2010;background:#ecff8e;border-color:#ecff8e}
+.app-remindkaro .hub-name{color:#E8EDE0}
+.app-remindkaro .hub-name span{color:#ecff8e}
+.app-remindkaro .hub-desc{color:rgba(232,237,224,0.7)}
+.app-remindkaro .hub-foot{border-top-color:rgba(232,237,224,0.14)}
+.app-remindkaro .hub-meta{color:rgba(232,237,224,0.62)}
+.app-remindkaro .hub-soon-pill{color:#E8EDE0;border-color:rgba(245,187,27,0.5)}
+.app-remindkaro .hub-soon-pill::before{background:#f5bb1b;box-shadow:0 0 0 4px rgba(245,187,27,0.18)}
+
+/* Trace (weight tracker) — src/theme/colors.ts: navy #13235C, yellow #FFC93C, text #13235C */
+.app-trace{background:linear-gradient(152deg,#1b2a63 0%,#0a0f28 100%);border-color:#28356b}
+.app-trace .hub-num{color:#FFC93C}
+.app-trace .hub-tag.soon-tag{color:#13235C;background:#FFC93C;border-color:#FFC93C}
+.app-trace .hub-name{color:#EEF1FA}
+.app-trace .hub-name span{color:#FFC93C}
+.app-trace .hub-desc{color:rgba(238,241,250,0.7)}
+.app-trace .hub-foot{border-top-color:rgba(238,241,250,0.14)}
+.app-trace .hub-meta{color:rgba(238,241,250,0.62)}
+.app-trace .hub-soon-pill{color:#EEF1FA;border-color:rgba(255,201,60,0.5)}
+.app-trace .hub-soon-pill::before{background:#FFC93C;box-shadow:0 0 0 4px rgba(255,201,60,0.18)}
+
+/* Bharometer — colors.ts: primary #007EC7/#409FD5, accent #FFDF00, bg #0B1622, surface #16263A, text #EAF1F8 */
+.app-bharometer{background:linear-gradient(152deg,#16263A 0%,#0B1622 100%);border-color:#21364f}
+.app-bharometer .hub-num{color:#409FD5}
+.app-bharometer .hub-tag.soon-tag{color:#06223a;background:#409FD5;border-color:#409FD5}
+.app-bharometer .hub-name{color:#EAF1F8}
+.app-bharometer .hub-name span{color:#409FD5}
+.app-bharometer .hub-desc{color:rgba(234,241,248,0.7)}
+.app-bharometer .hub-foot{border-top-color:rgba(234,241,248,0.14)}
+.app-bharometer .hub-meta{color:rgba(234,241,248,0.62)}
+.app-bharometer .hub-soon-pill{color:#EAF1F8;border-color:rgba(255,223,0,0.5)}
+.app-bharometer .hub-soon-pill::before{background:#FFDF00;box-shadow:0 0 0 4px rgba(255,223,0,0.18)}
+
+/* English Seekho — constants/colors.ts: accent #e89556, accentDark #c97233, bg #fdf8f3, text #2a1f15 */
+.app-englishseekho{background:linear-gradient(152deg,#3a2a1c 0%,#180f08 100%);border-color:#3f2e1e}
+.app-englishseekho .hub-num{color:#e89556}
+.app-englishseekho .hub-tag.soon-tag{color:#2a1f15;background:#e89556;border-color:#e89556}
+.app-englishseekho .hub-name{color:#FBF1E6}
+.app-englishseekho .hub-name span{color:#e89556}
+.app-englishseekho .hub-desc{color:rgba(251,241,230,0.7)}
+.app-englishseekho .hub-foot{border-top-color:rgba(251,241,230,0.14)}
+.app-englishseekho .hub-meta{color:rgba(251,241,230,0.62)}
+.app-englishseekho .hub-soon-pill{color:#FBF1E6;border-color:rgba(232,149,86,0.5)}
+.app-englishseekho .hub-soon-pill::before{background:#e89556;box-shadow:0 0 0 4px rgba(232,149,86,0.18)}
+
+/* Contact / app support form */
+.contact{background:var(--ink-soft);padding:120px 48px;border-top:1px solid var(--linen-faint)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;margin-top:48px}
+.contact-title{font-family:var(--display);font-size:clamp(44px,6vw,76px);line-height:0.9;letter-spacing:0.04em;color:var(--linen);margin-bottom:8px}
+.contact-title em{font-family:var(--serif);font-style:italic;font-weight:300;font-size:0.62em;color:var(--gold);display:block;letter-spacing:0.02em}
+.contact-sub{font-size:14px;font-weight:300;color:var(--linen-dim);line-height:1.85;margin-top:22px;margin-bottom:36px}
+.contact-details{display:flex;flex-direction:column;gap:12px}
+.cd-row{display:flex;gap:18px;align-items:baseline;font-size:13px}
+.cd-label{font-size:9px;font-weight:400;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;min-width:68px;flex-shrink:0}
+.cd-val{color:var(--linen-dim)}
+.form{display:flex;flex-direction:column;gap:13px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.form-field{display:flex;flex-direction:column;gap:6px}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-size:9px;font-weight:400;letter-spacing:0.18em;color:var(--linen-dim);text-transform:uppercase}
+.form-field input,.form-field textarea{background:rgba(232,224,212,0.04);border:1px solid rgba(232,224,212,0.08);color:var(--linen);font-family:var(--body);font-size:14px;font-weight:300;padding:14px 16px;outline:none;resize:none;transition:border-color .2s}
+.form-field input:focus,.form-field textarea:focus{border-color:var(--gold-dim)}
+.form-field input:focus-visible,.form-field textarea:focus-visible{outline:none;border-color:var(--gold)}
+.form-submit{align-self:flex-start;display:inline-flex;align-items:center;gap:12px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;background:var(--gold);color:var(--ink);border:none;padding:18px 32px;transition:background .3s}
+.form-submit:hover{background:#d4b255}
+.form-submit::after{content:'\2192';font-size:15px}
+.form-submit:disabled{opacity:.6}
+.form-feedback{font-size:13px;margin-top:8px;display:none}
+.form-feedback.success{display:block;color:#6abf69}
+.form-feedback.error{display:block;color:var(--clay)}
+@media(max-width:980px){.contact-grid{grid-template-columns:1fr;gap:48px}.form-row{grid-template-columns:1fr}}
+@media(max-width:768px){.contact{padding:80px 24px}}
+@media(max-width:560px){.contact-title{font-size:38px}}
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important;scroll-behavior:auto!important}
@@ -362,15 +433,54 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
       </div>
     </div>
 
-    <div class="hub-card soon app-notevault reveal">
+    <div class="hub-card soon app-remindkaro reveal">
       <div class="hub-card-top">
         <div class="hub-num">(03)</div>
-        <span class="hub-tag soon-tag">Notes App &middot; Coming Soon</span>
-        <h3 class="hub-name">NOTE<span>VAULT</span></h3>
-        <p class="hub-desc">A fast, private place for everything you write. Capture ideas, organise them into notebooks, tag them, and find anything with full-text search &mdash; your notes, synced across your devices and yours alone.</p>
+        <span class="hub-tag soon-tag">Reminders &middot; Coming Soon</span>
+        <h3 class="hub-name">REMIND <span>KARO</span></h3>
+        <p class="hub-desc">Fast reminders and countdown timers with a signature auto-snooze that keeps re-alerting you until a task is actually done. Capture in seconds, schedule it, and stay on track.</p>
       </div>
       <div class="hub-foot">
         <span class="hub-meta">iOS, Android &amp; Web</span>
+        <span class="hub-soon-pill">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="hub-card soon app-trace reveal">
+      <div class="hub-card-top">
+        <div class="hub-num">(04)</div>
+        <span class="hub-tag soon-tag">Health &middot; Coming Soon</span>
+        <h3 class="hub-name">TRACE<span>.</span></h3>
+        <p class="hub-desc">A beautifully simple weight &amp; body-measurement tracker. Log your weight in seconds, watch the trend line move, and reach your goal. Private by design &mdash; your data never leaves your device.</p>
+      </div>
+      <div class="hub-foot">
+        <span class="hub-meta">iOS, Android &amp; Web</span>
+        <span class="hub-soon-pill">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="hub-card soon app-bharometer reveal">
+      <div class="hub-card-top">
+        <div class="hub-num">(05)</div>
+        <span class="hub-tag soon-tag">Vehicle &middot; Coming Soon</span>
+        <h3 class="hub-name">BHAR<span>OMETER</span></h3>
+        <p class="hub-desc">Track fuel, mileage and running costs for your vehicle. AI pump-scan logs every fill-up in a tap, with accurate city-level daily fuel prices built for India.</p>
+      </div>
+      <div class="hub-foot">
+        <span class="hub-meta">iPhone &amp; Apple Watch</span>
+        <span class="hub-soon-pill">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="hub-card soon app-englishseekho reveal">
+      <div class="hub-card-top">
+        <div class="hub-num">(06)</div>
+        <span class="hub-tag soon-tag">Learning &middot; Coming Soon</span>
+        <h3 class="hub-name">ENGLISH <span>SEEKHO</span></h3>
+        <p class="hub-desc">Learn to speak English the easy way. Practise real conversations with &lsquo;Didi&rsquo; &mdash; a warm, patient AI teacher &mdash; made for Hindi speakers who want confidence, not grammar drills.</p>
+      </div>
+      <div class="hub-foot">
+        <span class="hub-meta">Android &amp; iOS</span>
         <span class="hub-soon-pill">Coming Soon</span>
       </div>
     </div>
@@ -416,6 +526,37 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   </div>
 </section>
 
+<section class="contact" id="contact">
+  <div class="section-header reveal">
+    <div class="section-tag">App Support</div>
+    <div class="section-num">( 04 )</div>
+  </div>
+  <div class="contact-grid">
+    <div class="reveal">
+      <h2 class="contact-title">CONTACT<br><em>We&#39;re here to help</em></h2>
+      <p class="contact-sub">Questions, bugs, feedback, or feature ideas for any of our apps &mdash; send us a note and we&#39;ll get back to you. This is the support inbox for <strong style="color:var(--linen);font-weight:400">all Positiva Films apps</strong>.</p>
+      <div class="contact-details">
+        <div class="cd-row"><span class="cd-label">Maker</span><span class="cd-val">Positiva Films &middot; Mumbai, India</span></div>
+        <div class="cd-row"><span class="cd-label">Reply</span><span class="cd-val">Usually within 1&ndash;2 working days</span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <!-- Formspree: shared inbox with the website contact form; _subject tags these as app support -->
+      <form class="form" id="contactForm" action="https://formspree.io/f/xgonvlyb" method="POST">
+        <input type="hidden" name="_subject" value="App Support — Positiva Films" />
+        <div class="form-row">
+          <div class="form-field"><label for="contact-name">Name</label><input type="text" id="contact-name" name="name" placeholder="Your name" required /></div>
+          <div class="form-field"><label for="contact-email">Email</label><input type="email" id="contact-email" name="email" placeholder="your@email.com" required /></div>
+        </div>
+        <div class="form-field full"><label for="contact-app">App</label><input type="text" id="contact-app" name="app" placeholder="Which app? (e.g. PasteKaro)" /></div>
+        <div class="form-field full"><label for="contact-message">Message</label><textarea rows="5" id="contact-message" name="message" placeholder="How can we help?" required></textarea></div>
+        <button type="submit" class="form-submit">Send Message</button>
+        <div class="form-feedback" id="formFeedback"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
@@ -435,6 +576,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
       <a href="products.html">Products</a>
       <a href="apps.html">Apps</a>
       <a href="luts.html">LUTs</a>
+      <a href="supergrade.html">SuperGrade</a>
       <a href="blog.html">Blog</a>
       <a href="index.html#contact">Contact</a>
     </div>
@@ -446,6 +588,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reducedMotion) {
+    document.body.classList.add('cc');
     const cur = document.getElementById('cur'), ring = document.getElementById('cur-ring');
     let mx=0,my=0,rx=0,ry=0;
     document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
@@ -476,6 +619,28 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  const form = document.getElementById('contactForm');
+  const feedback = document.getElementById('formFeedback');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.form-submit');
+      btn.disabled = true; btn.textContent = 'Sending...';
+      feedback.className = 'form-feedback'; feedback.style.display = 'none';
+      try {
+        const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
+        if (res.ok) {
+          feedback.textContent = "Message sent. We'll be in touch soon.";
+          feedback.className = 'form-feedback success'; form.reset();
+        } else { throw new Error('Failed'); }
+      } catch {
+        feedback.textContent = 'Something went wrong. Please try again.';
+        feedback.className = 'form-feedback error';
+      }
+      btn.disabled = false; btn.textContent = 'Send Message';
+    });
+  }
 </script>
 </body>
 </html>

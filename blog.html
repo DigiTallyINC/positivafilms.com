@@ -9,6 +9,12 @@
   <meta property="og:description" content="Field notes, behind-the-lens stories, and craft writing from Positiva Films." />
   <meta property="og:image" content="https://img.youtube.com/vi/xIzlP_EFEs8/maxresdefault.jpg" />
   <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://positivafilms.com/blog.html" />
+  <meta property="og:url" content="https://positivafilms.com/blog.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog — Positiva Films" />
+  <meta name="twitter:description" content="Field notes, behind-the-lens stories, and craft writing from Positiva Films." />
+  <meta name="twitter:image" content="https://img.youtube.com/vi/xIzlP_EFEs8/maxresdefault.jpg" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127916;</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,10 +31,10 @@
 html{scroll-behavior:smooth}
 html{overflow-x:hidden}
 body{background:var(--ink);color:var(--linen);font-family:var(--body);font-weight:300;overflow-x:hidden}
-@media(hover:hover)and (pointer:fine){body{cursor:none}a,button,input,textarea{cursor:none}}
+@media(hover:hover)and (pointer:fine){body.cc{cursor:none}body.cc a,body.cc button,body.cc input,body.cc textarea{cursor:none}}
 #cur{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:exclusion;display:none}
 #cur-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(201,168,76,0.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);display:none}
-@media(hover:hover)and (pointer:fine){#cur,#cur-ring{display:block}}
+@media(hover:hover)and (pointer:fine){body.cc #cur,body.cc #cur-ring{display:block}}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.38}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:28px 48px}
@@ -166,7 +172,7 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
 .footer-social a{width:40px;height:40px;border:1px solid var(--linen-faint);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--linen-dim);transition:border-color .2s,color .2s;text-decoration:none}
 .footer-social a:hover{border-color:var(--gold);color:var(--gold)}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px}
-.footer-copy{font-size:11px;color:rgba(232,224,212,0.25);letter-spacing:0.04em}
+.footer-copy{font-size:11px;color:rgba(232,224,212,0.5);letter-spacing:0.04em}
 .footer-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
 .footer-links a{font-size:11px;letter-spacing:0.12em;color:var(--linen-dim);text-decoration:none;text-transform:uppercase;transition:color .2s}
 .footer-links a:hover{color:var(--gold)}
@@ -513,6 +519,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
       <a href="products.html">Products</a>
       <a href="apps.html">Apps</a>
       <a href="luts.html">LUTs</a>
+      <a href="supergrade.html">SuperGrade</a>
       <a href="blog.html">Blog</a>
       <a href="index.html#contact">Contact</a>
     </div>
@@ -524,6 +531,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reducedMotion) {
+    document.body.classList.add('cc');
     const cur = document.getElementById('cur'), ring = document.getElementById('cur-ring');
     let mx=0,my=0,rx=0,ry=0;
     document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });

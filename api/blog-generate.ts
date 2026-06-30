@@ -108,6 +108,16 @@ async function runOnce() {
   const out = toolUse.input as ToolOutput;
   validateOutput(out);
 
+  // Guard: remove any internal post link the model invented (slug that isn't a real
+  // published post). Prevents the cron from ever shipping a broken "related post" link.
+  const knownSlugs = new Set<string>(published.map((p) => p.slug));
+  knownSlugs.add(out.slug);
+  const { html: cleanedBody, stripped } = sanitizeInternalPostLinks(out.body_html, knownSlugs);
+  if (stripped.length) {
+    console.warn(`[blog-generate] stripped ${stripped.length} link(s) to non-existent posts: ${stripped.join(", ")}`);
+    out.body_html = cleanedBody;
+  }
+
   // Compute read time from rendered word count
   const wordCount = out.body_html.replace(/<[^>]*>/g, " ").split(/\s+/).filter(Boolean).length;
   const readTime = Math.max(3, Math.round(wordCount / 230));
@@ -173,7 +183,28 @@ async function runOnce() {
     readTime,
     commit: commitResult.commitUrl,
     remainingQueued: totalQueued - 1,
+    strippedLinks: stripped,
   };
+}
+
+/**
+ * Remove internal post links whose target slug is not a real published post.
+ * The model occasionally invents a "related post" filename; rather than ship a 404,
+ * we unwrap the link to its visible text (the sentence stays, the bad link goes).
+ * Matches both `posts/slug.html` and `../posts/slug.html`, with optional #anchor.
+ */
+function sanitizeInternalPostLinks(
+  html: string,
+  knownSlugs: Set<string>
+): { html: string; stripped: string[] } {
+  const stripped: string[] = [];
+  const re = /<a\b[^>]*?href="(?:\.\.\/)?posts\/([a-z0-9-]+)\.html(?:#[^"]*)?"[^>]*>([\s\S]*?)<\/a>/gi;
+  const cleaned = html.replace(re, (match, slug: string, inner: string) => {
+    if (knownSlugs.has(slug)) return match;
+    stripped.push(slug);
+    return inner;
+  });
+  return { html: cleaned, stripped };
 }
 
 function validateOutput(out: ToolOutput): void {

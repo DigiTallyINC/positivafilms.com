@@ -39,6 +39,12 @@ export function userPrompt(opts: {
 
   const recent = publishedDescending.slice(0, 6).map((p) => `- ${p.title} (${p.date}, ${p.category})`).join("\n");
 
+  // The exact, real filenames the model is allowed to link to. Prevents invented slugs.
+  const linkable = publishedDescending
+    .slice(0, 40)
+    .map((p) => `- ${p.title} -> ../posts/${p.slug}.html`)
+    .join("\n");
+
   return `Today's publication date: **${prettyDate}** (${isoDate}).
 
 Today's topic from the queue:
@@ -51,6 +57,10 @@ Today's topic from the queue:
 Already published recently — avoid repeating their hooks, opening images, or near-identical phrasing:
 
 ${recent || "(none yet)"}
+
+LINKING RULE (strict): if you link to another Positiva blog post from inside body_html, you MUST use one of these exact paths verbatim. Do NOT invent, guess, abbreviate, or reword a filename. If none fits, link to ../luts.html, ../products.html, or ../blog.html instead. Any link to a post not on this list is removed automatically before publishing:
+
+${linkable || "(no earlier posts yet, so do not link to any other post)"}
 
 Write the post now. Length 1100–1700 words. Authoritative second-person voice. Show your work — node trees, exact slider values, real camera/codec names, real venue/location names where the topic invites it. Insert exactly one inline-cta block roughly 60–70% through the body.
 
