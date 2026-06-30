@@ -315,7 +315,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <section class="hero">
   <div class="hero-bg">
     <div class="hero-poster"></div>
-    <iframe id="heroVideo" style="display:none" data-src="https://www.youtube.com/embed/xIzlP_EFEs8?autoplay=1&mute=1&loop=1&playlist=xIzlP_EFEs8&controls=0&showinfo=0&modestbranding=1&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe id="heroVideo" style="display:none" data-src="https://www.youtube.com/embed/xIzlP_EFEs8?autoplay=1&mute=1&loop=1&playlist=xIzlP_EFEs8&controls=0&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
   <div class="hero-content">
     <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Positiva Films &mdash; Cinematic films, aerial &amp; wedding videography in Mumbai, India</h1>
@@ -623,6 +623,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     heroIframe.addEventListener('load', () => {
       setTimeout(() => heroIframe.classList.add('loaded'), 500);
     });
+    // Mobile browsers (esp. iOS Safari) ignore the autoplay= URL param for YouTube
+    // embeds, so force muted playback through the IFrame API once the player is ready.
+    const ytTag = document.createElement('script');
+    ytTag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(ytTag);
+    window.onYouTubeIframeAPIReady = () => {
+      new YT.Player('heroVideo', {
+        events: {
+          onReady: (e) => { e.target.mute(); e.target.playVideo(); }
+        }
+      });
+    };
   }
 
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reducedMotion) {
