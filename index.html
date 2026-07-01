@@ -73,6 +73,9 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .hero-bg .hero-poster{position:absolute;inset:0;background-image:url("https://img.youtube.com/vi/xIzlP_EFEs8/maxresdefault.jpg");background-size:cover;background-position:center;opacity:0.45;filter:saturate(1.2)}
 .hero-bg iframe{position:absolute;top:50%;left:50%;width:177.78vh;height:100vh;min-width:100%;min-height:56.25vw;transform:translate(-50%,-50%);pointer-events:none;opacity:0;transition:opacity 1.5s ease}
 .hero-bg iframe.loaded{opacity:1}
+/* Mobile-only self-hosted showreel — YouTube embeds don't autoplay on mobile */
+.hero-bg .hero-video-m{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;opacity:0;transition:opacity 1.5s ease;display:none}
+.hero-bg .hero-video-m.loaded{opacity:1}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--ink) 0%,rgba(10,9,8,0.5) 40%,rgba(10,9,8,0.25) 100%),linear-gradient(to right,rgba(10,9,8,0.5) 0%,transparent 50%);z-index:1}
 .hero-content{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:140px 48px 0}
 .hero-section-num{font-family:var(--serif);font-size:14px;font-style:italic;color:var(--gold);margin-bottom:24px;opacity:0;transform:translateY(20px)}
@@ -254,6 +257,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 }
 
 @media(max-width:768px){
+  .hero-bg iframe{display:none}.hero-bg .hero-video-m{display:block}
   nav{padding:20px 24px}.nav-links{display:none}.nav-hamburger{display:flex}.mobile-nav{display:flex}
   .hero-content{padding:120px 24px 0}.hero-bottom{flex-direction:column;padding:32px 24px 48px;align-items:flex-start}.hero-card{max-width:100%}
   .marquee-item{font-size:32px}
@@ -317,6 +321,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   <div class="hero-bg">
     <div class="hero-poster"></div>
     <iframe id="heroVideo" style="display:none" data-src="https://www.youtube.com/embed/xIzlP_EFEs8?autoplay=1&mute=1&loop=1&playlist=xIzlP_EFEs8&controls=0&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <video id="heroVideoM" class="hero-video-m" muted loop playsinline preload="none" poster="hero-poster.jpg"><source data-src="hero.mp4" type="video/mp4" /></video>
   </div>
   <div class="hero-content">
     <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Positiva Films &mdash; Cinematic films, aerial &amp; wedding videography in Mumbai, India</h1>
@@ -616,16 +621,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Only load YouTube embed when served over HTTP (not file://), and only when user has not requested reduced motion
+  // Hero background: mobile browsers won't autoplay YouTube embeds, so on mobile
+  // we play a self-hosted muted showreel; desktop keeps the working YouTube embed.
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
   const heroIframe = document.getElementById('heroVideo');
-  if (heroIframe && location.protocol.startsWith('http') && !reducedMotion) {
+  const heroVideoM = document.getElementById('heroVideoM');
+
+  if (isMobile && heroVideoM && !reducedMotion) {
+    const source = heroVideoM.querySelector('source');
+    if (source && source.dataset.src) source.src = source.dataset.src;
+    heroVideoM.load();
+    heroVideoM.addEventListener('loadeddata', () => heroVideoM.classList.add('loaded'));
+    const played = heroVideoM.play();
+    if (played && played.catch) played.catch(() => {});
+  } else if (heroIframe && location.protocol.startsWith('http') && !reducedMotion) {
     heroIframe.style.display = '';
     heroIframe.src = heroIframe.dataset.src;
     heroIframe.addEventListener('load', () => {
       setTimeout(() => heroIframe.classList.add('loaded'), 500);
     });
-    // Mobile browsers (esp. iOS Safari) ignore the autoplay= URL param for YouTube
-    // embeds, so force muted playback through the IFrame API once the player is ready.
+    // Force muted playback through the IFrame API once the player is ready.
     const ytTag = document.createElement('script');
     ytTag.src = 'https://www.youtube.com/iframe_api';
     document.head.appendChild(ytTag);
