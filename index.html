@@ -630,10 +630,24 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   if (isMobile && heroVideoM && !reducedMotion) {
     const source = heroVideoM.querySelector('source');
     if (source && source.dataset.src) source.src = source.dataset.src;
+    // iOS Safari ignores the muted *attribute* for programmatic autoplay — the
+    // muted *property* must be set in JS, and playsinline is required.
+    heroVideoM.muted = true;
+    heroVideoM.defaultMuted = true;
+    heroVideoM.setAttribute('muted', '');
+    heroVideoM.setAttribute('autoplay', '');
     heroVideoM.load();
-    heroVideoM.addEventListener('loadeddata', () => heroVideoM.classList.add('loaded'));
-    const played = heroVideoM.play();
-    if (played && played.catch) played.catch(() => {});
+    const tryPlay = () => {
+      const p = heroVideoM.play();
+      if (p && p.catch) p.catch(() => {});
+    };
+    heroVideoM.addEventListener('loadeddata', () => { heroVideoM.classList.add('loaded'); tryPlay(); });
+    heroVideoM.addEventListener('canplay', tryPlay);
+    tryPlay();
+    // Last-resort fallback: if the browser still blocks autoplay, start on first tap.
+    const kick = () => { tryPlay(); document.removeEventListener('touchstart', kick); document.removeEventListener('click', kick); };
+    document.addEventListener('touchstart', kick, { once: true, passive: true });
+    document.addEventListener('click', kick, { once: true });
   } else if (heroIframe && location.protocol.startsWith('http') && !reducedMotion) {
     heroIframe.style.display = '';
     heroIframe.src = heroIframe.dataset.src;
