@@ -736,9 +736,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     ytTag.src = 'https://www.youtube.com/iframe_api';
     document.head.appendChild(ytTag);
     window.onYouTubeIframeAPIReady = () => {
+      // unloadModule('captions') kills CC even for viewers whose YouTube
+      // preference has captions on; re-run on state changes because the
+      // module can reload when the loop restarts.
+      const killCaptions = (player) => {
+        try { player.unloadModule('captions'); player.unloadModule('cc'); } catch (_) {}
+      };
       new YT.Player('heroVideo', {
         events: {
-          onReady: (e) => { e.target.mute(); e.target.playVideo(); }
+          onReady: (e) => { e.target.mute(); killCaptions(e.target); e.target.playVideo(); },
+          onStateChange: (e) => { killCaptions(e.target); }
         }
       });
     };

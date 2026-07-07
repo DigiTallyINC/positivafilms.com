@@ -1,28 +1,28 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Color Space Transform Order in Resolve: Why CST-Then-LUT Beats LUT-Then-CST &mdash; Positiva Films</title>
-  <meta name="description" content="Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad — it breaks the math your LUT was built on. Here's exactly why, and how to fix it." />
+  <meta name="description" content="Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad â€” it breaks the math your LUT was built on. Here's exactly why, and how to fix it." />
   <meta name="keywords" content="color space transform node order resolve, cst before lut davinci resolve, lut placement node tree, log to rec709 cst resolve, creative lut node order, davinci resolve color managed workflow" />
   <meta name="author" content="Positiva Films" />
   <link rel="canonical" href="https://positivafilms.com/posts/color-space-transform-order-resolve-cst-then-lut.html" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Color Space Transform Order in Resolve: Why CST-Then-LUT Beats LUT-Then-CST" />
-  <meta property="og:description" content="Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad — it breaks the math your LUT was built on. Here's exactly why, and how to fix it." />
+  <meta property="og:description" content="Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad â€” it breaks the math your LUT was built on. Here's exactly why, and how to fix it." />
   <meta property="og:image" content="https://positivafilms.com/Bundle_Luts_pack.png" />
   <meta property="og:url" content="https://positivafilms.com/posts/color-space-transform-order-resolve-cst-then-lut.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Color Space Transform Order in Resolve: Why CST-Then-LUT Beats LUT-Then-CST" />
-  <meta name="twitter:description" content="Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad — it breaks the math your LUT was built on. Here's exactly why, and how to fix it." />
+  <meta name="twitter:description" content="Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad â€” it breaks the math your LUT was built on. Here's exactly why, and how to fix it." />
   <meta name="twitter:image" content="https://positivafilms.com/Bundle_Luts_pack.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Color Space Transform Order in Resolve: Why CST-Then-LUT Beats LUT-Then-CST",
-    "description": "Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad — it breaks the math your LUT was built on. Here's exactly why, and how to fix it.",
+    "description": "Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad â€” it breaks the math your LUT was built on. Here's exactly why, and how to fix it.",
     "image": "https://positivafilms.com/Bundle_Luts_pack.png",
     "datePublished": "2026-05-18",
     "dateModified": "2026-05-18",
@@ -69,7 +69,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .mobile-nav a{font-family:var(--display);font-size:34px;letter-spacing:0.1em;color:var(--linen);text-decoration:none;text-transform:uppercase}
 .mobile-nav .nav-cta{color:var(--gold);font-size:18px;font-family:var(--body);letter-spacing:0.16em}
 
-/* Article hero — text-only editorial */
+/* Article hero â€” text-only editorial */
 .article-hero{position:relative;min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 48px 80px;overflow:hidden;border-bottom:1px solid var(--linen-faint);background:var(--ink)}
 .article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(201,168,76,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
 .article-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none;z-index:0}
@@ -106,7 +106,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .article-inner img{max-width:100%;border:1px solid var(--linen-faint)}
 .article-inner figcaption{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--linen-dim);margin-top:10px;text-align:center}
 
-/* Inline product CTA — drops into the body */
+/* Inline product CTA â€” drops into the body */
 .inline-cta{margin:48px 0;padding:32px 36px;background:var(--soil);border:1px solid var(--gold-faint);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .inline-cta-text{flex:1;min-width:240px}
 .inline-cta-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -208,72 +208,72 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
 <article class="article">
   <div class="article-inner">
-    <p class="lede">Most colorists who run a LUT before their Color Space Transform wonder why the grade feels stiff, over-saturated, or just wrong. It's not the LUT. It's the order — and the math behind it is unforgiving.</p>
+    <p class="lede">Most colorists who run a LUT before their Color Space Transform wonder why the grade feels stiff, over-saturated, or just wrong. It's not the LUT. It's the order â€” and the math behind it is unforgiving.</p>
     <h2>The Node Order Problem Nobody Talks About Plainly</h2>
-<p>Open any DaVinci Resolve forum thread on LUT placement and you'll find contradictory advice, half-explained workflows, and people arguing from gut feel. Let's settle it properly, from first principles, because the answer is not a matter of taste — it's math.</p>
-<p>A LUT — whether a creative <code>.cube</code> or a technical transform — is a 3D table of input values mapped to output values. It was built under specific assumptions about what the incoming signal looks like. If you feed it something different from what it expects, it will do the wrong transformation. Full stop.</p>
+<p>Open any DaVinci Resolve forum thread on LUT placement and you'll find contradictory advice, half-explained workflows, and people arguing from gut feel. Let's settle it properly, from first principles, because the answer is not a matter of taste â€” it's math.</p>
+<p>A LUT â€” whether a creative <code>.cube</code> or a technical transform â€” is a 3D table of input values mapped to output values. It was built under specific assumptions about what the incoming signal looks like. If you feed it something different from what it expects, it will do the wrong transformation. Full stop.</p>
 <p>A <strong>Color Space Transform</strong> (<code>CST</code>) node in Resolve does one job: it reshapes the signal from one color space and gamma encoding to another. <code>S-Log3/S-Gamut3.Cine</code> to <code>DaVinci Wide Gamut/DaVinci Intermediate</code>. <code>Log-C3/AWF</code> to <code>Rec.709/Gamma 2.4</code>. Whatever the path, the CST node is normalizing your signal into a known state.</p>
-<p>A creative LUT — say, a film-emulation or a wedding pack LUT — was built assuming it receives a normalized, display-referred (or at minimum a linearized scene-referred) signal. It was not built to receive raw <code>S-Log3</code>. The moment you drop a creative LUT onto an untransformed log clip, you're asking the table to map logarithmically compressed values as though they were Rec.709 — and the result is exactly the crushed shadows, illegal highlights, and oversaturated skintones you've seen.</p>
+<p>A creative LUT â€” say, a film-emulation or a wedding pack LUT â€” was built assuming it receives a normalized, display-referred (or at minimum a linearized scene-referred) signal. It was not built to receive raw <code>S-Log3</code>. The moment you drop a creative LUT onto an untransformed log clip, you're asking the table to map logarithmically compressed values as though they were Rec.709 â€” and the result is exactly the crushed shadows, illegal highlights, and oversaturated skintones you've seen.</p>
 
 <h2>What Your Scopes Tell You</h2>
-<p>The fastest way to confirm the problem empirically — before you touch a single node — is to read your scopes before and after each node.</p>
-<p>Pull up a Sony FX3 clip shot in <code>S-Log3/S-Gamut3.Cine</code>. On the Parade scope, the log signal will sit between roughly 17% and 65% IRE — a compressed, low-contrast band. Middle grey (<code>18% grey card</code>) will read around 41 IRE in <code>S-Log3</code>.</p>
-<p>Now add a CST node first. Input: <code>S-Log3 / S-Gamut3.Cine</code>. Output: <code>Rec.709 / Gamma 2.4</code>. Your Parade immediately explodes into the full luma range — shadows at 0–15, midtones around 50, highlights at 80–95. Your whites are white. Middle grey is sitting near 45 IRE, where Rec.709 expects it.</p>
+<p>The fastest way to confirm the problem empirically â€” before you touch a single node â€” is to read your scopes before and after each node.</p>
+<p>Pull up a Sony FX3 clip shot in <code>S-Log3/S-Gamut3.Cine</code>. On the Parade scope, the log signal will sit between roughly 17% and 65% IRE â€” a compressed, low-contrast band. Middle grey (<code>18% grey card</code>) will read around 41 IRE in <code>S-Log3</code>.</p>
+<p>Now add a CST node first. Input: <code>S-Log3 / S-Gamut3.Cine</code>. Output: <code>Rec.709 / Gamma 2.4</code>. Your Parade immediately explodes into the full luma range â€” shadows at 0â€“15, midtones around 50, highlights at 80â€“95. Your whites are white. Middle grey is sitting near 45 IRE, where Rec.709 expects it.</p>
 <p><em>That</em> is the signal your creative LUT was built to receive. A LUT node placed after this CST sees exactly the input it was designed for. Skintones map correctly. Shadows roll off naturally. Film emulations that crushed skin before now render the way their maker intended.</p>
-<p>Run it backwards — LUT first, CST second — and read the Parade after the LUT. You'll see clipped highlights, lifted and posterized shadows, and vectors on the Vectorscope that have escaped the Rec.709 gamut triangle. The CST after that point is trying to make sense of a signal that's already been corrupted. You can push it toward legality, but the image is already broken at a sub-pixel level.</p>
+<p>Run it backwards â€” LUT first, CST second â€” and read the Parade after the LUT. You'll see clipped highlights, lifted and posterized shadows, and vectors on the Vectorscope that have escaped the Rec.709 gamut triangle. The CST after that point is trying to make sense of a signal that's already been corrupted. You can push it toward legality, but the image is already broken at a sub-pixel level.</p>
 
 <h2>The Correct Node Tree</h2>
 <p>Here is the baseline node structure that works for virtually every log-camera-to-display workflow where you're using a creative LUT:</p>
-<pre><code>Node 1 — CST In
+<pre><code>Node 1 â€” CST In
   Input CS:   S-Log3 / S-Gamut3.Cine  (or Log-C3, BRaw, etc.)
   Output CS:  DaVinci Wide Gamut / DaVinci Intermediate
               (or Rec.709 / Gamma 2.4 if going straight to display)
 
-Node 2 — Primary Correction (Lift / Gamma / Gain or Offset)
+Node 2 â€” Primary Correction (Lift / Gamma / Gain or Offset)
   Exposure, white balance, basic contrast only.
   Get the shot normalized before the LUT sees it.
 
-Node 3 — Creative LUT (.cube)
-  Applied in node Effects → LUTs, or drag-and-drop.
+Node 3 â€” Creative LUT (.cube)
+  Applied in node Effects â†’ LUTs, or drag-and-drop.
   At this point the signal is in the space the LUT expects.
 
-Node 4 — Qualifier-based secondaries
+Node 4 â€” Qualifier-based secondaries
   Skin Qualifier, sky mask, HSL selections.
   Adjust what the LUT got wrong for this specific shot.
 
-Node 5 — CST Out (if using DWG/DI as intermediate)
+Node 5 â€” CST Out (if using DWG/DI as intermediate)
   Input CS:   DaVinci Wide Gamut / DaVinci Intermediate
   Output CS:  Rec.709 / Gamma 2.4 (or P3-D65 / Gamma 2.6 for cinema)
 </code></pre>
-<p>If you're working in a Color Managed project (Project Settings → Color Management, with input and output color spaces set), Resolve handles the CST in/out automatically at the timeline level. In that case you don't need explicit CST nodes — but you still need to understand which node your LUT sits in, because the <em>timeline</em> CST runs before your node tree begins. The LUT in Node 1 of a color-managed project still receives a normalized signal. The math still applies.</p>
-<p>For unmanaged projects — which many freelance DPs and editors still use because they're working with mixed camera sources and want explicit control — the explicit CST-then-LUT structure above is essential. You cannot rely on implicit transforms you haven't set yourself.</p>
+<p>If you're working in a Color Managed project (Project Settings â†’ Color Management, with input and output color spaces set), Resolve handles the CST in/out automatically at the timeline level. In that case you don't need explicit CST nodes â€” but you still need to understand which node your LUT sits in, because the <em>timeline</em> CST runs before your node tree begins. The LUT in Node 1 of a color-managed project still receives a normalized signal. The math still applies.</p>
+<p>For unmanaged projects â€” which many freelance DPs and editors still use because they're working with mixed camera sources and want explicit control â€” the explicit CST-then-LUT structure above is essential. You cannot rely on implicit transforms you haven't set yourself.</p>
 
 <h2>ACES and the Same Logic</h2>
-<p>The same rule holds if you're working in an <code>ACES</code> pipeline. <code>IDT</code> (Input Device Transform) comes first, converting your camera-native signal into <code>ACEScg</code> scene linear. Your creative grades happen in that linear space. The <code>RRT + ODT</code> (Output Transform) comes last, mapping to the display. If someone gives you an ACES-compatible LUT — built for <code>ACEScg</code> input — it still must be placed <em>after</em> the IDT, not before it.</p>
+<p>The same rule holds if you're working in an <code>ACES</code> pipeline. <code>IDT</code> (Input Device Transform) comes first, converting your camera-native signal into <code>ACEScg</code> scene linear. Your creative grades happen in that linear space. The <code>RRT + ODT</code> (Output Transform) comes last, mapping to the display. If someone gives you an ACES-compatible LUT â€” built for <code>ACEScg</code> input â€” it still must be placed <em>after</em> the IDT, not before it.</p>
 <p>The mistake is identical in a different wrapper: a LUT expecting linear scene data placed onto a log-compressed signal will exhibit the same clipping and saturation errors. ACES does not make the problem disappear; it just gives the problem different labels.</p>
 
 <h2>The "But My LUT Has a Built-In Log Conversion" Caveat</h2>
-<p>Some LUTs — particularly technical ones from camera manufacturers, and some older creative packs — are designed as combined transforms: they ingest log directly and output Rec.709 in one step. Sony's <code>S-Log3 to Rec.709</code> technical LUT is a common example. Arri's <code>LogC3 to Rec.709</code> viewing LUTs work the same way.</p>
-<p>If your LUT is one of these all-in-one transforms, placing a CST before it would be wrong — you'd be normalizing the signal and then running a LUT that expects log, producing a doubly-converted mess.</p>
-<p>How do you tell the difference? Documentation. A reputable LUT pack will always specify its input expectation: <em>"Apply to S-Log3 / S-Gamut3.Cine footage before any CST"</em> or <em>"Apply after normalizing to Rec.709."</em> If the documentation doesn't say, test it: feed the LUT a chip chart clip and read your Parade after. If middle grey is hitting 45–50 IRE on a Rec.709-expected signal, you're in the right zone. If it's sitting at 15 IRE or 75 IRE, your input assumption is wrong.</p>
+<p>Some LUTs â€” particularly technical ones from camera manufacturers, and some older creative packs â€” are designed as combined transforms: they ingest log directly and output Rec.709 in one step. Sony's <code>S-Log3 to Rec.709</code> technical LUT is a common example. Arri's <code>LogC3 to Rec.709</code> viewing LUTs work the same way.</p>
+<p>If your LUT is one of these all-in-one transforms, placing a CST before it would be wrong â€” you'd be normalizing the signal and then running a LUT that expects log, producing a doubly-converted mess.</p>
+<p>How do you tell the difference? Documentation. A reputable LUT pack will always specify its input expectation: <em>"Apply to S-Log3 / S-Gamut3.Cine footage before any CST"</em> or <em>"Apply after normalizing to Rec.709."</em> If the documentation doesn't say, test it: feed the LUT a chip chart clip and read your Parade after. If middle grey is hitting 45â€“50 IRE on a Rec.709-expected signal, you're in the right zone. If it's sitting at 15 IRE or 75 IRE, your input assumption is wrong.</p>
 
-<div class="inline-cta"><div class="inline-cta-text"><div class="inline-cta-eyebrow">From the Positiva LUT Library</div><h4>The Positiva Bundle</h4><p>Every LUT in the bundle ships with explicit input-space documentation — so you know exactly where in your node tree to place it, whether you're on FX3, R5 C, or BMPCC 6K.</p></div><a class="btn" href="../luts.html#bundle" rel="noopener noreferrer">View Pack →</a></div>
+<div class="inline-cta"><div class="inline-cta-text"><div class="inline-cta-eyebrow">From the Positiva LUT Library</div><h4>The Positiva Bundle</h4><p>Every LUT in the bundle ships with explicit input-space documentation â€” so you know exactly where in your node tree to place it, whether you're on FX3, R5 C, or BMPCC 6K.</p></div><a class="btn" href="../luts.html#bundle" rel="noopener noreferrer">View Pack â†’</a></div>
 
 <h2>Practical Workflow for Mixed-Camera Projects</h2>
-<p>Multicam edits — a common reality on any larger Indian wedding or travel documentary — make node order even more critical because you may have <code>S-Log3</code> from an FX3 alongside <code>Cinema Gamut/Canon Log 3</code> from a C70 and <code>BRaw/BM Film Gen 5</code> from a BMPCC 6K. Each camera's log encoding is different. Each needs its own CST in Node 1.</p>
-<p>The efficient approach: create three serial nodes at the head of each clip's node tree — one labelled <strong>CST IN</strong>, one labelled <strong>PRIMARY</strong>, one labelled <strong>LUT</strong>. Apply the camera-specific CST in Node 1 for each clip. The LUT in Node 3 is identical across all cameras, because by the time the signal reaches it, all three cameras are speaking the same normalized language. You can now use Gallery Stills to copy-paste the LUT node (and secondary nodes below it) across clips without worrying about conflicting input spaces.</p>
-<p>In Resolve's Color page, right-click any node and <strong>Set Flag</strong> — use red for CST nodes, blue for creative grades. This takes five seconds per clip and saves you from mis-copying a Sony CST onto a Canon clip three days into the grade when you're running on cold coffee.</p>
+<p>Multicam edits â€” a common reality on any larger Indian wedding or travel documentary â€” make node order even more critical because you may have <code>S-Log3</code> from an FX3 alongside <code>Cinema Gamut/Canon Log 3</code> from a C70 and <code>BRaw/BM Film Gen 5</code> from a BMPCC 6K. Each camera's log encoding is different. Each needs its own CST in Node 1.</p>
+<p>The efficient approach: create three serial nodes at the head of each clip's node tree â€” one labelled <strong>CST IN</strong>, one labelled <strong>PRIMARY</strong>, one labelled <strong>LUT</strong>. Apply the camera-specific CST in Node 1 for each clip. The LUT in Node 3 is identical across all cameras, because by the time the signal reaches it, all three cameras are speaking the same normalized language. You can now use Gallery Stills to copy-paste the LUT node (and secondary nodes below it) across clips without worrying about conflicting input spaces.</p>
+<p>In Resolve's Color page, right-click any node and <strong>Set Flag</strong> â€” use red for CST nodes, blue for creative grades. This takes five seconds per clip and saves you from mis-copying a Sony CST onto a Canon clip three days into the grade when you're running on cold coffee.</p>
 
 <h2>When CST Nodes Get Expensive on Slower Systems</h2>
-<p>If you're grading on a laptop or a system without a strong GPU — common in field situations or when traveling between locations — CST nodes add processing overhead. Every <code>Color Space Transform</code> node forces Resolve to do a full 3D math operation per frame. Stack three of them (CST in, CST between nodes, CST out) and you'll drop GPU-rendered playback on a 4K timeline.</p>
+<p>If you're grading on a laptop or a system without a strong GPU â€” common in field situations or when traveling between locations â€” CST nodes add processing overhead. Every <code>Color Space Transform</code> node forces Resolve to do a full 3D math operation per frame. Stack three of them (CST in, CST between nodes, CST out) and you'll drop GPU-rendered playback on a 4K timeline.</p>
 <p>The fix: <strong>use Resolve's Color Management</strong> at the project level instead of per-clip CST nodes. Set your input color space to match your primary camera, set your timeline to <code>DaVinci Wide Gamut / DaVinci Intermediate</code>, and set your output to <code>Rec.709 / Gamma 2.4</code>. Resolve handles the math in the hardware pipeline rather than as discrete software nodes, which is significantly faster. Your creative LUT in Node 1 then receives the normalized intermediate signal automatically.</p>
-<p>You still need per-clip input overrides for any camera that doesn't match the project default — right-click a clip in the Media Pool → <strong>Clip Attributes → Color Space</strong> override. But the bulk of your timeline runs clean.</p>
+<p>You still need per-clip input overrides for any camera that doesn't match the project default â€” right-click a clip in the Media Pool â†’ <strong>Clip Attributes â†’ Color Space</strong> override. But the bulk of your timeline runs clean.</p>
 
 <h2>A Note on Output-Referred LUTs for Social Delivery</h2>
-<p>One last placement question that comes up frequently: where does a LUT go when you're delivering for Instagram or YouTube, which re-encode to their own pipeline anyway? The answer is the same. Your node tree should still read CST-then-LUT, with the final output rendering to Rec.709 Gamma 2.4. Let the platform handle the conversion to their delivery spec. Delivering a correctly tagged, display-referred Rec.709 master is always your cleanest starting point — what happens upstream of the CDN is outside your control.</p>
-<p>What you can control is whether the LUT in your grade was seeing the signal it was designed to see. Get that right, and every output — from a cinema DCP to an Instagram Reel compressed to 8 Mbps — starts from a solid foundation rather than a corrupted one.</p>
+<p>One last placement question that comes up frequently: where does a LUT go when you're delivering for Instagram or YouTube, which re-encode to their own pipeline anyway? The answer is the same. Your node tree should still read CST-then-LUT, with the final output rendering to Rec.709 Gamma 2.4. Let the platform handle the conversion to their delivery spec. Delivering a correctly tagged, display-referred Rec.709 master is always your cleanest starting point â€” what happens upstream of the CDN is outside your control.</p>
+<p>What you can control is whether the LUT in your grade was seeing the signal it was designed to see. Get that right, and every output â€” from a cinema DCP to an Instagram Reel compressed to 8 Mbps â€” starts from a solid foundation rather than a corrupted one.</p>
 
-<p>For a deeper look at secondary node work after your LUT is placed — qualifying skintones, pulling selective hue masks — see the post on <a href="../posts/fx30-skin-tones-cooler-than-fx3-single-node-fix.html" rel="noopener noreferrer">correcting FX30 skin tones with a single qualifier node</a>. And if you're building a node tree from scratch for a multicam project, the <a href="../luts.html#bundle" rel="noopener noreferrer">bundle pack documentation</a> walks through camera-specific CST settings for every format in the pack.</p>
+<p>For a deeper look at secondary node work after your LUT is placed â€” qualifying skintones, pulling selective hue masks â€” see the post on <a href="../posts/fx30-skin-tones-cooler-than-fx3-single-node-fix.html" rel="noopener noreferrer">correcting FX30 skin tones with a single qualifier node</a>. And if you're building a node tree from scratch for a multicam project, the <a href="../luts.html#bundle" rel="noopener noreferrer">bundle pack documentation</a> walks through camera-specific CST settings for every format in the pack.</p>
   </div>
 </article>
 
@@ -282,10 +282,10 @@ Node 5 — CST Out (if using DWG/DI as intermediate)
     <div>
       <div class="post-cta-eyebrow">&#10022; BUILT FOR YOUR NODE TREE</div>
       <h2>BUILT FOR YOUR NODE TREE<em>LUTs that document their own input space.</em></h2>
-      <p>Every pack in the Positiva Bundle specifies exactly where to place each LUT in your Resolve node tree — log-input or normalized — so you're never guessing. Covers FX3, FX30, C70, R5 C, BMPCC 6K, and more.</p>
+      <p>Every pack in the Positiva Bundle specifies exactly where to place each LUT in your Resolve node tree â€” log-input or normalized â€” so you're never guessing. Covers FX3, FX30, C70, R5 C, BMPCC 6K, and more.</p>
       <a class="btn" href="../luts.html#bundle">Get the Bundle &rarr;</a>
     </div>
-    <div class="post-cta-image bundle" style="background-image:url('../Bundle_Luts_pack.png')"></div>
+    <div class="post-cta-image bundle" style="background-image:url('../Bundle_Luts_pack.jpg')"></div>
   </div>
 </section>
 
