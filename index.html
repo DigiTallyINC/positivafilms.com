@@ -244,6 +244,30 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
 .footer-links a{font-size:11px;letter-spacing:0.12em;color:var(--linen-dim);text-decoration:none;text-transform:uppercase;transition:color .2s}
 .footer-links a:hover{color:var(--gold)}
 
+/* Open Road India — documentary roots */
+.openroad{background:var(--ink);padding:120px 48px;border-top:1px solid var(--linen-faint)}
+.openroad-sub{font-family:var(--serif);font-size:clamp(15px,1.6vw,19px);font-style:italic;color:var(--gold);margin:-26px 0 64px}
+.openroad-strip{display:flex;gap:26px;justify-content:center;align-items:center;margin-bottom:72px}
+.or-print{background:var(--linen);padding:9px 9px 30px;box-shadow:0 22px 44px rgba(0,0,0,0.5);flex:1 1 0;min-width:0;max-width:225px;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease}
+.or-print img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(1.06)}
+.or-print figcaption{margin-top:12px;text-align:center;font-family:var(--body);font-size:9px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-soft);opacity:0.75}
+.or-print:nth-child(odd){transform:rotate(-2.2deg)}
+.or-print:nth-child(even){transform:rotate(1.8deg) translateY(10px)}
+.or-print:hover{transform:rotate(0) translateY(-14px) scale(1.04);box-shadow:0 44px 80px rgba(0,0,0,0.65),0 0 0 1px rgba(201,168,76,0.5);z-index:2}
+.openroad-body{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start;max-width:1080px;margin:0 auto}
+.openroad-quote{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.4vw,26px);line-height:1.5;color:var(--linen)}
+.openroad-quote::before{content:'';display:block;width:56px;height:1px;background:var(--gold);margin-bottom:24px}
+.openroad-quote cite{display:block;font-family:var(--body);font-style:normal;font-size:10px;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--linen-dim);margin-top:20px}
+.openroad-text{font-size:13.5px;font-weight:300;color:var(--linen-dim);line-height:1.9}
+.openroad-text strong{color:var(--linen);font-weight:400}
+.openroad-actions{margin-top:32px}
+@media(max-width:900px){.openroad-body{grid-template-columns:1fr;gap:40px}}
+@media(max-width:768px){
+  .openroad{padding:80px 24px}
+  .openroad-strip{justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding:12px 4px 24px;margin-bottom:40px;-webkit-overflow-scrolling:touch}
+  .or-print{flex:0 0 auto;width:185px;scroll-snap-align:center}
+  .or-print:nth-child(even){transform:rotate(1.8deg)}
+}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
 
@@ -390,8 +414,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
           <div class="arrow-btn">&#8599;</div>
         </li>
         <li class="feature-item">
-          <a href="https://www.openroadindia.com" target="_blank" rel="noopener" class="feature-link">
-            <div><h3>Documentary Roots</h3><p>Ground-level storytelling built over a decade on the road. 160,000+ km across 15+ Indian states &mdash; chronicled at <span class="feature-link-site">openroadindia.com</span>.</p></div>
+          <a href="#openroad" class="feature-link">
+            <div><h3>Documentary Roots</h3><p>Ground-level storytelling built over a decade on the road. 160,000+ km across 15+ Indian states &mdash; <span class="feature-link-site">the Open Road India story</span>.</p></div>
             <div class="arrow-btn">&#8599;</div>
           </a>
         </li>
@@ -476,6 +500,33 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   </div>
 </div>
 
+<section class="openroad" id="openroad">
+  <div class="section-header reveal">
+    <div class="section-tag">Documentary Roots</div>
+    <div class="section-num">( 04 )</div>
+  </div>
+  <h2 class="section-title reveal">THE OPEN ROAD</h2>
+  <div class="openroad-sub reveal">Where Positiva Films began</div>
+  <div class="openroad-strip reveal">
+    <figure class="or-print"><img src="images/openroad/street.jpg" alt="Navigating a crowded Indian bazaar on foot, phone map in hand" loading="lazy" style="object-position:50% 30%" /><figcaption>The Road In</figcaption></figure>
+    <figure class="or-print"><img src="images/openroad/sadhu.jpg" alt="A sadhu in saffron praying at the river's edge" loading="lazy" style="object-position:62% 50%" /><figcaption>The People</figcaption></figure>
+    <figure class="or-print"><img src="images/openroad/aerial.jpg" alt="Aerial view of a lake winding through hills at sunset" loading="lazy" /><figcaption>From Above</figcaption></figure>
+    <figure class="or-print"><img src="images/openroad/filming.jpg" alt="Filming an interview in a narrow old-city lane" loading="lazy" /><figcaption>Behind the Lens</figcaption></figure>
+    <figure class="or-print"><img src="images/openroad/hilltop.jpg" alt="A lone figure on a hilltop under a big sky" loading="lazy" style="object-position:48% 60%" /><figcaption>The Climb</figcaption></figure>
+  </div>
+  <div class="openroad-body">
+    <div class="reveal">
+      <p class="openroad-quote">&ldquo;A journey to meet the people who make up the essential fabric of the country. People who we see every day, but rarely meet.&rdquo;<cite>Open Road India &middot; The Reel Real India</cite></p>
+    </div>
+    <div class="reveal">
+      <p class="openroad-text">Those kilometres up there were driven, not flown. Before Positiva Films, there was <strong>Open Road India</strong> &mdash; a 13-episode documentary series about the country's everyday people: Kumbh foot soldiers in Nasik, kite boys, puppeteers with a purpose, surfers in Puducherry, a cobbler in Amritsar. That instinct &mdash; find the person, earn the shot &mdash; is what this studio is built on.</p>
+      <div class="openroad-actions">
+        <a href="https://www.openroadindia.com" target="_blank" rel="noopener" class="btn-consultation">Visit Open Road India <span class="arrow">&#8599;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="process reveal">
   <div class="process-header">
     <div class="process-star">&#10033;</div>
@@ -508,7 +559,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <section class="instagram" id="instagram">
   <div class="section-header reveal">
     <div class="section-tag">On Location</div>
-    <div class="section-num">( 04 )</div>
+    <div class="section-num">( 05 )</div>
   </div>
   <h2 class="section-title reveal">FROM THE FIELD<br><span style="font-family:var(--serif);font-style:italic;font-weight:300;font-size:0.62em;color:var(--gold);letter-spacing:0.02em">Latest Reels</span></h2>
   <div class="reveal">
@@ -565,7 +616,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <section class="contact" id="contact">
   <div class="section-header reveal">
     <div class="section-tag">Get In Touch</div>
-    <div class="section-num">( 05 )</div>
+    <div class="section-num">( 06 )</div>
   </div>
   <div class="contact-grid">
     <div class="reveal">
