@@ -1,32 +1,4 @@
 {
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "shell": "bash",
-            "command": "if git pull --ff-only 2>&1; then echo '✓ Synced with GitHub'; else echo '⚠️  Could not pull from GitHub — offline, conflicts, or non-fast-forward. Run `git pull` manually when ready.'; fi",
-            "timeout": 30,
-            "statusMessage": "Pulling latest from GitHub..."
-          }
-        ]
-      }
-    ],
-    "SessionEnd": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "shell": "bash",
-            "command": "if git push 2>&1; then echo '✓ Pushed to GitHub'; else echo '⚠️  Could not push — offline or auth issue. Run `git push` manually when ready.'; fi",
-            "timeout": 30,
-            "statusMessage": "Pushing to GitHub..."
-          }
-        ]
-      }
-    ]
-  },
   "permissions": {
     "allow": [
       "Bash(git add index.html)",
@@ -43,10 +15,40 @@
       "WebFetch(domain:ai.positivafilms.com)",
       "Bash(git add index.html .gitignore \"Mlogo Cinematic 2 04 Render 1 SMALL.mp4\")",
       "Read(//c/Users/TALLY/.claude/projects/e--CLIPENGINE-FILES-POSITIVA-FILMS-WEBSITE/**)",
-      "Bash(python3 -c \":*)"
+      "Bash(python3 -c \":*)",
+      "Read(//e/26-04-16 - PHOTOENGINE-AI/photoengine-web/**)",
+      "Read(//e/26-06-26 - BHAROMETER APP/landing/**)"
     ],
     "additionalDirectories": [
       "e:\\CLIPENGINE FILES\\POSITIVA FILMS WEBSITE"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if git pull --ff-only 2>&1; then echo '✓ Synced with GitHub'; else echo '⚠️  Could not pull from GitHub — offline, conflicts, or non-fast-forward. Run `git pull` manually when ready.'; fi",
+            "shell": "bash",
+            "timeout": 30,
+            "statusMessage": "Pulling latest from GitHub..."
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if git push 2>&1; then echo '✓ Pushed to GitHub'; else echo '⚠️  Could not push — offline or auth issue. Run `git push` manually when ready.'; fi",
+            "shell": "bash",
+            "timeout": 30,
+            "statusMessage": "Pushing to GitHub..."
+          }
+        ]
+      }
     ]
   }
 }

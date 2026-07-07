@@ -9,7 +9,7 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
-      <title>Hill Station Fog (Munnar, Coorg, Ooty) Reads Grey — Adding Atmosphere Without Washing Out</title>
+      <title>Hill Station Fog (Munnar, Coorg, Ooty) Reads Grey: Adding Atmosphere Without Washing Out</title>
       <link>https://positivafilms.com/posts/hill-station-fog-munnar-coorg-ooty-color-grade.html</link>
       <guid>https://positivafilms.com/posts/hill-station-fog-munnar-coorg-ooty-color-grade.html</guid>
       <description>Fog reads grey on every log format. Here's the exact node chain to push atmosphere into your Munnar, Coorg, and Ooty footage without flattening depth or killing contrast.</description>
@@ -17,7 +17,7 @@
       <category>Travel & Place</category>
     </item>
     <item>
-      <title>Why You Cannot Fly a Drone at the Taj Mahal — And What You Can Shoot from Mehtab Bagh Instead</title>
+      <title>Why You Cannot Fly a Drone at the Taj Mahal: And What You Can Shoot from Mehtab Bagh Instead</title>
       <link>https://positivafilms.com/posts/drone-taj-mahal-ban-mehtab-bagh-alternatives.html</link>
       <guid>https://positivafilms.com/posts/drone-taj-mahal-ban-mehtab-bagh-alternatives.html</guid>
       <description>Flying a drone at the Taj Mahal will get it seized on the spot. Here is exactly where to shoot from Mehtab Bagh, what permits actually cover, and how to get the aerial you are after.</description>
@@ -25,7 +25,7 @@
       <category>Travel & Place</category>
     </item>
     <item>
-      <title>Why Drone Footage Looks Hazy at 400 Feet — A Dehaze + Contrast Recipe</title>
+      <title>Why Drone Footage Looks Hazy at 400 Feet: A Dehaze + Contrast Recipe</title>
       <link>https://positivafilms.com/posts/drone-footage-hazy-dehaze-contrast-recipe.html</link>
       <guid>https://positivafilms.com/posts/drone-footage-hazy-dehaze-contrast-recipe.html</guid>
       <description>Altitude haze kills aerial footage before you even land. Here's the exact dehaze, contrast, and saturation recipe to cut through atmospheric scatter and restore depth.</description>
@@ -92,7 +92,7 @@
       <title>Premiere vs Resolve for an Indian Wedding Edit: The Honest Speed Test on an M2 Pro</title>
       <link>https://positivafilms.com/posts/premiere-vs-resolve-indian-wedding-edit-m2-pro-speed-test.html</link>
       <guid>https://positivafilms.com/posts/premiere-vs-resolve-indian-wedding-edit-m2-pro-speed-test.html</guid>
-      <description>Cutting a 3-camera Indian wedding in Premiere vs Resolve on M2 Pro — render times, proxy workflows, color roundtrips, and which NLE actually ships the film faster.</description>
+      <description>Cutting a 3-camera Indian wedding in Premiere vs Resolve on M2 Pro: render times, proxy workflows, color roundtrips, and which NLE actually ships the film faster.</description>
       <pubDate>Wed, 20 May 2026 10:08:53 +0530</pubDate>
       <category>Field Notes</category>
     </item>
@@ -100,12 +100,12 @@
       <title>Color Space Transform Order in Resolve: Why CST-Then-LUT Beats LUT-Then-CST</title>
       <link>https://positivafilms.com/posts/color-space-transform-order-resolve-cst-then-lut.html</link>
       <guid>https://positivafilms.com/posts/color-space-transform-order-resolve-cst-then-lut.html</guid>
-      <description>Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad — it breaks the math your LUT was built on. Here's exactly why, and how to fix it.</description>
+      <description>Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad: it breaks the math your LUT was built on. Here's exactly why, and how to fix it.</description>
       <pubDate>Mon, 18 May 2026 09:58:24 +0530</pubDate>
       <category>Craft & Color</category>
     </item>
     <item>
-      <title>Why Your Sangeet Footage Looks Yellow — Neutralizing Banquet Hall Tungsten</title>
+      <title>Why Your Sangeet Footage Looks Yellow: Neutralizing Banquet Hall Tungsten</title>
       <link>https://positivafilms.com/posts/sangeet-tungsten-correction-banquet-hall.html</link>
       <guid>https://positivafilms.com/posts/sangeet-tungsten-correction-banquet-hall.html</guid>
       <description>Banquet hall tungsten turns every sangeet into an amber swamp. Here's the node-level correction pipeline that pulls it back without destroying skin.</description>
@@ -116,7 +116,7 @@
       <title>DGCA Drone Permissions in 2026: The Digital Sky Workflow That Actually Works</title>
       <link>https://positivafilms.com/posts/dgca-drone-permissions-2026-digital-sky-workflow.html</link>
       <guid>https://positivafilms.com/posts/dgca-drone-permissions-2026-digital-sky-workflow.html</guid>
-      <description>DGCA's Digital Sky portal looks simple until it isn't. Here's the exact workflow — UIN registration, Green Zone checks, NPNT compliance — that gets your drone legal and in the air.</description>
+      <description>DGCA's Digital Sky portal looks simple until it isn't. Here's the exact workflow: UIN registration, Green Zone checks, NPNT compliance: that gets your drone legal and in the air.</description>
       <pubDate>Wed, 13 May 2026 10:06:57 +0530</pubDate>
       <category>Aerial & FPV</category>
     </item>
@@ -129,10 +129,10 @@
       <category>Travel & Place</category>
     </item>
     <item>
-      <title>Why FX30's Skin Tones Read Cooler Than FX3 — and the Single Node That Fixes It</title>
+      <title>Why FX30's Skin Tones Read Cooler Than FX3: and the Single Node That Fixes It</title>
       <link>https://positivafilms.com/posts/fx30-skin-tones-cooler-than-fx3-single-node-fix.html</link>
       <guid>https://positivafilms.com/posts/fx30-skin-tones-cooler-than-fx3-single-node-fix.html</guid>
-      <description>The FX30 and FX3 share Sony's color science but their skin tones don't match out of the box. Here's exactly why — and the one node that bridges them.</description>
+      <description>The FX30 and FX3 share Sony's color science but their skin tones don't match out of the box. Here's exactly why: and the one node that bridges them.</description>
       <pubDate>Fri, 08 May 2026 10:31:36 +0530</pubDate>
       <category>Gear</category>
     </item>
@@ -148,7 +148,7 @@
       <title>Color-Grading Mandap Fire Without Blowing Out the Bride's Lehenga</title>
       <link>https://positivafilms.com/posts/color-grading-mandap-fire-lehenga-highlights.html</link>
       <guid>https://positivafilms.com/posts/color-grading-mandap-fire-lehenga-highlights.html</guid>
-      <description>Mandap fire blows highlights before you can blink. Here's the exact node tree — qualifiers, HDR wheels, and saturation limiters — that holds the bride's lehenga while the flames stay alive.</description>
+      <description>Mandap fire blows highlights before you can blink. Here's the exact node tree: qualifiers, HDR wheels, and saturation limiters: that holds the bride's lehenga while the flames stay alive.</description>
       <pubDate>Mon, 04 May 2026 09:54:49 +0530</pubDate>
       <category>Indian Wedding</category>
     </item>
@@ -156,7 +156,7 @@
       <title>Color-Matching A7S III to FX3 on a Wedding Multicam Edit (Resolve, 2026)</title>
       <link>https://positivafilms.com/posts/color-matching-a7s3-fx3-wedding-multicam-resolve.html</link>
       <guid>https://positivafilms.com/posts/color-matching-a7s3-fx3-wedding-multicam-resolve.html</guid>
-      <description>Same sensor, same log profile — and the cameras still don't sit on the timeline. The drift, the offset, and the group-grade workflow that locks them up in Resolve.</description>
+      <description>Same sensor, same log profile: and the cameras still don't sit on the timeline. The drift, the offset, and the group-grade workflow that locks them up in Resolve.</description>
       <pubDate>Fri, 01 May 2026 09:30:00 +0530</pubDate>
       <category>Gear</category>
     </item>
@@ -169,7 +169,7 @@
       <category>Wedding</category>
     </item>
     <item>
-      <title>Why Your LUT Crushes Blacks — A Pre-LUT Exposure Workflow That Saves Every Grade</title>
+      <title>Why Your LUT Crushes Blacks: A Pre-LUT Exposure Workflow That Saves Every Grade</title>
       <link>https://positivafilms.com/posts/lut-crushing-blacks-pre-lut-exposure-workflow.html</link>
       <guid>https://positivafilms.com/posts/lut-crushing-blacks-pre-lut-exposure-workflow.html</guid>
       <description>Most "the LUT looks bad" calls aren't a LUT problem. They're an exposure-mismatch problem upstream. The four-node tree that fixes it for good.</description>
@@ -185,7 +185,7 @@
       <category>Wedding</category>
     </item>
     <item>
-      <title>Why Applying a LUT Directly to S-Log3 Looks Flat — The CST Node You're Missing</title>
+      <title>Why Applying a LUT Directly to S-Log3 Looks Flat: The CST Node You're Missing</title>
       <link>https://positivafilms.com/posts/why-s-log3-lut-looks-flat-cst-node.html</link>
       <guid>https://positivafilms.com/posts/why-s-log3-lut-looks-flat-cst-node.html</guid>
       <description>S-Log3 isn't Rec.709. The LUT doesn't know that. Here's the Color Space Transform node every Sony shooter should have wired into their grade.</description>

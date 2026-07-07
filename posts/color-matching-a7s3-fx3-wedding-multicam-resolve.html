@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Color-Matching A7S III to FX3 on a Wedding Multicam Edit (Resolve, 2026) &mdash; Positiva Films</title>
+  <title>Color-Matching A7S III to FX3 on a Wedding Multicam Edit (Resolve, 2026): Positiva Films</title>
   <meta name="description" content="A7S III as A-cam, FX3 as B-cam, and a slight magenta drift you cannot un-see. Here is the exact Resolve workflow we use to lock the two cameras together for a 200-clip wedding edit." />
   <meta name="keywords" content="match a7s3 fx3 color, sony multicam color match, wedding multicam grade, a7s iii fx3 color science difference, resolve group grade sony, fx3 magenta cast" />
   <meta name="author" content="Positiva Color" />
@@ -211,20 +211,20 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   <div class="article-inner">
     <p class="lede">You cut the bidaai sequence together, A-cam to B-cam to A-cam, and the bride's lehenga shifts hue every time the edit returns to the FX3. The cameras are supposed to be twins. They are not behaving like twins.</p>
 
-    <p>This is the most common color complaint we hear from Indian wedding shooters in 2026, and it has a clean technical answer. The <code>A7S III</code> and the <code>FX3</code> share the same 12.1MP back-illuminated sensor and most of their image pipeline. On paper, they should match out of the camera. In a real edit, they don't &mdash; not catastrophically, but enough that a viewer who never thinks about color will still feel the cut.</p>
+    <p>This is the most common color complaint we hear from Indian wedding shooters in 2026, and it has a clean technical answer. The <code>A7S III</code> and the <code>FX3</code> share the same 12.1MP back-illuminated sensor and most of their image pipeline. On paper, they should match out of the camera. In a real edit, they don't: not catastrophically, but enough that a viewer who never thinks about color will still feel the cut.</p>
 
     <p>What follows is the exact workflow our color desk runs on every Sony two-camera wedding job. It assumes you are in DaVinci Resolve, you are shooting <code>S-Log3/S-Gamut3.Cine</code> on both bodies, and you have a 200+ clip timeline you cannot afford to grade per-clip.</p>
 
     <h2>Why two "identical" cameras drift</h2>
 
-    <p>The sensor is the same. The colour science branding is "the same." But the firmware paths are not. The <code>FX3</code> is positioned as a video-first body, and Sony's video-pipeline gamma processing &mdash; especially the way <code>Cinetone</code> influences the in-camera image even when you think you've bypassed it &mdash; nudges things slightly differently from the <code>A7S III</code>'s stills-leaning pipeline.</p>
+    <p>The sensor is the same. The colour science branding is "the same." But the firmware paths are not. The <code>FX3</code> is positioned as a video-first body, and Sony's video-pipeline gamma processing: especially the way <code>Cinetone</code> influences the in-camera image even when you think you've bypassed it: nudges things slightly differently from the <code>A7S III</code>'s stills-leaning pipeline.</p>
 
     <p>Even with both cameras locked to <code>S-Log3/S-Gamut3.Cine</code>, identical white balance, identical exposure index, identical lens, you will see two consistent drifts on a parade scope:</p>
 
     <ul>
-      <li><strong>FX3</strong> sits a touch warmer and slightly magenta in the midtones &mdash; bride's skin reads pinker.</li>
-      <li><strong>A7S III</strong> sits a touch cooler with a green lean in the same midtones &mdash; the same skin reads more olive.</li>
-      <li>Luma reads marginally darker on the FX3 at the same metered exposure &mdash; not a stop, but enough for the scope to register half to one and a half <code>IRE</code>.</li>
+      <li><strong>FX3</strong> sits a touch warmer and slightly magenta in the midtones: bride's skin reads pinker.</li>
+      <li><strong>A7S III</strong> sits a touch cooler with a green lean in the same midtones: the same skin reads more olive.</li>
+      <li>Luma reads marginally darker on the FX3 at the same metered exposure: not a stop, but enough for the scope to register half to one and a half <code>IRE</code>.</li>
     </ul>
 
     <p>None of this is broken. It's the cost of two different firmware teams shipping two different products. Your job in post is to neutralize the gap before the look LUT goes on, not after.</p>
@@ -233,7 +233,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
     <p>Before the haldi starts, before the makeup tent gets crowded, get both cameras together for ninety seconds. We shoot a grey card and a <code>Macbeth</code> chart with both bodies, identical exposure, identical white balance target, lit by the same source. Three seconds of clean chart on each is enough.</p>
 
-    <p>This is your ground truth. You will use it twice &mdash; once to derive the offset, and once to validate the offset is dialled in correctly. If you skip this and try to match by eye on real footage later, you will spend an hour chasing a number you could have measured in two minutes.</p>
+    <p>This is your ground truth. You will use it twice: once to derive the offset, and once to validate the offset is dialled in correctly. If you skip this and try to match by eye on real footage later, you will spend an hour chasing a number you could have measured in two minutes.</p>
 
     <p>Sync timecode while you're at it. Multicam without genlock is bad enough; multicam where you can't even auto-sync is worse.</p>
 
@@ -241,23 +241,23 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
     <p>The whole point of this pipeline is that it survives a 200-clip timeline. Group grades, not clip grades. We will say this twice because everyone learns it the hard way.</p>
 
-    <h3>Step 1 &mdash; Build the A-cam base grade</h3>
+    <h3>Step 1: Build the A-cam base grade</h3>
 
     <p>Select every <code>A7S III</code> clip, group them as "A-CAM." On the group's <em>pre-clip</em> stage, build:</p>
 
     <ul>
       <li><strong>Node 1:</strong> <code>Color Space Transform</code> from <code>S-Log3/S-Gamut3.Cine</code> to <code>DaVinci WG/Intermediate</code> (or to <code>Rec.709</code> if you're going straight out, but we prefer working in a wide intermediate). If this part feels handwavy, our walkthrough on <a href="../posts/why-s-log3-lut-looks-flat-cst-node.html">why your S-Log3 LUT looks flat without a CST node</a> covers exactly why the order matters.</li>
-      <li><strong>Node 2:</strong> Exposure normalization &mdash; lift or pull until your skin tone hits the <code>IRE</code> range you want before the look goes on. Our <a href="../posts/lut-crushing-blacks-pre-lut-exposure-workflow.html">pre-LUT exposure workflow piece</a> goes deep on the trim values we use for Indian skin under tungsten and LED.</li>
+      <li><strong>Node 2:</strong> Exposure normalization: lift or pull until your skin tone hits the <code>IRE</code> range you want before the look goes on. Our <a href="../posts/lut-crushing-blacks-pre-lut-exposure-workflow.html">pre-LUT exposure workflow piece</a> goes deep on the trim values we use for Indian skin under tungsten and LED.</li>
       <li><strong>Node 3:</strong> Look LUT or PowerGrade.</li>
     </ul>
 
-    <h3>Step 2 &mdash; Apply the same group grade to B-cam</h3>
+    <h3>Step 2: Apply the same group grade to B-cam</h3>
 
     <p>Select every <code>FX3</code> clip. Group them as "B-CAM." On the B-CAM group's pre-clip stage, paste the identical three-node tree from A-CAM. Do not modify it.</p>
 
-    <p>Now park your playhead on a B-cam clip that cuts directly against an A-cam clip &mdash; ideally a wide of the mandap that has both cameras' angles in roughly the same light. Open your parade scope. You will see the drift clearly: the red trace on FX3 sits a hair higher, the green trace sits lower, the whole luma sits half an <code>IRE</code> south.</p>
+    <p>Now park your playhead on a B-cam clip that cuts directly against an A-cam clip: ideally a wide of the mandap that has both cameras' angles in roughly the same light. Open your parade scope. You will see the drift clearly: the red trace on FX3 sits a hair higher, the green trace sits lower, the whole luma sits half an <code>IRE</code> south.</p>
 
-    <h3>Step 3 &mdash; Add the offset node, B-cam only</h3>
+    <h3>Step 3: Add the offset node, B-cam only</h3>
 
     <p>On the B-CAM group's pre-clip stage, add a fourth node <em>before</em> the look LUT. This is your match node and its job is to make the FX3 pretend to be an A7S III.</p>
 
@@ -266,13 +266,13 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
     <ul>
       <li>Hue offset: rotate the global hue wheel toward green, between +1 and +3 degrees. Counters the FX3 magenta lean.</li>
       <li>Tint: -1 to -3 on the temperature/tint pair, biased on tint. Same job, finer control.</li>
-      <li>Gain or offset: lift luma by +0.5 to +1.5 <code>IRE</code> &mdash; whatever brings the FX3 trace level with A7S III on the parade scope.</li>
+      <li>Gain or offset: lift luma by +0.5 to +1.5 <code>IRE</code>: whatever brings the FX3 trace level with A7S III on the parade scope.</li>
       <li>Optional: a tiny saturation pull, -2 to -3, if your FX3's midtones feel slightly more aggressive in chroma.</li>
     </ul>
 
     <p>Those numbers are starting points, not gospel. Your two specific bodies will have their own offset, and that is what the chart you shot at the start of the day is for.</p>
 
-    <h3>Step 4 &mdash; Validate against the chart</h3>
+    <h3>Step 4: Validate against the chart</h3>
 
     <p>Drop the chart clips from both cameras onto the timeline, side by side, in the same group context. Use the picker on the same neutral grey chip on each. The RGB values you read out of the picker tell you exactly how far apart the bodies are, and you can dial your match node until the two readings collapse into the same number. This is the only objectively correct way to do this. Eyeballing it on a hero shot will get you 80% there; the chart gets you to 100%.</p>
 
@@ -289,7 +289,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
     <p>The whole point of putting the match on the group's pre-clip stage is that you set it once and 200 clips inherit it. If you fix the magenta lean per-clip on a wedding edit, you will be fixing it for the rest of your life, and the next round of revisions will undo half of it.</p>
 
-    <p>Per-clip nodes exist for problems that are actually per-clip &mdash; a window light blew out one shot, a guest stepped in front of the lamp during the pheras. Camera-to-camera drift is not a per-clip problem. It's a per-camera problem. Solve it where it lives.</p>
+    <p>Per-clip nodes exist for problems that are actually per-clip: a window light blew out one shot, a guest stepped in front of the lamp during the pheras. Camera-to-camera drift is not a per-clip problem. It's a per-camera problem. Solve it where it lives.</p>
 
     <p>If you re-cut and the timeline grows from two cameras to three, your grouping survives. You add a third group, paste the base tree, derive its offset against the chart, done.</p>
 
@@ -299,9 +299,9 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
     <h2>Where this leaves you</h2>
 
-    <p>The match itself is small &mdash; one node, four to six values. The discipline is in doing it once at the group level instead of fighting it across 200 clips. Shoot the chart. Build the A-cam tree. Mirror it onto B-cam. Add the offset node. Validate on the parade scope using the chart. Move on to the actual creative grade, which is the part of the job worth your attention.</p>
+    <p>The match itself is small: one node, four to six values. The discipline is in doing it once at the group level instead of fighting it across 200 clips. Shoot the chart. Build the A-cam tree. Mirror it onto B-cam. Add the offset node. Validate on the parade scope using the chart. Move on to the actual creative grade, which is the part of the job worth your attention.</p>
 
-    <p>If you want a head start, the offset preset and the full base node tree are both inside <a href="../luts.html">our LUT library</a> &mdash; built specifically against the two-Sony wedding setup that runs most Indian weddings in 2026.</p>
+    <p>If you want a head start, the offset preset and the full base node tree are both inside <a href="../luts.html">our LUT library</a>: built specifically against the two-Sony wedding setup that runs most Indian weddings in 2026.</p>
   </div>
 </article>
 

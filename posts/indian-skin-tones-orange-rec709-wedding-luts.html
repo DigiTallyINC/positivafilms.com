@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why Indian Skin Tones Go Orange Under Rec.709 Wedding LUTs (And the One Node That Fixes It) &mdash; Positiva Films</title>
+  <title>Why Indian Skin Tones Go Orange Under Rec.709 Wedding LUTs (And the One Node That Fixes It): Positiva Films</title>
   <meta name="description" content="Brown skin pulls orange under stock cinematic LUTs because the I-line on a vectorscope was built for Caucasian skin. Here is the qualifier node that fixes it." />
   <meta name="keywords" content="indian skin tone lut, brown skin orange after lut, wedding lut skin tone, why is my skin orange after color grade, davinci resolve hsl qualifier indian skin, rec 709 skin tone correction" />
   <meta name="author" content="Tally Talwar" />
@@ -211,15 +211,15 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   <div class="article-inner">
     <p class="lede">You drop the LUT. The bride lights up like a traffic cone. The groom looks like he was rendered in a citrus juicer. The dance floor that you remember as warm and golden in your viewfinder is now a uniform pumpkin smear on the timeline. Welcome to the most predictable problem in Indian wedding color.</p>
 
-    <p>We shot a Punjabi wedding in Chandigarh last December &mdash; tungsten chandeliers in the banquet hall, LED uplighters on the mandap, sparklers on the entry, the usual mid-grade venue lighting that promises chaos for any colorist. The footage looked clean on the FX3 monitor. The S-Log3 graded fine through a <code>Color Space Transform</code>. Then we slapped a popular cinematic <code>Rec.709</code> LUT on the timeline and everyone in the frame turned the colour of a Fanta bottle.</p>
+    <p>We shot a Punjabi wedding in Chandigarh last December: tungsten chandeliers in the banquet hall, LED uplighters on the mandap, sparklers on the entry, the usual mid-grade venue lighting that promises chaos for any colorist. The footage looked clean on the FX3 monitor. The S-Log3 graded fine through a <code>Color Space Transform</code>. Then we slapped a popular cinematic <code>Rec.709</code> LUT on the timeline and everyone in the frame turned the colour of a Fanta bottle.</p>
 
-    <p>If you have been grading Indian weddings for any length of time, you have lived this exact moment. The fix is not your white balance, not your exposure, not your camera profile. The fix is in the LUT itself &mdash; or more honestly, in the assumption baked into it.</p>
+    <p>If you have been grading Indian weddings for any length of time, you have lived this exact moment. The fix is not your white balance, not your exposure, not your camera profile. The fix is in the LUT itself: or more honestly, in the assumption baked into it.</p>
 
     <h2>The Root Cause Nobody Talks About</h2>
 
-    <p>Open any popular off-the-shelf wedding LUT in DaVinci Resolve and look at what it is doing to the <code>vectorscope</code>. Most "cinematic" LUTs are graded against a pale Caucasian skin reference. The skin-tone indicator on a vectorscope &mdash; the famous <code>I-line</code> running at roughly 123 degrees from the center &mdash; is treated as gospel. LUT designers chase that line. They pull mids warmer, push midtone saturation up, lift the orange channel, and call it cinematic.</p>
+    <p>Open any popular off-the-shelf wedding LUT in DaVinci Resolve and look at what it is doing to the <code>vectorscope</code>. Most "cinematic" LUTs are graded against a pale Caucasian skin reference. The skin-tone indicator on a vectorscope: the famous <code>I-line</code> running at roughly 123 degrees from the center: is treated as gospel. LUT designers chase that line. They pull mids warmer, push midtone saturation up, lift the orange channel, and call it cinematic.</p>
 
-    <p>Here is the part the LUT marketing never mentions: <strong>the I-line was calibrated against a particular skin chroma</strong>. Specifically, against the kind of skin that broadcast engineers in 1953 had access to in a New Jersey lab. South Asian and brown skin tones do not sit on that line. They sit lower in chroma &mdash; less saturated by nature &mdash; and slightly off in hue, leaning marginally redder than the line predicts.</p>
+    <p>Here is the part the LUT marketing never mentions: <strong>the I-line was calibrated against a particular skin chroma</strong>. Specifically, against the kind of skin that broadcast engineers in 1953 had access to in a New Jersey lab. South Asian and brown skin tones do not sit on that line. They sit lower in chroma: less saturated by nature: and slightly off in hue, leaning marginally redder than the line predicts.</p>
 
     <p>So when a LUT says, "pull every face toward the I-line and then warm it," what it is really doing to brown skin is: take an already warm-leaning hue and yank it further into pure orange, while saturating the chroma past where it should ever sit. The result is the Fanta bottle. Plasticky highlights. A waxy mid that looks nothing like the actual person standing in front of your camera.</p>
 
@@ -231,7 +231,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
     <p>In Resolve, on a serial node downstream of the LUT, open the <code>HSL Qualifier</code>. You are isolating the bride and groom's skin and nothing else.</p>
 
-    <pre><code>HSL Qualifier &mdash; brown skin isolation
+    <pre><code>HSL Qualifier: brown skin isolation
   Hue:        center ~18, width ~30  (range roughly 5 to 35)
   Saturation: low ~12, high ~75       (kill the deep oranges of marigolds and lehengas)
   Luminance:  low ~25, high ~92       (mids upward; ignore deep shadow + clipped specular)
@@ -245,7 +245,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
     <ul>
       <li><strong>Hue versus Hue curve, on the orange band:</strong> push +2 to +5 degrees back toward red. This is the single highest-impact move. You are unwinding the orange yank the LUT just did.</li>
       <li><strong>Saturation:</strong> drop 4 to 8 points. Brown skin is naturally lower-chroma than the LUT assumes. You are letting it be.</li>
-      <li><strong>Luminance:</strong> nudge +2 on the gain wheel of the qualified node. Brown skin photographs best when there is a hint of internal glow on the highlight side &mdash; the "lit from within" quality you see in well-graded South Asian cinema. Without it, faces flatten.</li>
+      <li><strong>Luminance:</strong> nudge +2 on the gain wheel of the qualified node. Brown skin photographs best when there is a hint of internal glow on the highlight side: the "lit from within" quality you see in well-graded South Asian cinema. Without it, faces flatten.</li>
       <li><strong>Optional, on Indian grooms with beards:</strong> a second small qualifier inside the same node group, narrower hue, slightly more desaturation. Beards eat warmth.</li>
     </ul>
 
@@ -255,16 +255,16 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
       <div class="inline-cta-text">
         <div class="inline-cta-eyebrow">From the Positiva LUT Library</div>
         <h4>Indian Wedding LUTs</h4>
-        <p>Every preset in our Wedding pack was graded directly against South Asian skin references, with the qualifier-based correction node already built into the PowerGrade &mdash; drop the LUT, your skin sits where it should.</p>
+        <p>Every preset in our Wedding pack was graded directly against South Asian skin references, with the qualifier-based correction node already built into the PowerGrade: drop the LUT, your skin sits where it should.</p>
       </div>
       <a class="btn" href="../luts.html#wedding">View Pack &rarr;</a>
     </div>
 
-    <h2>The Vectorscope Reference Is Wrong For Us &mdash; Build Your Own</h2>
+    <h2>The Vectorscope Reference Is Wrong For Us: Build Your Own</h2>
 
     <p>Once you accept the I-line was not built for our subjects, the next move is to stop chasing it. Build your own target.</p>
 
-    <p>Pick ten frames of well-graded brown-skin reference. Stills from Indian features that are widely respected for their color work, frame grabs from South Asian DPs whose grades you trust, and &mdash; this is the underrated source &mdash; carefully colorimetered footage of people standing under known light from your own past projects. Put each frame on a Resolve viewer, sample the cheek and the forehead with the picker, log the position on the vectorscope.</p>
+    <p>Pick ten frames of well-graded brown-skin reference. Stills from Indian features that are widely respected for their color work, frame grabs from South Asian DPs whose grades you trust, and: this is the underrated source: carefully colorimetered footage of people standing under known light from your own past projects. Put each frame on a Resolve viewer, sample the cheek and the forehead with the picker, log the position on the vectorscope.</p>
 
     <p>You will see a cluster. It will sit a few degrees clockwise from the engineering I-line, at noticeably lower chroma than the line traditionally targets. Take the average position and store it as a custom guide in your viewer. From now on, when you grade an Indian face, you are pulling toward your custom target, not the legacy one.</p>
 
@@ -278,7 +278,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
     <ul>
       <li>Pull a grey card under the dominant light for 3 seconds. Slate it. Move on.</li>
-      <li>Re-pull when you cross from indoor tungsten to LED uplighter zones &mdash; banquet halls almost always have two or three competing color temperatures within a 30-foot radius.</li>
+      <li>Re-pull when you cross from indoor tungsten to LED uplighter zones: banquet halls almost always have two or three competing color temperatures within a 30-foot radius.</li>
       <li>Tungsten venue light is the worst offender for brown skin under a Rec.709 LUT. The LUT magnifies any warm-side error in your WB. If you are off by 200K warm at capture, you are off by 600K warm after the LUT. Then the qualifier has to do twice the work.</li>
     </ul>
 
@@ -286,7 +286,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
     <h2>What This All Adds Up To</h2>
 
-    <p>Three things, in this order. First, accept that the legacy <code>vectorscope</code> reference is wrong for our skin and build a custom target you trust. Second, add a qualified correction node downstream of any look LUT that walks the orange yank back &mdash; +2 to +5 degrees of hue toward red, 4 to 8 points off saturation, +2 on luminance gain. Third, hold the line on grey-card discipline at capture so the LUT has clean material to multiply.</p>
+    <p>Three things, in this order. First, accept that the legacy <code>vectorscope</code> reference is wrong for our skin and build a custom target you trust. Second, add a qualified correction node downstream of any look LUT that walks the orange yank back: +2 to +5 degrees of hue toward red, 4 to 8 points off saturation, +2 on luminance gain. Third, hold the line on grey-card discipline at capture so the LUT has clean material to multiply.</p>
 
     <p>We have been shooting weddings across India for fifteen years, and the orange-skin problem has been the single most common piece of post-production frustration we hear from DPs we cross paths with on circuit. It is solvable, it is mechanical, and once you have built the node and the custom guide, you stop thinking about it. You can browse <a href="../index.html">how we work</a> for context on the kind of weddings this approach has been tuned against, or jump straight to the <a href="../luts.html">LUT library</a> if you would rather skip the node-building afternoon.</p>
 
@@ -299,7 +299,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
     <div>
       <div class="post-cta-eyebrow">&#10022; Built For Indian Weddings</div>
       <h2>Skin Tones That Sit Right<em>the Wedding LUT pack</em></h2>
-      <p>Graded against brown skin from frame one. The qualifier correction node ships pre-built inside every PowerGrade. Drop the LUT on Punjabi tungsten, Tamil reception LED, or Gujarati outdoor noon &mdash; the bride looks like the bride, not a citrus fruit.</p>
+      <p>Graded against brown skin from frame one. The qualifier correction node ships pre-built inside every PowerGrade. Drop the LUT on Punjabi tungsten, Tamil reception LED, or Gujarati outdoor noon: the bride looks like the bride, not a citrus fruit.</p>
       <a class="btn" href="../luts.html#wedding">Explore The Wedding Pack &rarr;</a>
     </div>
     <div class="post-cta-image" style="background-image:url('../Indian_Wedding_Luts_pack.png')"></div>

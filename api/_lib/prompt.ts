@@ -1,6 +1,61 @@
 import type { QueuedTopic, PublishedEntry } from "./queue.js";
 
 /**
+ * Hard-banned AI-slop phrases. Single source of truth: injected into the system
+ * prompt AND enforced by validateOutput in blog-generate.ts (case-insensitive
+ * substring match — publication fails loudly if any appears).
+ * Only near-zero-false-positive phrases belong here.
+ */
+export const SLOP_PHRASES: readonly string[] = [
+  "delve",
+  "game-changer",
+  "game changer",
+  "game-changing",
+  "in today's fast",
+  "in this article",
+  "in this post",
+  "in this guide",
+  "look no further",
+  "say goodbye to",
+  "say hello to",
+  "welcome to the world",
+  "the world of",
+  "unleash",
+  "revolutioniz",
+  "elevate your",
+  "supercharge",
+  "to the next level",
+  "buckle up",
+  "let's dive",
+  "dive into",
+  "let's explore",
+  "whether you're a",
+  "whether you are a",
+  "in conclusion",
+  "wrapping up,",
+  "it's not just about",
+  "isn't just about",
+  "isn't just a",
+  "is more than just",
+  "here's the kicker",
+  "the best part?",
+  "but wait",
+  "enter:",
+  "seamlessly",
+  "effortlessly",
+  "hassle-free",
+  "a breeze",
+  "treasure trove",
+  "tapestry",
+  "testament to",
+  "in the ever-evolving",
+  "ever-changing landscape",
+  "digital age",
+  "🚀",
+  "✨",
+];
+
+/**
  * Build the system prompt — pulls voice/structure rules from the live AGENT.md
  * so the runbook remains the single source of truth that the human can edit.
  *
@@ -14,6 +69,17 @@ PRODUCT HONESTY RULE (strict): for APP and TOOL posts, every claim about the pro
 The site you are publishing to is positivafilms.com. The post you write must NEVER refer to "Positiva Films," "our team," "our studio," or any first-person-plural-as-brand framing inside the body. The bottom CTA box handles all brand reference.
 
 STRICT STYLE BAN: do not use em-dashes anywhere. Never write the character "—" (U+2014), never write the HTML entity "&mdash;", never write the bigram "--". Use commas, colons, semicolons, periods, or parentheses to break ideas. This rule applies to every field of the tool call (excerpt, lede, body_html, cta.body, etc.).
+
+BANNED PHRASES (hard gate — publication fails automatically if any of these appears, case-insensitive, in any field): ${SLOP_PHRASES.filter((p) => !/[🚀✨]/.test(p)).join(" · ")} · any emoji.
+
+ANTI-SLOP WRITING RULES (these patterns read as machine-generated; a human editor rejects them):
+- Never open with a rhetorical question, "Picture this", or a definition of the topic.
+- No rule-of-three flourishes ("faster, cleaner, better"), no sentence that exists only for rhythm.
+- No paragraph that starts with a bolded mini-headline sentence. No one-line "The result?" fragments.
+- Don't summarize what you're about to say or what you just said; no "as mentioned above".
+- Vary sentence length naturally; do not alternate short-long-short mechanically.
+- Concrete beats abstract: name the camera, the road, the rupee amount, the menu path. If a sentence would survive in any other blog on the internet unchanged, cut it or sharpen it.
+- Confidence without cheerleading: state what works and why; never sell with adjectives ("amazing", "powerful", "incredible", "stunning").
 
 If you include any <img> tags in body_html, every image must carry a descriptive alt attribute that names the actual subject (e.g. alt="DaVinci Resolve node graph showing CST In before creative LUT, before CST Out") and must include the attributes loading="lazy" decoding="async". Never ship an <img> without alt text.
 

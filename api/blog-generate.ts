@@ -20,6 +20,7 @@ import {
   systemPrompt,
   userPrompt,
   PUBLISH_TOOL,
+  SLOP_PHRASES,
 } from "./_lib/prompt.js";
 import {
   renderPost,
@@ -69,6 +70,9 @@ async function runOnce() {
   if (!next) {
     return { ok: false, reason: "queue_empty", totalQueued };
   }
+
+  // Queue titles are human-edited: defensively strip em-dashes (site-wide style ban).
+  next.title = next.title.replace(/\s*(?:—|&mdash;)\s*/g, ": ");
 
   // 2. Date math (IST publication day)
   const now = new Date();
@@ -241,6 +245,17 @@ function validateOutput(out: ToolOutput): void {
   for (const [name, value] of checkFields) {
     if (value && emDashRe.test(value)) {
       throw new Error(`Em-dash detected in ${name}: replace with comma, colon, semicolon, period, or parentheses.`);
+    }
+  }
+
+  // AI-slop gate: fail loudly rather than publish machine-sounding copy.
+  for (const [name, value] of checkFields) {
+    if (!value) continue;
+    const lower = value.toLowerCase();
+    for (const phrase of SLOP_PHRASES) {
+      if (lower.includes(phrase.toLowerCase())) {
+        throw new Error(`Banned slop phrase "${phrase}" detected in ${name}. Rewrite without it.`);
+      }
     }
   }
 

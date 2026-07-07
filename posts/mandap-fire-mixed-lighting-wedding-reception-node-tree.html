@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mixed Tungsten + LED + Mandap Fire: A Wedding Reception Node Tree That Actually Works &mdash; Positiva Films</title>
+  <title>Mixed Tungsten + LED + Mandap Fire: A Wedding Reception Node Tree That Actually Works: Positiva Films</title>
   <meta name="description" content="Three light sources, three color temperatures, one bride. The parallel node tree we use in Resolve to balance mandap fire, tungsten chandeliers, and LED uplights without wrecking skin." />
   <meta name="keywords" content="wedding reception color grade, mandap fire grade, mixed lighting wedding, fire glow skin tone correction, tungsten led wedding color, davinci resolve wedding node tree" />
   <meta name="author" content="Tally Talwar" />
@@ -69,7 +69,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .mobile-nav a{font-family:var(--display);font-size:34px;letter-spacing:0.1em;color:var(--linen);text-decoration:none;text-transform:uppercase}
 .mobile-nav .nav-cta{color:var(--gold);font-size:18px;font-family:var(--body);letter-spacing:0.16em}
 
-/* Article hero — text-only editorial */
+/* Article hero: text-only editorial */
 .article-hero{position:relative;min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 48px 80px;overflow:hidden;border-bottom:1px solid var(--linen-faint);background:var(--ink)}
 .article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(201,168,76,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
 .article-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none;z-index:0}
@@ -106,7 +106,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .article-inner img{max-width:100%;border:1px solid var(--linen-faint)}
 .article-inner figcaption{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--linen-dim);margin-top:10px;text-align:center}
 
-/* Inline product CTA — drops into the body */
+/* Inline product CTA: drops into the body */
 .inline-cta{margin:48px 0;padding:32px 36px;background:var(--soil);border:1px solid var(--gold-faint);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .inline-cta-text{flex:1;min-width:240px}
 .inline-cta-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -208,7 +208,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
 <article class="article">
   <div class="article-inner">
-    <p class="lede">On a recent reception we shot in Hyderabad, the bride sat under a chandelier pulling roughly 3200<code>K</code>, with two LED uplights washing the back wall in a magenta-leaning pink, while the priest fed ghee into a fire that swung between 1800 and 2000<code>K</code> every few seconds. One global white-balance node turned her face into a confused, sallow yellow. This is the node tree we built to fix it &mdash; and the capture-side habit that makes the fix faster.</p>
+    <p class="lede">On a recent reception we shot in Hyderabad, the bride sat under a chandelier pulling roughly 3200<code>K</code>, with two LED uplights washing the back wall in a magenta-leaning pink, while the priest fed ghee into a fire that swung between 1800 and 2000<code>K</code> every few seconds. One global white-balance node turned her face into a confused, sallow yellow. This is the node tree we built to fix it: and the capture-side habit that makes the fix faster.</p>
 
     <h2>Why a Reception Frame Breaks Your Grade</h2>
 
@@ -240,29 +240,29 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
         |
 [07] Final trim (offset, contrast, saturation)</code></pre>
 
-    <h3>Node 1 &mdash; Color Space Transform</h3>
+    <h3>Node 1: Color Space Transform</h3>
 
     <p>Start with a clean <code>Color Space Transform</code> from your camera's log space to <code>Rec.709</code>. Do not eyeball log to Rec.709 with curves. Use the CST. It gives every downstream node a predictable canvas, which matters enormously the moment you start qualifying narrow color regions.</p>
 
-    <h3>Node 2 &mdash; Global White Balance Neutralization</h3>
+    <h3>Node 2: Global White Balance Neutralization</h3>
 
     <p>This node is the only place a global decision happens, and the goal is modest: get one true neutral somewhere in the frame. Look for the white sheet on the mandap floor, the bride's pearl mala if it reads white, or the petals of marigolds where they catch a clean tungsten-only patch. Use Resolve's white-point picker on that reference. Do not chase the bride's skin yet. Do not touch fire yet. You are calibrating the room, not the look.</p>
 
-    <h3>Node 3 (parallel) &mdash; HSL Qualifier on Fire Glow</h3>
+    <h3>Node 3 (parallel): HSL Qualifier on Fire Glow</h3>
 
     <p>Branch a parallel node and pull a tight <code>HSL Qualifier</code> on the warm orange highlights produced by the fire itself. Soften the matte edges enough that you are not chasing flicker frame by frame. Inside that selection, drop saturation by 8 to 12 points and push hue by roughly +3&deg; toward red.</p>
 
     <p>That hue nudge is the trick that makes fire read <em>as fire</em> rather than as a sodium-vapor street light. Sodium is a dead, slightly green-orange around 590 nm; combustion fire is more spectrally complete and slightly redder. When fire blows out and saturates pure orange, your eye reads street lamp. The +3&deg; red shift, plus a small saturation pull, returns the warmth your eye expects without making the flame feel painted on.</p>
 
-    <h3>Node 4 (parallel) &mdash; HSL Qualifier on Skin</h3>
+    <h3>Node 4 (parallel): HSL Qualifier on Skin</h3>
 
     <p>Another parallel branch, this one qualifying the bride's and groom's faces and hands. The job here is to undo whatever the LED wash did to skin. If the LED was magenta-leaning, you are pulling magenta out and recovering warmth around the cheeks and forehead. If it was cyan-leaning (less common, but happens when decorators pair white LED with blue gels), you are adding warmth back into the midtones and lifting the jaw.</p>
 
-    <p>We have written about how Indian skin reads on the vectorscope inside the orange-to-<code>Rec.709</code> envelope &mdash; if you have not seen it, the companion piece on <a href="indian-skin-tones-orange-rec709-wedding-luts.html">Indian skin tones in Rec.709</a> covers the target line in detail. The short version: stay just inside the I-line, lean a hair warmer than you think for haldi-warm faces, and never let saturation push past the second graticule ring.</p>
+    <p>We have written about how Indian skin reads on the vectorscope inside the orange-to-<code>Rec.709</code> envelope: if you have not seen it, the companion piece on <a href="indian-skin-tones-orange-rec709-wedding-luts.html">Indian skin tones in Rec.709</a> covers the target line in detail. The short version: stay just inside the I-line, lean a hair warmer than you think for haldi-warm faces, and never let saturation push past the second graticule ring.</p>
 
-    <h3>Node 5 (parallel) &mdash; Power Window on the Background LED Wash</h3>
+    <h3>Node 5 (parallel): Power Window on the Background LED Wash</h3>
 
-    <p>Third parallel branch. If the back wall is blown out with magenta or pink LED, drop a <code>Power Window</code> around it &mdash; usually a soft horizontal band along the upper background &mdash; and desaturate by 15 points or more. Track it loosely; receptions move slowly enough that a keyframe every two or three seconds is plenty.</p>
+    <p>Third parallel branch. If the back wall is blown out with magenta or pink LED, drop a <code>Power Window</code> around it: usually a soft horizontal band along the upper background: and desaturate by 15 points or more. Track it loosely; receptions move slowly enough that a keyframe every two or three seconds is plenty.</p>
 
     <p>The reason this is a window and not a qualifier: LED wash often shares hue with the bride's lehenga, her bangles, and the marigold backdrop. A qualifier will eat all of them. A window respects geometry. You only want the wall to behave; you do not want her dupatta to lose its color.</p>
 
@@ -270,38 +270,38 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
       <div class="inline-cta-text">
         <div class="inline-cta-eyebrow">From the Positiva LUT Library</div>
         <h4>Indian Wedding LUTs</h4>
-        <p>The Reception node tree above is exactly the <code>PowerGrade</code> we use on every shoot &mdash; it ships in our Wedding pack ready to drop on a clip, with the qualifiers and parallel nodes pre-built. You spend 30 seconds adjusting; we already did the wiring.</p>
+        <p>The Reception node tree above is exactly the <code>PowerGrade</code> we use on every shoot: it ships in our Wedding pack ready to drop on a clip, with the qualifiers and parallel nodes pre-built. You spend 30 seconds adjusting; we already did the wiring.</p>
       </div>
       <a class="btn" href="../luts.html#wedding">View Pack &rarr;</a>
     </div>
 
-    <h3>Node 6 &mdash; Look LUT</h3>
+    <h3>Node 6: Look LUT</h3>
 
-    <p>Now &mdash; and only now &mdash; drop your creative <code>.cube</code> on top. The look LUT is the seasoning, not the meal. It runs after correction so that when you stack the same look across a tungsten frame, an LED-heavy frame, and a fire-dominant frame, all three start from the same neutral and end up consistent.</p>
+    <p>Now: and only now: drop your creative <code>.cube</code> on top. The look LUT is the seasoning, not the meal. It runs after correction so that when you stack the same look across a tungsten frame, an LED-heavy frame, and a fire-dominant frame, all three start from the same neutral and end up consistent.</p>
 
-    <h3>Node 7 &mdash; Final Trim</h3>
+    <h3>Node 7: Final Trim</h3>
 
     <p>Last node is offset, contrast, and overall saturation. Pull saturation down 4&ndash;6 points if the LUT has a heavy hand. Lift the offset wheel slightly toward warm if the room reads cold after correction. This is also where you match shot-to-shot inside the same scene.</p>
 
     <h2>Why Parallel, Not Serial</h2>
 
-    <p>If you stacked Nodes 3, 4, and 5 in a serial chain, the fire correction would feed into the skin correction, which would feed into the background correction. Each operation compounds the previous. Skin starts to do strange things &mdash; it picks up cyan from the LED node, then gets over-warmed by the skin node trying to compensate, then gets pulled again by the look LUT.</p>
+    <p>If you stacked Nodes 3, 4, and 5 in a serial chain, the fire correction would feed into the skin correction, which would feed into the background correction. Each operation compounds the previous. Skin starts to do strange things: it picks up cyan from the LED node, then gets over-warmed by the skin node trying to compensate, then gets pulled again by the look LUT.</p>
 
-    <p>Parallel nodes evaluate from the same upstream signal &mdash; the output of Node 2 &mdash; and Resolve composites them together based on the keys and windows you defined. Each correction is independent. Skin never sees the fire saturation pull. The background never sees the skin warmth recovery. That is the whole reason the structure works at receptions and not, say, at a hotel ballroom corporate shoot where one global node would do.</p>
+    <p>Parallel nodes evaluate from the same upstream signal: the output of Node 2: and Resolve composites them together based on the keys and windows you defined. Each correction is independent. Skin never sees the fire saturation pull. The background never sees the skin warmth recovery. That is the whole reason the structure works at receptions and not, say, at a hotel ballroom corporate shoot where one global node would do.</p>
 
     <h2>The Capture-Side Habit That Cuts Grading Time in Half</h2>
 
     <p>Everything above is reactive. The proactive move is on set, before pheras start.</p>
 
-    <p>Find the priest or a family elder during the lull right before the fire is lit, and ask politely for thirty seconds to fire the mandap before the continuous phase begins. Position your A-cam at its actual pheras distance from the fire. Set a manual white balance somewhere between 2700 and 2900<code>K</code> &mdash; closer to the fire than to the chandeliers. This is counterintuitive: the chandeliers are brighter on the bride's face from above, but the fire is the source whose color you want to preserve. If you balance to the chandeliers, the fire will blow into pure saturated orange and clip every red channel. If you balance toward the fire, the chandeliers warm up a touch &mdash; which actually looks correct for a mandap &mdash; and the fire keeps detail in the highlights.</p>
+    <p>Find the priest or a family elder during the lull right before the fire is lit, and ask politely for thirty seconds to fire the mandap before the continuous phase begins. Position your A-cam at its actual pheras distance from the fire. Set a manual white balance somewhere between 2700 and 2900<code>K</code>: closer to the fire than to the chandeliers. This is counterintuitive: the chandeliers are brighter on the bride's face from above, but the fire is the source whose color you want to preserve. If you balance to the chandeliers, the fire will blow into pure saturated orange and clip every red channel. If you balance toward the fire, the chandeliers warm up a touch: which actually looks correct for a mandap: and the fire keeps detail in the highlights.</p>
 
     <p>Lock that white balance. Do not let auto-WB run during pheras. Auto will swing the entire frame as the fire intensifies and dies down, and your edit will look like someone is fading a warm filter on and off across the cut.</p>
 
     <h2>One More Thing: Save It as a PowerGrade</h2>
 
-    <p>Once the tree works on one clip, right-click in the gallery and save it as a <code>PowerGrade</code>. Name it something specific: <em>Reception &mdash; Tungsten + LED + Fire</em>. Next wedding, you drop it on the first pheras clip, retrack the windows, retune the qualifiers for the new room, and you are done in minutes instead of an hour.</p>
+    <p>Once the tree works on one clip, right-click in the gallery and save it as a <code>PowerGrade</code>. Name it something specific: <em>Reception: Tungsten + LED + Fire</em>. Next wedding, you drop it on the first pheras clip, retrack the windows, retune the qualifiers for the new room, and you are done in minutes instead of an hour.</p>
 
-    <p>That single saved <code>PowerGrade</code> is the difference between dreading the reception delivery and shipping it the same week. If you want our version of it pre-built, alongside the corresponding <code>.cube</code> looks for tungsten, mixed, and fire-heavy scenes, see the <a href="../luts.html#wedding">Indian Wedding LUTs</a> pack &mdash; and the broader <a href="../luts.html">LUT library</a> if you also shoot travel and aerial.</p>
+    <p>That single saved <code>PowerGrade</code> is the difference between dreading the reception delivery and shipping it the same week. If you want our version of it pre-built, alongside the corresponding <code>.cube</code> looks for tungsten, mixed, and fire-heavy scenes, see the <a href="../luts.html#wedding">Indian Wedding LUTs</a> pack: and the broader <a href="../luts.html">LUT library</a> if you also shoot travel and aerial.</p>
   </div>
 </article>
 
@@ -309,8 +309,8 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
   <div class="post-cta-inner">
     <div>
       <div class="post-cta-eyebrow">&#10022; The Reception Toolkit</div>
-      <h2>Built For The Mandap<em>tungsten, LED, and fire &mdash; balanced</em></h2>
-      <p>The Indian Wedding LUTs pack ships the parallel node tree from this post as a ready-to-drop <code>PowerGrade</code>, plus the .cube looks we run across pheras, sangeet, and reception cuts. Tested on FX3, A7S III, and R5 footage from real Indian weddings &mdash; not stock plates.</p>
+      <h2>Built For The Mandap<em>tungsten, LED, and fire: balanced</em></h2>
+      <p>The Indian Wedding LUTs pack ships the parallel node tree from this post as a ready-to-drop <code>PowerGrade</code>, plus the .cube looks we run across pheras, sangeet, and reception cuts. Tested on FX3, A7S III, and R5 footage from real Indian weddings: not stock plates.</p>
       <a class="btn" href="../luts.html#wedding">Open The Wedding Pack &rarr;</a>
     </div>
     <div class="post-cta-image" style="background-image:url('../Indian_Wedding_Luts_pack.png')"></div>

@@ -59,7 +59,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ### Week of August 10, 2026
 - [ ] category: apps | type: APP | product: bharometer | title: **Petrol Prices Reset Every Morning at 6 AM: Why City-Level Rates Change Your Mileage Math** | intent: "daily petrol price india", "city fuel price difference"
-- [ ] category: wedding | type: LUT      | title: **Reception Stage LED Wash Killing Skin Tones — A Curve-Based Fix** | intent: "led wash skin tone", "reception color grade"
+- [ ] category: wedding | type: LUT      | title: **Reception Stage LED Wash Killing Skin Tones: A Curve-Based Fix** | intent: "led wash skin tone", "reception color grade"
 - [ ] category: travel  | type: BROADER  | title: **The Ladakh Cold That Killed My BMPCC Battery in 11 Minutes** | intent: "ladakh cold camera battery", "high altitude filmmaking"
 
 ### Week of August 17, 2026
@@ -89,7 +89,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 ### Week of June 8, 2026
 
 ### Week of June 15, 2026
-- [ ] category: wedding | type: LUT      | title: **Why Gold Jewellery Clips on Sony A7S III at Indian Weddings — A Highlight Rolloff Recipe** | intent: "gold clipping sony a7s3", "highlight rolloff jewellery"
+- [ ] category: wedding | type: LUT      | title: **Why Gold Jewellery Clips on Sony A7S III at Indian Weddings: A Highlight Rolloff Recipe** | intent: "gold clipping sony a7s3", "highlight rolloff jewellery"
 - [ ] category: field   | type: BROADER  | title: **Pricing a Two-Day Delhi Wedding in 2026: A Real Quote Breakdown** | intent: "wedding film pricing india", "delhi wedding videography rate"
 
 ### Week of June 22, 2026
@@ -99,7 +99,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ### Week of June 29, 2026
 - [ ] category: wedding | type: LUT      | title: **Matching Drone B-roll to Ground Cam Footage in a Wedding Edit** | intent: "drone match wedding cam", "aerial color match"
-- [ ] category: gear    | type: LUT      | title: **BMPCC 6K Pro Skin Tones Go Pink Under Tungsten — A Resolve-Native Fix** | intent: "bmpcc skin tone tungsten", "blackmagic color tungsten"
+- [ ] category: gear    | type: LUT      | title: **BMPCC 6K Pro Skin Tones Go Pink Under Tungsten: A Resolve-Native Fix** | intent: "bmpcc skin tone tungsten", "blackmagic color tungsten"
 
 ### Week of July 6, 2026
 
@@ -107,7 +107,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: travel  | type: LUT      | title: **Backwater Greens vs Tropical Greens: Two Different Approaches for Kerala** | intent: "kerala backwaters color", "tropical green grading"
 
 ### Week of July 20, 2026
-- [ ] category: aerial  | type: LUT      | title: **Mavic 3 vs Air 3 Color Science — Why the Same Sky Reads Differently** | intent: "mavic 3 vs air 3 color", "dji color science compare"
+- [ ] category: aerial  | type: LUT      | title: **Mavic 3 vs Air 3 Color Science: Why the Same Sky Reads Differently** | intent: "mavic 3 vs air 3 color", "dji color science compare"
 
 ### Week of July 27, 2026
 - [ ] category: travel  | type: LUT      | title: **Old Delhi Street Footage: Taming Mixed Sodium-Vapor Streetlight** | intent: "sodium vapor color grade", "street footage india"
@@ -127,7 +127,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 ### Week of August 17, 2026
 - [ ] category: travel  | type: LUT      | title: **Why Beach Footage Looks Washed Out and How to Recover Sand-to-Sky Contrast** | intent: "beach footage washed out", "sand sky contrast grade"
 - [ ] category: gear    | type: BROADER  | title: **The DJI Mic 2 vs RØDE Wireless Pro at an Outdoor Goa Wedding** | intent: "dji mic 2 vs rode wireless", "outdoor wireless mic wedding"
-- [ ] category: wedding | type: BROADER  | title: **Why the Pandit Always Stands Where Your A-Cam Is — And Three Angles That Beat Him to It** | intent: "pheras coverage angles", "wedding ceremony blocking"
+- [ ] category: wedding | type: BROADER  | title: **Why the Pandit Always Stands Where Your A-Cam Is: And Three Angles That Beat Him to It** | intent: "pheras coverage angles", "wedding ceremony blocking"
 
 ### Week of August 24, 2026
 - [ ] category: craft   | type: LUT      | title: **The Difference Between a Look LUT and a Conversion LUT (And Why You Probably Need Both)** | intent: "look lut vs conversion lut", "creative vs technical lut"
@@ -140,7 +140,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: wedding | type: BROADER  | title: **Catching the Baraat Without Eating Dhol Sticks: Ronin RS3 Settings for Dancing Crowds** | intent: "baraat gimbal settings", "ronin rs3 wedding"
 
 ### Week of September 7, 2026
-- [ ] category: travel  | type: LUT      | title: **Grading the Indian Night Sky — Why Astro LUTs Made for the Aurora Fail Here** | intent: "astro color grade india", "night sky lut"
+- [ ] category: travel  | type: LUT      | title: **Grading the Indian Night Sky: Why Astro LUTs Made for the Aurora Fail Here** | intent: "astro color grade india", "night sky lut"
 - [ ] category: travel  | type: BROADER  | title: **Packing for 30 Days Across Spiti: One Pelican, One Backpack, No Excess Baggage** | intent: "long shoot packing india", "spiti documentary kit"
 - [ ] category: aerial  | type: BROADER  | title: **Mavic 3 vs Air 3 vs Mini 4 Pro: A Decision Tree for Every Shoot Type** | intent: "dji drone comparison 2026", "which drone filmmaker"
 
@@ -155,8 +155,8 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: gear    | type: BROADER  | title: **Internal 10-bit vs Ninja V on the S5 IIX: Which Survives a Wedding Card-Wipe Scare** | intent: "ninja v vs internal recording", "external recorder wedding"
 
 ### Week of September 28, 2026
-- [ ] category: craft   | type: LUT      | title: **Why Your LUT Bakes In Exposure — and How to Build One That Doesn't** | intent: "exposure baked lut", "build a lut"
-- [ ] category: wedding | type: BROADER  | title: **The Vidaai Shot Everyone Asks For — And the One That Actually Makes the Mother Cry** | intent: "vidaai coverage", "wedding emotional shot"
+- [ ] category: craft   | type: LUT      | title: **Why Your LUT Bakes In Exposure: and How to Build One That Doesn't** | intent: "exposure baked lut", "build a lut"
+- [ ] category: wedding | type: BROADER  | title: **The Vidaai Shot Everyone Asks For: And the One That Actually Makes the Mother Cry** | intent: "vidaai coverage", "wedding emotional shot"
 - [ ] category: field   | type: BROADER  | title: **Recovering a Corrupt SanDisk SD Card from a Sangeet: What Actually Worked** | intent: "corrupt sd card recovery", "wedding card failure"
 
 ### Week of October 5, 2026
@@ -175,7 +175,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: travel  | type: BROADER  | title: **Why You Need a Local Fixer in Varanasi (And How to Find One Who Doesn't Inflate Quotes)** | intent: "local fixer india", "varanasi production help"
 
 ### Week of October 26, 2026
-- [ ] category: travel  | type: LUT      | title: **Tea Garden Footage in Assam — Adding Depth to Repetitive Greens** | intent: "tea garden color grade", "green tonal contrast"
+- [ ] category: travel  | type: LUT      | title: **Tea Garden Footage in Assam: Adding Depth to Repetitive Greens** | intent: "tea garden color grade", "green tonal contrast"
 - [ ] category: wedding | type: BROADER  | title: **Shooting a Punjabi Wedding vs a South Indian Wedding: Two Different Shot Lists** | intent: "punjabi vs south indian wedding", "regional wedding coverage"
 - [ ] category: gear    | type: BROADER  | title: **Sennheiser EW-DP vs RØDE Wireless Pro at the ₹80k Price Point** | intent: "ew-dp vs rode wireless pro", "pro wireless mic comparison"
 
@@ -191,7 +191,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: travel  | type: BROADER  | title: **The Monsoon Window in Meghalaya Is 11 Days. Here's How to Plan a Shoot Around It** | intent: "meghalaya monsoon shoot", "northeast india weather"
 - [ ] category: travel  | type: BROADER  | title: **Sand at Jaisalmer: How One Shoot Cost Me a Sigma 24-70 Mount** | intent: "desert dust camera damage", "rajasthan filmmaking gear"
 - [ ] category: travel  | type: BROADER  | title: **Filming Inside Hampi Temples: What the ASI Lets You Do, What They Don't** | intent: "hampi filming permission", "asi india film"
-- [ ] category: travel  | type: BROADER  | title: **Why I Stopped Carrying a Drone to Kashmir — And What I Carry Instead** | intent: "kashmir drone restriction", "conflict zone filmmaking"
+- [ ] category: travel  | type: BROADER  | title: **Why I Stopped Carrying a Drone to Kashmir: And What I Carry Instead** | intent: "kashmir drone restriction", "conflict zone filmmaking"
 
 ### Wedding craft (broader)
 - [ ] category: wedding | type: BROADER  | title: **Drone Permissions Inside a Five-Star Mumbai Banquet (Yes, You Need Them)** | intent: "indoor drone wedding", "banquet drone permission"
@@ -206,7 +206,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: gear    | type: BROADER  | title: **Why I Sold My GH6 After One Mehendi** | intent: "gh6 wedding review", "panasonic for wedding"
 - [ ] category: gear    | type: BROADER  | title: **Shooting a Documentary on Two Cameras Without Matching Bodies** | intent: "mismatched cameras documentary", "two body doc workflow"
 - [ ] category: gear    | type: LUT      | title: **GoPro Hero 12 GP-Log Mixed With Sony Footage on a Travel Edit** | intent: "gopro gp-log match sony", "action cam color match"
-- [ ] category: gear    | type: LUT      | title: **iPhone 15 Pro Apple Log Next to FX3 S-Log3 — A Realistic Match Workflow** | intent: "iphone apple log match sony", "phone cinema match"
+- [ ] category: gear    | type: LUT      | title: **iPhone 15 Pro Apple Log Next to FX3 S-Log3: A Realistic Match Workflow** | intent: "iphone apple log match sony", "phone cinema match"
 - [ ] category: gear    | type: LUT      | title: **Why S-Cinetone Footage Resists LUTs (And When to Just Not Use One)** | intent: "s-cinetone lut", "baked profile lut"
 - [ ] category: gear    | type: LUT      | title: **Lumix S5 II V-Log to Sony Match: Why Panasonic Greens Drift Yellow** | intent: "v-log to s-log match", "panasonic green shift"
 
@@ -214,8 +214,8 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: aerial  | type: BROADER  | title: **Precision Landing on a Mumbai Highrise Helipad with No GPS Lock** | intent: "drone gps denied landing", "highrise drone recovery"
 - [ ] category: aerial  | type: BROADER  | title: **RC 2 Pro Built-In Screen vs DJI Fly on a Phone: Which Survives 42 °C Jaisalmer Heat** | intent: "rc 2 pro vs phone heat", "drone controller heat failure"
 - [ ] category: aerial  | type: BROADER  | title: **FPV Cinematic vs Mavic for a Pre-Wedding in Udaipur: The Honest Pick** | intent: "fpv vs mavic wedding", "cinematic drone choice"
-- [ ] category: aerial  | type: BROADER  | title: **Why Geofencing Locked Me Out of a Goa Beach Shoot — And How I Got Unlocked in 38 Hours** | intent: "dji geofencing unlock", "drone no fly authorization"
-- [ ] category: aerial  | type: LUT      | title: **Drone Sunset Skies Banding on Export — A Grading + Codec Fix** | intent: "drone sky banding export", "aerial codec quality"
+- [ ] category: aerial  | type: BROADER  | title: **Why Geofencing Locked Me Out of a Goa Beach Shoot: And How I Got Unlocked in 38 Hours** | intent: "dji geofencing unlock", "drone no fly authorization"
+- [ ] category: aerial  | type: LUT      | title: **Drone Sunset Skies Banding on Export: A Grading + Codec Fix** | intent: "drone sky banding export", "aerial codec quality"
 - [ ] category: aerial  | type: LUT      | title: **Why Aerial Greens Read Yellow on DJI Drones** | intent: "dji green bias", "aerial green color"
 - [ ] category: aerial  | type: LUT      | title: **ND Filter Stops on a Drone: How Underexposure Wrecks Your LUT Later** | intent: "drone nd filter", "aerial exposure"
 - [ ] category: aerial  | type: LUT      | title: **Top-Down vs Reveal Shots: Why They Need Different Color Treatments in the Same Edit** | intent: "drone shot color", "top down reveal grade"
@@ -257,15 +257,15 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: field   | type: BROADER  | title: **The Case for the Boring Wide Shot at the Mandap** | intent: "wide shot wedding", "wedding coverage discipline"
 - [ ] category: field   | type: BROADER  | title: **Why Our Wedding Edits Got 90 Seconds Shorter in 2025** | intent: "wedding edit pacing", "shorter wedding films"
 - [ ] category: field   | type: BROADER  | title: **How Documentary Discipline Shows Up in Our Brand Work** | intent: "documentary commercial work", "doc to brand crossover"
-- [ ] category: field   | type: BROADER  | title: **The Year We Said No to 40 Weddings — And What Happened to Revenue** | intent: "filmmaker say no", "boutique wedding business"
+- [ ] category: field   | type: BROADER  | title: **The Year We Said No to 40 Weddings: And What Happened to Revenue** | intent: "filmmaker say no", "boutique wedding business"
 
 ### Craft / technical (LUT)
 - [ ] category: craft   | type: LUT      | title: **33-Point vs 65-Point Cube Files: Does Resolution Actually Matter?** | intent: ".cube file size", "33 vs 65 point lut"
-- [ ] category: craft   | type: LUT      | title: **Why Your LUT Posterizes Skies — The Dithering Fix Most Editors Skip** | intent: "lut sky banding", "posterize fix grade"
+- [ ] category: craft   | type: LUT      | title: **Why Your LUT Posterizes Skies: The Dithering Fix Most Editors Skip** | intent: "lut sky banding", "posterize fix grade"
 - [ ] category: craft   | type: LUT      | title: **HDR vs SDR Delivery: Why the Same LUT Won't Survive the Trip** | intent: "hdr sdr lut", "delivery space color"
 - [ ] category: craft   | type: LUT      | title: **Building a Show LUT for a Multi-Day Wedding Shoot** | intent: "show lut wedding", "base grade workflow"
-- [ ] category: craft   | type: LUT      | title: **Why "Neutral" LUTs Aren't Neutral — How to Test One in Under 60 Seconds** | intent: "test a lut", "neutral lut quality"
-- [ ] category: craft   | type: LUT      | title: **The Skin Tone Line on the Vectorscope Lies for Indian Skin — Here's a Better Reference** | intent: "vectorscope skin tone line", "indian skin reference"
+- [ ] category: craft   | type: LUT      | title: **Why "Neutral" LUTs Aren't Neutral: How to Test One in Under 60 Seconds** | intent: "test a lut", "neutral lut quality"
+- [ ] category: craft   | type: LUT      | title: **The Skin Tone Line on the Vectorscope Lies for Indian Skin: Here's a Better Reference** | intent: "vectorscope skin tone line", "indian skin reference"
 - [ ] category: craft   | type: LUT      | title: **Parade vs Waveform vs Vectorscope: Which One to Trust for Color Matching** | intent: "scopes color match", "parade waveform vectorscope"
 - [ ] category: craft   | type: LUT      | title: **What Is a .cube File, Really? A Plain-English Guide** | intent: "what is .cube file", "lut file format"
 - [ ] category: craft   | type: LUT      | title: **LUT vs Preset vs Filter: Why They're Not the Same Thing** | intent: "lut vs preset", "lut vs filter"

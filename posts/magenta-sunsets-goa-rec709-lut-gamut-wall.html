@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall &mdash; Positiva Films</title>
-  <meta name="description" content="That blown magenta band above the Arabian Sea isn't overexposure — it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame." />
+  <title>Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall: Positiva Films</title>
+  <meta name="description" content="That blown magenta band above the Arabian Sea isn't overexposure: it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame." />
   <meta name="keywords" content="magenta sunset rec709, out of gamut sunset fix, gamut wall travel lut, s-log3 sunset goa, davinci resolve gamut compression, travel lut colour space" />
   <meta name="author" content="Positiva Films" />
   <link rel="canonical" href="https://positivafilms.com/posts/magenta-sunsets-goa-rec709-lut-gamut-wall.html" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall" />
-  <meta property="og:description" content="That blown magenta band above the Arabian Sea isn't overexposure — it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame." />
+  <meta property="og:description" content="That blown magenta band above the Arabian Sea isn't overexposure: it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame." />
   <meta property="og:image" content="https://positivafilms.com/Indian_Travel_Luts_pack.png" />
   <meta property="og:url" content="https://positivafilms.com/posts/magenta-sunsets-goa-rec709-lut-gamut-wall.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall" />
-  <meta name="twitter:description" content="That blown magenta band above the Arabian Sea isn't overexposure — it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame." />
+  <meta name="twitter:description" content="That blown magenta band above the Arabian Sea isn't overexposure: it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame." />
   <meta name="twitter:image" content="https://positivafilms.com/Indian_Travel_Luts_pack.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Magenta Sunsets in Goa: When Your Rec.709 LUT Hits the Gamut Wall",
-    "description": "That blown magenta band above the Arabian Sea isn't overexposure — it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame.",
+    "description": "That blown magenta band above the Arabian Sea isn't overexposure: it's a gamut violation. Here's the node tree that recovers it before your LUT even sees the frame.",
     "image": "https://positivafilms.com/Indian_Travel_Luts_pack.png",
     "datePublished": "2026-05-01",
     "dateModified": "2026-05-01",
@@ -69,7 +69,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .mobile-nav a{font-family:var(--display);font-size:34px;letter-spacing:0.1em;color:var(--linen);text-decoration:none;text-transform:uppercase}
 .mobile-nav .nav-cta{color:var(--gold);font-size:18px;font-family:var(--body);letter-spacing:0.16em}
 
-/* Article hero — text-only editorial */
+/* Article hero: text-only editorial */
 .article-hero{position:relative;min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 48px 80px;overflow:hidden;border-bottom:1px solid var(--linen-faint);background:var(--ink)}
 .article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(201,168,76,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
 .article-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none;z-index:0}
@@ -106,7 +106,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .article-inner img{max-width:100%;border:1px solid var(--linen-faint)}
 .article-inner figcaption{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--linen-dim);margin-top:10px;text-align:center}
 
-/* Inline product CTA — drops into the body */
+/* Inline product CTA: drops into the body */
 .inline-cta{margin:48px 0;padding:32px 36px;background:var(--soil);border:1px solid var(--gold-faint);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .inline-cta-text{flex:1;min-width:240px}
 .inline-cta-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -208,16 +208,16 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
 <article class="article">
   <div class="article-inner">
-    <p class="lede">The magenta sunset over Candolim beach looked perfect on the FX3 monitor. On your graded timeline, it's a screaming, clipped band of neon that no LUT can save — because the LUT was never the problem. The gamut wall was.</p>
-    <p>Goa at golden hour is genuinely one of the most punishing grading situations in Indian travel cinematography. The sky does things that S-Gamut3.Cine handles beautifully and Rec.709 simply cannot contain. The magenta-to-orange gradient above the Arabian Sea between about 6:15 and 6:45 PM — in the dry season especially — sits in a region of colour space that exists in your sensor but evaporates the moment you apply a Rec.709 output transform. What remains isn't a soft clip. It's a hard, neon-violet smear that looks like a rendering artifact, because chromatically that's exactly what it is.</p>
+    <p class="lede">The magenta sunset over Candolim beach looked perfect on the FX3 monitor. On your graded timeline, it's a screaming, clipped band of neon that no LUT can save: because the LUT was never the problem. The gamut wall was.</p>
+    <p>Goa at golden hour is genuinely one of the most punishing grading situations in Indian travel cinematography. The sky does things that S-Gamut3.Cine handles beautifully and Rec.709 simply cannot contain. The magenta-to-orange gradient above the Arabian Sea between about 6:15 and 6:45 PM: in the dry season especially: sits in a region of colour space that exists in your sensor but evaporates the moment you apply a Rec.709 output transform. What remains isn't a soft clip. It's a hard, neon-violet smear that looks like a rendering artifact, because chromatically that's exactly what it is.</p>
 
-<p>This post is specifically about that problem: the <strong>gamut wall</strong> that your travel LUT hits on high-saturation, out-of-gamut skies. We'll work in DaVinci Resolve, the camera is a Sony FX3 shooting <code>S-Log3/S-Gamut3.Cine</code>, and the problem appears on every wide colour-gamut camera — A7S III, FX6, BMPCC 6K in Film mode, Canon R5 C in Cinema Gamut/Canon Log 3. The fix is the same across all of them.</p>
+<p>This post is specifically about that problem: the <strong>gamut wall</strong> that your travel LUT hits on high-saturation, out-of-gamut skies. We'll work in DaVinci Resolve, the camera is a Sony FX3 shooting <code>S-Log3/S-Gamut3.Cine</code>, and the problem appears on every wide colour-gamut camera: A7S III, FX6, BMPCC 6K in Film mode, Canon R5 C in Cinema Gamut/Canon Log 3. The fix is the same across all of them.</p>
 
 <h2>Why the Neon Band Appears</h2>
 
-<p>Rec.709 has a colour gamut that is smaller than every professional capture gamut. That's by design — your wide-gamut log format records colours that a Rec.709 display cannot reproduce. The job of a colour space transform (or a good LUT) is to map those colours into the Rec.709 container in a way that looks natural.</p>
+<p>Rec.709 has a colour gamut that is smaller than every professional capture gamut. That's by design: your wide-gamut log format records colours that a Rec.709 display cannot reproduce. The job of a colour space transform (or a good LUT) is to map those colours into the Rec.709 container in a way that looks natural.</p>
 
-<p>Most travel LUTs are designed and tested against typical daylight scenes: forests, buildings, people in open shade, moderate sunsets. They are <em>not</em> designed against the specific spectral energy of a coastal Indian sunset, where the magentas and crimsons push hard into the negative-green region of Rec.709's gamut boundary. When the transform reaches that boundary with no softening logic, it clips. Luminance keeps rendering because it's within range; chroma clips hard. The result is a band of maximum-saturation magenta with no tonal gradation — the gamut wall.</p>
+<p>Most travel LUTs are designed and tested against typical daylight scenes: forests, buildings, people in open shade, moderate sunsets. They are <em>not</em> designed against the specific spectral energy of a coastal Indian sunset, where the magentas and crimsons push hard into the negative-green region of Rec.709's gamut boundary. When the transform reaches that boundary with no softening logic, it clips. Luminance keeps rendering because it's within range; chroma clips hard. The result is a band of maximum-saturation magenta with no tonal gradation: the gamut wall.</p>
 
 <p>You'll see it on Rec.709's waveform as a flat top on the red channel while green and blue are still varying. On a vectorscope, the magentas pile up tight against the boundary rather than spreading naturally. That's your diagnostic: if the magentas are hitting the fence, you have a gamut problem, not an exposure problem.</p>
 
@@ -226,39 +226,39 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 <p>The correct fix happens <em>before</em> the LUT node, in the colour space, not after the gamut has already been violated. Here is the exact node order:</p>
 
 <ol>
-  <li><strong>Node 1 — CST In:</strong> <code>Color Space Transform</code>, S-Log3/S-Gamut3.Cine → Rec.709 (Scene). Tone mapping: <em>off</em>. Gamut mapping: <em>off</em>. You want a clean linear transform with no compression — you're about to handle that manually.</li>
-  <li><strong>Node 2 — Gamut Compression:</strong> This is the critical node. Use the <code>Gamut Mapping</code> tab inside the CST node on Node 1 — or, better for manual control, create a separate node and use a <code>Custom Curve</code> on the saturation-vs-saturation curve. Pull the shoulder of the curve down starting at around 65–70% saturation (on the input axis), rolling the output to a soft cap at 85%. This compresses extreme chromas before the LUT sees them.</li>
-  <li><strong>Node 3 — Your Travel LUT:</strong> Apply it here as a DCTL or <code>.cube</code>. Because Node 2 already pulled the gamut violations back inside the container, the LUT now sees legal Rec.709 values and renders correctly. The sunset gradient comes back.</li>
-  <li><strong>Node 4 — Sky Qualifier + Selective Saturation:</strong> Use an <code>HSL Qualifier</code> to isolate the magentas (hue roughly 290–330°, softness wide). Bring saturation back up by +15 to +25 — because your gamut compression in Node 2 desaturated everything in that range uniformly. This node recovers just the sky, giving you a compressed but still vivid sunset rather than a muddy one.</li>
-  <li><strong>Node 5 — Output CST or display LUT:</strong> If you're delivering to a Rec.709 master, close the loop here. If Node 1 already did a full output transform, skip this.</li>
+  <li><strong>Node 1: CST In:</strong> <code>Color Space Transform</code>, S-Log3/S-Gamut3.Cine → Rec.709 (Scene). Tone mapping: <em>off</em>. Gamut mapping: <em>off</em>. You want a clean linear transform with no compression: you're about to handle that manually.</li>
+  <li><strong>Node 2: Gamut Compression:</strong> This is the critical node. Use the <code>Gamut Mapping</code> tab inside the CST node on Node 1: or, better for manual control, create a separate node and use a <code>Custom Curve</code> on the saturation-vs-saturation curve. Pull the shoulder of the curve down starting at around 65–70% saturation (on the input axis), rolling the output to a soft cap at 85%. This compresses extreme chromas before the LUT sees them.</li>
+  <li><strong>Node 3: Your Travel LUT:</strong> Apply it here as a DCTL or <code>.cube</code>. Because Node 2 already pulled the gamut violations back inside the container, the LUT now sees legal Rec.709 values and renders correctly. The sunset gradient comes back.</li>
+  <li><strong>Node 4: Sky Qualifier + Selective Saturation:</strong> Use an <code>HSL Qualifier</code> to isolate the magentas (hue roughly 290–330°, softness wide). Bring saturation back up by +15 to +25: because your gamut compression in Node 2 desaturated everything in that range uniformly. This node recovers just the sky, giving you a compressed but still vivid sunset rather than a muddy one.</li>
+  <li><strong>Node 5: Output CST or display LUT:</strong> If you're delivering to a Rec.709 master, close the loop here. If Node 1 already did a full output transform, skip this.</li>
 </ol>
 
-<p>The order matters absolutely. Compressing gamut <em>after</em> the LUT achieves nothing useful — by that point, chrominance has already been destroyed. The clip happened in Node 3 if you reversed the order. You cannot recover a gamut clip downstream.</p>
+<p>The order matters absolutely. Compressing gamut <em>after</em> the LUT achieves nothing useful: by that point, chrominance has already been destroyed. The clip happened in Node 3 if you reversed the order. You cannot recover a gamut clip downstream.</p>
 
 <h2>Exact Values That Work for the Goa Sunset Case</h2>
 
 <p>These values are calibrated specifically against the magenta-heavy sky typical of Goa's west coast from November through March, when the atmosphere is dry and the hue skews violet rather than orange. Adjust for your material, but start here:</p>
 
 <ul>
-  <li><strong>Custom Curve, Sat vs Sat:</strong> Control point at Input 0.68 / Output 0.60. Control point at Input 0.85 / Output 0.72. Flat below 0.50 (don't touch the midrange). This creates a smooth shoulder — not a hard clip, a roll-off.</li>
-  <li><strong>HSL Qualifier for Node 4:</strong> Hue centre 305°, range ±35°. Saturation minimum 0.40 (ignore desaturated pixels — you only want to recover the vivid band). Luminance range 0.45–0.85 (ignore the dark foreground water and the overexposed sun disc).</li>
+  <li><strong>Custom Curve, Sat vs Sat:</strong> Control point at Input 0.68 / Output 0.60. Control point at Input 0.85 / Output 0.72. Flat below 0.50 (don't touch the midrange). This creates a smooth shoulder: not a hard clip, a roll-off.</li>
+  <li><strong>HSL Qualifier for Node 4:</strong> Hue centre 305°, range ±35°. Saturation minimum 0.40 (ignore desaturated pixels: you only want to recover the vivid band). Luminance range 0.45–0.85 (ignore the dark foreground water and the overexposed sun disc).</li>
   <li><strong>Selective Saturation boost in Node 4:</strong> +20 is almost always right for S-Gamut3.Cine material. For Cinema Gamut (Canon) or BM Film, you may need only +12 because those gamuts don't compress as aggressively.</li>
-  <li><strong>Feathering on the qualifier:</strong> Keep it wide — 0.35 on hue, 0.25 on saturation. A tight qualifier will give you a hard edge between the qualified sky and the unqualified foreground. You want a blend, especially where palm fronds or buildings break the skyline.</li>
+  <li><strong>Feathering on the qualifier:</strong> Keep it wide: 0.35 on hue, 0.25 on saturation. A tight qualifier will give you a hard edge between the qualified sky and the unqualified foreground. You want a blend, especially where palm fronds or buildings break the skyline.</li>
 </ul>
 
-<p>After this node tree, check your vectorscope. The magentas should be sitting 8–12% inside the Rec.709 boundary — compressed, but not destroyed. The tonal gradation from deep violet near the horizon to warm orange higher in the frame should be continuous, with no flat band.</p>
+<p>After this node tree, check your vectorscope. The magentas should be sitting 8–12% inside the Rec.709 boundary: compressed, but not destroyed. The tonal gradation from deep violet near the horizon to warm orange higher in the frame should be continuous, with no flat band.</p>
 
 <h2>What About HDR Delivery?</h2>
 
-<p>If you're delivering HLG or PQ for an HDR exhibition or a high-end tourism client, the gamut wall issue largely goes away — Rec.2020 (the container for both HLG and PQ) is wide enough to hold S-Gamut3.Cine without violations. The tradeoff is that you then need to grade for an HDR viewer who may actually see those magentas at full intensity, which can still look garish on the wrong display. The compression logic from Node 2 still has aesthetic value in HDR — just loosen the shoulder (pull the Input 0.68 point to 0.78) so you're compressing less aggressively.</p>
+<p>If you're delivering HLG or PQ for an HDR exhibition or a high-end tourism client, the gamut wall issue largely goes away: Rec.2020 (the container for both HLG and PQ) is wide enough to hold S-Gamut3.Cine without violations. The tradeoff is that you then need to grade for an HDR viewer who may actually see those magentas at full intensity, which can still look garish on the wrong display. The compression logic from Node 2 still has aesthetic value in HDR: just loosen the shoulder (pull the Input 0.68 point to 0.78) so you're compressing less aggressively.</p>
 
-<p>For social delivery — Instagram Reels, YouTube — always target Rec.709. The platforms tone-map for you in unpredictable ways if you upload HDR without proper tagging, and an untagged HDR clip on Instagram will make your magentas look exactly like the gamut wall problem you started with, just now on the viewer's end instead of yours.</p>
+<p>For social delivery: Instagram Reels, YouTube: always target Rec.709. The platforms tone-map for you in unpredictable ways if you upload HDR without proper tagging, and an untagged HDR clip on Instagram will make your magentas look exactly like the gamut wall problem you started with, just now on the viewer's end instead of yours.</p>
 
 <div class="inline-cta">
   <div class="inline-cta-text">
     <div class="inline-cta-eyebrow">From the Positiva LUT Library</div>
     <h4>Indian Travel LUTs</h4>
-    <p>Built and tested against high-saturation Indian light — coastal magentas, desert golds, monsoon greens — with gamut headroom baked into each transform so the sunset wall never appears.</p>
+    <p>Built and tested against high-saturation Indian light: coastal magentas, desert golds, monsoon greens: with gamut headroom baked into each transform so the sunset wall never appears.</p>
   </div>
   <a class="btn" href="../luts.html#travel" rel="noopener noreferrer">View Pack →</a>
 </div>
@@ -268,9 +268,9 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 <p>Goa is the case study, but the same gamut wall appears in a handful of other high-saturation Indian shooting situations:</p>
 
 <ul>
-  <li><strong>Varanasi at dawn:</strong> The saffron and flame-orange of the aarti against the river mist pushes into the positive-red / negative-cyan boundary of Rec.709. Same fix, different hue range — use an HSL qualifier centred around 30–55° instead of the magenta range.</li>
+  <li><strong>Varanasi at dawn:</strong> The saffron and flame-orange of the aarti against the river mist pushes into the positive-red / negative-cyan boundary of Rec.709. Same fix, different hue range: use an HSL qualifier centred around 30–55° instead of the magenta range.</li>
   <li><strong>Rajasthan blue hour in Jodhpur:</strong> The blue city's indigo walls under twilight sky pile the blues into the negative-red boundary. Watch the vectorscope for blues hugging the fence on the blue/cyan axis.</li>
-  <li><strong>Spiti Valley in October:</strong> The combination of thin-atmosphere UV light and the ochre-red terrain at elevation pushes reds and oranges into violation on cloudy-bright days more than on direct-sun days — counterintuitively, because clouds diffuse the UV differently than visible light.</li>
+  <li><strong>Spiti Valley in October:</strong> The combination of thin-atmosphere UV light and the ochre-red terrain at elevation pushes reds and oranges into violation on cloudy-bright days more than on direct-sun days: counterintuitively, because clouds diffuse the UV differently than visible light.</li>
   <li><strong>Haldi ceremonies shot outdoors in afternoon light:</strong> The turmeric yellow against the deep green of a garden or courtyard will clip on the yellow-green axis. This one is less about sky gamut and more about pigment-on-skin combined with a fast-saturating LUT.</li>
 </ul>
 
@@ -280,11 +280,11 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
 <p>When evaluating any travel or cinematic LUT pack, test it against a frame with deliberately out-of-gamut colour before you commit. Load a Goa sunset clip, or any clip where you can see the vectorscope magentas pressing the boundary. Apply the LUT directly with no pre-processing. If the sunset gradient disappears and a flat neon band replaces it, the LUT has no gamut compression baked in and you'll need the node tree above on every clip.</p>
 
-<p>If the gradient holds — if the magentas compress smoothly rather than clip — the LUT was built with gamut awareness. That's the difference between a LUT designed in a studio against controlled swatches and one tested against actual high-saturation field material from wide-gamut cameras.</p>
+<p>If the gradient holds: if the magentas compress smoothly rather than clip: the LUT was built with gamut awareness. That's the difference between a LUT designed in a studio against controlled swatches and one tested against actual high-saturation field material from wide-gamut cameras.</p>
 
 <p>Good travel LUTs handle this internally. The Sat vs Sat shoulder is baked into their transform math before the creative grade even starts. You can still use the Node 2 approach above as a safety net, but you shouldn't need to pull it out on every clip if the LUT was built properly for the material you're shooting.</p>
 
-<p>The Armenian-coast light at 6:30 PM is not a problem to be avoided. It's one of the finest natural light conditions on earth for cinematography. The gamut wall is a technical constraint of the delivery format — understand it, work around it systematically, and then go shoot the sunset.</p>
+<p>The Armenian-coast light at 6:30 PM is not a problem to be avoided. It's one of the finest natural light conditions on earth for cinematography. The gamut wall is a technical constraint of the delivery format: understand it, work around it systematically, and then go shoot the sunset.</p>
   </div>
 </article>
 
@@ -293,7 +293,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
     <div>
       <div class="post-cta-eyebrow">&#10022; GRADE THE GOLDEN COAST</div>
       <h2>GRADE THE GOLDEN COAST<em>LUTs built for Indian light extremes.</em></h2>
-      <p>The Indian Travel LUT pack was tested against coastal magentas, desert golds, and monsoon greens — the exact high-saturation conditions that expose a weak gamut transform. Each LUT ships with gamut compression baked in so your Goa sunsets render correctly from the first node.</p>
+      <p>The Indian Travel LUT pack was tested against coastal magentas, desert golds, and monsoon greens: the exact high-saturation conditions that expose a weak gamut transform. Each LUT ships with gamut compression baked in so your Goa sunsets render correctly from the first node.</p>
       <a class="btn" href="../luts.html#travel">Browse Travel LUTs &rarr;</a>
     </div>
     <div class="post-cta-image" style="background-image:url('../Indian_Travel_Luts_pack.png')"></div>

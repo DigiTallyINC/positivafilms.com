@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why Monsoon Greens in Kerala Look Radioactive on Sony Cameras &mdash; Positiva Films</title>
+  <title>Why Monsoon Greens in Kerala Look Radioactive on Sony Cameras: Positiva Films</title>
   <meta name="description" content="Sony's S-Gamut3.Cine renders Kerala's monsoon greens with a saturation spike that survives even a careful CST. Here's the exact node chain that tames them without draining the life from the scene." />
   <meta name="keywords" content="kerala green color grade, sony green saturation, S-Gamut3.Cine color grade, monsoon footage color correction, FX3 kerala grade, HSL qualifier green foliage" />
   <meta name="author" content="Positiva Films" />
@@ -69,7 +69,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .mobile-nav a{font-family:var(--display);font-size:34px;letter-spacing:0.1em;color:var(--linen);text-decoration:none;text-transform:uppercase}
 .mobile-nav .nav-cta{color:var(--gold);font-size:18px;font-family:var(--body);letter-spacing:0.16em}
 
-/* Article hero — text-only editorial */
+/* Article hero: text-only editorial */
 .article-hero{position:relative;min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 48px 80px;overflow:hidden;border-bottom:1px solid var(--linen-faint);background:var(--ink)}
 .article-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(201,168,76,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none;z-index:0}
 .article-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none;z-index:0}
@@ -106,7 +106,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .article-inner img{max-width:100%;border:1px solid var(--linen-faint)}
 .article-inner figcaption{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--linen-dim);margin-top:10px;text-align:center}
 
-/* Inline product CTA — drops into the body */
+/* Inline product CTA: drops into the body */
 .inline-cta{margin:48px 0;padding:32px 36px;background:var(--soil);border:1px solid var(--gold-faint);border-left:3px solid var(--gold);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .inline-cta-text{flex:1;min-width:240px}
 .inline-cta-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -208,38 +208,38 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 
 <article class="article">
   <div class="article-inner">
-    <p class="lede">Kerala in monsoon looks unreal on location — and it will look genuinely radioactive on your Sony footage if you don't catch the saturation problem before it compounds through your grade. Here's why it happens and exactly how to fix it.</p>
-    <h2>The Problem Isn't Your LUT — It's the Gamut</h2>
-<p>You've shot a morning in Munnar. Tea estates rolling fog, rain-slicked roads, backwater channels framed by banana leaves the size of ironing boards. On the monitor it looked controlled. Back at the desk, after your <code>Color Space Transform</code> from <code>S-Log3/S-Gamut3.Cine</code> to <code>DaVinci Wide Gamut / DaVinci Intermediate</code>, you drop a travel LUT and the greens go full nuclear. The foliage isn't green anymore — it's emitting light.</p>
-<p>This isn't user error. It's a geometry problem inside <code>S-Gamut3.Cine</code> itself. Sony's wide-gamut color space has a green primary that sits noticeably further out than Rec.709, and specifically further toward the yellow-green axis than the DCI-P3 primary. Kerala's monsoon foliage — predominantly <em>Ficus</em>, rubber tree, banana, rice paddy, and tea — is optically clustered right in that zone. When the CST remaps those values, it brings them into the working color space still carrying enormous saturation energy that was latent in the original encoding.</p>
-<p>Compare this with footage from a Canon R5 C in <code>Cinema Gamut/Canon Log 3</code>, or a Blackmagic Pocket 6K in <code>BMPCC Film</code>. Neither of those cameras encodes green with the same primary position. Canon Log 3 is more conservative in the green-yellow axis; BMPCC Film clips that region earlier. Sony's cameras — the FX3, A7S III, FX30, ZV-E1 — all share the same underlying color science, so they all share the same vulnerability to this specific environment.</p>
+    <p class="lede">Kerala in monsoon looks unreal on location: and it will look genuinely radioactive on your Sony footage if you don't catch the saturation problem before it compounds through your grade. Here's why it happens and exactly how to fix it.</p>
+    <h2>The Problem Isn't Your LUT: It's the Gamut</h2>
+<p>You've shot a morning in Munnar. Tea estates rolling fog, rain-slicked roads, backwater channels framed by banana leaves the size of ironing boards. On the monitor it looked controlled. Back at the desk, after your <code>Color Space Transform</code> from <code>S-Log3/S-Gamut3.Cine</code> to <code>DaVinci Wide Gamut / DaVinci Intermediate</code>, you drop a travel LUT and the greens go full nuclear. The foliage isn't green anymore: it's emitting light.</p>
+<p>This isn't user error. It's a geometry problem inside <code>S-Gamut3.Cine</code> itself. Sony's wide-gamut color space has a green primary that sits noticeably further out than Rec.709, and specifically further toward the yellow-green axis than the DCI-P3 primary. Kerala's monsoon foliage: predominantly <em>Ficus</em>, rubber tree, banana, rice paddy, and tea: is optically clustered right in that zone. When the CST remaps those values, it brings them into the working color space still carrying enormous saturation energy that was latent in the original encoding.</p>
+<p>Compare this with footage from a Canon R5 C in <code>Cinema Gamut/Canon Log 3</code>, or a Blackmagic Pocket 6K in <code>BMPCC Film</code>. Neither of those cameras encodes green with the same primary position. Canon Log 3 is more conservative in the green-yellow axis; BMPCC Film clips that region earlier. Sony's cameras: the FX3, A7S III, FX30, ZV-E1: all share the same underlying color science, so they all share the same vulnerability to this specific environment.</p>
 
 <h2>Reading the Problem on Scopes</h2>
-<p>Before you reach for a node, read what you're actually dealing with. On a vectorscope, correctly graded Rec.709 footage should have your greenery sitting roughly halfway between the <code>Mg</code> and <code>Yl</code> targets, pointing toward <code>G</code>. Kerala monsoon footage on Sony, after a straight CST, will typically push past 75% of the vectorscope radius — sometimes nearly touching the boundary — in the green-yellow quadrant. That's the excess you're correcting.</p>
+<p>Before you reach for a node, read what you're actually dealing with. On a vectorscope, correctly graded Rec.709 footage should have your greenery sitting roughly halfway between the <code>Mg</code> and <code>Yl</code> targets, pointing toward <code>G</code>. Kerala monsoon footage on Sony, after a straight CST, will typically push past 75% of the vectorscope radius: sometimes nearly touching the boundary: in the green-yellow quadrant. That's the excess you're correcting.</p>
 <p>On the parade (RGB), your green channel will be elevated relative to red and blue in any shot containing foliage. But watch for the <em>separation</em>: if green is 30–35 IRE above red in a midtone foliage shot, that's the specific signature. In normal temperate-climate green, that spread is closer to 15–20 IRE.</p>
-<p>The hue angle matters too. Pull up an <code>HSL Qualifier</code> and sample the worst leaves. You'll often find the hue sitting between 90° and 130° — that yellow-green band is precisely where <code>S-Gamut3.Cine</code> has the most primary expansion relative to Rec.709.</p>
+<p>The hue angle matters too. Pull up an <code>HSL Qualifier</code> and sample the worst leaves. You'll often find the hue sitting between 90° and 130°: that yellow-green band is precisely where <code>S-Gamut3.Cine</code> has the most primary expansion relative to Rec.709.</p>
 
 <h2>The Node Tree That Solves It</h2>
 <p>This is the chain for DaVinci Resolve. Adapt equivalently in Baselight or Flame.</p>
 <ol>
-  <li><strong>Node 1 — CST In:</strong> <code>S-Log3/S-Gamut3.Cine → DaVinci Wide Gamut / DaVinci Intermediate</code>. Tone mapping: None. This is a pure gamut-log transform — don't let Resolve "help" you by applying any automatic tone mapping here.</li>
-  <li><strong>Node 2 — Green Hue Rotation:</strong> Open <strong>Hue vs Hue</strong> in the Curves panel. Find the green band (roughly 90°–150°). Rotate it approximately <strong>+8° to +12° toward cyan</strong> (pulling the hue away from yellow-green). This is subtle — you're not making the leaves teal, you're taking the yellow edge off them so they read as a natural green rather than a lime spike. Start at +8° and check the vectorscope; stop when the cluster drops below 65% radius.</li>
-  <li><strong>Node 3 — HSL Qualifier + Sat Reduction:</strong> Use an <code>HSL Qualifier</code> to isolate the 90°–140° hue range. Set Hue to center around 115°, width ~50°, softness 30%. In the <strong>Hue vs Sat</strong> curve, pull that same green-yellow band down by about <strong>15–22%</strong>. Don't apply a global saturation reduction — you'll flatten your sky and skin simultaneously. The qualifier keeps the reduction surgical.</li>
-  <li><strong>Node 4 — Creative LUT:</strong> Drop your travel LUT here. By the time signal reaches this node, the green channel is behaving, and the LUT does what it's designed to do instead of amplifying a problem it was never tested against.</li>
-  <li><strong>Node 5 — CST Out (optional):</strong> <code>DaVinci Wide Gamut / DaVinci Intermediate → Rec.709 Gamma 2.4</code> if you're delivering broadcast-spec. Skip if you're exporting to a working space for a client who will do their own output transform.</li>
+  <li><strong>Node 1: CST In:</strong> <code>S-Log3/S-Gamut3.Cine → DaVinci Wide Gamut / DaVinci Intermediate</code>. Tone mapping: None. This is a pure gamut-log transform: don't let Resolve "help" you by applying any automatic tone mapping here.</li>
+  <li><strong>Node 2: Green Hue Rotation:</strong> Open <strong>Hue vs Hue</strong> in the Curves panel. Find the green band (roughly 90°–150°). Rotate it approximately <strong>+8° to +12° toward cyan</strong> (pulling the hue away from yellow-green). This is subtle: you're not making the leaves teal, you're taking the yellow edge off them so they read as a natural green rather than a lime spike. Start at +8° and check the vectorscope; stop when the cluster drops below 65% radius.</li>
+  <li><strong>Node 3: HSL Qualifier + Sat Reduction:</strong> Use an <code>HSL Qualifier</code> to isolate the 90°–140° hue range. Set Hue to center around 115°, width ~50°, softness 30%. In the <strong>Hue vs Sat</strong> curve, pull that same green-yellow band down by about <strong>15–22%</strong>. Don't apply a global saturation reduction: you'll flatten your sky and skin simultaneously. The qualifier keeps the reduction surgical.</li>
+  <li><strong>Node 4: Creative LUT:</strong> Drop your travel LUT here. By the time signal reaches this node, the green channel is behaving, and the LUT does what it's designed to do instead of amplifying a problem it was never tested against.</li>
+  <li><strong>Node 5: CST Out (optional):</strong> <code>DaVinci Wide Gamut / DaVinci Intermediate → Rec.709 Gamma 2.4</code> if you're delivering broadcast-spec. Skip if you're exporting to a working space for a client who will do their own output transform.</li>
 </ol>
 
-<p>A note on Node 3 softness: if you're shooting in locations where the green foliage is directly adjacent to subjects wearing green or gold-green fabric — a common issue in Kerala wedding shoots or saree-clad subjects in paddy fields — increase softness to 40% and verify your qualifier isn't bleeding into costume. Toggle the qualifier highlight mode and walk through the scene cut by cut before rendering.</p>
+<p>A note on Node 3 softness: if you're shooting in locations where the green foliage is directly adjacent to subjects wearing green or gold-green fabric: a common issue in Kerala wedding shoots or saree-clad subjects in paddy fields: increase softness to 40% and verify your qualifier isn't bleeding into costume. Toggle the qualifier highlight mode and walk through the scene cut by cut before rendering.</p>
 
 <h2>What You Lose If You Don't Do This</h2>
-<p>Some colorists default to bringing global saturation down across the board until the greens behave. The result is technically correct but visually dead. Kerala in monsoon is one of the most lushly saturated environments on earth — the sky behind overcast clouds has its own quality of diffuse grey-green bounce light, the rivers are almost black-green, the mist softens but doesn't desaturate. Flattening everything equally loses the very quality that made the location worth shooting.</p>
-<p>The qualifier approach preserves that differentiation. Your overcast sky stays cool and moody. Skin tones in the frame — if you've got a subject — stay warm and present. Only the chromatic problem zone is corrected. That's the standard you should be holding yourself to.</p>
+<p>Some colorists default to bringing global saturation down across the board until the greens behave. The result is technically correct but visually dead. Kerala in monsoon is one of the most lushly saturated environments on earth: the sky behind overcast clouds has its own quality of diffuse grey-green bounce light, the rivers are almost black-green, the mist softens but doesn't desaturate. Flattening everything equally loses the very quality that made the location worth shooting.</p>
+<p>The qualifier approach preserves that differentiation. Your overcast sky stays cool and moody. Skin tones in the frame: if you've got a subject: stay warm and present. Only the chromatic problem zone is corrected. That's the standard you should be holding yourself to.</p>
 
 <div class="inline-cta">
   <div class="inline-cta-text">
     <div class="inline-cta-eyebrow">From the Positiva LUT Library</div>
     <h4>Indian Travel LUTs</h4>
-    <p>Built and tested against real Kerala, Spiti, and Rajasthan footage — the greens are handled before you even open a qualifier.</p>
+    <p>Built and tested against real Kerala, Spiti, and Rajasthan footage: the greens are handled before you even open a qualifier.</p>
   </div>
   <a class="btn" href="../luts.html#travel" rel="noopener noreferrer">View Pack →</a>
 </div>
@@ -253,15 +253,15 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
 <p>This is also an argument for recording in <code>XAVC HS</code> 4:2:2 10-bit on the FX30 when you know you're going to a high-saturation outdoor environment. The camera can do it. If you're shooting Kerala and you have the card space, use it.</p>
 
 <h2>The Munnar-to-Alleppey Grade Shift</h2>
-<p>A logistical note for travel DPs working a full Kerala itinerary: Munnar at altitude shoots very differently from the backwaters of Alleppey. In Munnar, the green problem is concentrated in the tea estate rows and the forest edge — highly saturated, but relatively uniform in hue. Your qualifier will lock in quickly.</p>
-<p>In Alleppey, particularly on the houseboat channels, you're dealing with water-reflected sky mixed with overhanging coconut palm and water hyacinth. The green hue here is more varied — some leaves will read at 95°, others at 140°, and the water itself picks up a greenish cast from the canopy. A single qualifier node won't cover it cleanly. In this case, build a <strong>second HSL Qualifier node</strong> targeting the 140°–165° band (the darker, cooler palm greens) and apply a separate — and lighter — saturation pull there, around 8–12%. The two nodes in parallel (serial in the node tree, stacked) handle the full range without overcorrecting either.</p>
+<p>A logistical note for travel DPs working a full Kerala itinerary: Munnar at altitude shoots very differently from the backwaters of Alleppey. In Munnar, the green problem is concentrated in the tea estate rows and the forest edge: highly saturated, but relatively uniform in hue. Your qualifier will lock in quickly.</p>
+<p>In Alleppey, particularly on the houseboat channels, you're dealing with water-reflected sky mixed with overhanging coconut palm and water hyacinth. The green hue here is more varied: some leaves will read at 95°, others at 140°, and the water itself picks up a greenish cast from the canopy. A single qualifier node won't cover it cleanly. In this case, build a <strong>second HSL Qualifier node</strong> targeting the 140°–165° band (the darker, cooler palm greens) and apply a separate: and lighter: saturation pull there, around 8–12%. The two nodes in parallel (serial in the node tree, stacked) handle the full range without overcorrecting either.</p>
 <p>If you're grading a piece that moves between both environments, use <a href="../luts.html#travel" rel="noopener noreferrer">a LUT that was built against this kind of chroma variance</a> rather than one calibrated to a single environment type. The Hue vs Sat nodes you built as corrections will have less work to do if the LUT's baseline expectation is already close to what Kerala footage actually looks like.</p>
 
 <h2>One Final Scope Check</h2>
-<p>Before you export, open the <strong>CIE chromaticity scope</strong> in Resolve (or the equivalent in your NLE) and look at the distribution of your green values. After correction, they should sit comfortably inside the Rec.709 triangle if that's your delivery target — not just below the boundary, but with genuine headroom. If you still see a cluster pushing toward the boundary edge, go back to Node 3 and pull the HSL sat curve an additional 5%. Better to have a hair of headroom than to deliver a grade that will clip on a reference monitor at the client's end.</p>
-<p>The goal isn't to make Kerala look like it was shot in a studio. The goal is to make it look like what it is — one of the most visually overwhelming environments you can point a camera at — rendered faithfully on a system that wasn't designed with monsoon-season tea estates in mind. Fix the saturation geometry. Let the place do the rest.</p>
+<p>Before you export, open the <strong>CIE chromaticity scope</strong> in Resolve (or the equivalent in your NLE) and look at the distribution of your green values. After correction, they should sit comfortably inside the Rec.709 triangle if that's your delivery target: not just below the boundary, but with genuine headroom. If you still see a cluster pushing toward the boundary edge, go back to Node 3 and pull the HSL sat curve an additional 5%. Better to have a hair of headroom than to deliver a grade that will clip on a reference monitor at the client's end.</p>
+<p>The goal isn't to make Kerala look like it was shot in a studio. The goal is to make it look like what it is: one of the most visually overwhelming environments you can point a camera at: rendered faithfully on a system that wasn't designed with monsoon-season tea estates in mind. Fix the saturation geometry. Let the place do the rest.</p>
 
-<p>For how the same Sony color science creates a different, but related, problem at the other end of the color wheel — specifically in late-afternoon golden hour on Indian coastlines — see the breakdown on <a href="magenta-sunsets-goa-rec709-lut-gamut-wall.html" rel="noopener noreferrer">magenta sunset handling in Goa</a>. And if you're running a mixed-camera setup between an FX3 and a secondary shooter on FX30, the skin tone matching workflow in the <a href="fx30-skin-tones-cooler-than-fx3-single-node-fix.html" rel="noopener noreferrer">FX30 vs FX3 node post</a> applies directly here — same camera family, same color science, same corrective logic.</p>
+<p>For how the same Sony color science creates a different, but related, problem at the other end of the color wheel: specifically in late-afternoon golden hour on Indian coastlines: see the breakdown on <a href="magenta-sunsets-goa-rec709-lut-gamut-wall.html" rel="noopener noreferrer">magenta sunset handling in Goa</a>. And if you're running a mixed-camera setup between an FX3 and a secondary shooter on FX30, the skin tone matching workflow in the <a href="fx30-skin-tones-cooler-than-fx3-single-node-fix.html" rel="noopener noreferrer">FX30 vs FX3 node post</a> applies directly here: same camera family, same color science, same corrective logic.</p>
   </div>
 </article>
 
@@ -270,7 +270,7 @@ footer{background:var(--ink);padding:72px 48px 32px;border-top:1px solid var(--l
     <div>
       <div class="post-cta-eyebrow">&#10022; TAME THE TROPICS</div>
       <h2>TAME THE TROPICS<em>Greens that hold in any light.</em></h2>
-      <p>The Indian Travel LUT pack was graded against real footage from Kerala, Rajasthan, and the Himalayan north — environments where saturation management is half the craft. Drop them in and the foliage behaves from the first frame.</p>
+      <p>The Indian Travel LUT pack was graded against real footage from Kerala, Rajasthan, and the Himalayan north: environments where saturation management is half the craft. Drop them in and the foliage behaves from the first frame.</p>
       <a class="btn" href="../luts.html#travel">Browse Travel LUTs &rarr;</a>
     </div>
     <div class="post-cta-image" style="background-image:url('../Indian_Travel_Luts_pack.png')"></div>
