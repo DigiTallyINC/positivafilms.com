@@ -232,6 +232,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .sg-arrow-c{color:var(--sg-fg-dim);font-size:18px;margin:0 6px}
 .sg-node-one{width:64px;height:64px;border-radius:50%;border:1.5px solid var(--sg-teal);background:radial-gradient(circle at 50% 38%,rgba(31,169,192,0.4),rgba(10,10,12,0.5));box-shadow:0 0 0 8px rgba(31,169,192,0.08),0 0 44px rgba(31,169,192,0.45);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:20px;color:#d8eef3;flex:0 0 auto}
 
+/* before / after comparison slider */
+.sg-ba{position:relative;max-width:1100px;margin:24px auto 0;aspect-ratio:1600/903;overflow:hidden;border:1px solid var(--sg-line);background:#000;cursor:ew-resize;user-select:none;-webkit-user-select:none;touch-action:pan-y;--pos:50%}
+.sg-ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.sg-ba-beforewrap{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.sg-ba-line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:var(--sg-teal);transform:translateX(-1px);box-shadow:0 0 18px rgba(31,169,192,0.65)}
+.sg-ba-grip{position:absolute;top:50%;left:var(--pos);transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;border:1.5px solid var(--sg-teal);background:rgba(10,10,12,0.75);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;color:#d8eef3;font-size:15px;letter-spacing:2px;box-shadow:0 0 0 7px rgba(31,169,192,0.12),0 0 30px rgba(31,169,192,0.4)}
+.sg-ba-lbl{position:absolute;bottom:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;padding:6px 12px;background:rgba(10,10,12,0.72);border:1px solid var(--sg-line);color:var(--sg-fg);backdrop-filter:blur(3px);pointer-events:none}
+.sg-ba-lbl.b{left:14px}.sg-ba-lbl.a{right:14px;color:#d8eef3;border-color:var(--sg-teal)}
+.sg-ba-cap{max-width:1100px;margin:16px auto 0;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.06em;color:var(--sg-fg-dim);text-align:center}
+
 /* sections */
 .sg-sec{padding:110px 48px;border-top:1px solid var(--sg-line)}
 .sg-sec .section-tag{color:var(--sg-fg-dim)}.sg-sec .section-tag::before{background:var(--sg-teal)}
@@ -379,10 +389,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   </div>
 </section>
 
+<section class="sg-sec" id="proof">
+  <div class="section-header reveal">
+    <div class="section-tag">Before / After</div>
+    <div class="section-num">( 02 )</div>
+  </div>
+  <h2 class="section-title reveal">SEE THE GRADE<em>Drag the handle &mdash; one node did this</em></h2>
+  <div class="sg-ba reveal" id="sgBA" role="slider" aria-label="Before and after comparison — drag to reveal the ungraded frame" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+    <img src="images/supergrade/after.jpg" alt="Aerial still graded with a single SuperGrade node — rich greens, warm golds, protected highlights" />
+    <div class="sg-ba-beforewrap"><img src="images/supergrade/before.jpg" alt="The same aerial still ungraded — flat log footage" /></div>
+    <div class="sg-ba-line"></div>
+    <div class="sg-ba-grip">&#8596;</div>
+    <span class="sg-ba-lbl b">Log &middot; ungraded</span>
+    <span class="sg-ba-lbl a">SuperGrade &middot; one node</span>
+  </div>
+  <p class="sg-ba-cap reveal">The same frame, straight out of camera vs one SuperGrade node &mdash; CST, film emulation and finishing in a single step.</p>
+</section>
+
 <section class="sg-sec" id="how">
   <div class="section-header reveal">
     <div class="section-tag">Why one node</div>
-    <div class="section-num">( 02 )</div>
+    <div class="section-num">( 03 )</div>
   </div>
   <h2 class="section-title reveal">A 15-NODE CHAIN, REPLACED<em>Per-pixel, GPU, no spatial guesswork</em></h2>
   <p class="page-lede reveal" style="max-width:680px">SOURCE CST &middot; balance &middot; exposure &middot; skin &middot; primary &middot; contrast &middot; saturation &middot; look &middot; split-tone &middot; film traits &middot; halation &middot; grain &middot; lens-FX &middot; bloom &middot; OUTPUT CST &mdash; the serial chain a clean grade usually needs, engineered into a single per-pixel DCTL you drop on one node. Works in DaVinci Resolve (free &amp; Studio) on Windows, macOS, and Linux.</p>
@@ -474,6 +501,31 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Before/after comparison slider
+  const ba = document.getElementById('sgBA');
+  if (ba) {
+    const setPos = (clientX) => {
+      const r = ba.getBoundingClientRect();
+      const p = Math.max(0, Math.min(100, ((clientX - r.left) / r.width) * 100));
+      ba.style.setProperty('--pos', p + '%');
+      ba.setAttribute('aria-valuenow', Math.round(p));
+    };
+    let dragging = false;
+    ba.addEventListener('pointerdown', e => { dragging = true; ba.setPointerCapture(e.pointerId); setPos(e.clientX); });
+    ba.addEventListener('pointermove', e => { if (dragging) setPos(e.clientX); });
+    ba.addEventListener('pointerup', () => { dragging = false; });
+    ba.addEventListener('pointercancel', () => { dragging = false; });
+    ba.addEventListener('keydown', e => {
+      const now = parseFloat(ba.style.getPropertyValue('--pos')) || 50;
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        const p = Math.max(0, Math.min(100, now + (e.key === 'ArrowRight' ? 4 : -4)));
+        ba.style.setProperty('--pos', p + '%');
+        ba.setAttribute('aria-valuenow', Math.round(p));
+      }
+    });
+  }
 </script>
 </body>
 </html>
