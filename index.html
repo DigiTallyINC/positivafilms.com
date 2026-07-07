@@ -128,6 +128,9 @@ body.loaded .scroll-hint{animation:fadeUp .8s ease 1.2s both}
 .feature-item p{font-size:12px;font-weight:300;color:var(--linen-dim);line-height:1.7;margin-top:5px}
 .arrow-btn{width:44px;height:44px;flex-shrink:0;border:1px solid var(--linen-faint);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--linen);font-size:16px;transition:border-color .3s,color .3s,background .3s;background:none}
 .feature-item:hover .arrow-btn{border-color:var(--gold);color:var(--gold);background:var(--gold-faint)}
+.feature-link{display:flex;align-items:center;justify-content:space-between;gap:20px;flex:1;text-decoration:none;color:inherit}
+.feature-link-site{color:var(--gold);transition:color .2s}
+.feature-link:hover .feature-link-site{color:var(--linen)}
 
 .work{background:var(--ink-soft);padding:120px 48px}
 .projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:48px}
@@ -387,8 +390,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
           <div class="arrow-btn">&#8599;</div>
         </li>
         <li class="feature-item">
-          <div><h3>Documentary Roots</h3><p>Ground-level storytelling built over a decade on the road. 160,000+ km across 15+ Indian states.</p></div>
-          <div class="arrow-btn">&#8599;</div>
+          <a href="https://www.openroadindia.com" target="_blank" rel="noopener" class="feature-link">
+            <div><h3>Documentary Roots</h3><p>Ground-level storytelling built over a decade on the road. 160,000+ km across 15+ Indian states &mdash; chronicled at <span class="feature-link-site">openroadindia.com</span>.</p></div>
+            <div class="arrow-btn">&#8599;</div>
+          </a>
         </li>
       </ul>
     </div>
@@ -608,6 +613,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
       <a href="luts.html">LUTs</a>
       <a href="supergrade.html">SuperGrade</a>
       <a href="blog.html">Blog</a>
+      <a href="https://www.openroadindia.com" target="_blank" rel="noopener">Open Road India</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
     </div>
