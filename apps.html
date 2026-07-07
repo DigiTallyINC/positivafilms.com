@@ -283,8 +283,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .app-bharometer .hub-desc{color:rgba(234,241,248,0.7)}
 .app-bharometer .hub-foot{border-top-color:rgba(234,241,248,0.14)}
 .app-bharometer .hub-meta{color:rgba(234,241,248,0.62)}
-.app-bharometer .hub-soon-pill{color:#EAF1F8;border-color:rgba(255,223,0,0.5)}
-.app-bharometer .hub-soon-pill::before{background:#FFDF00;box-shadow:0 0 0 4px rgba(255,223,0,0.18)}
+.app-bharometer .hub-arrow{border-color:rgba(234,241,248,0.22);color:#EAF1F8}
+.app-bharometer:hover .hub-arrow{background:#007EC7;border-color:#007EC7;color:#fff}
 
 /* English Seekho — constants/colors.ts: accent #e89556, accentDark #c97233, bg #fdf8f3, text #2a1f15 */
 .app-englishseekho{background:linear-gradient(152deg,#3a2a1c 0%,#180f08 100%);border-color:#3f2e1e}
@@ -420,9 +420,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
       </div>
     </a>
 
-    <div class="hub-card soon app-sehatvault reveal">
+    <a href="https://bharometer.com" target="_blank" rel="noopener" class="hub-card app-bharometer reveal">
       <div class="hub-card-top">
         <div class="hub-num">(02)</div>
+        <span class="hub-tag soon-tag">Vehicle &middot; Coming Soon</span>
+        <h3 class="hub-name">BHARO<span>METER</span></h3>
+        <p class="hub-desc">Track fuel, mileage and running costs for your vehicle. AI pump-scan logs every fill-up in a tap, with accurate city-level daily fuel prices built for India.</p>
+      </div>
+      <div class="hub-foot">
+        <span class="hub-meta">iPhone &amp; Apple Watch</span>
+        <div class="hub-arrow">&#8599;</div>
+      </div>
+    </a>
+
+    <div class="hub-card soon app-sehatvault reveal">
+      <div class="hub-card-top">
+        <div class="hub-num">(03)</div>
         <span class="hub-tag soon-tag">Health &middot; Coming Soon</span>
         <h3 class="hub-name">SEHAT<span>VAULT</span></h3>
         <p class="hub-desc">A private, local-first medical-records vault for the whole family. Scan, speak, or share a report &mdash; it gets organised by family member into a clear timeline, with a 60-second brief for your doctor.</p>
@@ -435,7 +448,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 
     <div class="hub-card soon app-remindkaro reveal">
       <div class="hub-card-top">
-        <div class="hub-num">(03)</div>
+        <div class="hub-num">(04)</div>
         <span class="hub-tag soon-tag">Reminders &middot; Coming Soon</span>
         <h3 class="hub-name">REMIND <span>KARO</span></h3>
         <p class="hub-desc">Fast reminders and countdown timers with a signature auto-snooze that keeps re-alerting you until a task is actually done. Capture in seconds, schedule it, and stay on track.</p>
@@ -448,26 +461,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 
     <div class="hub-card soon app-trace reveal">
       <div class="hub-card-top">
-        <div class="hub-num">(04)</div>
+        <div class="hub-num">(05)</div>
         <span class="hub-tag soon-tag">Health &middot; Coming Soon</span>
         <h3 class="hub-name">TRACE<span>.</span></h3>
         <p class="hub-desc">A beautifully simple weight &amp; body-measurement tracker. Log your weight in seconds, watch the trend line move, and reach your goal. Private by design &mdash; your data never leaves your device.</p>
       </div>
       <div class="hub-foot">
         <span class="hub-meta">iOS, Android &amp; Web</span>
-        <span class="hub-soon-pill">Coming Soon</span>
-      </div>
-    </div>
-
-    <div class="hub-card soon app-bharometer reveal">
-      <div class="hub-card-top">
-        <div class="hub-num">(05)</div>
-        <span class="hub-tag soon-tag">Vehicle &middot; Coming Soon</span>
-        <h3 class="hub-name">BHARO<span>METER</span></h3>
-        <p class="hub-desc">Track fuel, mileage and running costs for your vehicle. AI pump-scan logs every fill-up in a tap, with accurate city-level daily fuel prices built for India.</p>
-      </div>
-      <div class="hub-foot">
-        <span class="hub-meta">iPhone &amp; Apple Watch</span>
         <span class="hub-soon-pill">Coming Soon</span>
       </div>
     </div>
