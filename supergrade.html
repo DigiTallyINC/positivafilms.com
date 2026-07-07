@@ -241,6 +241,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .sg-ba-lbl{position:absolute;bottom:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;padding:6px 12px;background:rgba(10,10,12,0.72);border:1px solid var(--sg-line);color:var(--sg-fg);backdrop-filter:blur(3px);pointer-events:none}
 .sg-ba-lbl.b{left:14px}.sg-ba-lbl.a{right:14px;color:#d8eef3;border-color:var(--sg-teal)}
 .sg-ba-cap{max-width:1100px;margin:16px auto 0;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.06em;color:var(--sg-fg-dim);text-align:center}
+.sg-ba-thumbs{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:1100px;margin:20px auto 0}
+.sg-ba-th{width:118px;padding:0;background:none;border:1px solid var(--sg-line);cursor:pointer;opacity:0.5;transition:opacity .25s,border-color .25s,box-shadow .25s,transform .25s}
+.sg-ba-th img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.sg-ba-th span{display:block;font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--sg-fg-dim);padding:7px 4px;text-align:center}
+.sg-ba-th:hover{opacity:0.85;transform:translateY(-2px)}
+.sg-ba-th.on{opacity:1;border-color:var(--sg-teal);box-shadow:0 0 0 1px var(--sg-teal),0 0 20px rgba(31,169,192,0.3)}
+.sg-ba-th.on span{color:#d8eef3}
+.sg-ba-th:focus-visible{outline:2px solid var(--sg-teal);outline-offset:3px}
 
 /* sections */
 .sg-sec{padding:110px 48px;border-top:1px solid var(--sg-line)}
@@ -396,14 +404,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   </div>
   <h2 class="section-title reveal">SEE THE GRADE<em>Drag the handle &mdash; one node did this</em></h2>
   <div class="sg-ba reveal" id="sgBA" role="slider" aria-label="Before and after comparison — drag to reveal the ungraded frame" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
-    <img src="images/supergrade/after.jpg" alt="Aerial still graded with a single SuperGrade node — rich greens, warm golds, protected highlights" />
-    <div class="sg-ba-beforewrap"><img src="images/supergrade/before.jpg" alt="The same aerial still ungraded — flat log footage" /></div>
+    <img id="sgBAAfter" src="images/supergrade/aerial-after.jpg" alt="Graded frame — the SuperGrade look" />
+    <div class="sg-ba-beforewrap"><img id="sgBABefore" src="images/supergrade/aerial-before.jpg" alt="The same frame in flat, ungraded log" /></div>
     <div class="sg-ba-line"></div>
     <div class="sg-ba-grip">&#8596;</div>
     <span class="sg-ba-lbl b">Log &middot; ungraded</span>
     <span class="sg-ba-lbl a">SuperGrade &middot; one node</span>
   </div>
-  <p class="sg-ba-cap reveal">The same frame, straight out of camera vs one SuperGrade node &mdash; CST, film emulation and finishing in a single step.</p>
+  <div class="sg-ba-thumbs reveal" id="sgBAThumbs" role="tablist" aria-label="Choose a comparison shot">
+    <button class="sg-ba-th on" data-scene="aerial"><img src="images/supergrade/aerial-thumb.jpg" alt="" /><span>Aerial</span></button>
+    <button class="sg-ba-th" data-scene="alley"><img src="images/supergrade/alley-thumb.jpg" alt="" /><span>Alley</span></button>
+    <button class="sg-ba-th" data-scene="cafe"><img src="images/supergrade/cafe-thumb.jpg" alt="" /><span>Caf&eacute;</span></button>
+    <button class="sg-ba-th" data-scene="desert"><img src="images/supergrade/desert-thumb.jpg" alt="" /><span>Desert</span></button>
+    <button class="sg-ba-th" data-scene="neon"><img src="images/supergrade/neon-thumb.jpg" alt="" /><span>Neon</span></button>
+    <button class="sg-ba-th" data-scene="bookshop"><img src="images/supergrade/bookshop-thumb.jpg" alt="" /><span>Bookshop</span></button>
+  </div>
+  <p class="sg-ba-cap reveal" id="sgBACap">Real footage &mdash; the same frame straight out of camera vs one SuperGrade node.</p>
 </section>
 
 <section class="sg-sec" id="how">
@@ -524,6 +540,31 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
         ba.style.setProperty('--pos', p + '%');
         ba.setAttribute('aria-valuenow', Math.round(p));
       }
+    });
+
+    // Scene switcher — swap the pair, keep the slider
+    const SCENES = {
+      aerial:   { cap: 'Real footage — the same frame straight out of camera vs one SuperGrade node.' },
+      alley:    { cap: 'Rain-soaked alley — flat log vs the SuperGrade look.' },
+      cafe:     { cap: 'Café interior — flat log vs the SuperGrade look.' },
+      desert:   { cap: 'Desert highway at dusk — flat log vs the SuperGrade look.' },
+      neon:     { cap: 'Neon street — flat log vs the SuperGrade look.' },
+      bookshop: { cap: 'Bookshop — flat log vs the SuperGrade look.' }
+    };
+    const afterImg = document.getElementById('sgBAAfter');
+    const beforeImg = document.getElementById('sgBABefore');
+    const cap = document.getElementById('sgBACap');
+    document.querySelectorAll('.sg-ba-th').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const scene = btn.dataset.scene;
+        if (!SCENES[scene]) return;
+        afterImg.src = 'images/supergrade/' + scene + '-after.jpg';
+        beforeImg.src = 'images/supergrade/' + scene + '-before.jpg';
+        cap.textContent = SCENES[scene].cap;
+        ba.style.setProperty('--pos', '50%');
+        ba.setAttribute('aria-valuenow', 50);
+        document.querySelectorAll('.sg-ba-th').forEach(b => b.classList.toggle('on', b === btn));
+      });
     });
   }
 </script>
