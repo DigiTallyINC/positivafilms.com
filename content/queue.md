@@ -6,6 +6,7 @@ The cron picks the **first `[ ]` item from `## Queued`** (top-down). After publi
 
 - **Months 1–3 (May 4 → Aug 1, 2026):** Pattern repeats `LUT · LUT · BROADER` per Mon/Wed/Fri week — 2 LUT posts and 1 broader post each week. This is the LUT-launch push to drive traffic to `luts.html` while the audience is small.
 - **Months 4+ (Aug 4, 2026 →):** Pattern flips to `LUT · BROADER · BROADER` per week — 1 LUT and 2 broader posts. The blog matures into a general filmmaker resource with LUT pieces in steady rotation rather than dominant.
+- **App-forward era (Jul 8, 2026 →):** Pattern is `APP · TOOL · BROADER` per week — apps lead every week, then a product/tool or LUT post, then a broader craft post. See the App-forward section below; after it drains, the older sections continue in file order.
 
 Categories map to `data-cat` on `.post-card`:
 - `wedding`  — Indian Wedding (LUT *and* non-LUT — pheras, audio, business, etc.)
@@ -14,12 +15,62 @@ Categories map to `data-cat` on `.post-card`:
 - `gear`     — Gear (camera/lens/audio gear, comparisons, settings)
 - `aerial`   — Aerial & FPV (drone craft, regs, gear)
 - `field`    — Field Notes (workflow, business, on-set, essays)
+- `apps`     — Apps (PasteKaro, Bharometer — consumer apps from Positiva Studios; lines carry `product:`)
+- `tools`    — Tools & Plugins (SuperGrade, ClipEngine AI — filmmaker software; lines carry `product:`)
 
 Internal-link targets the agent should weave into every post:
 - `luts.html` (LUT pack hub) — `#wedding`, `#travel`, `#bundle` anchors
 - `index.html` (home / about)
 - `products.html` (ClipEngine + LUTs hub)
+- `supergrade.html` (SuperGrade plugin), `apps.html` (Positiva Studios apps hub)
+- Product sites: `https://pastekaro.positivafilms.com`, `https://bharometer.com`, `https://clipengineai.positivafilms.com`
 - Other published `posts/<slug>.html` for cross-referencing — see the `## Published` list below
+
+---
+
+## Queued — App-forward era (from Jul 8, 2026): APP · TOOL · BROADER weekly
+
+Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` field; the post must feature that product (fact sheets in AGENT.md).
+
+### Week of July 6, 2026 (remaining runs)
+- [ ] category: apps | type: APP | product: pastekaro | title: **Your iPhone Clipboard Only Remembers One Thing. Here's How to Get a Real Clipboard History on iOS** | intent: "iphone clipboard history", "ios clipboard manager"
+- [ ] category: tools | type: TOOL | product: supergrade | title: **The 15-Node Base Grade Every Colorist Rebuilds on Every Project (And How to Collapse It to One)** | intent: "resolve base grade node tree", "single node film look"
+- [ ] category: field   | type: BROADER  | title: **Cloud Backup for Wedding Footage: Backblaze vs Tresorit vs a 4-Bay NAS** | intent: "wedding footage backup", "cloud storage filmmaker"
+
+### Week of July 13, 2026
+- [ ] category: apps | type: APP | product: bharometer | title: **What Your Car Actually Costs Per Kilometre in India (It's Not the Mileage Number)** | intent: "cost per km car india", "fuel cost tracking app"
+- [ ] category: travel  | type: LUT      | title: **Grading Ladakh's Cold Blue Shadows Without Cyan-Shifting Skin** | intent: "ladakh color grade", "cold shadow warm skin"
+- [ ] category: wedding | type: BROADER  | title: **The Christian Wedding Coverage Plan That Doesn't Work for Hindu Weddings (And Vice Versa)** | intent: "christian vs hindu wedding shot list", "ceremony coverage india"
+
+### Week of July 20, 2026
+- [ ] category: apps | type: APP | product: pastekaro | title: **Paste Any Saved Snippet into Any iPhone App: The Keyboard Trick Most People Miss** | intent: "ios paste snippets any app", "iphone keyboard clipboard"
+- [ ] category: tools | type: TOOL | product: clipengine | title: **Why Stock Footage Gets Rejected: The Metadata Mistakes Killing Your Shutterstock and BlackBox Submissions** | intent: "stock footage rejected metadata", "shutterstock keywords rejection"
+- [ ] category: aerial  | type: BROADER  | title: **ND Filter Math for 24fps Drone Cinema: A Cheat Sheet for the Mavic 3** | intent: "drone nd filter 24fps", "mavic 3 nd math"
+
+### Week of July 27, 2026
+- [ ] category: apps | type: APP | product: bharometer | title: **Tank-to-Tank Is the Only Real Mileage Number: How to Measure "Kitna Deti Hai" Properly** | intent: "actual mileage calculation", "tank to tank mileage method"
+- [ ] category: gear    | type: LUT      | title: **Canon C70 CLog3 to Rec.709: Why the Built-In LUT Crushes Your Shadows** | intent: "c70 clog3 rec709", "canon log shadow crush"
+- [ ] category: gear    | type: BROADER  | title: **Why a 24-70 Isn't Enough at an Indian Wedding (And the Three Lenses That Are)** | intent: "wedding lens kit", "indian wedding lens choice"
+
+### Week of August 3, 2026
+- [ ] category: apps | type: APP | product: pastekaro | title: **Stop Retyping Addresses, UPI IDs and Canned Replies: A Snippet System for Your iPhone** | intent: "iphone text snippets", "save upi id quick paste"
+- [ ] category: tools | type: TOOL | product: supergrade | title: **Halation, Grain and Bloom Without Three Plugins Fighting: One-Pass Film Finishing in Resolve** | intent: "resolve halation grain workflow", "film look one node"
+- [ ] category: wedding | type: BROADER  | title: **The Three Contract Clauses Every Indian Wedding Filmmaker Gets Burned On** | intent: "wedding videography contract india", "freelance contract clauses"
+
+### Week of August 10, 2026
+- [ ] category: apps | type: APP | product: bharometer | title: **Petrol Prices Reset Every Morning at 6 AM: Why City-Level Rates Change Your Mileage Math** | intent: "daily petrol price india", "city fuel price difference"
+- [ ] category: wedding | type: LUT      | title: **Reception Stage LED Wash Killing Skin Tones — A Curve-Based Fix** | intent: "led wash skin tone", "reception color grade"
+- [ ] category: travel  | type: BROADER  | title: **The Ladakh Cold That Killed My BMPCC Battery in 11 Minutes** | intent: "ladakh cold camera battery", "high altitude filmmaking"
+
+### Week of August 17, 2026
+- [ ] category: apps | type: APP | product: pastekaro | title: **You Copied It Last Tuesday: Finding Anything You Ever Copied with Smart Clipboard Categories** | intent: "find copied text iphone", "clipboard history search"
+- [ ] category: tools | type: TOOL | product: clipengine | title: **Keywording 200 Stock Clips Without Losing a Weekend: An AI-Assisted Metadata Workflow** | intent: "stock footage keywording workflow", "ai metadata stock clips"
+- [ ] category: wedding | type: BROADER  | title: **A 14-Hour Indian Wedding Shot List That Fits on One A4 Page** | intent: "indian wedding shot list", "14 hour wedding coverage"
+
+### Week of August 24, 2026
+- [ ] category: apps | type: APP | product: bharometer | title: **Logging a Fill-Up in One Tap: Scanning the Pump Screen Instead of Typing Numbers** | intent: "fuel log app scan pump", "track fill ups india"
+- [ ] category: wedding | type: LUT      | title: **Vidaai at Sunset: Grading Departures Without Magenta Sky Spill** | intent: "vidaai sunset grade", "magenta sky cleanup"
+- [ ] category: field   | type: BROADER  | title: **Multicam Sync Without Timecode: PluralEyes vs Resolve's Sync Bin in 2026** | intent: "multicam sync resolve", "wedding multicam workflow"
 
 ---
 
@@ -49,27 +100,18 @@ Internal-link targets the agent should weave into every post:
 ### Week of June 29, 2026
 - [ ] category: wedding | type: LUT      | title: **Matching Drone B-roll to Ground Cam Footage in a Wedding Edit** | intent: "drone match wedding cam", "aerial color match"
 - [ ] category: gear    | type: LUT      | title: **BMPCC 6K Pro Skin Tones Go Pink Under Tungsten — A Resolve-Native Fix** | intent: "bmpcc skin tone tungsten", "blackmagic color tungsten"
-- [ ] category: aerial  | type: BROADER  | title: **ND Filter Math for 24fps Drone Cinema: A Cheat Sheet for the Mavic 3** | intent: "drone nd filter 24fps", "mavic 3 nd math"
 
 ### Week of July 6, 2026
-- [ ] category: travel  | type: LUT      | title: **Grading Ladakh's Cold Blue Shadows Without Cyan-Shifting Skin** | intent: "ladakh color grade", "cold shadow warm skin"
-- [ ] category: wedding | type: LUT      | title: **Reception Stage LED Wash Killing Skin Tones — A Curve-Based Fix** | intent: "led wash skin tone", "reception color grade"
-- [ ] category: field   | type: BROADER  | title: **Cloud Backup for Wedding Footage: Backblaze vs Tresorit vs a 4-Bay NAS** | intent: "wedding footage backup", "cloud storage filmmaker"
 
 ### Week of July 13, 2026
-- [ ] category: gear    | type: LUT      | title: **Canon C70 CLog3 to Rec.709: Why the Built-In LUT Crushes Your Shadows** | intent: "c70 clog3 rec709", "canon log shadow crush"
 - [ ] category: travel  | type: LUT      | title: **Backwater Greens vs Tropical Greens: Two Different Approaches for Kerala** | intent: "kerala backwaters color", "tropical green grading"
-- [ ] category: wedding | type: BROADER  | title: **The Christian Wedding Coverage Plan That Doesn't Work for Hindu Weddings (And Vice Versa)** | intent: "christian vs hindu wedding shot list", "ceremony coverage india"
 
 ### Week of July 20, 2026
-- [ ] category: wedding | type: LUT      | title: **Vidaai at Sunset: Grading Departures Without Magenta Sky Spill** | intent: "vidaai sunset grade", "magenta sky cleanup"
 - [ ] category: aerial  | type: LUT      | title: **Mavic 3 vs Air 3 Color Science — Why the Same Sky Reads Differently** | intent: "mavic 3 vs air 3 color", "dji color science compare"
-- [ ] category: gear    | type: BROADER  | title: **Why a 24-70 Isn't Enough at an Indian Wedding (And the Three Lenses That Are)** | intent: "wedding lens kit", "indian wedding lens choice"
 
 ### Week of July 27, 2026
 - [ ] category: travel  | type: LUT      | title: **Old Delhi Street Footage: Taming Mixed Sodium-Vapor Streetlight** | intent: "sodium vapor color grade", "street footage india"
 - [ ] category: gear    | type: LUT      | title: **DJI Mavic 3 Pro D-Log to Rec.709: The Cleanest CST Setup in Resolve** | intent: "dji d-log rec709", "mavic 3 pro color grade"
-- [ ] category: wedding | type: BROADER  | title: **The Three Contract Clauses Every Indian Wedding Filmmaker Gets Burned On** | intent: "wedding videography contract india", "freelance contract clauses"
 
 ---
 
@@ -77,13 +119,10 @@ Internal-link targets the agent should weave into every post:
 
 ### Week of August 3, 2026
 - [ ] category: craft   | type: LUT      | title: **Stacking Two LUTs Without Banding: When It's Allowed and When It Breaks** | intent: "stack luts", "lut on lut banding"
-- [ ] category: travel  | type: BROADER  | title: **The Ladakh Cold That Killed My BMPCC Battery in 11 Minutes** | intent: "ladakh cold camera battery", "high altitude filmmaking"
-- [ ] category: wedding | type: BROADER  | title: **A 14-Hour Indian Wedding Shot List That Fits on One A4 Page** | intent: "indian wedding shot list", "14 hour wedding coverage"
 
 ### Week of August 10, 2026
 - [ ] category: wedding | type: LUT      | title: **Christian vs Hindu Wedding Color Palettes: When to Switch LUT Looks Mid-Edit** | intent: "wedding color palette", "venue color shift"
 - [ ] category: aerial  | type: BROADER  | title: **Mavic 3 Pro at 28 km/h Headwind in Spiti: When to Land** | intent: "drone wind limit", "mavic high altitude"
-- [ ] category: field   | type: BROADER  | title: **Multicam Sync Without Timecode: PluralEyes vs Resolve's Sync Bin in 2026** | intent: "multicam sync resolve", "wedding multicam workflow"
 
 ### Week of August 17, 2026
 - [ ] category: travel  | type: LUT      | title: **Why Beach Footage Looks Washed Out and How to Recover Sand-to-Sky Contrast** | intent: "beach footage washed out", "sand sky contrast grade"

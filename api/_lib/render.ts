@@ -19,9 +19,11 @@ export type ToolOutput = {
     | "Craft & Color"
     | "Gear"
     | "Aerial & FPV"
-    | "Field Notes";
+    | "Field Notes"
+    | "Apps"
+    | "Tools & Plugins";
   cta: {
-    pack: "wedding" | "travel" | "bundle";
+    pack: "wedding" | "travel" | "bundle" | "pastekaro" | "bharometer" | "supergrade" | "clipengine";
     headline: string;
     sub: string;
     body: string;
@@ -32,14 +34,36 @@ export type ToolOutput = {
 const PACK_IMAGE: Record<ToolOutput["cta"]["pack"], string> = {
   wedding: "Indian_Wedding_Luts_pack.png",
   travel: "Indian_Travel_Luts_pack.png",
-  bundle: "Bundle_Luts_pack.png",
+  bundle: "Bundle_Luts_pack.jpg",
+  pastekaro: "images/cta/pastekaro.jpg",
+  bharometer: "images/cta/bharometer.jpg",
+  supergrade: "images/cta/supergrade.jpg",
+  clipengine: "images/cta/clipengine.jpg",
 };
 
 const HERO_IMAGE: Record<ToolOutput["cta"]["pack"], string> = {
   wedding: "https://positivafilms.com/Indian_Wedding_Luts_pack.png",
   travel: "https://positivafilms.com/Indian_Travel_Luts_pack.png",
-  bundle: "https://positivafilms.com/Bundle_Luts_pack.png",
+  bundle: "https://positivafilms.com/Bundle_Luts_pack.jpg",
+  pastekaro: "https://positivafilms.com/images/cta/pastekaro.jpg",
+  bharometer: "https://positivafilms.com/images/cta/bharometer.jpg",
+  supergrade: "https://positivafilms.com/images/cta/supergrade.jpg",
+  clipengine: "https://positivafilms.com/images/cta/clipengine.jpg",
 };
+
+/** Where the bottom CTA button goes. Relative paths get a ../ prefix (posts live in posts/). */
+const PACK_LINK: Record<ToolOutput["cta"]["pack"], string> = {
+  wedding: "../luts.html#wedding",
+  travel: "../luts.html#travel",
+  bundle: "../luts.html#bundle",
+  pastekaro: "https://pastekaro.positivafilms.com",
+  bharometer: "https://bharometer.com",
+  supergrade: "../supergrade.html",
+  clipengine: "https://clipengineai.positivafilms.com",
+};
+
+/** Product CTA images are 16:9 screenshots; the LUT box art (except bundle) is square. */
+const WIDE_CTA_PACKS: ReadonlySet<string> = new Set(["bundle", "pastekaro", "bharometer", "supergrade", "clipengine"]);
 
 export function renderPost(opts: {
   template: string;
@@ -63,7 +87,7 @@ export function renderPost(opts: {
     throw new Error("Sanitization stripped the inline-cta block — model output was malformed");
   }
 
-  const ctaImageClass = out.cta.pack === "bundle" ? " bundle" : "";
+  const ctaImageClass = WIDE_CTA_PACKS.has(out.cta.pack) ? " bundle" : "";
 
   const replacements: Record<string, string> = {
     "{{TITLE}}": escapeText(topic.title),
@@ -83,7 +107,8 @@ export function renderPost(opts: {
     "{{CTA_SUB}}": escapeText(out.cta.sub),
     "{{CTA_BODY}}": escapeText(out.cta.body),
     "{{CTA_BUTTON}}": escapeText(out.cta.button),
-    "{{CTA_LINK}}": `luts.html#${out.cta.pack}`,
+    "{{CTA_LINK}}": PACK_LINK[out.cta.pack],
+    "{{CTA_LINK_EXTRA}}": PACK_LINK[out.cta.pack].startsWith("http") ? ` target="_blank" rel="noopener"` : "",
     "{{CTA_IMAGE}}": PACK_IMAGE[out.cta.pack],
     "{{CTA_IMAGE_CLASS}}": ctaImageClass,
     // Author block was removed from the template; leftover refs get a no-op:

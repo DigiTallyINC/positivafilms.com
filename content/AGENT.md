@@ -163,6 +163,37 @@ git push origin master
 
 Use a clean, descriptive message. No marketing copy in commit messages.
 
+## App & tool posts (type: APP / type: TOOL)
+
+The studio ships software as well as film. Two new categories exist alongside the six filmmaking ones:
+
+- `apps`  → display label **Apps** (consumer iPhone/Android apps from Positiva Studios)
+- `tools` → display label **Tools & Plugins** (filmmaker software: SuperGrade, ClipEngine AI)
+
+The queue line carries a `product:` field (`pastekaro | bharometer | supergrade | clipengine`). The post's inline CTA **and** bottom CTA (`cta.pack`) must both point at that product.
+
+### Voice for product posts
+
+Same practitioner voice, different subject. The reader arrives with a **problem**, not brand curiosity, so the post is 60–70% genuinely useful problem/workflow content that would stand alone even if the product didn't exist; the product enters as the working answer, the way you'd recommend a lens you actually use. India-first examples and numbers (₹, litres, Mumbai traffic, UPI IDs, monsoon humidity). Never press-release tone, never exclamation-mark hype, never "game-changer".
+
+### Product fact sheets — the ONLY permitted claims
+
+Claims about a product must come from its sheet below. No invented features, prices, ratings, download counts, availability dates, or platform claims.
+
+**PasteKaro** (`apps`, product `pastekaro`) — private clipboard manager for iPhone. Tagline: "Copy. Paste. Karo." Saves everything you copy (links, addresses, emails, phone numbers, code, hex codes, notes) into a searchable, organised history with smart categories plus custom ones. A keyboard extension pastes saved snippets into any app. Fully on-device: no account, no servers, no tracking. iPhone, iOS 16+, on the App Store; a free Android version is on Google Play. CTA link: `https://pastekaro.positivafilms.com`.
+
+**Bharometer** (`apps`, product `bharometer`) — fuel, mileage and running-cost tracker built for India. Tagline: "Know what every kilometre costs." Log fill-ups in seconds; the free pump-scan feature photographs the pump screen and auto-fills litres, amount and rate. True tank-to-tank mileage ("kitna deti hai?"), monthly spending, cost per kilometre. Handles petrol, diesel, CNG (tracked in kg with km-per-kg mileage) and EV. City-level daily fuel prices; pumps near you or along a route. Free to start, no ads, no account; data on-device plus iCloud. iPhone. Do NOT claim it is live on the App Store; say it is "at bharometer.com" / "for iPhone". CTA link: `https://bharometer.com`.
+
+**SuperGrade** (`tools`, product `supergrade`) — single-node cinematic base-grade engine for DaVinci Resolve (GPU-accelerated DCTL). Built-in colour-space transform in DaVinci Wide Gamut / Intermediate, film-emulation core, skin-tone protection, halation, bloom, grain, split-tone. Replaces the ~15-node serial chain of a conventional base grade. Works in Resolve 18+ (free and Studio) on Windows, macOS and Linux. ₹2,999 one-time, lifetime licence. CTA link: `../supergrade.html`.
+
+**ClipEngine AI** (`tools`, product `clipengine`) — Chrome extension + web app for stock-footage contributors. Generates metadata (titles, descriptions, keywords) for stock workflows (BlackBox Global, Shutterstock, Adobe Stock, Pond5) and runs a technical audit of clips before submission. Do not quote a specific number of audit checks. CTA link: `https://clipengineai.positivafilms.com`.
+
+### CTA mapping for product posts
+
+- Inline CTA eyebrow: APP posts → `From Positiva Studios`; TOOL posts → `From the Positiva Workbench`.
+- Inline CTA href and bottom `cta.pack`: exactly the featured product (see sheets above for hrefs).
+- The bottom cream CTA body should connect the product to THIS post's specific problem, same rule as LUT posts.
+
 ## Queue exhausted
 
 If `## Queued` is empty:

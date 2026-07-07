@@ -14,7 +14,9 @@ export type QueuedTopic = {
   /** Index of the line within the file (zero-based) */
   lineIndex: number;
   category: string;
-  type?: "LUT" | "BROADER";
+  type?: "LUT" | "BROADER" | "APP" | "TOOL";
+  /** For APP/TOOL topics: which product the post features (pastekaro | bharometer | supergrade | clipengine) */
+  product?: string;
   title: string;
   intent: string;
 };
@@ -28,7 +30,8 @@ export type PublishedEntry = {
 
 const TITLE_RE = /title:\s*\*\*(.+?)\*\*/;
 const CAT_RE = /category:\s*([a-z]+)/i;
-const TYPE_RE = /type:\s*(LUT|BROADER)/i;
+const TYPE_RE = /type:\s*(LUT|BROADER|APP|TOOL)/i;
+const PRODUCT_RE = /product:\s*([a-z]+)/i;
 const INTENT_RE = /intent:\s*(.+)$/;
 
 export function parseQueue(md: string): {
@@ -50,10 +53,11 @@ export function parseQueue(md: string): {
       if (next) continue;
       const title = TITLE_RE.exec(line)?.[1]?.trim();
       const category = CAT_RE.exec(line)?.[1]?.trim().toLowerCase();
-      const type = (TYPE_RE.exec(line)?.[1]?.toUpperCase() as "LUT" | "BROADER" | undefined);
+      const type = (TYPE_RE.exec(line)?.[1]?.toUpperCase() as QueuedTopic["type"]);
+      const product = PRODUCT_RE.exec(line)?.[1]?.trim().toLowerCase();
       const intent = INTENT_RE.exec(line)?.[1]?.trim() || "";
       if (!title || !category) continue;
-      next = { rawLine: line, lineIndex: i, category, type, title, intent };
+      next = { rawLine: line, lineIndex: i, category, type, product, title, intent };
     } else if (line.startsWith("- [x]")) {
       const dateMatch = /\[x\]\s*(\d{4}-\d{2}-\d{2})/.exec(line);
       const slugMatch = /slug:\s*([a-z0-9-]+)/.exec(line);

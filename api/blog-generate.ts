@@ -108,6 +108,11 @@ async function runOnce() {
   const out = toolUse.input as ToolOutput;
   validateOutput(out);
 
+  // Product topics must sell their own product, not a LUT pack.
+  if (next.product && out.cta.pack !== next.product) {
+    throw new Error(`Topic features product "${next.product}" but cta.pack is "${out.cta.pack}"`);
+  }
+
   // Guard: remove any internal post link the model invented (slug that isn't a real
   // published post). Prevents the cron from ever shipping a broken "related post" link.
   const knownSlugs = new Set<string>(published.map((p) => p.slug));
@@ -220,8 +225,8 @@ function validateOutput(out: ToolOutput): void {
   if (out.body_html.toLowerCase().includes("positiva films") || out.body_html.toLowerCase().includes("at positiva")) {
     throw new Error("Body must not contain brand mascot framing ('Positiva Films', 'at Positiva')");
   }
-  if (!out.cta || !["wedding", "travel", "bundle"].includes(out.cta.pack)) {
-    throw new Error("CTA pack must be wedding|travel|bundle");
+  if (!out.cta || !["wedding", "travel", "bundle", "pastekaro", "bharometer", "supergrade", "clipengine"].includes(out.cta.pack)) {
+    throw new Error("CTA pack must be wedding|travel|bundle|pastekaro|bharometer|supergrade|clipengine");
   }
 
   const emDashRe = /—|&mdash;|--/;
