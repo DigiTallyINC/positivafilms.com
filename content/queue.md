@@ -33,7 +33,6 @@ Internal-link targets the agent should weave into every post:
 Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` field; the post must feature that product (fact sheets in AGENT.md).
 
 ### Week of July 6, 2026 (remaining runs)
-- [ ] category: apps | type: APP | product: pastekaro | title: **Your iPhone Clipboard Only Remembers One Thing. Here's How to Get a Real Clipboard History on iOS** | intent: "iphone clipboard history", "ios clipboard manager"
 - [ ] category: tools | type: TOOL | product: supergrade | title: **The 15-Node Base Grade Every Colorist Rebuilds on Every Project (And How to Collapse It to One)** | intent: "resolve base grade node tree", "single node film look"
 - [ ] category: field   | type: BROADER  | title: **Cloud Backup for Wedding Footage: Backblaze vs Tresorit vs a 4-Bay NAS** | intent: "wedding footage backup", "cloud storage filmmaker"
 
@@ -279,6 +278,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-07-08 | slug: iphone-clipboard-history-ios-clipboard-manager | category: apps | title: **Your iPhone Clipboard Only Remembers One Thing. Here's How to Get a Real Clipboard History on iOS**
 - [x] 2026-06-24 | slug: hill-station-fog-munnar-coorg-ooty-color-grade | category: travel | title: **Hill Station Fog (Munnar, Coorg, Ooty) Reads Grey — Adding Atmosphere Without Washing Out**
 - [x] 2026-06-19 | slug: drone-taj-mahal-ban-mehtab-bagh-alternatives | category: travel | title: **Why You Cannot Fly a Drone at the Taj Mahal — And What You Can Shoot from Mehtab Bagh Instead**
 - [x] 2026-06-17 | slug: drone-footage-hazy-dehaze-contrast-recipe | category: aerial | title: **Why Drone Footage Looks Hazy at 400 Feet — A Dehaze + Contrast Recipe**
