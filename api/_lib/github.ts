@@ -16,11 +16,16 @@ export const REPO: RepoTarget = {
   branch: process.env.GITHUB_BRANCH || "master",
 };
 
-/** The bharometer.com landing repo — dual-publish target for Bharometer posts. */
+/**
+ * The bharometer.com landing repo — dual-publish target for Bharometer posts.
+ * NOTE: the live site lives on the v2-fidelity-parity branch (origin/main is
+ * stale, 380+ commits behind). If that branch ever merges to main, update the
+ * default here or set GITHUB_BHAROMETER_BRANCH in the Vercel env.
+ */
 export const BHAROMETER_REPO: RepoTarget = {
   owner: process.env.GITHUB_OWNER || "DigiTallyINC",
   repo: process.env.GITHUB_BHAROMETER_REPO || "bharometer",
-  branch: process.env.GITHUB_BHAROMETER_BRANCH || "master",
+  branch: process.env.GITHUB_BHAROMETER_BRANCH || "v2-fidelity-parity",
 };
 
 /** Fetch a file from the configured branch as UTF-8 text. */
