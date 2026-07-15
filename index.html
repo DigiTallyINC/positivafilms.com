@@ -287,6 +287,24 @@ footer{background:var(--ink);padding:60px 48px 32px;border-top:1px solid var(--l
 
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .nav-hamburger:focus-visible{outline-offset:-2px}
+/* Human / Machine view toggle (pattern from bharometer.com) */
+.modes{display:inline-flex;align-items:center;gap:12px;font-family:'DM Mono',monospace;position:relative;z-index:1}
+.mode{background:none;border:0;padding:0;cursor:pointer;font-family:inherit;font-size:11px;font-weight:500;letter-spacing:.04em;color:var(--linen-dim);transition:color .18s ease;text-transform:uppercase}
+.mode::before{content:"[ ] ";color:inherit}
+.mode.is-active{color:var(--linen)}
+.mode.is-active::before{content:"[x] ";color:var(--gold)}
+.mode:hover{color:var(--gold)}
+.machine{position:fixed;inset:0;z-index:1100;background:var(--ink);overflow:auto;display:none;-webkit-overflow-scrolling:touch}
+body.machine-on .machine{display:block}
+body.machine-on{overflow:hidden}
+body.machine-on nav{z-index:1200;background:rgba(10,9,8,.94)}
+body.machine-on .nav-links,body.machine-on .nav-hamburger,body.machine-on .mobile-nav{display:none}
+.machine-inner{max-width:760px;margin:0 auto;padding:110px 22px 120px}
+.machine-pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:'DM Mono',ui-monospace,Menlo,Consolas,monospace;font-size:13px;line-height:1.7;color:var(--linen)}
+.machine-copy{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;margin:0 0 40px;padding:14px 22px;background:none;border:1px solid var(--gold-dim);border-radius:6px;font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:var(--linen-dim);cursor:pointer;transition:color .18s,border-color .18s,background .18s}
+.machine-copy:hover{background:var(--gold-faint);border-color:var(--gold);color:var(--linen)}
+.machine-copy.is-copied{color:#3DD68C;border-color:#3DD68C;background:transparent}
+@media(max-width:560px){.modes{gap:8px}.mode{font-size:10px}.machine-inner{padding-top:96px}}
 .form-field input:focus-visible,.form-field textarea:focus-visible{outline:none;border-color:var(--gold)}
 
 @media(prefers-reduced-motion:reduce){
@@ -319,6 +337,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   .manifesto-body h2{font-size:32px}
 }
 </style>
+<link rel="alternate" type="text/markdown" href="index.md" title="Positiva Films — machine-readable markdown" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -371,6 +390,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     <li><a href="#about">About</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
+  <div class="modes" id="viewModes" role="group" aria-label="View this page for humans or machines">
+    <button type="button" class="mode is-active" data-mode="human" aria-pressed="true">Human</button>
+    <button type="button" class="mode" data-mode="machine" aria-pressed="false">Machine</button>
+  </div>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <ul class="mobile-nav" id="mobileNav">
@@ -855,6 +878,46 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     }
     btn.disabled = false; btn.textContent = 'Send Enquiry';
   });
+</script>
+<!-- MACHINE VIEW — this page as markdown, for agents & the curious -->
+<div class="machine" id="machineView" aria-hidden="true">
+  <div class="machine-inner">
+    <button type="button" class="machine-copy" id="machineCopy" aria-label="Copy the whole page as markdown">
+      <span class="machine-copy-label">Copy page as Markdown &mdash; paste into any AI</span>
+    </button>
+    <pre class="machine-pre" id="machinePre">Loading the markdown version&hellip;</pre>
+  </div>
+</div>
+<script>
+(function(){
+  var modes=document.getElementById('viewModes'),panel=document.getElementById('machineView');
+  if(!modes||!panel)return;
+  var btns=modes.querySelectorAll('.mode'),pre=document.getElementById('machinePre'),loaded=false;
+  function setMode(machine){
+    document.body.classList.toggle('machine-on',machine);
+    panel.setAttribute('aria-hidden',machine?'false':'true');
+    btns.forEach(function(b){
+      var on=(b.dataset.mode==='machine')===machine;
+      b.classList.toggle('is-active',on);
+      b.setAttribute('aria-pressed',on?'true':'false');
+    });
+    if(machine&&!loaded){
+      loaded=true;
+      fetch('index.md').then(function(r){return r.text();}).then(function(t){pre.textContent=t;})
+        .catch(function(){pre.textContent='Could not load index.md — view it directly at https://positivafilms.com/index.md';});
+    }
+    if(machine)panel.scrollTop=0;
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){setMode(b.dataset.mode==='machine');});});
+  var copyBtn=document.getElementById('machineCopy'),label=copyBtn.querySelector('.machine-copy-label');
+  copyBtn.addEventListener('click',function(){
+    var t=pre.textContent||'';
+    (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){
+      copyBtn.classList.add('is-copied');label.textContent='Copied — paste it into any AI';
+      setTimeout(function(){copyBtn.classList.remove('is-copied');label.textContent='Copy page as Markdown — paste into any AI';},2200);
+    }).catch(function(){label.textContent='Select the text below and copy manually';});
+  });
+})();
 </script>
 </body>
 </html>
