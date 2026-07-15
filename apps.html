@@ -108,6 +108,8 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 
 /* Featured product — ClipEngine AI brand */
 .featured{background:var(--ink);padding:120px 48px}
+.featured.f-bharo{background:linear-gradient(180deg,#0A1322 0%,#0C1626 55%,#0A1322 100%);border-top:1px solid rgba(88,166,232,0.14);border-bottom:1px solid rgba(88,166,232,0.14)}
+.featured.f-pk{background:linear-gradient(180deg,#15110B 0%,#1B150C 55%,#15110B 100%);border-bottom:1px solid rgba(181,101,29,0.22)}
 .featured-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
 .featured-visual{position:relative;background:linear-gradient(135deg,#0e1116 0%,#232a34 100%);overflow:hidden;border:1px solid rgba(122,181,255,0.18);display:flex;align-items:center;justify-content:center;padding:0;border-radius:6px}
 .featured-visual::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(122,181,255,0.18) 0%,rgba(83,157,255,0.05) 40%,transparent 70%);pointer-events:none}
@@ -138,6 +140,8 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .btn-ghost:hover{border-color:var(--gold-dim);background:rgba(201,168,76,0.06)}
 .btn-ghost .arrow{font-size:15px;color:var(--gold);transition:transform .3s}
 .btn-ghost:hover .arrow{transform:translateX(4px)}
+.btn-bharo{background:#FFDF00;color:#0B1524}
+.btn-bharo:hover{background:#FFE84D}
 
 /* Products grid */
 .catalog{background:var(--linen);padding:120px 48px;border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim)}
@@ -274,17 +278,17 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .app-trace .hub-soon-pill{color:#EEF1FA;border-color:rgba(255,201,60,0.5)}
 .app-trace .hub-soon-pill::before{background:#FFC93C;box-shadow:0 0 0 4px rgba(255,201,60,0.18)}
 
-/* Bharometer — colors.ts: primary #007EC7/#409FD5, accent #FFDF00, bg #0B1622, surface #16263A, text #EAF1F8 */
-.app-bharometer{background:linear-gradient(152deg,#16263A 0%,#0B1622 100%);border-color:#21364f}
-.app-bharometer .hub-num{color:#409FD5}
-.app-bharometer .hub-tag{color:#06223a;background:#409FD5;border-color:#409FD5}
-.app-bharometer .hub-name{color:#EAF1F8}
-.app-bharometer .hub-name span{color:#409FD5}
-.app-bharometer .hub-desc{color:rgba(234,241,248,0.7)}
-.app-bharometer .hub-foot{border-top-color:rgba(234,241,248,0.14)}
-.app-bharometer .hub-meta{color:rgba(234,241,248,0.62)}
-.app-bharometer .hub-arrow{border-color:rgba(234,241,248,0.22);color:#EAF1F8}
-.app-bharometer:hover .hub-arrow{background:#007EC7;border-color:#007EC7;color:#fff}
+/* Bharometer — bharometer.com site palette: bg #0A1322, surface #111F35, ink #EDF3FB, sun #FFDF00, azure #58A6E8 */
+.app-bharometer{background:linear-gradient(152deg,#111F35 0%,#0A1322 100%);border-color:#22334D}
+.app-bharometer .hub-num{color:#FFDF00}
+.app-bharometer .hub-tag{color:#0B1524;background:#FFDF00;border-color:#FFDF00}
+.app-bharometer .hub-name{color:#EDF3FB}
+.app-bharometer .hub-name span{color:#FFDF00}
+.app-bharometer .hub-desc{color:rgba(237,243,251,0.7)}
+.app-bharometer .hub-foot{border-top-color:rgba(237,243,251,0.14)}
+.app-bharometer .hub-meta{color:rgba(237,243,251,0.62)}
+.app-bharometer .hub-arrow{border-color:rgba(237,243,251,0.22);color:#EDF3FB}
+.app-bharometer:hover .hub-arrow{background:#FFDF00;border-color:#FFDF00;color:#0B1524}
 
 /* English Seekho — constants/colors.ts: accent #e89556, accentDark #c97233, bg #fdf8f3, text #2a1f15 */
 .app-englishseekho{background:linear-gradient(152deg,#3a2a1c 0%,#180f08 100%);border-color:#3f2e1e}
@@ -487,10 +491,50 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   </div>
 </section>
 
-<section class="featured" id="pastekaro">
+<section class="featured f-bharo" id="bharometer">
   <div class="section-header reveal">
     <div class="section-tag">Featured</div>
     <div class="section-num">( 03 )</div>
+  </div>
+  <h2 class="section-title reveal">NOW ON THE APP STORE<em>Know what every kilometre costs</em></h2>
+
+  <div class="featured-grid">
+    <div class="featured-col reveal">
+      <div class="featured-visual" style="background:linear-gradient(135deg,#111F35 0%,#0A1322 100%);border-color:rgba(255,223,0,0.22)">
+        <div class="featured-grid-bg"></div>
+        <div class="featured-logo-wrap" style="text-align:center">
+          <div style="font-family:var(--display);font-size:clamp(44px,7vw,84px);letter-spacing:0.04em;color:#EDF3FB;text-transform:uppercase;line-height:0.9">Bharo<span style="color:#FFDF00">meter</span></div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(237,243,251,0.55);margin-top:16px">Fuel &middot; Mileage &middot; Costs</div>
+        </div>
+      </div>
+      <div class="featured-chips">
+        <span class="featured-chip solid" style="background:#FFDF00;border-color:#FFDF00;color:#0B1524">iPhone</span>
+        <span class="featured-chip" style="background:rgba(88,166,232,0.14);border-color:rgba(88,166,232,0.4);color:#EDF3FB">Made in India</span>
+        <span class="featured-chip" style="background:rgba(88,166,232,0.14);border-color:rgba(88,166,232,0.4);color:#EDF3FB">On-device + iCloud</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="featured-eyebrow">Our Fuel &amp; Mileage App</div>
+      <h3 class="featured-name">BHARO<span style="color:#FFDF00">METER</span></h3>
+      <p class="featured-desc">The mileage on the brochure isn&#39;t what your vehicle actually does. Bharometer logs every fill-up in seconds and turns it into <strong style="color:var(--linen);font-weight:400">true tank-to-tank mileage, monthly spending and cost per kilometre</strong> &mdash; built for the way India drives.</p>
+      <ul class="featured-bullets">
+        <li>Pump-scan photographs the pump screen and auto-fills litres, amount and rate</li>
+        <li>True tank-to-tank mileage &mdash; the honest answer to &ldquo;kitna deti hai?&rdquo;</li>
+        <li>Petrol, diesel, CNG and EV, with city-level daily fuel prices</li>
+        <li>Free to start, no ads, no account. Your data stays on-device plus iCloud</li>
+      </ul>
+      <div class="featured-actions">
+        <a href="https://apps.apple.com/in/app/bharometer-fuel-kmpl-costs/id6784579909" target="_blank" rel="noopener" class="btn-primary btn-bharo">Download on the App Store</a>
+        <a href="https://bharometer.com" target="_blank" rel="noopener" class="btn-ghost">bharometer.com <span class="arrow">&#8599;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured f-pk" id="pastekaro">
+  <div class="section-header reveal">
+    <div class="section-tag">Featured</div>
+    <div class="section-num">( 04 )</div>
   </div>
   <h2 class="section-title reveal">NOW ON IPHONE &amp; ANDROID<em>The clipboard your phone forgot to ship</em></h2>
 
@@ -529,7 +573,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <section class="contact" id="contact">
   <div class="section-header reveal">
     <div class="section-tag">App Support</div>
-    <div class="section-num">( 04 )</div>
+    <div class="section-num">( 05 )</div>
   </div>
   <div class="contact-grid">
     <div class="reveal">
