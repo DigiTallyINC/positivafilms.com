@@ -8,20 +8,29 @@ export function gh() {
   return new Octokit({ auth: token });
 }
 
-export const REPO = {
+export type RepoTarget = { owner: string; repo: string; branch: string };
+
+export const REPO: RepoTarget = {
   owner: process.env.GITHUB_OWNER || "DigiTallyINC",
   repo: process.env.GITHUB_REPO || "positivafilms.com",
   branch: process.env.GITHUB_BRANCH || "master",
 };
 
+/** The bharometer.com landing repo — dual-publish target for Bharometer posts. */
+export const BHAROMETER_REPO: RepoTarget = {
+  owner: process.env.GITHUB_OWNER || "DigiTallyINC",
+  repo: process.env.GITHUB_BHAROMETER_REPO || "bharometer",
+  branch: process.env.GITHUB_BHAROMETER_BRANCH || "master",
+};
+
 /** Fetch a file from the configured branch as UTF-8 text. */
-export async function readFile(path: string): Promise<string> {
+export async function readFile(path: string, target: RepoTarget = REPO): Promise<string> {
   const o = gh();
   const res = await o.repos.getContent({
-    owner: REPO.owner,
-    repo: REPO.repo,
+    owner: target.owner,
+    repo: target.repo,
     path,
-    ref: REPO.branch,
+    ref: target.branch,
   });
   if (Array.isArray(res.data) || res.data.type !== "file") {
     throw new Error(`${path} is not a file`);
@@ -33,9 +42,10 @@ export async function readFile(path: string): Promise<string> {
 export async function commitFiles(opts: {
   files: FileChange[];
   message: string;
+  target?: RepoTarget;
 }): Promise<{ commitSha: string; commitUrl: string }> {
   const o = gh();
-  const { owner, repo, branch } = REPO;
+  const { owner, repo, branch } = opts.target ?? REPO;
 
   const ref = await o.git.getRef({ owner, repo, ref: `heads/${branch}` });
   const headSha = ref.data.object.sha;

@@ -7,6 +7,7 @@ The cron picks the **first `[ ]` item from `## Queued`** (top-down). After publi
 - **Months 1–3 (May 4 → Aug 1, 2026):** Pattern repeats `LUT · LUT · BROADER` per Mon/Wed/Fri week — 2 LUT posts and 1 broader post each week. This is the LUT-launch push to drive traffic to `luts.html` while the audience is small.
 - **Months 4+ (Aug 4, 2026 →):** Pattern flips to `LUT · BROADER · BROADER` per week — 1 LUT and 2 broader posts. The blog matures into a general filmmaker resource with LUT pieces in steady rotation rather than dominant.
 - **App-forward era (Jul 8, 2026 →):** Pattern is `APP · TOOL · BROADER` per week — apps lead every week, then a product/tool or LUT post, then a broader craft post. See the App-forward section below; after it drains, the older sections continue in file order.
+- **BHAROMETER PUSH (Jul 17 → Sep 11, 2026):** ALL three weekly runs are Bharometer posts (`product: bharometer`), India-specific, dual-published to bharometer.com/blog (the cron handles the second publish + canonical automatically). The App-forward and older sections resume after this section drains (~Sep 14).
 
 Categories map to `data-cat` on `.post-card`:
 - `wedding`  — Indian Wedding (LUT *and* non-LUT — pheras, audio, business, etc.)
@@ -28,6 +29,55 @@ Internal-link targets the agent should weave into every post:
 
 ---
 
+## Queued — BHAROMETER PUSH (Jul 17 → Sep 11, 2026): Bharometer × 3 weekly
+
+Every run in this section is `product: bharometer` (auto dual-published to bharometer.com/blog, canonical there). Audience: Indian vehicle owners, not filmmakers. India-specific always: ₹, litres, km/l, km/kg, kitna deti hai. E20 claims ONLY from the E20 fact sheet in AGENT.md — E20 posts are PRACTICAL AND NEUTRAL (measurement, compatibility, care); zero controversy, politics, or complaint framing. NO petrol-company or car-brand names.
+
+### Week of July 13, 2026 (remaining run: Fri Jul 17)
+- [ ] category: apps | type: APP | product: bharometer | title: **E20 Petrol Is in Every Tank Now: How to Measure What It Means for Your Own Mileage** | intent: "e20 petrol mileage", "e20 fuel mileage india"
+
+### Week of July 20, 2026
+- [ ] category: apps | type: APP | product: bharometer | title: **What Your Car Actually Costs Per Kilometre in India (It's Not the Mileage Number)** | intent: "cost per km car india", "fuel cost tracking app"
+- [ ] category: apps | type: APP | product: bharometer | title: **Is Your Car or Bike E20-Compatible? The April 2023 Rule of Thumb** | intent: "e20 compatible cars india", "how to check e20 compatibility"
+- [ ] category: apps | type: APP | product: bharometer | title: **Why Your Car's Dashboard Average Lies (By 5 to 15 Percent), and the Pump Method That Doesn't** | intent: "dashboard mileage wrong", "real average kitna deti hai"
+
+### Week of July 27, 2026
+- [ ] category: apps | type: APP | product: bharometer | title: **Tank-to-Tank Is the Only Real Mileage Number: How to Measure "Kitna Deti Hai" Properly** | intent: "actual mileage calculation", "tank to tank mileage method"
+- [ ] category: apps | type: APP | product: bharometer | title: **Recalculating Your Cost Per Kilometre on E20: A 10-Minute Refresh Every Driver Should Do** | intent: "e20 running cost per km", "recalculate fuel cost e20"
+- [ ] category: apps | type: APP | product: bharometer | title: **The Real Cost of Running Your Car's AC in City Traffic (In Rupees Per Month)** | intent: "ac fuel consumption car", "ac mileage drop city"
+
+### Week of August 3, 2026
+- [ ] category: apps | type: APP | product: bharometer | title: **Petrol Prices Reset Every Morning at 6 AM: Why City-Level Rates Change Your Mileage Math** | intent: "daily petrol price india", "city fuel price difference"
+- [ ] category: apps | type: APP | product: bharometer | title: **CNG vs Petrol in 2026: The Rupees-Per-Kilometre Math Nobody Shows You at the Showroom** | intent: "cng vs petrol cost per km", "cng car worth it 2026"
+- [ ] category: apps | type: APP | product: bharometer | title: **Monsoon Mileage Drop: What August Traffic and Rain Do to Your km/l (And How to See It in Your Own Log)** | intent: "monsoon mileage drop", "rain fuel consumption increase"
+
+### Week of August 10, 2026
+- [ ] category: apps | type: APP | product: bharometer | title: **Running an Older Car or Bike on E20: A Practical Care Checklist** | intent: "e20 older car care", "e20 old bike maintenance"
+- [ ] category: apps | type: APP | product: bharometer | title: **Petrol vs Diesel in 2026: The Break-Even Kilometres Math Before Your Next Car** | intent: "petrol vs diesel 2026 india", "diesel break even km per year"
+- [ ] category: apps | type: APP | product: bharometer | title: **Logging a Fill-Up in One Tap: Scanning the Pump Screen Instead of Typing Numbers** | intent: "fuel log app scan pump", "track fill ups india"
+
+### Week of August 17, 2026
+- [ ] category: apps | type: APP | product: bharometer | title: **Highway 18, City 11: Why One Mileage Number for Your Car Is Meaningless** | intent: "city vs highway mileage difference", "real world mileage india"
+- [ ] category: apps | type: APP | product: bharometer | title: **How to Budget Fuel for a Mumbai to Goa Road Trip (A Worked Example in Rupees)** | intent: "road trip fuel cost calculation", "mumbai goa fuel cost"
+- [ ] category: apps | type: APP | product: bharometer | title: **When a Mileage Drop Means a Service Is Due: Your Fuel Log as an Early-Warning System** | intent: "sudden mileage drop reasons", "car service mileage drop"
+
+### Week of August 24, 2026
+- [ ] category: apps | type: APP | product: bharometer | title: **Has Your Mileage Changed on E20? A Two-Tank Experiment Anyone Can Run** | intent: "e20 mileage test method", "measure mileage change e20"
+- [ ] category: apps | type: APP | product: bharometer | title: **km/kg, Not km/l: Tracking a CNG or Bi-Fuel Car Without Mixing Up the Fuels** | intent: "cng mileage km per kg", "bi fuel car mileage tracking"
+- [ ] category: apps | type: APP | product: bharometer | title: **Tyre Pressure and Mileage: The Free 3 to 5 Percent Most Drivers Leave on the Table** | intent: "tyre pressure mileage effect", "correct tyre pressure fuel saving"
+
+### Week of August 31, 2026
+- [ ] category: apps | type: APP | product: bharometer | title: **Should You Switch to an EV? Run the Rupees-Per-Kilometre on Your Actual Driving First** | intent: "ev vs petrol running cost india", "ev cost per km"
+- [ ] category: apps | type: APP | product: bharometer | title: **Standing Costs vs Running Costs: What Your Parked Car Spends Every Month** | intent: "car ownership cost india", "monthly car expenses breakdown"
+- [ ] category: apps | type: APP | product: bharometer | title: **Fuel Bills for Business and Tax: Why a Shoebox of Receipts Isn't a Record** | intent: "fuel expense tracking business", "vehicle expense log india"
+
+### Week of September 7, 2026
+- [ ] category: apps | type: APP | product: bharometer | title: **The Best Day (and Hour) to Fill Up: How Daily 6 AM Price Resets Actually Work** | intent: "best time to fill petrol", "petrol price 6am change"
+- [ ] category: apps | type: APP | product: bharometer | title: **Bike vs Car for the Daily Commute: The Honest Rupees-Per-Kilometre Comparison** | intent: "bike vs car commute cost", "two wheeler running cost per km"
+- [ ] category: apps | type: APP | product: bharometer | title: **"Kitna Deti Hai" Is the Wrong Question: Cost Per Kilometre Is the Answer** | intent: "cost per km vs mileage", "true car running cost india"
+
+---
+
 ## Queued — App-forward era (from Jul 8, 2026): APP · TOOL · BROADER weekly
 
 Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` field; the post must feature that product (fact sheets in AGENT.md).
@@ -37,7 +87,6 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: field   | type: BROADER  | title: **Cloud Backup for Wedding Footage: Backblaze vs Tresorit vs a 4-Bay NAS** | intent: "wedding footage backup", "cloud storage filmmaker"
 
 ### Week of July 13, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **What Your Car Actually Costs Per Kilometre in India (It's Not the Mileage Number)** | intent: "cost per km car india", "fuel cost tracking app"
 - [ ] category: travel  | type: LUT      | title: **Grading Ladakh's Cold Blue Shadows Without Cyan-Shifting Skin** | intent: "ladakh color grade", "cold shadow warm skin"
 - [ ] category: wedding | type: BROADER  | title: **The Christian Wedding Coverage Plan That Doesn't Work for Hindu Weddings (And Vice Versa)** | intent: "christian vs hindu wedding shot list", "ceremony coverage india"
 
@@ -47,7 +96,6 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: aerial  | type: BROADER  | title: **ND Filter Math for 24fps Drone Cinema: A Cheat Sheet for the Mavic 3** | intent: "drone nd filter 24fps", "mavic 3 nd math"
 
 ### Week of July 27, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **Tank-to-Tank Is the Only Real Mileage Number: How to Measure "Kitna Deti Hai" Properly** | intent: "actual mileage calculation", "tank to tank mileage method"
 - [ ] category: gear    | type: LUT      | title: **Canon C70 CLog3 to Rec.709: Why the Built-In LUT Crushes Your Shadows** | intent: "c70 clog3 rec709", "canon log shadow crush"
 - [ ] category: gear    | type: BROADER  | title: **Why a 24-70 Isn't Enough at an Indian Wedding (And the Three Lenses That Are)** | intent: "wedding lens kit", "indian wedding lens choice"
 
@@ -57,7 +105,6 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: wedding | type: BROADER  | title: **The Three Contract Clauses Every Indian Wedding Filmmaker Gets Burned On** | intent: "wedding videography contract india", "freelance contract clauses"
 
 ### Week of August 10, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **Petrol Prices Reset Every Morning at 6 AM: Why City-Level Rates Change Your Mileage Math** | intent: "daily petrol price india", "city fuel price difference"
 - [ ] category: wedding | type: LUT      | title: **Reception Stage LED Wash Killing Skin Tones: A Curve-Based Fix** | intent: "led wash skin tone", "reception color grade"
 - [ ] category: travel  | type: BROADER  | title: **The Ladakh Cold That Killed My BMPCC Battery in 11 Minutes** | intent: "ladakh cold camera battery", "high altitude filmmaking"
 
@@ -67,7 +114,6 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: wedding | type: BROADER  | title: **A 14-Hour Indian Wedding Shot List That Fits on One A4 Page** | intent: "indian wedding shot list", "14 hour wedding coverage"
 
 ### Week of August 24, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **Logging a Fill-Up in One Tap: Scanning the Pump Screen Instead of Typing Numbers** | intent: "fuel log app scan pump", "track fill ups india"
 - [ ] category: wedding | type: LUT      | title: **Vidaai at Sunset: Grading Departures Without Magenta Sky Spill** | intent: "vidaai sunset grade", "magenta sky cleanup"
 - [ ] category: field   | type: BROADER  | title: **Multicam Sync Without Timecode: PluralEyes vs Resolve's Sync Bin in 2026** | intent: "multicam sync resolve", "wedding multicam workflow"
 

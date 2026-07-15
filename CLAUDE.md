@@ -50,6 +50,12 @@ Vercel cron (Mon/Wed/Fri 04:07 UTC) → api/blog-generate.ts
   → renders posts/<slug>.html, updates blog.html (promote featured + add card), sitemap, rss, queue
   → commits all 5 files in one commit via GitHub Trees API → pushes to master
   → Vercel auto-redeploys the static site with the new post
+  → BHAROMETER posts (queue line `product: bharometer`) are additionally DUAL-PUBLISHED:
+    the same article is rendered into content/bharometer-post-template.html (Bharometer theme)
+    and committed to the DigiTallyINC/bharometer repo (landing/blog/<slug>.html + .md twin +
+    blog index card + sitemap + llms.txt) — canonical points to bharometer.com; the positiva
+    copy carries rel=canonical to it. See api/_lib/bharometer.ts. A dual-publish failure never
+    rolls back the positiva publish (reported in the response JSON instead).
 ```
 
 ### Required Vercel env vars

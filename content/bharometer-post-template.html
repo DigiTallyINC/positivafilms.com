@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{TITLE}} — Bharometer Blog</title>
+<meta name="description" content="{{EXCERPT}}" />
+<meta name="keywords" content="{{KEYWORDS}}" />
+<meta name="theme-color" content="#007EC7" />
+<link rel="canonical" href="https://bharometer.com/blog/{{SLUG}}.html" />
+<link rel="alternate" type="text/markdown" href="{{SLUG}}.md" title="Machine-readable markdown version" />
+<meta name="apple-itunes-app" content="app-id=6784579909" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Bharometer" />
+<meta property="og:url" content="https://bharometer.com/blog/{{SLUG}}.html" />
+<meta property="og:title" content="{{TITLE_JSON}}" />
+<meta property="og:description" content="{{EXCERPT}}" />
+<meta property="og:image" content="https://bharometer.com/assets/og-card.png" />
+<link rel="icon" type="image/png" href="../assets/app-icon.png" />
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  /* Blog-post additions on top of the shared doc styles */
+  .doc .inline-cta{background:#0E2A47;border:1px solid rgba(255,214,10,.25);border-radius:14px;padding:22px 24px;margin:34px 0;display:flex;flex-wrap:wrap;align-items:center;gap:18px;justify-content:space-between}
+  .doc .inline-cta-text{flex:1 1 320px}
+  .doc .inline-cta-eyebrow{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#FFD60A;margin-bottom:6px}
+  .doc .inline-cta h4{margin:0 0 6px;color:#fff}
+  .doc .inline-cta p{margin:0;color:#B7C6D9;font-size:.95rem}
+  .doc .inline-cta .btn{white-space:nowrap}
+  .doc pre{background:#0E2A47;border-radius:10px;padding:14px 16px;overflow-x:auto}
+  .doc blockquote{border-left:3px solid #FFD60A;margin:20px 0;padding:4px 0 4px 18px;color:#B7C6D9}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "{{TITLE_JSON}}",
+      "description": "{{EXCERPT}}",
+      "datePublished": "{{DATE_ISO}}",
+      "dateModified": "{{DATE_ISO}}",
+      "author": { "@type": "Organization", "name": "Bharometer (Positiva Films)", "url": "https://bharometer.com" },
+      "publisher": { "@type": "Organization", "name": "Positiva Films", "logo": { "@type": "ImageObject", "url": "https://bharometer.com/assets/app-icon.png" } },
+      "mainEntityOfPage": "https://bharometer.com/blog/{{SLUG}}.html",
+      "image": "https://bharometer.com/assets/og-card.png"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Bharometer", "item": "https://bharometer.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://bharometer.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "{{TITLE_JSON}}" }
+      ]
+    }
+  ]
+}
+</script>
+<!-- Anonymous, cookie-less website analytics (PostHog EU): counts visits + store-badge taps; no cookies, no identity, nothing personal -->
+<script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
+  api_host:'https://eu.i.posthog.com',
+  persistence:'memory',
+  person_profiles:'identified_only',
+  autocapture:false,
+  capture_pageview:true,
+  capture_pageleave:false,
+  disable_session_recording:true
+});
+addEventListener('click',function(ev){
+  var a=ev.target.closest&&ev.target.closest('a.store-btn, a[data-cta="get-app"]');
+  if(a&&window.posthog){posthog.capture(a.classList.contains('store-btn')?(a.classList.contains('soon')?'play_badge_clicked':'appstore_badge_clicked'):'get_app_clicked');}
+},true);
+</script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="../index.html" class="brand">
+      <img src="../assets/app-icon.png" alt="Bharometer app icon" />
+      <span><span class="wm-1">Bharo</span><span class="wm-2">meter</span></span>
+    </a>
+    <div class="nav-cta"><a href="https://apps.apple.com/in/app/bharometer-fuel-kmpl-costs/id6784579909" target="_blank" rel="noopener" data-cta="get-app" class="btn btn-primary pulse">Get the app</a></div>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="wrap">
+    <div class="doc-top">
+      <a href="./" class="doc-back">← All posts</a>
+      <a href="{{SLUG}}.md" class="doc-md-link" title="This post as plain markdown — for AI agents & copy-pasting">🤖 View as Markdown</a>
+    </div>
+    <h1>{{TITLE}}</h1>
+    <p class="updated">Published {{DATE}} · Bharometer Blog · {{READ_TIME}} min read</p>
+
+    <div class="card">
+      <h3>The short answer</h3>
+      <p>{{LEDE}}</p>
+    </div>
+
+    {{BODY_HTML}}
+
+    <div class="card">
+      <h3>{{CTA_HEADLINE}}</h3>
+      <p>{{CTA_BODY}}</p>
+      <p><a class="btn btn-primary" href="../index.html">Get Bharometer for iPhone</a></p>
+    </div>
+
+    <h2>Keep reading</h2>
+    <ul>
+      <li><a href="./">All blog posts</a></li>
+      <li><a href="../guides/">Fuel &amp; mileage guides</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-bottom" style="border:none;padding-top:0">
+      <span>© 2026 Bharometer · A DigiTally / Positiva Films app.</span>
+      <span><a href="../privacy.html" style="color:#B7C6D9">Privacy</a> · <a href="../terms.html" style="color:#B7C6D9">Terms</a> · <a href="../support.html" style="color:#B7C6D9">Support</a> · <a href="https://positivafilms.com" style="color:#B7C6D9">Positiva Films</a> · <a href="https://positivafilms.com/apps.html" style="color:#B7C6D9">Our other apps</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8));
+</script>
+</body>
+</html>

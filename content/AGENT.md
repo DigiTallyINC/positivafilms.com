@@ -182,7 +182,7 @@ Claims about a product must come from its sheet below. No invented features, pri
 
 **PasteKaro** (`apps`, product `pastekaro`) — private clipboard manager for iPhone. Tagline: "Copy. Paste. Karo." Saves everything you copy (links, addresses, emails, phone numbers, code, hex codes, notes) into a searchable, organised history with smart categories plus custom ones. A keyboard extension pastes saved snippets into any app. Fully on-device: no account, no servers, no tracking. iPhone, iOS 16+, on the App Store; a free Android version is on Google Play. CTA link: `https://pastekaro.positivafilms.com`.
 
-**Bharometer** (`apps`, product `bharometer`) — fuel, mileage and running-cost tracker built for India. Tagline: "Know what every kilometre costs." Log fill-ups in seconds; the free pump-scan feature photographs the pump screen and auto-fills litres, amount and rate. True tank-to-tank mileage ("kitna deti hai?"), monthly spending, cost per kilometre. Handles petrol, diesel, CNG (tracked in kg with km-per-kg mileage) and EV. City-level daily fuel prices; pumps near you or along a route. Free to start, no ads, no account; data on-device plus iCloud. iPhone, live on the App Store (more at bharometer.com). CTA link: `https://bharometer.com`.
+**Bharometer** (`apps`, product `bharometer`) — fuel, mileage and running-cost tracker built for India. Tagline: "Know what every kilometre costs." Log fill-ups in seconds; the free pump-scan feature photographs the pump screen and auto-fills litres, amount and rate. True tank-to-tank mileage ("kitna deti hai?"), monthly spending, cost per kilometre. Handles petrol, diesel, CNG (tracked in kg with km-per-kg mileage) and EV; dual-fuel (petrol + CNG) vehicles supported. Since all petrol at Indian pumps is now the E20 blend, tracking petrol in Bharometer IS tracking E20: the app is how you see your own real E20 mileage and ₹/km. (Do NOT claim a dedicated "E20" fuel selector exists in the app; the honest line is "every fuel at an Indian pump, E20 included".) City-level daily fuel prices; pumps near you or along a route. Free to start, no ads, no account; data on-device plus iCloud. iPhone, live on the App Store (more at bharometer.com). CTA link: `https://bharometer.com`.
 
 **SuperGrade** (`tools`, product `supergrade`) — single-node cinematic base-grade engine for DaVinci Resolve (GPU-accelerated DCTL). Built-in colour-space transform in DaVinci Wide Gamut / Intermediate, film-emulation core, skin-tone protection, halation, bloom, grain, split-tone. Replaces the ~15-node serial chain of a conventional base grade. Works in Resolve 18+ (free and Studio) on Windows, macOS and Linux. ₹2,999 one-time, lifetime licence. CTA link: `../supergrade.html`.
 
@@ -193,6 +193,27 @@ Claims about a product must come from its sheet below. No invented features, pri
 - Inline CTA eyebrow: APP posts → `From Positiva Studios`; TOOL posts → `From the Positiva Workbench`.
 - Inline CTA href and bottom `cta.pack`: exactly the featured product (see sheets above for hrefs).
 - The bottom cream CTA body should connect the product to THIS post's specific problem, same rule as LUT posts.
+
+## BHAROMETER PUSH ERA (queue section "BHAROMETER PUSH", Jul 17 → Sep 11, 2026)
+
+During this section every post is `product: bharometer` and the system DUAL-PUBLISHES it: the same article also goes live at `https://bharometer.com/blog/<slug>.html` in Bharometer's own theme (that copy is the canonical one). You don't do anything extra for that, but write with it in mind:
+
+- **Audience is an Indian vehicle owner, not a filmmaker.** Same practitioner authority, different craft: you are someone who has tracked fuel, mileage and running costs across cars, bikes and CNG vehicles for years. No filmmaking references, no camera talk.
+- **India-specific in every post:** ₹, litres, km/l, km/kg, "kitna deti hai", city traffic, monsoon, toll plazas, real city names. Worked numeric examples in ₹ are mandatory: a reader should be able to redo the math for their own vehicle.
+- **Internal links:** the "link to ../luts.html" rule is WAIVED for bharometer posts. Instead link at least one Bharometer guide (`https://bharometer.com/guides/how-to-calculate-mileage.html`, `https://bharometer.com/guides/kitna-deti-hai-real-average.html`, `https://bharometer.com/guides/cng-mileage-km-per-kg.html`, `https://bharometer.com/guides/fuel-cost-per-km.html`) where relevant, plus earlier published bharometer posts (`posts/<slug>.html`) for cross-referencing.
+- **NO third-party names, ever:** no petrol/oil company names, no car or bike manufacturer names, no fuel-app competitor names. Generic only: "a mass-market hatchback", "your fuel company's app", "oil marketing companies".
+- **NO CONTROVERSY.** Especially around E20: do not cover protests, court cases, PILs, surveys, social-media backlash, political statements, or "government vs drivers" framing. No complaint or grievance tone. Our posts are practical, neutral and factual: how to measure, how to check, how to care for the vehicle, how to budget.
+
+### E20 fact sheet — the ONLY permitted E20 claims (verified 15 Jul 2026)
+
+SAFE to state, neutrally:
+- Since 1 April 2026, all petrol sold at Indian pumps is E20 (20% ethanol blend, minimum RON 95). There is no separate E0/E10 grade at retail pumps. India reached 20% average blending in 2025, five years ahead of the original 2030 target.
+- Measured effect on fuel economy (state as ranges, attributed): government roadmap estimates put the drop at roughly 1–2% for vehicles designed/calibrated for E20 and up to 6–7% for older vehicles calibrated for earlier blends; controlled test-agency results published in July 2026 measured 2–6% higher fuel consumption vs E10 across 3–10-year-old vehicles, with no engine failures in compatible vehicles.
+- Compatibility rule of thumb: petrol vehicles made in India from April 2023 are E20 material-compatible; vehicles from roughly April 2025 are additionally E20-tuned (smallest mileage effect). Check the fuel-lid sticker, the owner's manual fuel section, or the manufacturer's service centre with your VIN.
+- Older vehicles: official guidance is that some rubber parts and gaskets may need earlier replacement at routine service; no drivability failures were found in long-term compatible-vehicle trials.
+- The practical takeaway (our angle): whatever the averages say, your own tank-to-tank log tells you what E20 does in YOUR vehicle. Bharometer's petrol tracking is E20 tracking by definition.
+
+DO NOT claim: that E20 damages or ruins engines; that older vehicles face zero risk; any specific mileage drop above the measured ranges as fact; anything about E20 pricing, fairness, or "paying the same for fewer km"; E27/E30 rollout dates; that E10 is still available; quantified monsoon/heat effects on E20; anything sourced from surveys or social media.
 
 ## Queue exhausted
 

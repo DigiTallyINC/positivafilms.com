@@ -14,7 +14,8 @@
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import Anthropic from "@anthropic-ai/sdk";
-import { readFile, commitFiles } from "./_lib/github.js";
+import { readFile, commitFiles, BHAROMETER_REPO } from "./_lib/github.js";
+import { renderBharometerPost } from "./_lib/bharometer.js";
 import { parseQueue, markPublished } from "./_lib/queue.js";
 import {
   systemPrompt,
@@ -82,39 +83,61 @@ async function runOnce() {
   const prettyDate = formatPrettyDate(istNow);
   const rfc822Date = formatRfc822(now);
 
-  // 3. Call Anthropic with structured tool output
+  // 3. Call Anthropic with structured tool output.
+  // Up to 2 attempts: if validation fails (usually a stray em-dash or slop
+  // phrase deep in a long technical post), retry once with the error fed back.
+  // Failing hard here used to strand the queue for days (Jul 10-15, 2026).
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-  const response = await anthropic.messages.create({
-    model: MODEL,
-    max_tokens: 8192,
-    system: systemPrompt(agentMd),
-    tools: [PUBLISH_TOOL as unknown as Anthropic.Tool],
-    tool_choice: { type: "tool", name: "publish_post" },
-    messages: [
-      {
-        role: "user",
-        content: userPrompt({
-          topic: next,
-          publishedDescending: published,
-          isoDate,
-          prettyDate,
-        }),
-      },
-    ],
+  const baseUserPrompt = userPrompt({
+    topic: next,
+    publishedDescending: published,
+    isoDate,
+    prettyDate,
   });
 
-  const toolUse = response.content.find((c) => c.type === "tool_use");
-  if (!toolUse || toolUse.type !== "tool_use") {
-    throw new Error(`Model did not call publish_post tool. Stop reason: ${response.stop_reason}`);
+  let out: ToolOutput | null = null;
+  let lastError = "";
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const content = attempt === 1
+      ? baseUserPrompt
+      : `${baseUserPrompt}\n\nIMPORTANT: your previous attempt was REJECTED by automated validation with this error:\n"${lastError}"\nRegenerate the complete post and fix the problem. Re-read the style bans carefully.`;
+
+    const response = await anthropic.messages.create({
+      model: MODEL,
+      max_tokens: 8192,
+      system: systemPrompt(agentMd),
+      tools: [PUBLISH_TOOL as unknown as Anthropic.Tool],
+      tool_choice: { type: "tool", name: "publish_post" },
+      messages: [{ role: "user", content }],
+    });
+
+    const toolUse = response.content.find((c) => c.type === "tool_use");
+    if (!toolUse || toolUse.type !== "tool_use") {
+      lastError = `Model did not call publish_post tool. Stop reason: ${response.stop_reason}`;
+      continue;
+    }
+
+    const candidate = toolUse.input as ToolOutput;
+    // Deterministic style repair BEFORE validation: em-dashes are a hard site-wide
+    // ban but the model occasionally slips one in a long post; replace rather than fail.
+    sanitizeEmDashes(candidate);
+
+    try {
+      validateOutput(candidate);
+      // Product topics must sell their own product, not a LUT pack.
+      if (next.product && candidate.cta.pack !== next.product) {
+        throw new Error(`Topic features product "${next.product}" but cta.pack is "${candidate.cta.pack}"`);
+      }
+      out = candidate;
+      break;
+    } catch (err) {
+      lastError = err instanceof Error ? err.message : String(err);
+      console.warn(`[blog-generate] attempt ${attempt} failed validation: ${lastError}`);
+    }
   }
-
-  const out = toolUse.input as ToolOutput;
-  validateOutput(out);
-
-  // Product topics must sell their own product, not a LUT pack.
-  if (next.product && out.cta.pack !== next.product) {
-    throw new Error(`Topic features product "${next.product}" but cta.pack is "${out.cta.pack}"`);
+  if (!out) {
+    throw new Error(`Both generation attempts failed validation. Last error: ${lastError}`);
   }
 
   // Guard: remove any internal post link the model invented (slug that isn't a real
@@ -132,7 +155,7 @@ async function runOnce() {
   const readTime = Math.max(3, Math.round(wordCount / 230));
 
   // 4. Render
-  const postHtml = renderPost({
+  let postHtml = renderPost({
     template,
     topic: next,
     out,
@@ -140,6 +163,15 @@ async function runOnce() {
     isoDate,
     readTime,
   });
+
+  // Bharometer posts are dual-published; bharometer.com owns the canonical.
+  const isBharometer = next.product === "bharometer";
+  if (isBharometer) {
+    postHtml = postHtml.replace(
+      `<link rel="canonical" href="https://positivafilms.com/posts/${out.slug}.html" />`,
+      `<link rel="canonical" href="https://bharometer.com/blog/${out.slug}.html" />`,
+    );
+  }
 
   // Sanity: no unresolved placeholders
   const unresolved = postHtml.match(/\{\{[A-Z_]+\}\}/g);
@@ -171,7 +203,7 @@ async function runOnce() {
     isoDate,
   });
 
-  // 5. Commit all changes atomically
+  // 5. Commit all changes atomically (positivafilms.com is the primary publish)
   const commitResult = await commitFiles({
     message: `blog: ${next.title}`,
     files: [
@@ -183,6 +215,47 @@ async function runOnce() {
     ],
   });
 
+  // 6. Dual-publish Bharometer posts to bharometer.com (canonical copy).
+  // A failure here must not undo the primary publish — report it instead.
+  let bharometer: { ok: boolean; commit?: string; error?: string } | undefined;
+  if (isBharometer) {
+    try {
+      const [bhTemplate, bhIndex, bhSitemap, bhLlms] = await Promise.all([
+        readFile("content/bharometer-post-template.html"),
+        readFile("landing/blog/index.html", BHAROMETER_REPO),
+        readFile("landing/sitemap.xml", BHAROMETER_REPO),
+        readFile("landing/llms.txt", BHAROMETER_REPO),
+      ]);
+      const bh = renderBharometerPost({
+        template: bhTemplate,
+        indexHtml: bhIndex,
+        sitemap: bhSitemap,
+        llms: bhLlms,
+        topic: next,
+        out,
+        prettyDate,
+        isoDate,
+        readTime,
+      });
+      const bhCommit = await commitFiles({
+        target: BHAROMETER_REPO,
+        message: `blog: ${next.title}`,
+        files: [
+          { path: `landing/blog/${out.slug}.html`, content: bh.postHtml },
+          { path: `landing/blog/${out.slug}.md`, content: bh.postMd },
+          { path: "landing/blog/index.html", content: bh.indexHtml },
+          { path: "landing/sitemap.xml", content: bh.sitemap },
+          { path: "landing/llms.txt", content: bh.llms },
+        ],
+      });
+      bharometer = { ok: true, commit: bhCommit.commitUrl };
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      console.error("[blog-generate] bharometer dual-publish failed", message);
+      bharometer = { ok: false, error: message };
+    }
+  }
+
   return {
     ok: true,
     slug: out.slug,
@@ -191,9 +264,29 @@ async function runOnce() {
     wordCount,
     readTime,
     commit: commitResult.commitUrl,
+    bharometer,
     remainingQueued: totalQueued - 1,
     strippedLinks: stripped,
   };
+}
+
+/**
+ * Deterministic style repair: replace any em-dash the model slipped in with
+ * ", " (site-wide style ban). Mutates the tool output in place. "--" inside
+ * code samples is legitimate and handled separately in validateOutput.
+ */
+function sanitizeEmDashes(out: ToolOutput): void {
+  const fix = (s: string) => s
+    .replace(/\s*(?:—|&mdash;|&#8212;|&#x2014;)\s*/g, ", ")
+    .replace(/,\s*,/g, ",");
+  out.excerpt = fix(out.excerpt ?? "");
+  out.lede = fix(out.lede ?? "");
+  out.body_html = fix(out.body_html ?? "");
+  if (out.cta) {
+    out.cta.headline = fix(out.cta.headline ?? "");
+    out.cta.sub = fix(out.cta.sub ?? "");
+    out.cta.body = fix(out.cta.body ?? "");
+  }
 }
 
 /**
@@ -243,7 +336,11 @@ function validateOutput(out: ToolOutput): void {
     ["cta.body", out.cta?.body],
   ];
   for (const [name, value] of checkFields) {
-    if (value && emDashRe.test(value)) {
+    if (!value) continue;
+    // "--" is legitimate inside code samples (CLI flags, CSS custom properties,
+    // DCTL) — check prose only. Real em-dashes are auto-repaired upstream.
+    const prose = value.replace(/<pre\b[\s\S]*?<\/pre>/gi, "").replace(/<code\b[\s\S]*?<\/code>/gi, "");
+    if (emDashRe.test(prose)) {
       throw new Error(`Em-dash detected in ${name}: replace with comma, colon, semicolon, period, or parentheses.`);
     }
   }
