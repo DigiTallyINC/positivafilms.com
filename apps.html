@@ -140,8 +140,9 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .btn-ghost:hover{border-color:var(--gold-dim);background:rgba(201,168,76,0.06)}
 .btn-ghost .arrow{font-size:15px;color:var(--gold);transition:transform .3s}
 .btn-ghost:hover .arrow{transform:translateX(4px)}
-.btn-bharo{background:#FFDF00;color:#0B1524}
-.btn-bharo:hover{background:#FFE84D}
+.store-badge{display:inline-flex;flex-shrink:0;transition:transform .25s,filter .25s}
+.store-badge img{height:54px;width:auto;display:block}
+.store-badge:hover{transform:translateY(-2px);filter:brightness(1.15)}
 
 /* Products grid */
 .catalog{background:var(--linen);padding:120px 48px;border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim)}
@@ -524,7 +525,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
         <li>Free to start, no ads, no account. Your data stays on-device plus iCloud</li>
       </ul>
       <div class="featured-actions">
-        <a href="https://apps.apple.com/in/app/bharometer-fuel-kmpl-costs/id6784579909" target="_blank" rel="noopener" class="btn-primary btn-bharo">Download on the App Store</a>
+        <a href="https://apps.apple.com/in/app/bharometer-fuel-kmpl-costs/id6784579909" target="_blank" rel="noopener" class="store-badge"><img src="images/badges/app-store-badge.svg" alt="Download on the App Store" height="54" loading="lazy"></a>
         <a href="https://bharometer.com" target="_blank" rel="noopener" class="btn-ghost">bharometer.com <span class="arrow">&#8599;</span></a>
       </div>
     </div>
@@ -564,7 +565,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
         <li>Fully on-device. No account, no server, nothing leaves your phone</li>
       </ul>
       <div class="featured-actions">
-        <a href="https://pastekaro.positivafilms.com" target="_blank" rel="noopener" class="btn-primary">Visit PasteKaro</a>
+        <a href="https://apps.apple.com/us/app/copy-paste-karo/id6768088006" target="_blank" rel="noopener" class="store-badge"><img src="images/badges/app-store-badge.svg" alt="Download on the App Store" height="54" loading="lazy"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.positivafilms.pastekaro" target="_blank" rel="noopener" class="store-badge"><img src="images/badges/google-play-badge.svg" alt="Get it on Google Play" height="54" loading="lazy"></a>
+        <a href="https://pastekaro.positivafilms.com" target="_blank" rel="noopener" class="btn-ghost">Visit PasteKaro <span class="arrow">&#8599;</span></a>
       </div>
     </div>
   </div>
