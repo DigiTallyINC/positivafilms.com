@@ -1,0 +1,28 @@
+# Positiva Films
+
+> Independent film & video production studio from Mumbai, India — and the home of Positiva Studios, its software arm. One banner, two crafts: cinematic films (weddings, travel, documentary, aerial) and small, sharp software for filmmakers and everyday users.
+
+- Site: https://positivafilms.com
+- Contact: https://positivafilms.com/index.html#contact (support inbox for all products: https://positivafilms.com/apps.html#contact)
+- YouTube: https://www.youtube.com/@TallyTalwarOfficial
+- Instagram (films): https://www.instagram.com/djtally/ · Instagram (apps): https://www.instagram.com/positiva.studios
+
+## Apps (Positiva Studios)
+
+- [Bharometer](https://bharometer.com): fuel, mileage and running-cost tracker built for India — tank-to-tank kmpl ("kitna deti hai?"), pump-scan logging, petrol/diesel/CNG/EV. iPhone, free on the App Store: https://apps.apple.com/in/app/bharometer-fuel-kmpl-costs/id6784579909
+- [PasteKaro](https://pastekaro.positivafilms.com): private clipboard manager — searchable history of everything you copy, keyboard extension pastes into any app, fully on-device. iPhone: https://apps.apple.com/us/app/copy-paste-karo/id6768088006 · Android (free): https://play.google.com/store/apps/details?id=com.positivafilms.pastekaro
+- More apps in progress: https://positivafilms.com/apps.html
+
+## Filmmaker tools
+
+- [ClipEngine AI](https://clipengineai.positivafilms.com/): Chrome extension for stock-footage contributors — AI metadata (titles, descriptions, keywords) plus a technical audit of clips before submission.
+- [SuperGrade](https://positivafilms.com/supergrade.html): single-node cinematic base-grade engine for DaVinci Resolve (GPU-accelerated DCTL) — film-emulation core, skin-tone protection, halation, bloom, grain, split-tone. ₹2,999 one-time, lifetime licence. Resolve 18+ on Windows, macOS, Linux.
+- [LUT packs](https://positivafilms.com/luts.html): cinematic .cube LUTs graded for Indian light and Indian skin tones. Indian Wedding LUTs Pack ₹480 · Indian Travel LUTs Pack ₹480 · Both Packs Bundle ₹720. Work in every major NLE.
+
+## Blog
+
+- [Blog](https://positivafilms.com/blog.html): practical filmmaking, color-grading and app guides with India-first examples, published three times a week. Feed: https://positivafilms.com/rss.xml · Sitemap: https://positivafilms.com/sitemap.xml
+
+## Company
+
+- Operating entity: DigiTallyINC — https://digitallyinc.positivafilms.com

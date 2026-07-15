@@ -173,6 +173,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   .post-cta h2{font-size:30px}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{TITLE_JSON}}",
+  "description": "{{EXCERPT}}",
+  "url": "https://positivafilms.com/posts/{{SLUG}}.html",
+  "datePublished": "{{DATE_ISO}}",
+  "keywords": "{{KEYWORDS}}",
+  "author": { "@type": "Organization", "name": "Positiva Films", "url": "https://positivafilms.com" },
+  "publisher": { "@type": "Organization", "name": "Positiva Films", "url": "https://positivafilms.com" },
+  "mainEntityOfPage": "https://positivafilms.com/posts/{{SLUG}}.html"
+}
+</script>
 </head>
 <body>
 

@@ -91,6 +91,8 @@ export function renderPost(opts: {
 
   const replacements: Record<string, string> = {
     "{{TITLE}}": escapeText(topic.title),
+    // Quote-safe variant for embedding inside JSON-LD string literals:
+    "{{TITLE_JSON}}": escapeAttr(topic.title),
     "{{EXCERPT}}": escapeAttr(out.excerpt),
     "{{KEYWORDS}}": escapeAttr(out.keywords),
     "{{AUTHOR}}": "Positiva Films",
