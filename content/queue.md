@@ -34,7 +34,6 @@ Internal-link targets the agent should weave into every post:
 Every run in this section is `product: bharometer` (auto dual-published to bharometer.com/blog, canonical there). Audience: Indian vehicle owners, not filmmakers. India-specific always: ₹, litres, km/l, km/kg, kitna deti hai. E20 claims ONLY from the E20 fact sheet in AGENT.md — E20 posts are PRACTICAL AND NEUTRAL (measurement, compatibility, care); zero controversy, politics, or complaint framing. NO petrol-company or car-brand names.
 
 ### Week of July 13, 2026 (remaining run: Fri Jul 17)
-- [ ] category: apps | type: APP | product: bharometer | title: **E20 Petrol Is in Every Tank Now: How to Measure What It Means for Your Own Mileage** | intent: "e20 petrol mileage", "e20 fuel mileage india"
 
 ### Week of July 20, 2026
 - [ ] category: apps | type: APP | product: bharometer | title: **What Your Car Actually Costs Per Kilometre in India (It's Not the Mileage Number)** | intent: "cost per km car india", "fuel cost tracking app"
@@ -324,6 +323,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-07-17 | slug: e20-petrol-mileage-india-how-to-measure | category: apps | title: **E20 Petrol Is in Every Tank Now: How to Measure What It Means for Your Own Mileage**
 - [x] 2026-07-08 | slug: iphone-clipboard-history-ios-clipboard-manager | category: apps | title: **Your iPhone Clipboard Only Remembers One Thing. Here's How to Get a Real Clipboard History on iOS**
 - [x] 2026-06-24 | slug: hill-station-fog-munnar-coorg-ooty-color-grade | category: travel | title: **Hill Station Fog (Munnar, Coorg, Ooty) Reads Grey — Adding Atmosphere Without Washing Out**
 - [x] 2026-06-19 | slug: drone-taj-mahal-ban-mehtab-bagh-alternatives | category: travel | title: **Why You Cannot Fly a Drone at the Taj Mahal — And What You Can Shoot from Mehtab Bagh Instead**
