@@ -36,7 +36,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of July 13, 2026 (remaining run: Fri Jul 17)
 
 ### Week of July 20, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **What Your Car Actually Costs Per Kilometre in India (It's Not the Mileage Number)** | intent: "cost per km car india", "fuel cost tracking app"
 - [ ] category: apps | type: APP | product: bharometer | title: **Is Your Car or Bike E20-Compatible? The April 2023 Rule of Thumb** | intent: "e20 compatible cars india", "how to check e20 compatibility"
 - [ ] category: apps | type: APP | product: bharometer | title: **Why Your Car's Dashboard Average Lies (By 5 to 15 Percent), and the Pump Method That Doesn't** | intent: "dashboard mileage wrong", "real average kitna deti hai"
 
@@ -323,6 +322,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-07-20 | slug: car-cost-per-kilometre-india-beyond-mileage | category: apps | title: **What Your Car Actually Costs Per Kilometre in India (It's Not the Mileage Number)**
 - [x] 2026-07-17 | slug: e20-petrol-mileage-india-how-to-measure | category: apps | title: **E20 Petrol Is in Every Tank Now: How to Measure What It Means for Your Own Mileage**
 - [x] 2026-07-08 | slug: iphone-clipboard-history-ios-clipboard-manager | category: apps | title: **Your iPhone Clipboard Only Remembers One Thing. Here's How to Get a Real Clipboard History on iOS**
 - [x] 2026-06-24 | slug: hill-station-fog-munnar-coorg-ooty-color-grade | category: travel | title: **Hill Station Fog (Munnar, Coorg, Ooty) Reads Grey — Adding Atmosphere Without Washing Out**
