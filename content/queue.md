@@ -36,7 +36,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of July 13, 2026 (remaining run: Fri Jul 17)
 
 ### Week of July 20, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **Why Your Car's Dashboard Average Lies (By 5 to 15 Percent), and the Pump Method That Doesn't** | intent: "dashboard mileage wrong", "real average kitna deti hai"
 
 ### Week of July 27, 2026
 - [ ] category: apps | type: APP | product: bharometer | title: **Tank-to-Tank Is the Only Real Mileage Number: How to Measure "Kitna Deti Hai" Properly** | intent: "actual mileage calculation", "tank to tank mileage method"
@@ -321,6 +320,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-07-24 | slug: dashboard-mileage-wrong-pump-method-real-average | category: apps | title: **Why Your Car's Dashboard Average Lies (By 5 to 15 Percent), and the Pump Method That Doesn't**
 - [x] 2026-07-22 | slug: e20-compatible-cars-bikes-india-april-2023-rule | category: apps | title: **Is Your Car or Bike E20-Compatible? The April 2023 Rule of Thumb**
 - [x] 2026-07-20 | slug: car-cost-per-kilometre-india-beyond-mileage | category: apps | title: **What Your Car Actually Costs Per Kilometre in India (It's Not the Mileage Number)**
 - [x] 2026-07-17 | slug: e20-petrol-mileage-india-how-to-measure | category: apps | title: **E20 Petrol Is in Every Tank Now: How to Measure What It Means for Your Own Mileage**
