@@ -9,7 +9,7 @@
 
 ## Apps (Positiva Studios)
 
-- [Bharometer](https://bharometer.com): fuel, mileage and running-cost tracker built for India — tank-to-tank kmpl ("kitna deti hai?"), pump-scan logging, petrol/diesel/CNG/EV. iPhone, free on the App Store: https://apps.apple.com/in/app/bharometer-fuel-kmpl-costs/id6784579909
+- [Bharometer](https://bharometer.com): fuel, mileage and running-cost tracker built for India — tank-to-tank kmpl ("kitna deti hai?"), pump-scan logging, petrol/diesel/CNG/EV. free on iPhone and Android. iPhone: https://apps.apple.com/in/app/bharometer-fuel-kmpl-costs/id6784579909 · Android: https://play.google.com/store/apps/details?id=com.positivafilms.bharometer
 - [PasteKaro](https://pastekaro.positivafilms.com): private clipboard manager — searchable history of everything you copy, keyboard extension pastes into any app, fully on-device. iPhone: https://apps.apple.com/us/app/copy-paste-karo/id6768088006 · Android (free): https://play.google.com/store/apps/details?id=com.positivafilms.pastekaro
 - More apps in progress: https://positivafilms.com/apps.html
 

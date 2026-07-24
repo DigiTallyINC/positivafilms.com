@@ -13,9 +13,10 @@ Cinematic production, drone/aerial work, weddings, travel films and documentary 
 
 ## Apps (Positiva Studios)
 
-- **Bharometer** — fuel, mileage and running-cost tracker built for India: tank-to-tank kmpl ("kitna deti hai?"), pump-scan logging, petrol/diesel/CNG/EV. iPhone, free on the App Store.
+- **Bharometer** — fuel, mileage and running-cost tracker built for India: tank-to-tank kmpl ("kitna deti hai?"), pump-scan logging, petrol/diesel/CNG/EV. Free on iPhone and Android.
   - Site: https://bharometer.com
   - App Store: https://apps.apple.com/in/app/bharometer-fuel-kmpl-costs/id6784579909
+  - Google Play (free): https://play.google.com/store/apps/details?id=com.positivafilms.bharometer
 - **PasteKaro** — private clipboard manager: a searchable history of everything you copy, pasteable from any app via its keyboard, fully on-device.
   - Site: https://pastekaro.positivafilms.com
   - App Store: https://apps.apple.com/us/app/copy-paste-karo/id6768088006
