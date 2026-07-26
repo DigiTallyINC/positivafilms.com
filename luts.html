@@ -224,7 +224,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
       "url": "https://positivafilms.com/luts.html",
       "image": "https://positivafilms.com/Indian_Wedding_Luts_pack.png",
       "brand": { "@type": "Brand", "name": "Positiva Films" },
-      "offers": { "@type": "Offer", "price": "480", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "url": "https://positivafilms.com/luts.html" }
+      "offers": {
+        "@type": "Offer",
+        "price": "480",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://positivafilms.com/luts.html",
+        "itemCondition": "https://schema.org/NewCondition",
+        "shippingDetails": { "@id": "https://positivafilms.com/luts.html#digital-delivery" },
+        "hasMerchantReturnPolicy": { "@id": "https://positivafilms.com/luts.html#return-policy" }
+      }
     },
     {
       "@type": "Product",
@@ -233,7 +242,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
       "url": "https://positivafilms.com/luts.html",
       "image": "https://positivafilms.com/Indian_Travel_Luts_pack.png",
       "brand": { "@type": "Brand", "name": "Positiva Films" },
-      "offers": { "@type": "Offer", "price": "480", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "url": "https://positivafilms.com/luts.html" }
+      "offers": {
+        "@type": "Offer",
+        "price": "480",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://positivafilms.com/luts.html",
+        "itemCondition": "https://schema.org/NewCondition",
+        "shippingDetails": { "@id": "https://positivafilms.com/luts.html#digital-delivery" },
+        "hasMerchantReturnPolicy": { "@id": "https://positivafilms.com/luts.html#return-policy" }
+      }
     },
     {
       "@type": "Product",
@@ -242,7 +260,33 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
       "url": "https://positivafilms.com/luts.html#bundle",
       "image": "https://positivafilms.com/Bundle_Luts_pack.jpg",
       "brand": { "@type": "Brand", "name": "Positiva Films" },
-      "offers": { "@type": "Offer", "price": "720", "priceCurrency": "INR", "availability": "https://schema.org/InStock", "url": "https://positivafilms.com/luts.html#bundle" }
+      "offers": {
+        "@type": "Offer",
+        "price": "720",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://positivafilms.com/luts.html#bundle",
+        "itemCondition": "https://schema.org/NewCondition",
+        "shippingDetails": { "@id": "https://positivafilms.com/luts.html#digital-delivery" },
+        "hasMerchantReturnPolicy": { "@id": "https://positivafilms.com/luts.html#return-policy" }
+      }
+    },
+    {
+      "@type": "OfferShippingDetails",
+      "@id": "https://positivafilms.com/luts.html#digital-delivery",
+      "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" },
+      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+        "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+      }
+    },
+    {
+      "@type": "MerchantReturnPolicy",
+      "@id": "https://positivafilms.com/luts.html#return-policy",
+      "applicableCountry": "IN",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
     }
   ]
 }

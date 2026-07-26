@@ -341,7 +341,30 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Windows, macOS, Linux",
   "softwareRequirements": "DaVinci Resolve 18+ (free or Studio)",
-  "offers": { "@type": "Offer", "price": "2999", "priceCurrency": "INR", "description": "One-time purchase, lifetime licence." },
+  "offers": {
+    "@type": "Offer",
+    "price": "2999",
+    "priceCurrency": "INR",
+    "description": "One-time purchase, lifetime licence.",
+    "availability": "https://schema.org/InStock",
+    "url": "https://positivafilms.com/supergrade.html",
+    "itemCondition": "https://schema.org/NewCondition",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "INR" },
+      "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "IN" },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+        "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "IN",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    }
+  },
   "publisher": { "@type": "Organization", "name": "Positiva Films", "url": "https://positivafilms.com" }
 }
 </script>
