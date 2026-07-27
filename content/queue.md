@@ -38,7 +38,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of July 20, 2026
 
 ### Week of July 27, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **Tank-to-Tank Is the Only Real Mileage Number: How to Measure "Kitna Deti Hai" Properly** | intent: "actual mileage calculation", "tank to tank mileage method"
 - [ ] category: apps | type: APP | product: bharometer | title: **Recalculating Your Cost Per Kilometre on E20: A 10-Minute Refresh Every Driver Should Do** | intent: "e20 running cost per km", "recalculate fuel cost e20"
 - [ ] category: apps | type: APP | product: bharometer | title: **The Real Cost of Running Your Car's AC in City Traffic (In Rupees Per Month)** | intent: "ac fuel consumption car", "ac mileage drop city"
 
@@ -320,6 +319,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-07-27 | slug: tank-to-tank-mileage-method-kitna-deti-hai | category: apps | title: **Tank-to-Tank Is the Only Real Mileage Number: How to Measure "Kitna Deti Hai" Properly**
 - [x] 2026-07-24 | slug: dashboard-mileage-wrong-pump-method-real-average | category: apps | title: **Why Your Car's Dashboard Average Lies (By 5 to 15 Percent), and the Pump Method That Doesn't**
 - [x] 2026-07-22 | slug: e20-compatible-cars-bikes-india-april-2023-rule | category: apps | title: **Is Your Car or Bike E20-Compatible? The April 2023 Rule of Thumb**
 - [x] 2026-07-20 | slug: car-cost-per-kilometre-india-beyond-mileage | category: apps | title: **What Your Car Actually Costs Per Kilometre in India (It's Not the Mileage Number)**
