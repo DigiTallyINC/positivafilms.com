@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>The Real Cost of Running Your Car's AC in City Traffic (In Rupees Per Month)</title>
+      <link>https://positivafilms.com/posts/car-ac-fuel-cost-city-traffic-india-rupees.html</link>
+      <guid>https://positivafilms.com/posts/car-ac-fuel-cost-city-traffic-india-rupees.html</guid>
+      <description>Running your car's AC in Mumbai or Bengaluru traffic costs more than the fuel bill suggests. Here's how to calculate the real monthly rupee figure for your vehicle.</description>
+      <pubDate>Fri, 31 Jul 2026 10:32:16 +0530</pubDate>
+      <category>Apps</category>
+    </item>
+    <item>
       <title>Recalculating Your Cost Per Kilometre on E20: A 10-Minute Refresh Every Driver Should Do</title>
       <link>https://positivafilms.com/posts/recalculating-cost-per-km-e20-petrol-india.html</link>
       <guid>https://positivafilms.com/posts/recalculating-cost-per-km-e20-petrol-india.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Fri, 24 Apr 2026 09:30:00 +0530</pubDate>
       <category>Wedding</category>
     </item>
-    <item>
-      <title>Why Applying a LUT Directly to S-Log3 Looks Flat: The CST Node You're Missing</title>
-      <link>https://positivafilms.com/posts/why-s-log3-lut-looks-flat-cst-node.html</link>
-      <guid>https://positivafilms.com/posts/why-s-log3-lut-looks-flat-cst-node.html</guid>
-      <description>S-Log3 isn't Rec.709. The LUT doesn't know that. Here's the Color Space Transform node every Sony shooter should have wired into their grade.</description>
-      <pubDate>Wed, 22 Apr 2026 09:30:00 +0530</pubDate>
-      <category>Craft &amp; Color</category>
-    </item>
-  </channel>
+      </channel>
 </rss>

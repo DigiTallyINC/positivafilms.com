@@ -38,7 +38,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of July 20, 2026
 
 ### Week of July 27, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **The Real Cost of Running Your Car's AC in City Traffic (In Rupees Per Month)** | intent: "ac fuel consumption car", "ac mileage drop city"
 
 ### Week of August 3, 2026
 - [ ] category: apps | type: APP | product: bharometer | title: **Petrol Prices Reset Every Morning at 6 AM: Why City-Level Rates Change Your Mileage Math** | intent: "daily petrol price india", "city fuel price difference"
@@ -318,6 +317,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-07-31 | slug: car-ac-fuel-cost-city-traffic-india-rupees | category: apps | title: **The Real Cost of Running Your Car's AC in City Traffic (In Rupees Per Month)**
 - [x] 2026-07-29 | slug: recalculating-cost-per-km-e20-petrol-india | category: apps | title: **Recalculating Your Cost Per Kilometre on E20: A 10-Minute Refresh Every Driver Should Do**
 - [x] 2026-07-27 | slug: tank-to-tank-mileage-method-kitna-deti-hai | category: apps | title: **Tank-to-Tank Is the Only Real Mileage Number: How to Measure "Kitna Deti Hai" Properly**
 - [x] 2026-07-24 | slug: dashboard-mileage-wrong-pump-method-real-average | category: apps | title: **Why Your Car's Dashboard Average Lies (By 5 to 15 Percent), and the Pump Method That Doesn't**
