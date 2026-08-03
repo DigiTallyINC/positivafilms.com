@@ -40,7 +40,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of July 27, 2026
 
 ### Week of August 3, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **Petrol Prices Reset Every Morning at 6 AM: Why City-Level Rates Change Your Mileage Math** | intent: "daily petrol price india", "city fuel price difference"
 - [ ] category: apps | type: APP | product: bharometer | title: **CNG vs Petrol in 2026: The Rupees-Per-Kilometre Math Nobody Shows You at the Showroom** | intent: "cng vs petrol cost per km", "cng car worth it 2026"
 - [ ] category: apps | type: APP | product: bharometer | title: **Monsoon Mileage Drop: What August Traffic and Rain Do to Your km/l (And How to See It in Your Own Log)** | intent: "monsoon mileage drop", "rain fuel consumption increase"
 
@@ -317,6 +316,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-08-03 | slug: petrol-prices-reset-6am-city-level-rates-mileage-math | category: apps | title: **Petrol Prices Reset Every Morning at 6 AM: Why City-Level Rates Change Your Mileage Math**
 - [x] 2026-07-31 | slug: car-ac-fuel-cost-city-traffic-india-rupees | category: apps | title: **The Real Cost of Running Your Car's AC in City Traffic (In Rupees Per Month)**
 - [x] 2026-07-29 | slug: recalculating-cost-per-km-e20-petrol-india | category: apps | title: **Recalculating Your Cost Per Kilometre on E20: A 10-Minute Refresh Every Driver Should Do**
 - [x] 2026-07-27 | slug: tank-to-tank-mileage-method-kitna-deti-hai | category: apps | title: **Tank-to-Tank Is the Only Real Mileage Number: How to Measure "Kitna Deti Hai" Properly**

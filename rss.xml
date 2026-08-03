@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>Petrol Prices Reset Every Morning at 6 AM: Why City-Level Rates Change Your Mileage Math</title>
+      <link>https://positivafilms.com/posts/petrol-prices-reset-6am-city-level-rates-mileage-math.html</link>
+      <guid>https://positivafilms.com/posts/petrol-prices-reset-6am-city-level-rates-mileage-math.html</guid>
+      <description>Petrol prices reset at 6 AM every day, and the rate at your pump can differ by ₹2–4 from a city 80 km away. Here's why that gap matters more than you think.</description>
+      <pubDate>Mon, 03 Aug 2026 10:32:57 +0530</pubDate>
+      <category>Apps</category>
+    </item>
+    <item>
       <title>The Real Cost of Running Your Car's AC in City Traffic (In Rupees Per Month)</title>
       <link>https://positivafilms.com/posts/car-ac-fuel-cost-city-traffic-india-rupees.html</link>
       <guid>https://positivafilms.com/posts/car-ac-fuel-cost-city-traffic-india-rupees.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Mon, 27 Apr 2026 09:30:00 +0530</pubDate>
       <category>Craft &amp; Color</category>
     </item>
-    <item>
-      <title>Why Indian Skin Tones Go Orange Under Rec.709 Wedding LUTs (And the One Node That Fixes It)</title>
-      <link>https://positivafilms.com/posts/indian-skin-tones-orange-rec709-wedding-luts.html</link>
-      <guid>https://positivafilms.com/posts/indian-skin-tones-orange-rec709-wedding-luts.html</guid>
-      <description>Most cinematic LUTs are graded against pale Western skin. Apply them to brown skin and the bride goes pumpkin. Here's the qualifier-based fix.</description>
-      <pubDate>Fri, 24 Apr 2026 09:30:00 +0530</pubDate>
-      <category>Wedding</category>
-    </item>
-      </channel>
+          </channel>
 </rss>
