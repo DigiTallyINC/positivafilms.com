@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>CNG vs Petrol in 2026: The Rupees-Per-Kilometre Math Nobody Shows You at the Showroom</title>
+      <link>https://positivafilms.com/posts/cng-vs-petrol-cost-per-km-rupees-math-2026.html</link>
+      <guid>https://positivafilms.com/posts/cng-vs-petrol-cost-per-km-rupees-math-2026.html</guid>
+      <description>CNG looks cheaper at the pump, but the real number is rupees per kilometre, not price per kg. Here's the full math, including mileage drop, conversion cost, and fill-up hassle.</description>
+      <pubDate>Wed, 05 Aug 2026 09:51:47 +0530</pubDate>
+      <category>Apps</category>
+    </item>
+    <item>
       <title>Petrol Prices Reset Every Morning at 6 AM: Why City-Level Rates Change Your Mileage Math</title>
       <link>https://positivafilms.com/posts/petrol-prices-reset-6am-city-level-rates-mileage-math.html</link>
       <guid>https://positivafilms.com/posts/petrol-prices-reset-6am-city-level-rates-mileage-math.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Wed, 29 Apr 2026 09:30:00 +0530</pubDate>
       <category>Wedding</category>
     </item>
-    <item>
-      <title>Why Your LUT Crushes Blacks: A Pre-LUT Exposure Workflow That Saves Every Grade</title>
-      <link>https://positivafilms.com/posts/lut-crushing-blacks-pre-lut-exposure-workflow.html</link>
-      <guid>https://positivafilms.com/posts/lut-crushing-blacks-pre-lut-exposure-workflow.html</guid>
-      <description>Most "the LUT looks bad" calls aren't a LUT problem. They're an exposure-mismatch problem upstream. The four-node tree that fixes it for good.</description>
-      <pubDate>Mon, 27 Apr 2026 09:30:00 +0530</pubDate>
-      <category>Craft &amp; Color</category>
-    </item>
-          </channel>
+              </channel>
 </rss>
