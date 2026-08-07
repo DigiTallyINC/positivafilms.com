@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>Monsoon Mileage Drop: What August Traffic and Rain Do to Your km/l (And How to See It in Your Own Log)</title>
+      <link>https://positivafilms.com/posts/monsoon-mileage-drop-august-traffic-rain-km-per-litre.html</link>
+      <guid>https://positivafilms.com/posts/monsoon-mileage-drop-august-traffic-rain-km-per-litre.html</guid>
+      <description>August rains don't just slow your commute, they quietly drain 10–18% from your fuel tank. Here's the physics behind it, and how to read the proof in your own fill-up log.</description>
+      <pubDate>Fri, 07 Aug 2026 09:59:22 +0530</pubDate>
+      <category>Apps</category>
+    </item>
+    <item>
       <title>CNG vs Petrol in 2026: The Rupees-Per-Kilometre Math Nobody Shows You at the Showroom</title>
       <link>https://positivafilms.com/posts/cng-vs-petrol-cost-per-km-rupees-math-2026.html</link>
       <guid>https://positivafilms.com/posts/cng-vs-petrol-cost-per-km-rupees-math-2026.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Fri, 01 May 2026 09:30:00 +0530</pubDate>
       <category>Gear</category>
     </item>
-    <item>
-      <title>Mixed Tungsten + LED + Mandap Fire: A Wedding Reception Node Tree That Actually Works</title>
-      <link>https://positivafilms.com/posts/mandap-fire-mixed-lighting-wedding-reception-node-tree.html</link>
-      <guid>https://positivafilms.com/posts/mandap-fire-mixed-lighting-wedding-reception-node-tree.html</guid>
-      <description>Three light sources, three colour temperatures, one subject. The parallel-node tree we run on every pheras segment to keep skin where it should be.</description>
-      <pubDate>Wed, 29 Apr 2026 09:30:00 +0530</pubDate>
-      <category>Wedding</category>
-    </item>
-              </channel>
+                  </channel>
 </rss>

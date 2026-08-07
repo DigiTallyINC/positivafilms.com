@@ -40,7 +40,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of July 27, 2026
 
 ### Week of August 3, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **Monsoon Mileage Drop: What August Traffic and Rain Do to Your km/l (And How to See It in Your Own Log)** | intent: "monsoon mileage drop", "rain fuel consumption increase"
 
 ### Week of August 10, 2026
 - [ ] category: apps | type: APP | product: bharometer | title: **Running an Older Car or Bike on E20: A Practical Care Checklist** | intent: "e20 older car care", "e20 old bike maintenance"
@@ -315,6 +314,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-08-07 | slug: monsoon-mileage-drop-august-traffic-rain-km-per-litre | category: apps | title: **Monsoon Mileage Drop: What August Traffic and Rain Do to Your km/l (And How to See It in Your Own Log)**
 - [x] 2026-08-05 | slug: cng-vs-petrol-cost-per-km-rupees-math-2026 | category: apps | title: **CNG vs Petrol in 2026: The Rupees-Per-Kilometre Math Nobody Shows You at the Showroom**
 - [x] 2026-08-03 | slug: petrol-prices-reset-6am-city-level-rates-mileage-math | category: apps | title: **Petrol Prices Reset Every Morning at 6 AM: Why City-Level Rates Change Your Mileage Math**
 - [x] 2026-07-31 | slug: car-ac-fuel-cost-city-traffic-india-rupees | category: apps | title: **The Real Cost of Running Your Car's AC in City Traffic (In Rupees Per Month)**
