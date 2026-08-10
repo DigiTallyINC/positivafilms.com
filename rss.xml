@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>Running an Older Car or Bike on E20: A Practical Care Checklist</title>
+      <link>https://positivafilms.com/posts/older-car-bike-e20-practical-care-checklist.html</link>
+      <guid>https://positivafilms.com/posts/older-car-bike-e20-practical-care-checklist.html</guid>
+      <description>Every tank is now E20. If your car or bike is pre-2023, here's the practical maintenance checklist that keeps it running cleanly and tells you exactly what changed in your mileage.</description>
+      <pubDate>Mon, 10 Aug 2026 10:25:00 +0530</pubDate>
+      <category>Apps</category>
+    </item>
+    <item>
       <title>Monsoon Mileage Drop: What August Traffic and Rain Do to Your km/l (And How to See It in Your Own Log)</title>
       <link>https://positivafilms.com/posts/monsoon-mileage-drop-august-traffic-rain-km-per-litre.html</link>
       <guid>https://positivafilms.com/posts/monsoon-mileage-drop-august-traffic-rain-km-per-litre.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Mon, 04 May 2026 09:54:49 +0530</pubDate>
       <category>Indian Wedding</category>
     </item>
-    <item>
-      <title>Color-Matching A7S III to FX3 on a Wedding Multicam Edit (Resolve, 2026)</title>
-      <link>https://positivafilms.com/posts/color-matching-a7s3-fx3-wedding-multicam-resolve.html</link>
-      <guid>https://positivafilms.com/posts/color-matching-a7s3-fx3-wedding-multicam-resolve.html</guid>
-      <description>Same sensor, same log profile: and the cameras still don't sit on the timeline. The drift, the offset, and the group-grade workflow that locks them up in Resolve.</description>
-      <pubDate>Fri, 01 May 2026 09:30:00 +0530</pubDate>
-      <category>Gear</category>
-    </item>
-                  </channel>
+                      </channel>
 </rss>

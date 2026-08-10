@@ -42,7 +42,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of August 3, 2026
 
 ### Week of August 10, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **Running an Older Car or Bike on E20: A Practical Care Checklist** | intent: "e20 older car care", "e20 old bike maintenance"
 - [ ] category: apps | type: APP | product: bharometer | title: **Petrol vs Diesel in 2026: The Break-Even Kilometres Math Before Your Next Car** | intent: "petrol vs diesel 2026 india", "diesel break even km per year"
 - [ ] category: apps | type: APP | product: bharometer | title: **Logging a Fill-Up in One Tap: Scanning the Pump Screen Instead of Typing Numbers** | intent: "fuel log app scan pump", "track fill ups india"
 
@@ -314,6 +313,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-08-10 | slug: older-car-bike-e20-practical-care-checklist | category: apps | title: **Running an Older Car or Bike on E20: A Practical Care Checklist**
 - [x] 2026-08-07 | slug: monsoon-mileage-drop-august-traffic-rain-km-per-litre | category: apps | title: **Monsoon Mileage Drop: What August Traffic and Rain Do to Your km/l (And How to See It in Your Own Log)**
 - [x] 2026-08-05 | slug: cng-vs-petrol-cost-per-km-rupees-math-2026 | category: apps | title: **CNG vs Petrol in 2026: The Rupees-Per-Kilometre Math Nobody Shows You at the Showroom**
 - [x] 2026-08-03 | slug: petrol-prices-reset-6am-city-level-rates-mileage-math | category: apps | title: **Petrol Prices Reset Every Morning at 6 AM: Why City-Level Rates Change Your Mileage Math**
