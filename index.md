@@ -21,6 +21,8 @@ Cinematic production, drone/aerial work, weddings, travel films and documentary 
   - Site: https://pastekaro.positivafilms.com
   - App Store: https://apps.apple.com/us/app/copy-paste-karo/id6768088006
   - Google Play (free): https://play.google.com/store/apps/details?id=com.positivafilms.pastekaro
+- **Gyaan Daily** — a daily verse from the classical traditions of India, in Sanskrit, Tamil, Hindi and English. Each language keeps its own script and its own catalogue, so nothing in the app is a translation of another line in it; every verse carries a plain translation, a note on what it means, and its source. Widgets, shareable cards, no account and no analytics. iPhone, not yet released.
+  - Site: https://gyaandaily.positivafilms.com
 - More apps in progress: https://positivafilms.com/apps.html
 
 ## Filmmaker tools

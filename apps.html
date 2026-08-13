@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Positiva Studios &mdash; Apps &amp; software by Positiva Films</title>
-  <meta name="description" content="Positiva Studios is the software arm of Positiva Films &mdash; every app and tool we build ships under one banner. PasteKaro, a smart clipboard, and Bharometer, a fuel &amp; mileage tracker, are live, with more on the way." />
+  <meta name="description" content="Positiva Studios is the software arm of Positiva Films &mdash; every app and tool we build ships under one banner. PasteKaro, a smart clipboard, and Bharometer, a fuel &amp; mileage tracker, are live. Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, is next." />
   <meta property="og:title" content="Positiva Studios — Apps by Positiva Films" />
-  <meta property="og:description" content="The software studio inside Positiva Films. Every app we build ships under the Positiva Studios banner — PasteKaro smart clipboard and Bharometer fuel tracker are live, with more on the way." />
+  <meta property="og:description" content="The software studio inside Positiva Films. Every app we build ships under the Positiva Studios banner: PasteKaro smart clipboard and Bharometer fuel tracker are live, and Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, is next." />
   <meta property="og:image" content="https://positivafilms.com/positiva-studios-badge-dark.png" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://positivafilms.com/apps.html" />
   <meta property="og:url" content="https://positivafilms.com/apps.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Positiva Studios — Apps by Positiva Films" />
-  <meta name="twitter:description" content="The software studio inside Positiva Films. Every app we build ships under the Positiva Studios banner — PasteKaro smart clipboard and Bharometer fuel tracker are live, with more on the way." />
+  <meta name="twitter:description" content="The software studio inside Positiva Films. Every app we build ships under the Positiva Studios banner: PasteKaro smart clipboard and Bharometer fuel tracker are live, and Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, is next." />
   <meta name="twitter:image" content="https://positivafilms.com/positiva-studios-badge-dark.png" />
   <link rel="icon" type="image/png" href="positiva-studios-badge-dark.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -303,6 +303,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .app-englishseekho .hub-soon-pill{color:#FBF1E6;border-color:rgba(232,149,86,0.5)}
 .app-englishseekho .hub-soon-pill::before{background:#e89556;box-shadow:0 0 0 4px rgba(232,149,86,0.18)}
 
+/* Gyaan Daily — gyaandaily.positivafilms.com "Night Study" palette: bg #0C0C0B, raised #1E1C18, ink #F3E3C8, gold #E0B25F, blue #7FA6D8 */
+.app-gyaandaily{background:linear-gradient(152deg,#1E1C18 0%,#0C0C0B 100%);border-color:#38342C}
+.app-gyaandaily:hover{border-color:#E0B25F;box-shadow:0 80px 120px rgba(0,0,0,0.7),0 30px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(224,178,95,0.5)}
+.app-gyaandaily::before{background:radial-gradient(ellipse 80% 60% at 80% 100%,rgba(224,178,95,0.18) 0%,transparent 65%)}
+.app-gyaandaily .hub-num{color:#E0B25F}
+.app-gyaandaily .hub-tag.soon-tag{color:#F3E3C8;background:rgba(224,178,95,0.14);border-color:rgba(224,178,95,0.55)}
+.app-gyaandaily .hub-name{color:#F3E3C8}
+.app-gyaandaily .hub-name span{color:#E0B25F}
+.app-gyaandaily .hub-desc{color:rgba(243,227,200,0.72)}
+.app-gyaandaily .hub-desc em{color:rgba(243,227,200,0.9)!important}
+.app-gyaandaily .hub-foot{border-top-color:rgba(243,227,200,0.16)}
+.app-gyaandaily .hub-meta{color:rgba(243,227,200,0.62)}
+.app-gyaandaily .hub-arrow{border-color:rgba(243,227,200,0.22);color:#F3E3C8}
+.app-gyaandaily:hover .hub-arrow{background:#E0B25F;border-color:#E0B25F;color:#0C0C0B}
+
 /* Contact / app support form */
 .contact{background:var(--ink-soft);padding:120px 48px;border-top:1px solid var(--linen-faint)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;margin-top:48px}
@@ -385,6 +400,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
       "applicationCategory": "UtilitiesApplication",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
       "publisher": { "@type": "Organization", "name": "Positiva Films", "url": "https://positivafilms.com" }
+    },
+    {
+      "@type": "MobileApplication",
+      "name": "Gyaan Daily",
+      "description": "Lines from the classical traditions of India in Sanskrit, Tamil, Hindi and English, each in its own script, with a plain translation, what it means, and where it came from. Four independent catalogues, not translations of one another. No account, no analytics, no tracking.",
+      "url": "https://gyaandaily.positivafilms.com",
+      "operatingSystem": "iOS",
+      "applicationCategory": "EducationApplication",
+      "inLanguage": ["sa", "ta", "hi", "en"],
+      "publisher": { "@type": "Organization", "name": "Positiva Films", "url": "https://positivafilms.com" }
     }
   ]
 }
@@ -443,7 +468,7 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
 <header class="page-hero">
   <div class="page-eyebrow"><span class="num">( 01 )</span> &nbsp;The software studio at Positiva Films</div>
   <h1 class="page-title">Positiva<em>Studios</em></h1>
-  <p class="page-lede">Positiva Studios is where Positiva Films builds software. Every app and plugin we make &mdash; small, sharp, useful, made in India &mdash; ships under one banner. <strong>PasteKaro</strong>, a smart clipboard for iPhone &amp; Android, and <strong>Bharometer</strong>, a fuel &amp; mileage tracker for iPhone &amp; Android, are live, with more on the way.</p>
+  <p class="page-lede">Positiva Studios is where Positiva Films builds software. Every app and plugin we make &mdash; small, sharp, useful, made in India &mdash; ships under one banner. <strong>PasteKaro</strong>, a smart clipboard for iPhone &amp; Android, and <strong>Bharometer</strong>, a fuel &amp; mileage tracker for iPhone &amp; Android, are live. <strong>Gyaan Daily</strong>, a daily verse in Sanskrit, Tamil, Hindi and English, is next.</p>
 </header>
 
 <section class="hub">
@@ -451,7 +476,7 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
     <div class="section-tag">Browse Apps</div>
     <div class="section-num">( 02 )</div>
   </div>
-  <h2 class="section-title reveal">FROM THE STUDIO<em>Two live, more on the way</em></h2>
+  <h2 class="section-title reveal">FROM THE STUDIO<em>Two live, five on the way</em></h2>
 
   <div class="hub-grid">
     <a href="https://pastekaro.positivafilms.com" target="_blank" rel="noopener" class="hub-card app-pastekaro reveal">
@@ -480,9 +505,22 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
       </div>
     </a>
 
-    <div class="hub-card soon app-sehatvault reveal">
+    <a href="https://gyaandaily.positivafilms.com" target="_blank" rel="noopener" class="hub-card app-gyaandaily reveal">
       <div class="hub-card-top">
         <div class="hub-num">(03)</div>
+        <span class="hub-tag soon-tag">Verses &middot; Coming Soon</span>
+        <h3 class="hub-name">GYAAN <span>DAILY</span></h3>
+        <p class="hub-desc">Lines from the classical traditions of India in Sanskrit, Tamil, Hindi and English, each in its own script, with a plain translation, what it means, and where it came from. <em style="color:var(--linen-dim);font-style:italic">Four catalogues, not one.</em></p>
+      </div>
+      <div class="hub-foot">
+        <span class="hub-meta">iPhone &middot; Read the site</span>
+        <div class="hub-arrow">&#8599;</div>
+      </div>
+    </a>
+
+    <div class="hub-card soon app-sehatvault reveal">
+      <div class="hub-card-top">
+        <div class="hub-num">(04)</div>
         <span class="hub-tag soon-tag">Health &middot; Coming Soon</span>
         <h3 class="hub-name">SEHAT<span>VAULT</span></h3>
         <p class="hub-desc">A private, local-first medical-records vault for the whole family. Scan, speak, or share a report &mdash; it gets organised by family member into a clear timeline, with a 60-second brief for your doctor.</p>
@@ -495,7 +533,7 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
 
     <div class="hub-card soon app-remindkaro reveal">
       <div class="hub-card-top">
-        <div class="hub-num">(04)</div>
+        <div class="hub-num">(05)</div>
         <span class="hub-tag soon-tag">Reminders &middot; Coming Soon</span>
         <h3 class="hub-name">REMIND <span>KARO</span></h3>
         <p class="hub-desc">Fast reminders and countdown timers with a signature auto-snooze that keeps re-alerting you until a task is actually done. Capture in seconds, schedule it, and stay on track.</p>
@@ -508,7 +546,7 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
 
     <div class="hub-card soon app-trace reveal">
       <div class="hub-card-top">
-        <div class="hub-num">(05)</div>
+        <div class="hub-num">(06)</div>
         <span class="hub-tag soon-tag">Health &middot; Coming Soon</span>
         <h3 class="hub-name">TRACE<span>.</span></h3>
         <p class="hub-desc">A beautifully simple weight &amp; body-measurement tracker. Log your weight in seconds, watch the trend line move, and reach your goal. Private by design &mdash; your data never leaves your device.</p>
@@ -521,7 +559,7 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
 
     <div class="hub-card soon app-englishseekho reveal">
       <div class="hub-card-top">
-        <div class="hub-num">(06)</div>
+        <div class="hub-num">(07)</div>
         <span class="hub-tag soon-tag">Learning &middot; Coming Soon</span>
         <h3 class="hub-name">ENGLISH <span>SEEKHO</span></h3>
         <p class="hub-desc">Learn to speak English the easy way. Practise real conversations with &lsquo;Didi&rsquo; &mdash; a warm, patient AI teacher &mdash; made for Hindi speakers who want confidence, not grammar drills.</p>
@@ -663,6 +701,7 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
     <div class="footer-copy">&copy; 2026 Positiva Films. All rights reserved.</div>
     <div class="footer-links">
       <a href="https://clipengineai.positivafilms.com/" target="_blank" rel="noopener">ClipEngine AI</a>
+      <a href="https://gyaandaily.positivafilms.com" target="_blank" rel="noopener">Gyaan Daily</a>
       <a href="products.html">Products</a>
       <a href="apps.html">Apps</a>
       <a href="luts.html">LUTs</a>
