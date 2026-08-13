@@ -110,6 +110,26 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .featured{background:var(--ink);padding:120px 48px}
 .featured.f-bharo{background:linear-gradient(180deg,#0A1322 0%,#0C1626 55%,#0A1322 100%);border-top:1px solid rgba(88,166,232,0.14);border-bottom:1px solid rgba(88,166,232,0.14)}
 .featured.f-pk{background:linear-gradient(180deg,#15110B 0%,#1B150C 55%,#15110B 100%);border-bottom:1px solid rgba(181,101,29,0.22)}
+/* Gyaan Daily — "Night Study" ground. The visual is a real verse card rather than a wordmark:
+   the app's whole premise is that the meaning sits under the line, so the panel shows exactly that. */
+.featured.f-gyaan{background:linear-gradient(180deg,#0C0C0B 0%,#15130F 55%,#0C0C0B 100%);border-bottom:1px solid rgba(224,178,95,0.22)}
+.f-gyaan .featured-eyebrow{color:#E0B25F}
+.f-gyaan .featured-eyebrow::before{background:#E0B25F}
+.f-gyaan .featured-bullets li::before{color:#E0B25F}
+.gd-card{position:relative;z-index:2;width:100%;max-width:430px;padding:38px 36px 32px;background:linear-gradient(160deg,#1E1C18 0%,#141310 100%);border:1px solid #38342C;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,0.66)}
+.gd-label{font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:rgba(224,178,95,0.85);margin-bottom:12px}
+.gd-verse{font-family:'Noto Serif Tamil','Nirmala UI','Latha','Noto Sans Tamil',serif;font-size:clamp(19px,2.1vw,24px);line-height:1.75;color:#F3E3C8;margin-bottom:14px}
+/* ⛔ The transliteration stays in system-ui and must NOT be moved to Playfair or DM Sans. Neither
+   carries the Tamil romanisation diacritics (ṇ ḍ ḻ ṭ ṁ), so both fall back mid-word and the line
+   renders in two fonts at once. Measured: system-ui has all of them. gyaandaily.positivafilms.com
+   solves this the same way, keeping its transliterations in a sans for exactly this reason. */
+.gd-translit{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-style:italic;font-size:12.5px;line-height:1.75;letter-spacing:0.01em;color:#978A74;margin-bottom:26px}
+.gd-rule{height:1px;background:linear-gradient(90deg,rgba(224,178,95,0.45),rgba(224,178,95,0.06));margin-bottom:22px}
+.gd-gloss{font-size:14px;font-weight:300;line-height:1.8;color:#C3B295;margin-bottom:22px}
+.gd-attrib{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:#978A74}
+.gd-soon{display:inline-flex;align-items:center;gap:9px;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.6px;text-transform:uppercase;padding:13px 18px;border-radius:4px;color:#F3E3C8;background:rgba(224,178,95,0.1);border:1px solid rgba(224,178,95,0.45)}
+.gd-soon::before{content:'';width:7px;height:7px;border-radius:50%;background:#E0B25F;box-shadow:0 0 0 4px rgba(224,178,95,0.16)}
+@media(max-width:560px){.gd-card{padding:30px 24px 26px}}
 .featured-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
 .featured-visual{position:relative;background:linear-gradient(135deg,#0e1116 0%,#232a34 100%);overflow:hidden;border:1px solid rgba(122,181,255,0.18);display:flex;align-items:center;justify-content:center;padding:0;border-radius:6px}
 .featured-visual::before{content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(122,181,255,0.18) 0%,rgba(83,157,255,0.05) 40%,transparent 70%);pointer-events:none}
@@ -654,10 +674,55 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
   </div>
 </section>
 
+<section class="featured f-gyaan" id="gyaandaily">
+  <div class="section-header reveal">
+    <div class="section-tag">Featured</div>
+    <div class="section-num">( 05 )</div>
+  </div>
+  <h2 class="section-title reveal">COMING TO IPHONE<em>Every line with its meaning underneath</em></h2>
+
+  <div class="featured-grid">
+    <div class="featured-col reveal">
+      <div class="featured-visual" style="background:linear-gradient(135deg,#15130F 0%,#0C0C0B 100%);border-color:rgba(224,178,95,0.22);padding:44px 32px">
+        <div class="featured-grid-bg"></div>
+        <div class="gd-card">
+          <div class="gd-label">The verse</div>
+          <p class="gd-verse" lang="ta">&#2986;&#2965;&#2994;&#3021;&#2997;&#3014;&#2994;&#3021;&#2994;&#3009;&#2990;&#3021; &#2965;&#3010;&#2965;&#3014;&#2996;&#3009;&#2991;&#3016;&#2965;&#3021; &#2965;&#2965;&#3021;&#2965;&#3016; &#2951;&#2965;&#2994;&#3021;&#2997;&#3014;&#2994;&#3021;&#2994;&#3009;&#2990;&#3021; &#2997;&#3015;&#2984;&#3021;&#2980;&#2992;&#3021;&#2965;&#3021;&#2965;&#3009; &#2997;&#3015;&#2979;&#3021;&#2975;&#3009;&#2990;&#3021; &#2986;&#3018;&#2996;&#3009;&#2980;&#3009;.</p>
+          <p class="gd-translit">pagalvellum k&#363;gaiyaig k&#257;kkai igalvellum v&#275;ndharkku v&#275;&#7751;&#7693;um po&#7787;udhu.</p>
+          <div class="gd-rule"></div>
+          <div class="gd-label">What it says</div>
+          <p class="gd-gloss">By daylight a crow beats an owl. Anyone who wants to win needs the right hour as much as the strength.</p>
+          <div class="gd-attrib">Thirukkural 481 &middot; Thiruvalluvar</div>
+        </div>
+      </div>
+      <div class="featured-chips">
+        <span class="featured-chip solid" style="background:#E0B25F;border-color:#E0B25F;color:#0C0C0B">iPhone</span>
+        <span class="featured-chip" style="background:rgba(127,166,216,0.14);border-color:rgba(127,166,216,0.4);color:#F3E3C8">Made in India</span>
+        <span class="featured-chip" style="background:rgba(127,166,216,0.14);border-color:rgba(127,166,216,0.4);color:#F3E3C8">No account, no analytics</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="featured-eyebrow">Our Daily Verse App</div>
+      <h3 class="featured-name">GYAAN <span style="color:#E0B25F">DAILY</span></h3>
+      <p class="featured-desc">Most apps of this kind hand you a sentence and a name and leave you to it. Gyaan Daily gives you the line <strong style="color:var(--linen);font-weight:400">in the script it was written in</strong>, with a plain translation, what it is actually getting at, and the work it came from.</p>
+      <ul class="featured-bullets">
+        <li>Four catalogues, not one. The Tamil, Hindi and Sanskrit are the verse as written, never a translation of an English original</li>
+        <li>Thirukkural and the Naladiyar, Kabir and Rahim, the Bhagavad Gita complete at 701 verses, and out-of-copyright English letters and essays</li>
+        <li>Widgets for the Home Screen, Lock Screen and StandBy, and one reminder at a time you choose</li>
+        <li>Nothing piles up. No streaks, no unread count, no account and no analytics</li>
+      </ul>
+      <div class="featured-actions">
+        <span class="gd-soon">On the App Store when it&#39;s finished</span>
+        <a href="https://gyaandaily.positivafilms.com" target="_blank" rel="noopener" class="btn-ghost">Read the site <span class="arrow">&#8599;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="section-header reveal">
     <div class="section-tag">App Support</div>
-    <div class="section-num">( 05 )</div>
+    <div class="section-num">( 06 )</div>
   </div>
   <div class="contact-grid">
     <div class="reveal">
