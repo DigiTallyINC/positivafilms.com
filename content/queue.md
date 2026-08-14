@@ -42,7 +42,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of August 3, 2026
 
 ### Week of August 10, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **Logging a Fill-Up in One Tap: Scanning the Pump Screen Instead of Typing Numbers** | intent: "fuel log app scan pump", "track fill ups india"
 
 ### Week of August 17, 2026
 - [ ] category: apps | type: APP | product: bharometer | title: **Highway 18, City 11: Why One Mileage Number for Your Car Is Meaningless** | intent: "city vs highway mileage difference", "real world mileage india"
@@ -312,6 +311,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-08-14 | slug: logging-fill-up-scan-pump-screen-bharometer | category: apps | title: **Logging a Fill-Up in One Tap: Scanning the Pump Screen Instead of Typing Numbers**
 - [x] 2026-08-12 | slug: petrol-vs-diesel-break-even-km-math-2026 | category: apps | title: **Petrol vs Diesel in 2026: The Break-Even Kilometres Math Before Your Next Car**
 - [x] 2026-08-10 | slug: older-car-bike-e20-practical-care-checklist | category: apps | title: **Running an Older Car or Bike on E20: A Practical Care Checklist**
 - [x] 2026-08-07 | slug: monsoon-mileage-drop-august-traffic-rain-km-per-litre | category: apps | title: **Monsoon Mileage Drop: What August Traffic and Rain Do to Your km/l (And How to See It in Your Own Log)**
