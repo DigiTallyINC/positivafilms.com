@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>Highway 18, City 11: Why One Mileage Number for Your Car Is Meaningless</title>
+      <link>https://positivafilms.com/posts/highway-18-city-11-mileage-meaningless-real-world.html</link>
+      <guid>https://positivafilms.com/posts/highway-18-city-11-mileage-meaningless-real-world.html</guid>
+      <description>Your car's ARAI rating means nothing in Bengaluru peak hour. Here's why city and highway mileage diverge so sharply, and how to track what your driving actually costs.</description>
+      <pubDate>Mon, 17 Aug 2026 10:19:37 +0530</pubDate>
+      <category>Apps</category>
+    </item>
+    <item>
       <title>Logging a Fill-Up in One Tap: Scanning the Pump Screen Instead of Typing Numbers</title>
       <link>https://positivafilms.com/posts/logging-fill-up-scan-pump-screen-bharometer.html</link>
       <guid>https://positivafilms.com/posts/logging-fill-up-scan-pump-screen-bharometer.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Mon, 11 May 2026 10:15:46 +0530</pubDate>
       <category>Travel & Place</category>
     </item>
-    <item>
-      <title>Why FX30's Skin Tones Read Cooler Than FX3: and the Single Node That Fixes It</title>
-      <link>https://positivafilms.com/posts/fx30-skin-tones-cooler-than-fx3-single-node-fix.html</link>
-      <guid>https://positivafilms.com/posts/fx30-skin-tones-cooler-than-fx3-single-node-fix.html</guid>
-      <description>The FX30 and FX3 share Sony's color science but their skin tones don't match out of the box. Here's exactly why: and the one node that bridges them.</description>
-      <pubDate>Fri, 08 May 2026 10:31:36 +0530</pubDate>
-      <category>Gear</category>
-    </item>
-                              </channel>
+                                  </channel>
 </rss>
