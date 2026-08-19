@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>How to Budget Fuel for a Mumbai to Goa Road Trip (A Worked Example in Rupees)</title>
+      <link>https://positivafilms.com/posts/mumbai-goa-road-trip-fuel-cost-budget-rupees.html</link>
+      <guid>https://positivafilms.com/posts/mumbai-goa-road-trip-fuel-cost-budget-rupees.html</guid>
+      <description>Mumbai to Goa covers roughly 600 km and three different fuel prices. Here is a full worked budget in rupees, litres, cost per km, and where the numbers go wrong.</description>
+      <pubDate>Wed, 19 Aug 2026 10:35:28 +0530</pubDate>
+      <category>Apps</category>
+    </item>
+    <item>
       <title>Highway 18, City 11: Why One Mileage Number for Your Car Is Meaningless</title>
       <link>https://positivafilms.com/posts/highway-18-city-11-mileage-meaningless-real-world.html</link>
       <guid>https://positivafilms.com/posts/highway-18-city-11-mileage-meaningless-real-world.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Wed, 13 May 2026 10:06:57 +0530</pubDate>
       <category>Aerial & FPV</category>
     </item>
-    <item>
-      <title>Why Monsoon Greens in Kerala Look Radioactive on Sony Cameras</title>
-      <link>https://positivafilms.com/posts/monsoon-greens-kerala-sony-color-grade.html</link>
-      <guid>https://positivafilms.com/posts/monsoon-greens-kerala-sony-color-grade.html</guid>
-      <description>Sony's S-Gamut3.Cine renders Kerala's monsoon greens with a saturation spike that survives even a careful CST. Here's the exact node chain that tames them without draining the life from the scene.</description>
-      <pubDate>Mon, 11 May 2026 10:15:46 +0530</pubDate>
-      <category>Travel & Place</category>
-    </item>
-                                  </channel>
+                                      </channel>
 </rss>

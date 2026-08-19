@@ -44,7 +44,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of August 10, 2026
 
 ### Week of August 17, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **How to Budget Fuel for a Mumbai to Goa Road Trip (A Worked Example in Rupees)** | intent: "road trip fuel cost calculation", "mumbai goa fuel cost"
 - [ ] category: apps | type: APP | product: bharometer | title: **When a Mileage Drop Means a Service Is Due: Your Fuel Log as an Early-Warning System** | intent: "sudden mileage drop reasons", "car service mileage drop"
 
 ### Week of August 24, 2026
@@ -310,6 +309,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-08-19 | slug: mumbai-goa-road-trip-fuel-cost-budget-rupees | category: apps | title: **How to Budget Fuel for a Mumbai to Goa Road Trip (A Worked Example in Rupees)**
 - [x] 2026-08-17 | slug: highway-18-city-11-mileage-meaningless-real-world | category: apps | title: **Highway 18, City 11: Why One Mileage Number for Your Car Is Meaningless**
 - [x] 2026-08-14 | slug: logging-fill-up-scan-pump-screen-bharometer | category: apps | title: **Logging a Fill-Up in One Tap: Scanning the Pump Screen Instead of Typing Numbers**
 - [x] 2026-08-12 | slug: petrol-vs-diesel-break-even-km-math-2026 | category: apps | title: **Petrol vs Diesel in 2026: The Break-Even Kilometres Math Before Your Next Car**
