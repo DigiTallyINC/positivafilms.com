@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>When a Mileage Drop Means a Service Is Due: Your Fuel Log as an Early-Warning System</title>
+      <link>https://positivafilms.com/posts/mileage-drop-service-due-fuel-log-early-warning.html</link>
+      <guid>https://positivafilms.com/posts/mileage-drop-service-due-fuel-log-early-warning.html</guid>
+      <description>A sudden drop in your tank-to-tank mileage is often the first sign your car needs attention. Here's how to read your fuel log as a diagnostic tool before the problem gets expensive.</description>
+      <pubDate>Fri, 21 Aug 2026 10:18:13 +0530</pubDate>
+      <category>Apps</category>
+    </item>
+    <item>
       <title>How to Budget Fuel for a Mumbai to Goa Road Trip (A Worked Example in Rupees)</title>
       <link>https://positivafilms.com/posts/mumbai-goa-road-trip-fuel-cost-budget-rupees.html</link>
       <guid>https://positivafilms.com/posts/mumbai-goa-road-trip-fuel-cost-budget-rupees.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Fri, 15 May 2026 09:43:39 +0530</pubDate>
       <category>Indian Wedding</category>
     </item>
-    <item>
-      <title>DGCA Drone Permissions in 2026: The Digital Sky Workflow That Actually Works</title>
-      <link>https://positivafilms.com/posts/dgca-drone-permissions-2026-digital-sky-workflow.html</link>
-      <guid>https://positivafilms.com/posts/dgca-drone-permissions-2026-digital-sky-workflow.html</guid>
-      <description>DGCA's Digital Sky portal looks simple until it isn't. Here's the exact workflow: UIN registration, Green Zone checks, NPNT compliance: that gets your drone legal and in the air.</description>
-      <pubDate>Wed, 13 May 2026 10:06:57 +0530</pubDate>
-      <category>Aerial & FPV</category>
-    </item>
-                                      </channel>
+                                          </channel>
 </rss>

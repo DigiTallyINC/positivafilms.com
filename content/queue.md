@@ -44,7 +44,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of August 10, 2026
 
 ### Week of August 17, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **When a Mileage Drop Means a Service Is Due: Your Fuel Log as an Early-Warning System** | intent: "sudden mileage drop reasons", "car service mileage drop"
 
 ### Week of August 24, 2026
 - [ ] category: apps | type: APP | product: bharometer | title: **Has Your Mileage Changed on E20? A Two-Tank Experiment Anyone Can Run** | intent: "e20 mileage test method", "measure mileage change e20"
@@ -309,6 +308,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-08-21 | slug: mileage-drop-service-due-fuel-log-early-warning | category: apps | title: **When a Mileage Drop Means a Service Is Due: Your Fuel Log as an Early-Warning System**
 - [x] 2026-08-19 | slug: mumbai-goa-road-trip-fuel-cost-budget-rupees | category: apps | title: **How to Budget Fuel for a Mumbai to Goa Road Trip (A Worked Example in Rupees)**
 - [x] 2026-08-17 | slug: highway-18-city-11-mileage-meaningless-real-world | category: apps | title: **Highway 18, City 11: Why One Mileage Number for Your Car Is Meaningless**
 - [x] 2026-08-14 | slug: logging-fill-up-scan-pump-screen-bharometer | category: apps | title: **Logging a Fill-Up in One Tap: Scanning the Pump Screen Instead of Typing Numbers**
