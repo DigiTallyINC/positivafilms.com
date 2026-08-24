@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>Has Your Mileage Changed on E20? A Two-Tank Experiment Anyone Can Run</title>
+      <link>https://positivafilms.com/posts/e20-mileage-two-tank-experiment-method.html</link>
+      <guid>https://positivafilms.com/posts/e20-mileage-two-tank-experiment-method.html</guid>
+      <description>Since April 2026 every petrol tank in India holds E20. Here is a rigorous two-tank test you can run yourself to measure exactly what it has done to your mileage and ₹/km.</description>
+      <pubDate>Mon, 24 Aug 2026 09:49:04 +0530</pubDate>
+      <category>Apps</category>
+    </item>
+    <item>
       <title>When a Mileage Drop Means a Service Is Due: Your Fuel Log as an Early-Warning System</title>
       <link>https://positivafilms.com/posts/mileage-drop-service-due-fuel-log-early-warning.html</link>
       <guid>https://positivafilms.com/posts/mileage-drop-service-due-fuel-log-early-warning.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Mon, 18 May 2026 09:58:24 +0530</pubDate>
       <category>Craft & Color</category>
     </item>
-    <item>
-      <title>Why Your Sangeet Footage Looks Yellow: Neutralizing Banquet Hall Tungsten</title>
-      <link>https://positivafilms.com/posts/sangeet-tungsten-correction-banquet-hall.html</link>
-      <guid>https://positivafilms.com/posts/sangeet-tungsten-correction-banquet-hall.html</guid>
-      <description>Banquet hall tungsten turns every sangeet into an amber swamp. Here's the node-level correction pipeline that pulls it back without destroying skin.</description>
-      <pubDate>Fri, 15 May 2026 09:43:39 +0530</pubDate>
-      <category>Indian Wedding</category>
-    </item>
-                                          </channel>
+                                              </channel>
 </rss>
