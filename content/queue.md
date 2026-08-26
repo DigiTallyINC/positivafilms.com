@@ -46,7 +46,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of August 17, 2026
 
 ### Week of August 24, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **km/kg, Not km/l: Tracking a CNG or Bi-Fuel Car Without Mixing Up the Fuels** | intent: "cng mileage km per kg", "bi fuel car mileage tracking"
 - [ ] category: apps | type: APP | product: bharometer | title: **Tyre Pressure and Mileage: The Free 3 to 5 Percent Most Drivers Leave on the Table** | intent: "tyre pressure mileage effect", "correct tyre pressure fuel saving"
 
 ### Week of August 31, 2026
@@ -307,6 +306,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-08-26 | slug: cng-mileage-km-per-kg-bi-fuel-car-tracking | category: apps | title: **km/kg, Not km/l: Tracking a CNG or Bi-Fuel Car Without Mixing Up the Fuels**
 - [x] 2026-08-24 | slug: e20-mileage-two-tank-experiment-method | category: apps | title: **Has Your Mileage Changed on E20? A Two-Tank Experiment Anyone Can Run**
 - [x] 2026-08-21 | slug: mileage-drop-service-due-fuel-log-early-warning | category: apps | title: **When a Mileage Drop Means a Service Is Due: Your Fuel Log as an Early-Warning System**
 - [x] 2026-08-19 | slug: mumbai-goa-road-trip-fuel-cost-budget-rupees | category: apps | title: **How to Budget Fuel for a Mumbai to Goa Road Trip (A Worked Example in Rupees)**

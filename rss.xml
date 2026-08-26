@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>km/kg, Not km/l: Tracking a CNG or Bi-Fuel Car Without Mixing Up the Fuels</title>
+      <link>https://positivafilms.com/posts/cng-mileage-km-per-kg-bi-fuel-car-tracking.html</link>
+      <guid>https://positivafilms.com/posts/cng-mileage-km-per-kg-bi-fuel-car-tracking.html</guid>
+      <description>CNG gives you km/kg, not km/l. Bi-fuel cars run both. Here's how to track each fuel separately, calculate true cost per km, and stop mixing up the numbers.</description>
+      <pubDate>Wed, 26 Aug 2026 10:29:44 +0530</pubDate>
+      <category>Apps</category>
+    </item>
+    <item>
       <title>Has Your Mileage Changed on E20? A Two-Tank Experiment Anyone Can Run</title>
       <link>https://positivafilms.com/posts/e20-mileage-two-tank-experiment-method.html</link>
       <guid>https://positivafilms.com/posts/e20-mileage-two-tank-experiment-method.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Wed, 20 May 2026 10:08:53 +0530</pubDate>
       <category>Field Notes</category>
     </item>
-    <item>
-      <title>Color Space Transform Order in Resolve: Why CST-Then-LUT Beats LUT-Then-CST</title>
-      <link>https://positivafilms.com/posts/color-space-transform-order-resolve-cst-then-lut.html</link>
-      <guid>https://positivafilms.com/posts/color-space-transform-order-resolve-cst-then-lut.html</guid>
-      <description>Getting your CST and LUT node order wrong in DaVinci Resolve doesn't just look bad: it breaks the math your LUT was built on. Here's exactly why, and how to fix it.</description>
-      <pubDate>Mon, 18 May 2026 09:58:24 +0530</pubDate>
-      <category>Craft & Color</category>
-    </item>
-                                              </channel>
+                                                  </channel>
 </rss>
