@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>Tyre Pressure and Mileage: The Free 3 to 5 Percent Most Drivers Leave on the Table</title>
+      <link>https://positivafilms.com/posts/tyre-pressure-mileage-fuel-saving-india.html</link>
+      <guid>https://positivafilms.com/posts/tyre-pressure-mileage-fuel-saving-india.html</guid>
+      <description>Running even 4 PSI low on all four tyres can cost you 3 to 5 percent of your mileage every tank. Here's the math, the right pressure to use, and how to track whether it actually worked.</description>
+      <pubDate>Fri, 28 Aug 2026 10:36:47 +0530</pubDate>
+      <category>Apps</category>
+    </item>
+    <item>
       <title>km/kg, Not km/l: Tracking a CNG or Bi-Fuel Car Without Mixing Up the Fuels</title>
       <link>https://positivafilms.com/posts/cng-mileage-km-per-kg-bi-fuel-car-tracking.html</link>
       <guid>https://positivafilms.com/posts/cng-mileage-km-per-kg-bi-fuel-car-tracking.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Mon, 25 May 2026 10:17:33 +0530</pubDate>
       <category>Travel & Place</category>
     </item>
-    <item>
-      <title>Premiere vs Resolve for an Indian Wedding Edit: The Honest Speed Test on an M2 Pro</title>
-      <link>https://positivafilms.com/posts/premiere-vs-resolve-indian-wedding-edit-m2-pro-speed-test.html</link>
-      <guid>https://positivafilms.com/posts/premiere-vs-resolve-indian-wedding-edit-m2-pro-speed-test.html</guid>
-      <description>Cutting a 3-camera Indian wedding in Premiere vs Resolve on M2 Pro: render times, proxy workflows, color roundtrips, and which NLE actually ships the film faster.</description>
-      <pubDate>Wed, 20 May 2026 10:08:53 +0530</pubDate>
-      <category>Field Notes</category>
-    </item>
-                                                  </channel>
+                                                      </channel>
 </rss>
