@@ -48,7 +48,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of August 24, 2026
 
 ### Week of August 31, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **Standing Costs vs Running Costs: What Your Parked Car Spends Every Month** | intent: "car ownership cost india", "monthly car expenses breakdown"
 - [ ] category: apps | type: APP | product: bharometer | title: **Fuel Bills for Business and Tax: Why a Shoebox of Receipts Isn't a Record** | intent: "fuel expense tracking business", "vehicle expense log india"
 
 ### Week of September 7, 2026
@@ -304,6 +303,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-09-02 | slug: standing-costs-vs-running-costs-parked-car-monthly-expenses | category: apps | title: **Standing Costs vs Running Costs: What Your Parked Car Spends Every Month**
 - [x] 2026-08-31 | slug: ev-vs-petrol-rupees-per-kilometre-india-cost-comparison | category: apps | title: **Should You Switch to an EV? Run the Rupees-Per-Kilometre on Your Actual Driving First**
 - [x] 2026-08-28 | slug: tyre-pressure-mileage-fuel-saving-india | category: apps | title: **Tyre Pressure and Mileage: The Free 3 to 5 Percent Most Drivers Leave on the Table**
 - [x] 2026-08-26 | slug: cng-mileage-km-per-kg-bi-fuel-car-tracking | category: apps | title: **km/kg, Not km/l: Tracking a CNG or Bi-Fuel Car Without Mixing Up the Fuels**
