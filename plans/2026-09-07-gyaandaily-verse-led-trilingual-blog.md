@@ -1,8 +1,15 @@
 # Gyaan Daily: a verse-led trilingual blog, on the existing cron
 
-**Status: 5 of 8 pieces done. The cron itself is not started.**
-Written 2026-09-07. Session ended here deliberately; the cron is the riskiest
-piece and was left for fresh context.
+**Status: DONE. 8 of 8. Built and pushed 2026-09-07 (commit `8956c3b`), deployed
+on Vercel and verified READY, so the new cron code is live.**
+First Gyaan Daily post publishes **Monday 14 September** (Wed 9 and Fri 11 are the
+two remaining Bharometer lines). Both blockers below are cleared: the gyaandaily
+Vercel project is now git-connected with Root Directory `web`, and the GitHub
+token blocker turned out not to be real.
+
+⚠️ NOT verified, and nothing offline can verify it: the live model call itself and
+the real commit ordering against GitHub. Everything before the model's output and
+everything after it is covered by 102 offline assertions. Watch the first run.
 
 ---
 
@@ -245,7 +252,25 @@ measure the first dry run.
 
 ---
 
-## Blocked on Tally
+## Blocked on Tally — BOTH CLEARED 2026-09-07
+
+✅ **1. Vercel: FIXED.** The `gyaandaily` project is git-connected to
+`DigiTallyINC/gyaan-daily`, `rootDirectory=web`, production branch `main`, all read
+back from the API. A production deploy from `main@9b3d116` went READY and the plan's
+own test now passes: `/assets/blog-verses-ta.json` returns 200, as do `/hindi/blog/`
+and `/tamil/blog/`. ⚠️ Root Directory is load-bearing, not cosmetic: `gyaan-daily` is
+a PRIVATE repo whose root holds `ios/`, `crash-reports/`, `personas/`. Connected with
+the default `./`, a deploy serves all of it publicly. Verified 404 after the fix.
+
+✅ **2. GitHub token: NOT A REAL BLOCKER.** Measured the same day: the cron committed
+to `positivafilms.com` at 05:07:59Z and to `DigiTallyINC/bharometer` at 05:08:01Z, two
+repos two seconds apart, so the credential is already account-wide. Tally has zero
+classic tokens and exactly one fine-grained token (`project-hq releases`, scoped only
+to `project-hq-releases`), so the cron's credential is neither. ⛔ Do not re-raise this
+without new evidence. The first run into gyaan-daily settles it, failing loudly and
+harmlessly at the commit step if wrong.
+
+### The original text, kept for the record
 
 1. ⛔⛔ **Vercel: the `gyaandaily` project does not deploy from git AT ALL.**
    Measured 2026-09-07, after this session's pushes:
