@@ -164,7 +164,7 @@ export const PUBLISH_TOOL = {
       body_html: {
         type: "string",
         description:
-          "The full post body as HTML. Allowed tags: <h2>, <h3>, <p>, <ul>, <ol>, <li>, <blockquote>, <pre>, <code>, <strong>, <em>, <a>, <hr>, <img>, <figure>, <figcaption>. STRICT BAN on em-dashes: never use '—' (U+2014) or '&mdash;' or the bigram '--'. Use commas, colons, semicolons, periods, or parentheses instead. Any <img> tag must include a descriptive alt attribute and loading=\"lazy\" decoding=\"async\". MUST include exactly one inline-cta block at ~60–70% through the body, with this exact structure: <div class=\"inline-cta\"><div class=\"inline-cta-text\"><div class=\"inline-cta-eyebrow\">EYEBROW</div><h4>PRODUCT_NAME</h4><p>ONE_LINE_PITCH</p></div><a class=\"btn\" href=\"CTA_HREF\">BUTTON_LABEL →</a></div>. For LUT posts: EYEBROW='From the Positiva LUT Library', PRODUCT_NAME one of 'Indian Wedding LUTs'/'Indian Travel LUTs'/'The Positiva Bundle', CTA_HREF one of '../luts.html#wedding'/'../luts.html#travel'/'../luts.html#bundle', BUTTON_LABEL='View Pack'. For APP posts: EYEBROW='From Positiva Studios', PRODUCT_NAME is the app name, CTA_HREF is 'https://pastekaro.positivafilms.com' (PasteKaro) or 'https://bharometer.com' (Bharometer), BUTTON_LABEL like 'Get the App'. For TOOL posts: EYEBROW='From the Positiva Workbench', CTA_HREF is '../supergrade.html' (SuperGrade) or 'https://clipengineai.positivafilms.com' (ClipEngine AI), BUTTON_LABEL like 'See the Tool'. No other hrefs are allowed in the inline-cta. Pitch must connect to THIS post's specific problem.",
+          "The full post body as HTML. Allowed tags: <h2>, <h3>, <p>, <ul>, <ol>, <li>, <blockquote>, <pre>, <code>, <strong>, <em>, <a>, <hr>, <img>, <figure>, <figcaption>. STRICT BAN on em-dashes: never use '—' (U+2014) or '&mdash;' or the bigram '--'. Use commas, colons, semicolons, periods, or parentheses instead. Any <img> tag must include a descriptive alt attribute and loading=\"lazy\" decoding=\"async\". MUST include exactly one inline-cta block at ~60–70% through the body, with this exact structure: <div class=\"inline-cta\"><div class=\"inline-cta-text\"><div class=\"inline-cta-eyebrow\">EYEBROW</div><h4>PRODUCT_NAME</h4><p>ONE_LINE_PITCH</p></div><a class=\"btn\" href=\"CTA_HREF\">BUTTON_LABEL →</a></div>. For LUT posts: EYEBROW='From the Positiva LUT Library', PRODUCT_NAME one of 'Indian Wedding LUTs'/'Indian Travel LUTs'/'The Positiva Bundle', CTA_HREF one of '../luts.html#wedding'/'../luts.html#travel'/'../luts.html#bundle', BUTTON_LABEL='View Pack'. For APP posts: EYEBROW='From Positiva Studios', PRODUCT_NAME is the app name, CTA_HREF is 'https://pastekaro.positivafilms.com' (PasteKaro), 'https://bharometer.com' (Bharometer) or 'https://gyaandaily.positivafilms.com' (Gyaan Daily), BUTTON_LABEL like 'Get the App'. For TOOL posts: EYEBROW='From the Positiva Workbench', CTA_HREF is '../supergrade.html' (SuperGrade) or 'https://clipengineai.positivafilms.com' (ClipEngine AI), BUTTON_LABEL like 'See the Tool'. No other hrefs are allowed in the inline-cta. Pitch must connect to THIS post's specific problem.",
       },
       keywords: {
         type: "string",
@@ -187,9 +187,9 @@ export const PUBLISH_TOOL = {
         properties: {
           pack: {
             type: "string",
-            enum: ["wedding", "travel", "bundle", "pastekaro", "bharometer", "supergrade", "clipengine"],
+            enum: ["wedding", "travel", "bundle", "pastekaro", "bharometer", "gyaandaily", "supergrade", "clipengine"],
             description:
-              "Which product the bottom CTA sells. LUT posts: wedding posts → wedding, travel/place posts → travel, craft/gear/aerial/field/multicam → bundle. APP/TOOL posts: MUST equal the topic's featured product (pastekaro, bharometer, supergrade, or clipengine).",
+              "Which product the bottom CTA sells. LUT posts: wedding posts → wedding, travel/place posts → travel, craft/gear/aerial/field/multicam → bundle. APP/TOOL posts: MUST equal the topic's featured product (pastekaro, bharometer, gyaandaily, supergrade, or clipengine).",
           },
           headline: {
             type: "string",
@@ -215,3 +215,120 @@ export const PUBLISH_TOOL = {
     },
   },
 } as const;
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Gyaan Daily: a different post, and therefore a different tool.
+ *
+ * A Gyaan Daily post is built around a real verse from the app's own catalogue
+ * and publishes in three languages at once. It does NOT go to positivafilms.com,
+ * so none of the positiva furniture applies: no lede, no data_search, no
+ * category_label, no cta object, no inline-cta div.
+ *
+ * ⛔ THE VERSE IS NEVER WRITTEN BY THE MODEL. It is spliced from the pool by
+ * api/_lib/gyaandaily.ts. The model is given it as context so the prose can
+ * discuss it, and is told in three places not to reproduce it. Indic text that
+ * passes through a language model comes back subtly wrong, and eighteen Tamil
+ * rows in the Gyaan Daily project were once damaged exactly that way.
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+const GYAAN_BODY_RULES =
+  "The post body as HTML for ONE language. ALLOWED TAGS, and no others: <p>, <h2>, <strong>, <em>, <ul>, <li>, <a>. " +
+  "The stylesheet has NO rule for <blockquote>, <pre>, <figure>, <img> or a button class, so any of those renders as unstyled debris. " +
+  "⛔ DO NOT reproduce the verse, its transliteration, its author or its citation anywhere in the body: the publishing system splices those in above your first paragraph, and a second copy is both wrong and duplicated. Refer to the verse, quote a single word of it when a word is the point, but never restate the line. " +
+  "STRICT BAN on these characters: em-dash (U+2014), en-dash (U+2013) and the arrow (U+2192). Use commas, colons, semicolons, periods or parentheses. " +
+  "Structure: open by saying what the line is doing (not what it says, the reader can read it), then one <h2> section on what it means including the one word it turns on, then one <h2> section on what it asks of the reader today. " +
+  "End with exactly one closing paragraph containing exactly one link, in this exact form: <p><a class=\"chip chip-primary\" href=\"/#getapp\">LABEL</a></p> where LABEL is a short natural call to action in THIS language. No other links anywhere in the body. " +
+  "Length 450 to 700 words in this language.";
+
+function gyaanLangSchema(label: string) {
+  return {
+    type: "object" as const,
+    required: ["title", "excerpt", "body_html"],
+    description: `The complete post in ${label}.`,
+    properties: {
+      title: {
+        type: "string",
+        description: `Post title in ${label}. Six to nine words. It is a title, not a summary, and never the verse itself.`,
+      },
+      excerpt: {
+        type: "string",
+        description: `120 to 175 characters in ${label}. Used as the meta description, the index card blurb and the share card. No leading "In this post".`,
+      },
+      body_html: { type: "string", description: `${GYAAN_BODY_RULES} Write it in ${label}.` },
+    },
+  };
+}
+
+export const GYAAN_PUBLISH_TOOL = {
+  name: "publish_gyaandaily_post",
+  description:
+    "Submit the finished Gyaan Daily post for publication in all three languages at once. The publishing system splices the verse in and renders each language into its own page.",
+  input_schema: {
+    type: "object" as const,
+    required: ["slug", "en", "hi", "ta"],
+    properties: {
+      slug: {
+        type: "string",
+        description:
+          "One URL slug, in English, shared by all three languages. Lowercase, hyphenated, max ~60 chars, no leading stop-words. Derived from the English title. All three pages use it, which is what makes them one hreflang cluster.",
+      },
+      en: gyaanLangSchema("English"),
+      hi: gyaanLangSchema("Hindi (Devanagari script)"),
+      ta: gyaanLangSchema("Tamil"),
+    },
+  },
+} as const;
+
+/** Which tool this topic publishes through. */
+export function toolFor(topic: QueuedTopic) {
+  return topic.product === "gyaandaily" ? GYAAN_PUBLISH_TOOL : PUBLISH_TOOL;
+}
+
+/**
+ * The user prompt for a Gyaan Daily post. The verse arrives as immutable context.
+ * Note the three separate places it says not to reproduce it: here, in the tool
+ * schema's body rules, and in content/AGENT.md. That repetition is deliberate.
+ */
+export function gyaanUserPrompt(opts: {
+  topic: QueuedTopic;
+  verse: {
+    text: string;
+    transliteration: string;
+    translation: string;
+    meaning: string;
+    application: string;
+    author: string;
+    citation: string;
+  };
+  prettyDate: string;
+  isoDate: string;
+}): string {
+  const { topic, verse, prettyDate, isoDate } = opts;
+  return `Today's publication date: **${prettyDate}** (${isoDate}).
+
+Today's topic from the queue:
+
+- Angle: **${topic.title}**
+- Search intent we want to rank for: ${topic.intent || "(none specified)"}
+
+THE VERSE THIS POST IS BUILT AROUND. It is already rendered on the page, above your first
+paragraph, in all three languages. It is given to you so you can discuss it.
+
+- Verse: ${verse.text}
+- How it is said: ${verse.transliteration}
+- Plain translation: ${verse.translation}
+- What it means: ${verse.meaning}
+- What it asks: ${verse.application}
+- Attributed to: ${verse.author}
+- Source: ${verse.citation}
+
+⛔ DO NOT reproduce the verse, the transliteration, the author line or the citation in any of
+the three bodies. They are spliced in by the publishing system. Your prose starts underneath them.
+
+Write the same article three times: once in English, once in Hindi, once in Tamil. Not a literal
+translation of the English into the other two, but the same argument, the same structure and the
+same length, written properly in each language. A reader of any one of the three should not be able
+to tell which was written first.
+
+When ready, submit via the \`publish_gyaandaily_post\` tool.`;
+}

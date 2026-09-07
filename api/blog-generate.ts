@@ -14,15 +14,28 @@
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import Anthropic from "@anthropic-ai/sdk";
-import { readFile, commitFiles, BHAROMETER_REPO } from "./_lib/github.js";
+import { readFile, commitFiles, fileExists, BHAROMETER_REPO, GYAANDAILY_REPO } from "./_lib/github.js";
 import { renderBharometerPost } from "./_lib/bharometer.js";
-import { parseQueue, markPublished } from "./_lib/queue.js";
+import { parseQueue, markPublished, type QueuedTopic, type PublishedEntry } from "./_lib/queue.js";
 import {
   systemPrompt,
   userPrompt,
+  gyaanUserPrompt,
   PUBLISH_TOOL,
+  GYAAN_PUBLISH_TOOL,
   SLOP_PHRASES,
 } from "./_lib/prompt.js";
+import {
+  renderGyaanDailyPosts,
+  pickVerse,
+  postUrl,
+  postPath,
+  indexPath,
+  LANGS,
+  type LangCode,
+  type VerseRow,
+  type GyaanOutput,
+} from "./_lib/gyaandaily.js";
 import {
   renderPost,
   updateBlogHtml,
@@ -88,6 +101,13 @@ async function runOnce() {
   // phrase deep in a long technical post), retry once with the error fed back.
   // Failing hard here used to strand the queue for days (Jul 10-15, 2026).
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+  // Gyaan Daily posts are ROUTED, not mirrored: they publish to gyaandaily.positivafilms.com
+  // and positivafilms.com never gains a copy. Different tool, different repo, different
+  // commit order — so it forks here rather than threading conditionals through the rest.
+  if (next.product === "gyaandaily") {
+    return await runGyaanDaily({ anthropic, agentMd, queueMd, topic: next, published, isoDate, istNow });
+  }
 
   const baseUserPrompt = userPrompt({
     topic: next,
@@ -363,6 +383,257 @@ function validateOutput(out: ToolOutput): void {
     }
     if (!/\bloading\s*=\s*["']?lazy/i.test(tag)) {
       throw new Error(`Image tag missing loading="lazy": ${tag.slice(0, 120)}`);
+    }
+  }
+}
+
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Gyaan Daily: one verse, three languages, and a repo that is not this one.
+ *
+ * ⭐ THE COMMIT ORDER IS THE REVERSE OF THE BHAROMETER FLOW, DELIBERATELY.
+ * Bharometer marks the queue published in the same commit as the positiva post
+ * and mirrors afterwards. That is safe because positiva already holds the
+ * article if the mirror fails. Here there is no positiva copy: if the gyaan
+ * commit fails, the post exists nowhere. So:
+ *
+ *   1. commit the post to gyaan-daily FIRST
+ *   2. only on success, commit content/queue.md to positiva, alone
+ *   3. on failure, leave the queue untouched and return the error
+ *
+ * Backwards, a failed run silently eats the topic. The cost of this order is the
+ * opposite hazard: a run that commits the post and then fails to mark the queue
+ * would republish the same topic on the next fire. That is what the slug guard
+ * in step 3 is for.
+ * ──────────────────────────────────────────────────────────────────────────── */
+
+const VERSE_LANGUAGE_ROTATION = ["ta", "hi", "sa"] as const;
+
+async function runGyaanDaily(opts: {
+  anthropic: Anthropic;
+  agentMd: string;
+  queueMd: string;
+  topic: QueuedTopic;
+  published: PublishedEntry[];
+  isoDate: string;
+  istNow: Date;
+}) {
+  const { anthropic, agentMd, queueMd, topic, published, isoDate, istNow } = opts;
+
+  // Which language the VERSE is drawn from. The prose is always all three; this
+  // only decides which catalogue the line itself comes from. An explicit
+  // `language:` on the queue line wins; otherwise it rotates ta -> hi -> sa so that
+  // no single tradition dominates the blog.
+  const gyaanPublished = published.filter((p) => p.product === "gyaandaily");
+  const verseLang =
+    topic.language && (VERSE_LANGUAGE_ROTATION as readonly string[]).includes(topic.language)
+      ? topic.language
+      : VERSE_LANGUAGE_ROTATION[gyaanPublished.length % VERSE_LANGUAGE_ROTATION.length];
+
+  // 1. Live state. Templates come from THIS repo; everything else from the site's repo.
+  const [tplEn, tplHi, tplTa, idxEn, idxHi, idxTa, sitemap, llms, poolJson] = await Promise.all([
+    readFile("content/gyaandaily-post-en.html"),
+    readFile("content/gyaandaily-post-hi.html"),
+    readFile("content/gyaandaily-post-ta.html"),
+    readFile(indexPath("en"), GYAANDAILY_REPO),
+    readFile(indexPath("hi"), GYAANDAILY_REPO),
+    readFile(indexPath("ta"), GYAANDAILY_REPO),
+    readFile("web/sitemap.xml", GYAANDAILY_REPO),
+    readFile("web/llms.txt", GYAANDAILY_REPO),
+    readFile("web/assets/blog-verses-" + verseLang + ".json", GYAANDAILY_REPO),
+  ]);
+
+  const templates = { en: tplEn, hi: tplHi, ta: tplTa } as Record<LangCode, string>;
+  const indexes = { en: idxEn, hi: idxHi, ta: idxTa } as Record<LangCode, string>;
+
+  const pool = JSON.parse(poolJson).quotes as VerseRow[];
+  const verse = pickVerse(
+    pool,
+    gyaanPublished.map((p) => p.verse).filter((v): v is string => !!v),
+  );
+
+  // The stylesheet href carries a content hash. Read it off the live index; a post
+  // shipped with a stale hash renders half-built.
+  const cssV = /site\.css\?v=([a-f0-9]+)/.exec(idxEn)?.[1];
+  if (!cssV) throw new Error("could not read the site.css content hash from the live blog index");
+
+  // Dates, localised by ICU rather than by anyone typing a month name in Devanagari.
+  const prettyDate = {
+    en: formatPrettyDate(istNow),
+    hi: formatLocalDate(istNow, "hi-IN"),
+    ta: formatLocalDate(istNow, "ta-IN"),
+  } as Record<LangCode, string>;
+
+  // 2. Generate. Two attempts, same as the positiva path.
+  const base = gyaanUserPrompt({ topic, verse, prettyDate: prettyDate.en, isoDate });
+  let out: GyaanOutput | null = null;
+  let lastError = "";
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const content =
+      attempt === 1
+        ? base
+        : base +
+          "\n\nIMPORTANT: your previous attempt was REJECTED by automated validation with this error:\n\"" +
+          lastError +
+          "\"\nRegenerate all three languages and fix the problem.";
+
+    const response = await anthropic.messages.create({
+      model: MODEL,
+      // Three languages of prose, not one. Sized up from the positiva path's 8K.
+      max_tokens: 24000,
+      system: systemPrompt(agentMd),
+      tools: [GYAAN_PUBLISH_TOOL as unknown as Anthropic.Tool],
+      tool_choice: { type: "tool", name: "publish_gyaandaily_post" },
+      messages: [{ role: "user", content }],
+    });
+
+    const toolUse = response.content.find((c) => c.type === "tool_use");
+    if (!toolUse || toolUse.type !== "tool_use") {
+      lastError = "Model did not call publish_gyaandaily_post. Stop reason: " + response.stop_reason;
+      continue;
+    }
+
+    const candidate = toolUse.input as GyaanOutput;
+    for (const lang of LANGS) {
+      const copy = candidate[lang];
+      if (copy && typeof copy.body_html === "string") copy.body_html = stripBannedDashes(copy.body_html);
+    }
+
+    try {
+      validateGyaanOutput(candidate, verse);
+      out = candidate;
+      break;
+    } catch (err) {
+      lastError = err instanceof Error ? err.message : String(err);
+      console.warn("[blog-generate] gyaandaily attempt " + attempt + " failed validation: " + lastError);
+    }
+  }
+  if (!out) throw new Error("Both Gyaan Daily attempts failed validation. Last error: " + lastError);
+  const result: GyaanOutput = out;
+
+  // 3. Idempotency guard. If the English post already exists, a previous run got as
+  // far as committing and then failed before marking the queue. Publishing again
+  // would overwrite a live post and add a second index card. Advance the queue and stop.
+  if (await fileExists(postPath("en", result.slug), GYAANDAILY_REPO)) {
+    const repaired = markPublished({ md: queueMd, topic, slug: result.slug, isoDate, verseId: verse.id });
+    const fix = await commitFiles({
+      message: "blog: queue catch-up for " + result.slug + " (post was already live)",
+      files: [{ path: "content/queue.md", content: repaired }],
+    });
+    return {
+      ok: true,
+      site: "gyaandaily",
+      alreadyPublished: true,
+      slug: result.slug,
+      queueCommit: fix.commitUrl,
+      note: "the post already existed in gyaan-daily; only the queue was advanced",
+    };
+  }
+
+  // 4. Render all three languages.
+  const rendered = renderGyaanDailyPosts({
+    templates,
+    indexes,
+    sitemap,
+    llms,
+    out: result,
+    verse,
+    prettyDate,
+    isoDate,
+    cssV,
+  });
+
+  // 5. Commit to gyaan-daily FIRST. Eight files, one commit.
+  const gyaanCommit = await commitFiles({
+    target: GYAANDAILY_REPO,
+    message: "blog: " + result.en.title,
+    files: [
+      ...rendered.posts.map((p) => ({ path: p.path, content: p.html })),
+      ...LANGS.map((l) => ({ path: indexPath(l), content: rendered.indexes[l] })),
+      { path: "web/sitemap.xml", content: rendered.sitemap },
+      { path: "web/llms.txt", content: rendered.llms },
+    ],
+  });
+
+  // 6. Only now advance the queue, in its own commit to this repo.
+  const newQueue = markPublished({ md: queueMd, topic, slug: result.slug, isoDate, verseId: verse.id });
+  const queueCommit = await commitFiles({
+    message: "blog: " + result.en.title + " (queue)",
+    files: [{ path: "content/queue.md", content: newQueue }],
+  });
+
+  return {
+    ok: true,
+    site: "gyaandaily",
+    slug: result.slug,
+    verse: { id: verse.id, language: verseLang, citation: verse.citation },
+    urls: LANGS.map((l) => postUrl(l, result.slug)),
+    gyaanCommit: gyaanCommit.commitUrl,
+    queueCommit: queueCommit.commitUrl,
+  };
+}
+
+/** Month names in Hindi and Tamil come from ICU, never from anyone typing them. */
+function formatLocalDate(d: Date, locale: string): string {
+  return new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric" }).format(d);
+}
+
+/**
+ * The character bans are language-agnostic, so unlike copy-sweep.py's word bans
+ * these run over all three bodies. This is the gate that killed the cron for five
+ * days in July, so it repairs rather than rejects, and validation re-checks after.
+ */
+export function stripBannedDashes(html: string): string {
+  return html
+    .replace(/\s*(?:—|&mdash;)\s*/g, ": ")
+    .replace(/\s*(?:–|&ndash;)\s*/g, " to ")
+    .replace(/\s*(?:→|&rarr;)\s*/g, " then ");
+}
+
+export function validateGyaanOutput(out: GyaanOutput, verse: VerseRow): void {
+  if (!out || !out.slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(out.slug)) {
+    throw new Error('slug must be lowercase-hyphenated, got "' + (out && out.slug) + '"');
+  }
+  if (out.slug.length > 70) throw new Error("slug is " + out.slug.length + " chars, max 70");
+
+  for (const lang of LANGS) {
+    const copy = out[lang];
+    if (!copy) throw new Error("missing the " + lang + " copy entirely");
+    for (const field of ["title", "excerpt", "body_html"] as const) {
+      if (!copy[field] || !String(copy[field]).trim()) throw new Error(lang + "." + field + " is empty");
+    }
+
+    // ⛔ The verse is spliced by the renderer. A second copy in the prose means the
+    // model retyped Indic text, which is exactly how rows get silently damaged.
+    for (const field of ["text", "transliteration", "citation"] as const) {
+      const needle = verse[field].trim();
+      if (needle.length > 12 && copy.body_html.includes(needle)) {
+        throw new Error(
+          lang + ".body_html reproduces the verse's " + field + "; it is spliced in automatically, do not restate it",
+        );
+      }
+    }
+
+    if (/[—–→]/.test(copy.body_html)) {
+      throw new Error(lang + ".body_html still contains a banned dash or arrow after repair");
+    }
+
+    // The stylesheet has no rule for any of these, so they render as unstyled debris.
+    const forbidden = copy.body_html.match(/<(blockquote|pre|figure|img|table)\b/i);
+    if (forbidden) {
+      throw new Error(lang + ".body_html uses <" + forbidden[1] + ">, which this site has no stylesheet rule for");
+    }
+
+    const links = copy.body_html.match(/href="([^"]*)"/g) || [];
+    if (links.length !== 1 || !links[0].includes("/#getapp")) {
+      throw new Error(lang + ".body_html must contain exactly one link, to /#getapp; found " + links.length);
+    }
+
+    const lower = copy.body_html.toLowerCase();
+    for (const phrase of SLOP_PHRASES) {
+      if (lower.includes(phrase.toLowerCase())) {
+        throw new Error(lang + '.body_html contains the banned phrase "' + phrase + '"');
+      }
     }
   }
 }

@@ -28,6 +28,37 @@ export const BHAROMETER_REPO: RepoTarget = {
   branch: process.env.GITHUB_BHAROMETER_BRANCH || "v2-fidelity-parity",
 };
 
+/**
+ * The Gyaan Daily site repo — ROUTING target for Gyaan Daily posts.
+ * NOTE: unlike Bharometer this is not a mirror. Gyaan Daily posts publish HERE
+ * ONLY; positivafilms.com never gains a copy, so a failure here means the post
+ * does not exist anywhere. Commit here FIRST, mark the queue second.
+ * The site lives in web/ (Vercel Root Directory), so every path is web/-prefixed.
+ */
+export const GYAANDAILY_REPO: RepoTarget = {
+  owner: process.env.GITHUB_OWNER || "DigiTallyINC",
+  repo: process.env.GITHUB_GYAANDAILY_REPO || "gyaan-daily",
+  branch: process.env.GITHUB_GYAANDAILY_BRANCH || "main",
+};
+
+/**
+ * Does this path exist on the branch? Used as an idempotency guard: a run that
+ * committed its post and then failed before marking the queue would otherwise
+ * republish the same topic on the next fire, over the top of the live post.
+ * A missing file is a clean `false`; any other failure is re-thrown, because
+ * "I could not tell" must never be mistaken for "it is not there".
+ */
+export async function fileExists(path: string, target: RepoTarget = REPO): Promise<boolean> {
+  try {
+    await gh().repos.getContent({ owner: target.owner, repo: target.repo, path, ref: target.branch });
+    return true;
+  } catch (err) {
+    const status = (err as { status?: number }).status;
+    if (status === 404) return false;
+    throw err;
+  }
+}
+
 /** Fetch a file from the configured branch as UTF-8 text. */
 export async function readFile(path: string, target: RepoTarget = REPO): Promise<string> {
   const o = gh();

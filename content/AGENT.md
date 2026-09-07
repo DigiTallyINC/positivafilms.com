@@ -219,6 +219,73 @@ SAFE to state, neutrally:
 
 DO NOT claim: that E20 damages or ruins engines; that older vehicles face zero risk; any specific mileage drop above the measured ranges as fact; anything about E20 pricing, fairness, or "paying the same for fewer km"; E27/E30 rollout dates; that E10 is still available; quantified monsoon/heat effects on E20; anything sourced from surveys or social media.
 
+## GYAAN DAILY POSTS (product `gyaandaily`) — a different post entirely
+
+A Gyaan Daily post does **not** publish to positivafilms.com. It is routed to
+gyaandaily.positivafilms.com and published there in three languages at once. It uses a
+different tool (`publish_gyaandaily_post`), a different template and a different shape.
+Almost nothing in the sections above applies to it.
+
+**What does not apply:** no lede, no `data_search`, no `category_label`, no `cta` object,
+no `inline-cta` div, no read time, no byline, no hero image, no links to other Positiva
+posts, no second-person DP voice, no 1100 to 1700 word length.
+
+### The verse is the post
+
+Every Gyaan Daily post is built around one real verse from the app's own catalogue. The
+publishing system picks it, and renders it on the page above your first paragraph, in the
+script it was written in, with its transliteration, author and citation.
+
+⛔ **You never write the verse.** Not the line, not the transliteration, not the author,
+not the citation. They are spliced in by code and validation rejects the post if any of
+them appears in your prose. This is not a style preference: Indic text that passes through
+a language model comes back subtly wrong, and eighteen Tamil rows in this project were once
+damaged exactly that way. You are given the verse so you can *discuss* it. Quote a single
+word when that word is the point. Never restate the line.
+
+### Structure
+
+Three sections, in this order, in each language:
+
+1. **An opening that says what the line is doing** — not what it says. The reader can read
+   what it says; it is printed directly above your paragraph. Say what kind of move it is
+   making, or what it is arguing against.
+2. **One `<h2>` on what it means**, including the one word the reading turns on. Most
+   classical lines hinge on a single term whose ordinary sense is not the sense in the
+   verse. Find it and explain it.
+3. **One `<h2>` on what it asks of the reader today** — concrete, small, and doable. Not
+   "reflect on impermanence". Something a person could do before lunch.
+
+Then exactly one closing paragraph with exactly one link:
+`<p><a class="chip chip-primary" href="/#getapp">LABEL</a></p>`, LABEL written naturally in
+that language. No other link anywhere in the body.
+
+### Three languages, not one translated three times
+
+Write the same article in English, Hindi and Tamil. Same argument, same structure, same
+length, each written properly in its own language. A reader of any one of the three should
+not be able to tell which was written first. A Hindi post that reads like translated
+English has failed even if every word is correct.
+
+450 to 700 words per language.
+
+### Markup
+
+Allowed: `<p>`, `<h2>`, `<strong>`, `<em>`, `<ul>`, `<li>`, `<a>`. Nothing else. The Gyaan
+Daily stylesheet has **no rule** for `<blockquote>`, `<pre>`, `<figure>`, `<img>`, `<table>`
+or a `.btn` class, so any of those renders as unstyled debris on a live page. Validation
+rejects them.
+
+The character bans (no `—`, no `–`, no `→`) apply to **all three languages**, unlike the
+word-level slop bans which are English-only.
+
+### Voice
+
+The site's own voice, not the Positiva Films blog voice. Plain, unhurried, specific.
+No second person imperative stacking, no "here's the thing", no marketing cadence. The app
+is mentioned once, at the end, and never called out mid-argument. Do not refer to
+"our team", "we built", or Positiva Films at all inside the body.
+
 ## Queue exhausted
 
 If `## Queued` is empty:

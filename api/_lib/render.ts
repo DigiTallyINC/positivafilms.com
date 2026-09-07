@@ -23,7 +23,7 @@ export type ToolOutput = {
     | "Apps"
     | "Tools & Plugins";
   cta: {
-    pack: "wedding" | "travel" | "bundle" | "pastekaro" | "bharometer" | "supergrade" | "clipengine";
+    pack: "wedding" | "travel" | "bundle" | "pastekaro" | "bharometer" | "gyaandaily" | "supergrade" | "clipengine";
     headline: string;
     sub: string;
     body: string;
@@ -37,6 +37,7 @@ const PACK_IMAGE: Record<ToolOutput["cta"]["pack"], string> = {
   bundle: "Bundle_Luts_pack.jpg",
   pastekaro: "images/cta/pastekaro.jpg",
   bharometer: "images/cta/bharometer.jpg",
+  gyaandaily: "images/cta/gyaandaily.jpg",
   supergrade: "images/cta/supergrade.jpg",
   clipengine: "images/cta/clipengine.jpg",
 };
@@ -47,6 +48,7 @@ const HERO_IMAGE: Record<ToolOutput["cta"]["pack"], string> = {
   bundle: "https://positivafilms.com/Bundle_Luts_pack.jpg",
   pastekaro: "https://positivafilms.com/images/cta/pastekaro.jpg",
   bharometer: "https://positivafilms.com/images/cta/bharometer.jpg",
+  gyaandaily: "https://positivafilms.com/images/cta/gyaandaily.jpg",
   supergrade: "https://positivafilms.com/images/cta/supergrade.jpg",
   clipengine: "https://positivafilms.com/images/cta/clipengine.jpg",
 };
@@ -58,12 +60,13 @@ const PACK_LINK: Record<ToolOutput["cta"]["pack"], string> = {
   bundle: "../luts.html#bundle",
   pastekaro: "https://pastekaro.positivafilms.com",
   bharometer: "https://bharometer.com",
+  gyaandaily: "https://gyaandaily.positivafilms.com",
   supergrade: "../supergrade.html",
   clipengine: "https://clipengineai.positivafilms.com",
 };
 
 /** Product CTA images are 16:9 screenshots; the LUT box art (except bundle) is square. */
-const WIDE_CTA_PACKS: ReadonlySet<string> = new Set(["bundle", "pastekaro", "bharometer", "supergrade", "clipengine"]);
+const WIDE_CTA_PACKS: ReadonlySet<string> = new Set(["bundle", "pastekaro", "bharometer", "gyaandaily", "supergrade", "clipengine"]);
 
 export function renderPost(opts: {
   template: string;

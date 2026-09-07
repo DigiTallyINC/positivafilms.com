@@ -60,6 +60,7 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` field; the post must feature that product (fact sheets in AGENT.md).
 
 ### Week of July 6, 2026 (remaining runs)
+- [ ] category: apps | type: APP | product: gyaandaily | verse: auto | title: **What One Word Does to a Line You Thought You Understood** | intent: "meaning of thirukkural couplet", "what does this verse actually mean"
 - [ ] category: field   | type: BROADER  | title: **Cloud Backup for Wedding Footage: Backblaze vs Tresorit vs a 4-Bay NAS** | intent: "wedding footage backup", "cloud storage filmmaker"
 
 ### Week of July 13, 2026
@@ -67,11 +68,13 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 - [ ] category: wedding | type: BROADER  | title: **The Christian Wedding Coverage Plan That Doesn't Work for Hindu Weddings (And Vice Versa)** | intent: "christian vs hindu wedding shot list", "ceremony coverage india"
 
 ### Week of July 20, 2026
+- [ ] category: apps | type: APP | product: gyaandaily | verse: auto | title: **The Advice in Old Verses Is Smaller Than You Expect** | intent: "practical wisdom sanskrit verse", "daily verse meaning app"
 - [ ] category: apps | type: APP | product: pastekaro | title: **Paste Any Saved Snippet into Any iPhone App: The Keyboard Trick Most People Miss** | intent: "ios paste snippets any app", "iphone keyboard clipboard"
 - [ ] category: tools | type: TOOL | product: clipengine | title: **Why Stock Footage Gets Rejected: The Metadata Mistakes Killing Your Shutterstock and BlackBox Submissions** | intent: "stock footage rejected metadata", "shutterstock keywords rejection"
 - [ ] category: aerial  | type: BROADER  | title: **ND Filter Math for 24fps Drone Cinema: A Cheat Sheet for the Mavic 3** | intent: "drone nd filter 24fps", "mavic 3 nd math"
 
 ### Week of July 27, 2026
+- [ ] category: apps | type: APP | product: gyaandaily | verse: auto | title: **Reading a Verse in the Script It Was Written In** | intent: "read sanskrit tamil verse original script", "transliteration meaning app"
 - [ ] category: gear    | type: LUT      | title: **Canon C70 CLog3 to Rec.709: Why the Built-In LUT Crushes Your Shadows** | intent: "c70 clog3 rec709", "canon log shadow crush"
 - [ ] category: gear    | type: BROADER  | title: **Why a 24-70 Isn't Enough at an Indian Wedding (And the Three Lenses That Are)** | intent: "wedding lens kit", "indian wedding lens choice"
 
