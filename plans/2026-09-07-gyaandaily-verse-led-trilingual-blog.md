@@ -12,6 +12,11 @@ piece and was left for fresh context.
 built, committed, pushed and verified. Two things are blocked on Tally and are
 listed at the bottom.
 
+⛔ **Blocked before anything can publish: the gyaan-daily Vercel project is not
+git-connected, so commits do not deploy.** Measured, not assumed — see "Blocked
+on Tally" at the bottom. Building the cron is fine; SHIPPING it is not, until
+that is fixed.
+
 ⏰ **Deadline: Monday 14 September.** The queue's next runs are Wed 9 and Fri 11
 (both Bharometer). The 14th is the first slot a Gyaan Daily line could take.
 
@@ -242,10 +247,37 @@ measure the first dry run.
 
 ## Blocked on Tally
 
-1. **Vercel** → `gyaandaily` project (`prj_Uc5wCjv4m5bLJIzS7QQTuL1Lsy27`) →
-   production branch to **`main`**. It is almost certainly still on
-   `build-22-teardown`. If the cron commits to a branch Vercel ignores, the
-   posts never appear **and nothing errors**.
+1. ⛔⛔ **Vercel: the `gyaandaily` project does not deploy from git AT ALL.**
+   Measured 2026-09-07, after this session's pushes:
+
+   | URL | result |
+   |---|---|
+   | `/assets/icon.png`, `/assets/site.css`, `/assets/quotes.json` | 200 — same folder, live for weeks |
+   | `/assets/blog-verses-ta.json` (pushed 40 min earlier, to BOTH refs) | **404** |
+   | `/hindi/blog/` (pushed 40 min earlier) | **404** |
+   | live `/hindi/` nav | still the OLD `/blog/` link, not `/hindi/blog/` |
+
+   Cache-busted and `Cache-Control: no-cache`; `Age` never reset. For contrast,
+   positivafilms.com served today's cron post immediately, so THAT project is
+   git-connected and this one is not.
+
+   This is the same arrangement as bharometer, which deploys via
+   `vercel deploy --prod` from the CLI (see the bharometer deploy memory), and
+   `web/.vercel/project.json` existing locally is the signature of CLI linking.
+
+   ⚠️ **This changes the shape of the blocker.** It is not "which branch does
+   Vercel watch" — it is that a commit does not deploy anything. If the cron
+   ships while this is true, it will commit posts to GitHub that **never appear
+   on the site, with no error anywhere**, which is the exact silent failure the
+   rest of this document is written to avoid.
+
+   **The fix (Tally's, in the Vercel dashboard):** connect the `gyaandaily`
+   project (`prj_Uc5wCjv4m5bLJIzS7QQTuL1Lsy27`) to `DigiTallyINC/gyaan-daily`,
+   Root Directory `web`, Production Branch **`main`**. Then verify by pushing a
+   trivial change and watching `/assets/blog-verses-ta.json` turn 200.
+
+   ⛔ **Do not run the first live cron until that URL returns 200.** It is the
+   cheapest possible proof that a commit reaches the site.
 2. **GitHub token** → `contents:write` on **`DigiTallyINC/gyaan-daily`** for the
    fine-grained PAT the cron uses, or every run fails at the commit step.
 
