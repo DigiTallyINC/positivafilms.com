@@ -60,7 +60,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` field; the post must feature that product (fact sheets in AGENT.md).
 
 ### Week of July 6, 2026 (remaining runs)
-- [ ] category: tools | type: TOOL | product: supergrade | title: **The 15-Node Base Grade Every Colorist Rebuilds on Every Project (And How to Collapse It to One)** | intent: "resolve base grade node tree", "single node film look"
 - [ ] category: field   | type: BROADER  | title: **Cloud Backup for Wedding Footage: Backblaze vs Tresorit vs a 4-Bay NAS** | intent: "wedding footage backup", "cloud storage filmmaker"
 
 ### Week of July 13, 2026
@@ -78,7 +77,6 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ### Week of August 3, 2026
 - [ ] category: apps | type: APP | product: pastekaro | title: **Stop Retyping Addresses, UPI IDs and Canned Replies: A Snippet System for Your iPhone** | intent: "iphone text snippets", "save upi id quick paste"
-- [ ] category: tools | type: TOOL | product: supergrade | title: **Halation, Grain and Bloom Without Three Plugins Fighting: One-Pass Film Finishing in Resolve** | intent: "resolve halation grain workflow", "film look one node"
 - [ ] category: wedding | type: BROADER  | title: **The Three Contract Clauses Every Indian Wedding Filmmaker Gets Burned On** | intent: "wedding videography contract india", "freelance contract clauses"
 
 ### Week of August 10, 2026

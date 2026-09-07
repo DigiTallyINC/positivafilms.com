@@ -170,7 +170,7 @@ The studio ships software as well as film. Two new categories exist alongside th
 - `apps`  → display label **Apps** (consumer iPhone/Android apps from Positiva Studios)
 - `tools` → display label **Tools & Plugins** (filmmaker software: SuperGrade, ClipEngine AI)
 
-The queue line carries a `product:` field (`pastekaro | bharometer | supergrade | clipengine`). The post's inline CTA **and** bottom CTA (`cta.pack`) must both point at that product.
+The queue line carries a `product:` field (`pastekaro | bharometer | gyaandaily | supergrade | clipengine`). The post's inline CTA **and** bottom CTA (`cta.pack`) must both point at that product.
 
 ### Voice for product posts
 
@@ -187,6 +187,10 @@ Claims about a product must come from its sheet below. No invented features, pri
 **SuperGrade** (`tools`, product `supergrade`) — single-node cinematic base-grade engine for DaVinci Resolve (GPU-accelerated DCTL). Built-in colour-space transform in DaVinci Wide Gamut / Intermediate, film-emulation core, skin-tone protection, halation, bloom, grain, split-tone. Replaces the ~15-node serial chain of a conventional base grade. Works in Resolve 18+ (free and Studio) on Windows, macOS and Linux. ₹2,999 one-time, lifetime licence. CTA link: `../supergrade.html`.
 
 **ClipEngine AI** (`tools`, product `clipengine`) — Chrome extension + web app for stock-footage contributors. Generates metadata (titles, descriptions, keywords) for stock workflows (BlackBox Global, Shutterstock, Adobe Stock, Pond5) and runs a technical audit of clips before submission. Do not quote a specific number of audit checks. CTA link: `https://clipengineai.positivafilms.com`.
+
+**Gyaan Daily** (`apps`, product `gyaandaily`) - a daily verse from the classical traditions of India, on iPhone. Four separate catalogues, Sanskrit, Tamil, Hindi and English, each independently sourced: nothing in the app is a translation of another row in it, so the Tamil, Hindi and Sanskrit verses are the texts as written, with English alongside to help read them. Under every verse sits the script itself, a transliteration, a translation, a word-by-word gloss and a note on what the line is actually saying and where in its book it sits. The app opens on one verse a day; reminders bring more. Everything quoted is out of copyright; the written layer (translations, notes, glosses) was written by people for this app. No account. The app fetches no quotes and makes one outbound request, a static settings file, which sends nothing about the reader; crash reporting and coarse screen counting are anonymous and the usage counting can be switched off in Settings. iPhone, live on the App Store. The website is published in English, Hindi and Tamil. CTA link: `https://gyaandaily.positivafilms.com`.
+
+Do NOT claim: a price, a subscription tier, an Android version, an iPad or Mac version, a verse count or catalogue size, a rating, a download number, offline/online behaviour beyond the single settings request, or that any verse is a translation of another. Do NOT name a living translator, publisher or edition. Do NOT frame any tradition against another, and do NOT make religious, devotional or political claims: these posts are about the texts and how to read them, not about belief.
 
 ### CTA mapping for product posts
 

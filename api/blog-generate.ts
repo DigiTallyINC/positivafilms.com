@@ -322,8 +322,8 @@ function validateOutput(out: ToolOutput): void {
   if (out.body_html.toLowerCase().includes("positiva films") || out.body_html.toLowerCase().includes("at positiva")) {
     throw new Error("Body must not contain brand mascot framing ('Positiva Films', 'at Positiva')");
   }
-  if (!out.cta || !["wedding", "travel", "bundle", "pastekaro", "bharometer", "supergrade", "clipengine"].includes(out.cta.pack)) {
-    throw new Error("CTA pack must be wedding|travel|bundle|pastekaro|bharometer|supergrade|clipengine");
+  if (!out.cta || !["wedding", "travel", "bundle", "pastekaro", "bharometer", "gyaandaily", "supergrade", "clipengine"].includes(out.cta.pack)) {
+    throw new Error("CTA pack must be wedding|travel|bundle|pastekaro|bharometer|gyaandaily|supergrade|clipengine");
   }
 
   const emDashRe = /—|&mdash;|--/;
