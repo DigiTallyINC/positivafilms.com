@@ -50,7 +50,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 ### Week of August 31, 2026
 
 ### Week of September 7, 2026
-- [ ] category: apps | type: APP | product: bharometer | title: **Bike vs Car for the Daily Commute: The Honest Rupees-Per-Kilometre Comparison** | intent: "bike vs car commute cost", "two wheeler running cost per km"
 - [ ] category: apps | type: APP | product: bharometer | title: **"Kitna Deti Hai" Is the Wrong Question: Cost Per Kilometre Is the Answer** | intent: "cost per km vs mileage", "true car running cost india"
 
 ---
@@ -302,6 +301,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-09-09 | slug: bike-vs-car-commute-cost-rupees-per-kilometre-india | category: apps | product: bharometer | title: **Bike vs Car for the Daily Commute: The Honest Rupees-Per-Kilometre Comparison**
 - [x] 2026-09-07 | slug: best-time-fill-petrol-6am-price-reset-india | category: apps | title: **The Best Day (and Hour) to Fill Up: How Daily 6 AM Price Resets Actually Work**
 - [x] 2026-09-04 | slug: fuel-bills-business-tax-expense-tracking-india | category: apps | title: **Fuel Bills for Business and Tax: Why a Shoebox of Receipts Isn't a Record**
 - [x] 2026-09-02 | slug: standing-costs-vs-running-costs-parked-car-monthly-expenses | category: apps | title: **Standing Costs vs Running Costs: What Your Parked Car Spends Every Month**
