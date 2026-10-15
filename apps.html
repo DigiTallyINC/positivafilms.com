@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Positiva Studios &mdash; Apps &amp; software by Positiva Films</title>
-  <meta name="description" content="Positiva Studios is the software arm of Positiva Films &mdash; every app and tool we build ships under one banner. PasteKaro, a smart clipboard, Bharometer, a fuel &amp; mileage tracker, and Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, are all live. Ride Saathi, a group riding app, is coming soon." />
-  <meta property="og:title" content="Positiva Studios — Apps by Positiva Films" />
+  <title>Positiva Studios | Apps &amp; software by Positiva Films</title>
+  <meta name="description" content="Positiva Studios is the software arm of Positiva Films. Every app and tool we build ships under one banner. PasteKaro, a smart clipboard, Bharometer, a fuel &amp; mileage tracker, and Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, are all live. Ride Saathi, a group riding app, is coming soon." />
+  <meta property="og:title" content="Positiva Studios | Apps by Positiva Films" />
   <meta property="og:description" content="The software studio inside Positiva Films. Every app we build ships under the Positiva Studios banner: PasteKaro smart clipboard, Bharometer fuel tracker and Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, are all live. Ride Saathi, a group riding app, is coming soon." />
   <meta property="og:image" content="https://positivafilms.com/positiva-studios-badge-dark.png" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://positivafilms.com/apps.html" />
   <meta property="og:url" content="https://positivafilms.com/apps.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Positiva Studios — Apps by Positiva Films" />
+  <meta name="twitter:title" content="Positiva Studios | Apps by Positiva Films" />
   <meta name="twitter:description" content="The software studio inside Positiva Films. Every app we build ships under the Positiva Studios banner: PasteKaro smart clipboard, Bharometer fuel tracker and Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, are all live. Ride Saathi, a group riding app, is coming soon." />
   <meta name="twitter:image" content="https://positivafilms.com/positiva-studios-badge-dark.png" />
   <link rel="icon" type="image/png" href="positiva-studios-badge-dark.png" />
@@ -91,6 +91,23 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .page-hero{min-height:62vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:160px 48px 80px;border-bottom:1px solid var(--linen-faint);overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(201,168,76,0.08) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(184,92,56,0.05) 0%,transparent 50%);pointer-events:none}
 .page-hero::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 119px,rgba(232,224,212,0.025) 119px,rgba(232,224,212,0.025) 120px);pointer-events:none}
+/* Hero background: code typing itself, full bleed */
+.code-bg{position:absolute;inset:0;z-index:0;display:grid;grid-template-columns:repeat(var(--cols,3),1fr);gap:40px;padding:110px 48px 40px;overflow:hidden;pointer-events:none;font-family:'DM Mono',monospace;font-size:13px;line-height:1.9;color:rgba(201,168,76,0.75);white-space:pre;text-align:left}
+.code-bg .col{overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.code-bg .ln{display:block;min-height:1.9em}
+.code-bg .n{display:inline-block;width:2.6em;color:rgba(232,224,212,0.28)}
+.code-bg .kw{color:rgba(201,168,76,1)}
+.code-bg .st{color:rgba(196,168,130,0.95)}
+.code-bg .cm{color:rgba(232,224,212,0.45);font-style:italic}
+.code-bg .fn{color:rgba(232,224,212,0.9)}
+.code-bg .caret{display:inline-block;width:8px;height:15px;background:var(--gold);opacity:.6;vertical-align:-2px;animation:caretBlink 1s steps(1) infinite}
+@keyframes caretBlink{50%{opacity:0}}
+.code-veil{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(10,9,8,0.93) 0%,rgba(10,9,8,0.9) 48%,rgba(10,9,8,0.55) 60%,rgba(10,9,8,0) 74%)}
+.hero-copy{position:relative;z-index:1}
+.page-hero .page-eyebrow::before{display:none}
+.page-hero .page-eyebrow,.page-hero .page-title{text-shadow:0 0 14px rgba(10,9,8,0.95),0 0 32px rgba(10,9,8,0.9),0 0 56px rgba(10,9,8,0.8)}
+@media(max-width:700px){.code-veil{background:rgba(10,9,8,0.82)}}
+.page-hero .page-lede{color:rgba(232,224,212,0.86);text-shadow:0 0 3px rgba(10,9,8,1),0 0 14px rgba(10,9,8,0.95),0 0 30px rgba(10,9,8,0.9)}
 .page-eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--body);font-size:11px;font-weight:400;letter-spacing:0.22em;color:var(--linen-dim);text-transform:uppercase;margin-bottom:28px;position:relative;z-index:1}
 .page-eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
 .page-eyebrow .num{font-family:var(--serif);font-style:italic;color:var(--gold);text-transform:none;letter-spacing:0.04em;font-size:13px}
@@ -270,6 +287,34 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .app-pastekaro .hub-meta{color:rgba(239,233,220,0.62)}
 .app-pastekaro .hub-arrow{border-color:rgba(239,233,220,0.22);color:#EFE9DC}
 .app-pastekaro:hover .hub-arrow{background:#B5651D;border-color:#B5651D;color:#fff}
+/* PasteKaro card as a code editor (trial) */
+.hub-card.code-card{padding:0;font-family:'DM Mono',monospace}
+.cc-bar{position:relative;z-index:1;display:flex;flex-wrap:wrap;row-gap:8px;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid rgba(239,233,220,0.12);background:rgba(0,0,0,0.28)}
+.cc-dot{flex:none;width:9px;height:9px;border-radius:50%;background:rgba(239,233,220,0.18)}
+.cc-tab{margin-left:12px;white-space:nowrap;font-size:11px;color:rgba(239,233,220,0.8);padding:5px 10px;border-bottom:1.5px solid var(--cca)}
+.cc-live{margin-left:auto;white-space:nowrap;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ccl-fg);background:var(--cca);padding:4px 8px;border-radius:4px}
+.cc-body{counter-reset:ln;padding:24px 18px 10px 0;font-size:14px;line-height:1.95;color:var(--cct)}
+.cc-l{display:block;position:relative;padding-left:44px;white-space:pre-wrap}
+.cc-l::before{counter-increment:ln;content:counter(ln);position:absolute;left:0;width:28px;text-align:right;color:var(--cct);opacity:.38}
+.cc-l.i1{padding-left:60px}
+.cc-l.i2{padding-left:106px}
+.code-card .k{color:var(--cck,var(--cca))}
+.code-card .p{color:rgba(239,233,220,0.78)}
+.code-card .s{color:var(--ccs,var(--cct))}
+.code-card .c{color:var(--cct);opacity:.62}
+.cc-name{display:inline;font-family:var(--display);font-size:40px;font-weight:400;line-height:1;letter-spacing:0.04em;vertical-align:-5px;color:var(--cct)}
+.cc-name span{color:var(--cca)}
+.cc-l.cc-nl{white-space:nowrap;line-height:1.3;padding-top:2px;padding-bottom:6px}
+.cc-caret{display:inline-block;width:8px;height:15px;margin-left:4px;background:var(--cca);vertical-align:-2px;animation:caretBlink 1s steps(1) infinite}
+.cc-foot{position:relative;z-index:1;margin:0 20px 20px 44px}
+.app-pastekaro{--cca:#B5651D;--cck:#D9823A;--cct:#EFE9DC;--ccs:#F4E2B8;--ccl-fg:#221c10}
+.app-bharometer{--cca:#FFDF00;--cct:#EDF3FB;--ccl-fg:#0B1524}
+.app-gyaandaily{--cca:#E0B25F;--cct:#F3E3C8;--ccl-fg:#0C0C0B}
+.app-ridesaathi{--cca:#FF551A;--cck:#FF7A47;--cct:#FFFFFF;--ccl-fg:#FFFFFF}
+.app-sehatvault{--cca:#E89C2E;--cct:#F4EFE5;--ccl-fg:#1F3D2E}
+.app-remindkaro{--cca:#ecff8e;--cct:#E8EDE0;--ccl-fg:#1A2010}
+.app-trace{--cca:#FFC93C;--cct:#EEF1FA;--ccl-fg:#13235C}
+.app-englishseekho{--cca:#e89556;--cct:#FBF1E6;--ccl-fg:#2a1f15}
 
 /* SehatVault — lib/tokens.ts tulsi: brand #1F3D2E, accent #E89C2E, border #B5A892, text #F4EFE5 */
 .app-sehatvault{background:linear-gradient(152deg,#1F3D2E 0%,#0F1612 100%);border-color:#2E3A33}
@@ -424,7 +469,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     {
       "@type": "MobileApplication",
       "name": "Bharometer",
-      "description": "Fuel, mileage and running-cost tracker built for India — tank-to-tank kmpl, pump-scan logging, petrol, diesel, CNG and EV. Free to start, no ads, no account.",
+      "description": "Fuel, mileage and running-cost tracker built for India. Tank-to-tank kmpl, pump-scan logging, petrol, diesel, CNG and EV. Free to start, no ads, no account.",
       "url": "https://bharometer.com",
       "installUrl": "https://apps.apple.com/in/app/bharometer-fuel-kmpl-costs/id6784579909",
       "operatingSystem": "iOS, Android",
@@ -435,7 +480,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
     {
       "@type": "MobileApplication",
       "name": "PasteKaro",
-      "description": "Private clipboard manager — everything you copy kept in a searchable, organised history, pasteable from any app via its keyboard. Fully on-device: no account, no servers, no tracking.",
+      "description": "Private clipboard manager. Everything you copy is kept in a searchable, organised history, pasteable from any app via its keyboard. Fully on-device: no account, no servers, no tracking.",
       "url": "https://pastekaro.positivafilms.com",
       "installUrl": "https://apps.apple.com/us/app/copy-paste-karo/id6768088006",
       "operatingSystem": "iOS, Android",
@@ -510,9 +555,13 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
 </ul>
 
 <header class="page-hero">
-  <div class="page-eyebrow"><span class="num">( 01 )</span> &nbsp;The software studio at Positiva Films</div>
+  <div class="code-bg" id="codeBg" aria-hidden="true"></div>
+  <div class="code-veil" aria-hidden="true"></div>
+  <div class="hero-copy">
+  <div class="page-eyebrow">The software studio</div>
   <h1 class="page-title">Positiva<em>Studios</em></h1>
-  <p class="page-lede">Positiva Studios is where Positiva Films builds software. Every app and plugin we make &mdash; small, sharp, useful, made in India &mdash; ships under one banner. <strong>PasteKaro</strong>, a smart clipboard for iPhone &amp; Android, <strong>Bharometer</strong>, a fuel &amp; mileage tracker for iPhone &amp; Android, and <strong>Gyaan Daily</strong>, a daily verse in Sanskrit, Tamil, Hindi and English, are all live. <strong>Ride Saathi</strong>, a group riding app, is coming soon.</p>
+  <p class="page-lede">Positiva Studios is where Positiva Films builds software. Every app and plugin we make is small, useful and made in India, and they all ship under one banner. <strong>PasteKaro</strong>, a smart clipboard for iPhone &amp; Android, <strong>Bharometer</strong>, a fuel &amp; mileage tracker for iPhone &amp; Android, and <strong>Gyaan Daily</strong>, a daily verse in Sanskrit, Tamil, Hindi and English, are all live. <strong>Ride Saathi</strong>, a group riding app, is coming soon.</p>
+  </div>
 </header>
 
 <section class="hub">
@@ -523,105 +572,176 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
   <h2 class="section-title reveal">FROM THE STUDIO<em>Three live, five on the way</em></h2>
 
   <div class="hub-grid">
-    <a href="https://pastekaro.positivafilms.com" target="_blank" rel="noopener" class="hub-card app-pastekaro reveal">
-      <div class="hub-card-top">
-        <div class="hub-num">(01)</div>
-        <span class="hub-tag">iOS &amp; Android &middot; Live</span>
-        <h3 class="hub-name">PASTE<span>KARO</span></h3>
-        <p class="hub-desc">A smart clipboard for iPhone &amp; Android. Everything you copy &mdash; links, addresses, code, hex codes &mdash; kept in a searchable, organised history, and pasteable from any app via the keyboard. <em style="color:var(--linen-dim);font-style:italic">Copy. Paste. Karo.</em></p>
+    <a href="https://pastekaro.positivafilms.com" target="_blank" rel="noopener" class="hub-card app-pastekaro code-card reveal">
+      <div class="cc-bar"><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-tab">pastekaro.ts</span><span class="cc-live">iOS &amp; Android &middot; Live</span></div>
+      <div class="cc-body hub-card-top">
+        <span class="cc-l"><span class="c">// (01)</span></span>
+        <span class="cc-l"><span class="k">export const</span></span>
+        <span class="cc-l cc-nl"><h3 class="cc-name">PASTE<span>KARO</span></h3> = <span class="s">`</span></span>
+        <span class="cc-l i1"><span class="s">A smart clipboard for iPhone</span></span>
+        <span class="cc-l i1"><span class="s">&amp; Android. Links, addresses,</span></span>
+        <span class="cc-l i1"><span class="s">code and hex codes you copy</span></span>
+        <span class="cc-l i1"><span class="s">are kept in a searchable,</span></span>
+        <span class="cc-l i1"><span class="s">organised history, and</span></span>
+        <span class="cc-l i1"><span class="s">pasteable from any app via</span></span>
+        <span class="cc-l i1"><span class="s">the keyboard.</span></span>
+        <span class="cc-l"><span class="s">`</span>;</span>
+        <span class="cc-l"><span class="c">// Copy. Paste. Karo.</span><span class="cc-caret"></span></span>
       </div>
-      <div class="hub-foot">
+      <div class="hub-foot cc-foot">
         <span class="hub-meta">iPhone &amp; Android &middot; On-device</span>
         <div class="hub-arrow">&#8599;</div>
       </div>
     </a>
 
-    <a href="https://bharometer.com" target="_blank" rel="noopener" class="hub-card app-bharometer reveal">
-      <div class="hub-card-top">
-        <div class="hub-num">(02)</div>
-        <span class="hub-tag">iOS &amp; Android &middot; Live</span>
-        <h3 class="hub-name">BHARO<span>METER</span></h3>
-        <p class="hub-desc">Track fuel, mileage and running costs for your vehicle. AI pump-scan logs every fill-up in a tap, with accurate city-level daily fuel prices built for India.</p>
+    <a href="https://bharometer.com" target="_blank" rel="noopener" class="hub-card app-bharometer code-card reveal">
+      <div class="cc-bar"><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-tab">bharometer.ts</span><span class="cc-live">iOS &amp; Android &middot; Live</span></div>
+      <div class="cc-body hub-card-top">
+        <span class="cc-l"><span class="c">// (02)</span></span>
+        <span class="cc-l"><span class="k">export const</span></span>
+        <span class="cc-l cc-nl"><h3 class="cc-name">BHARO<span>METER</span></h3> = <span class="s">`</span></span>
+        <span class="cc-l i1"><span class="s">Track fuel, mileage and</span></span>
+        <span class="cc-l i1"><span class="s">running costs for your</span></span>
+        <span class="cc-l i1"><span class="s">vehicle. AI pump-scan logs</span></span>
+        <span class="cc-l i1"><span class="s">every fill-up in a tap, with</span></span>
+        <span class="cc-l i1"><span class="s">accurate city-level daily</span></span>
+        <span class="cc-l i1"><span class="s">fuel prices built for India.</span></span>
+        <span class="cc-l"><span class="s">`</span>;</span>
+        <span class="cc-l"><span class="cc-caret"></span></span>
       </div>
-      <div class="hub-foot">
+      <div class="hub-foot cc-foot">
         <span class="hub-meta">iPhone, Watch &amp; Android</span>
         <div class="hub-arrow">&#8599;</div>
       </div>
     </a>
 
-    <a href="https://gyaandaily.positivafilms.com" target="_blank" rel="noopener" class="hub-card app-gyaandaily reveal">
-      <div class="hub-card-top">
-        <div class="hub-num">(03)</div>
-        <span class="hub-tag">iPhone &amp; Android &middot; Live</span>
-        <h3 class="hub-name">GYAAN <span>DAILY</span></h3>
-        <p class="hub-desc">Lines from the classical traditions of India in Sanskrit, Tamil, Hindi and English, each in its own script, with a plain translation, what it means, and where it came from. <em style="color:var(--linen-dim);font-style:italic">Four catalogues, not one.</em></p>
+    <a href="https://gyaandaily.positivafilms.com" target="_blank" rel="noopener" class="hub-card app-gyaandaily code-card reveal">
+      <div class="cc-bar"><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-tab">gyaan-daily.ts</span><span class="cc-live">iPhone &amp; Android &middot; Live</span></div>
+      <div class="cc-body hub-card-top">
+        <span class="cc-l"><span class="c">// (03)</span></span>
+        <span class="cc-l"><span class="k">export const</span></span>
+        <span class="cc-l cc-nl"><h3 class="cc-name">GYAAN <span>DAILY</span></h3> = <span class="s">`</span></span>
+        <span class="cc-l i1"><span class="s">Lines from the classical</span></span>
+        <span class="cc-l i1"><span class="s">traditions of India in</span></span>
+        <span class="cc-l i1"><span class="s">Sanskrit, Tamil, Hindi and</span></span>
+        <span class="cc-l i1"><span class="s">English, each in its own</span></span>
+        <span class="cc-l i1"><span class="s">script, with a plain</span></span>
+        <span class="cc-l i1"><span class="s">translation, what it means,</span></span>
+        <span class="cc-l i1"><span class="s">and where it came from.</span></span>
+        <span class="cc-l"><span class="s">`</span>;</span>
+        <span class="cc-l"><span class="c">// Four catalogues, not one.</span><span class="cc-caret"></span></span>
       </div>
-      <div class="hub-foot">
+      <div class="hub-foot cc-foot">
         <span class="hub-meta">App Store &amp; Google Play</span>
         <div class="hub-arrow">&#8599;</div>
       </div>
     </a>
 
-    <a href="https://ridesaathi.positivafilms.com" target="_blank" rel="noopener" class="hub-card app-ridesaathi reveal">
-      <div class="hub-card-top">
-        <div class="hub-num">(04)</div>
-        <span class="hub-tag">Group Rides &middot; Coming Soon</span>
-        <h3 class="hub-name">RIDE <span>SAATHI</span></h3>
-        <p class="hub-desc">A group riding app from the makers of Bharometer. Every rider on one live map, and an alert to your group if a fall looks serious. Family too, if you choose. <em style="color:var(--linen-dim);font-style:italic">See all your riders on one map.</em></p>
+    <a href="https://ridesaathi.positivafilms.com" target="_blank" rel="noopener" class="hub-card app-ridesaathi code-card reveal">
+      <div class="cc-bar"><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-tab">ride-saathi.ts</span><span class="cc-live">Group Rides &middot; Coming Soon</span></div>
+      <div class="cc-body hub-card-top">
+        <span class="cc-l"><span class="c">// (04)</span></span>
+        <span class="cc-l"><span class="k">export const</span></span>
+        <span class="cc-l cc-nl"><h3 class="cc-name">RIDE <span>SAATHI</span></h3> = <span class="s">`</span></span>
+        <span class="cc-l i1"><span class="s">A group riding app from the</span></span>
+        <span class="cc-l i1"><span class="s">makers of Bharometer. Every</span></span>
+        <span class="cc-l i1"><span class="s">rider on one live map, and</span></span>
+        <span class="cc-l i1"><span class="s">an alert to your group if a</span></span>
+        <span class="cc-l i1"><span class="s">fall looks serious. Family</span></span>
+        <span class="cc-l i1"><span class="s">too, if you choose.</span></span>
+        <span class="cc-l"><span class="s">`</span>;</span>
+        <span class="cc-l"><span class="c">// See all your riders on one map.</span><span class="cc-caret"></span></span>
       </div>
-      <div class="hub-foot">
+      <div class="hub-foot cc-foot">
         <span class="hub-meta">iPhone &amp; Android</span>
         <div class="hub-arrow">&#8599;</div>
       </div>
     </a>
 
-    <div class="hub-card soon app-sehatvault reveal">
-      <div class="hub-card-top">
-        <div class="hub-num">(05)</div>
-        <span class="hub-tag soon-tag">Health &middot; Coming Soon</span>
-        <h3 class="hub-name">SEHAT<span>VAULT</span></h3>
-        <p class="hub-desc">A private, local-first medical-records vault for the whole family. Scan, speak, or share a report &mdash; it gets organised by family member into a clear timeline, with a 60-second brief for your doctor.</p>
+    <div class="hub-card soon app-sehatvault code-card reveal">
+      <div class="cc-bar"><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-tab">sehat-vault.ts</span><span class="cc-live">Health &middot; Coming Soon</span></div>
+      <div class="cc-body hub-card-top">
+        <span class="cc-l"><span class="c">// (05)</span></span>
+        <span class="cc-l"><span class="k">export const</span></span>
+        <span class="cc-l cc-nl"><h3 class="cc-name">SEHAT<span>VAULT</span></h3> = <span class="s">`</span></span>
+        <span class="cc-l i1"><span class="s">A private, local-first</span></span>
+        <span class="cc-l i1"><span class="s">medical-records vault for</span></span>
+        <span class="cc-l i1"><span class="s">the whole family. Scan,</span></span>
+        <span class="cc-l i1"><span class="s">speak or share a report,</span></span>
+        <span class="cc-l i1"><span class="s">and it gets organised by</span></span>
+        <span class="cc-l i1"><span class="s">family member into a clear</span></span>
+        <span class="cc-l i1"><span class="s">timeline, with a 60-second</span></span>
+        <span class="cc-l i1"><span class="s">brief for your doctor.</span></span>
+        <span class="cc-l"><span class="s">`</span>;</span>
+        <span class="cc-l"><span class="cc-caret"></span></span>
       </div>
-      <div class="hub-foot">
+      <div class="hub-foot cc-foot">
         <span class="hub-meta">iOS &amp; Android</span>
         <span class="hub-soon-pill">Coming Soon</span>
       </div>
     </div>
 
-    <div class="hub-card soon app-remindkaro reveal">
-      <div class="hub-card-top">
-        <div class="hub-num">(06)</div>
-        <span class="hub-tag soon-tag">Reminders &middot; Coming Soon</span>
-        <h3 class="hub-name">REMIND <span>KARO</span></h3>
-        <p class="hub-desc">Fast reminders and countdown timers with a signature auto-snooze that keeps re-alerting you until a task is actually done. Capture in seconds, schedule it, and stay on track.</p>
+    <div class="hub-card soon app-remindkaro code-card reveal">
+      <div class="cc-bar"><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-tab">remind-karo.ts</span><span class="cc-live">Reminders &middot; Coming Soon</span></div>
+      <div class="cc-body hub-card-top">
+        <span class="cc-l"><span class="c">// (06)</span></span>
+        <span class="cc-l"><span class="k">export const</span></span>
+        <span class="cc-l cc-nl"><h3 class="cc-name">REMIND <span>KARO</span></h3> = <span class="s">`</span></span>
+        <span class="cc-l i1"><span class="s">Fast reminders and countdown</span></span>
+        <span class="cc-l i1"><span class="s">timers with a signature</span></span>
+        <span class="cc-l i1"><span class="s">auto-snooze that keeps</span></span>
+        <span class="cc-l i1"><span class="s">re-alerting you until a task</span></span>
+        <span class="cc-l i1"><span class="s">is actually done. Capture in</span></span>
+        <span class="cc-l i1"><span class="s">seconds, schedule it, and</span></span>
+        <span class="cc-l i1"><span class="s">stay on track.</span></span>
+        <span class="cc-l"><span class="s">`</span>;</span>
+        <span class="cc-l"><span class="cc-caret"></span></span>
       </div>
-      <div class="hub-foot">
+      <div class="hub-foot cc-foot">
         <span class="hub-meta">iOS, Android &amp; Web</span>
         <span class="hub-soon-pill">Coming Soon</span>
       </div>
     </div>
 
-    <div class="hub-card soon app-trace reveal">
-      <div class="hub-card-top">
-        <div class="hub-num">(07)</div>
-        <span class="hub-tag soon-tag">Health &middot; Coming Soon</span>
-        <h3 class="hub-name">TRACE<span>.</span></h3>
-        <p class="hub-desc">A beautifully simple weight &amp; body-measurement tracker. Log your weight in seconds, watch the trend line move, and reach your goal. Private by design &mdash; your data never leaves your device.</p>
+    <div class="hub-card soon app-trace code-card reveal">
+      <div class="cc-bar"><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-tab">trace.ts</span><span class="cc-live">Health &middot; Coming Soon</span></div>
+      <div class="cc-body hub-card-top">
+        <span class="cc-l"><span class="c">// (07)</span></span>
+        <span class="cc-l"><span class="k">export const</span></span>
+        <span class="cc-l cc-nl"><h3 class="cc-name">TRACE<span>.</span></h3> = <span class="s">`</span></span>
+        <span class="cc-l i1"><span class="s">A beautifully simple weight</span></span>
+        <span class="cc-l i1"><span class="s">&amp; body-measurement tracker.</span></span>
+        <span class="cc-l i1"><span class="s">Log your weight in seconds,</span></span>
+        <span class="cc-l i1"><span class="s">watch the trend line move,</span></span>
+        <span class="cc-l i1"><span class="s">and reach your goal. Your</span></span>
+        <span class="cc-l i1"><span class="s">data never leaves your</span></span>
+        <span class="cc-l i1"><span class="s">device.</span></span>
+        <span class="cc-l"><span class="s">`</span>;</span>
+        <span class="cc-l"><span class="cc-caret"></span></span>
       </div>
-      <div class="hub-foot">
+      <div class="hub-foot cc-foot">
         <span class="hub-meta">iOS, Android &amp; Web</span>
         <span class="hub-soon-pill">Coming Soon</span>
       </div>
     </div>
 
-    <div class="hub-card soon app-englishseekho reveal">
-      <div class="hub-card-top">
-        <div class="hub-num">(08)</div>
-        <span class="hub-tag soon-tag">Learning &middot; Coming Soon</span>
-        <h3 class="hub-name">ENGLISH <span>SEEKHO</span></h3>
-        <p class="hub-desc">Learn to speak English the easy way. Practise real conversations with &lsquo;Didi&rsquo; &mdash; a warm, patient AI teacher &mdash; made for Hindi speakers who want confidence, not grammar drills.</p>
+    <div class="hub-card soon app-englishseekho code-card reveal">
+      <div class="cc-bar"><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-dot"></span><span class="cc-tab">english-seekho.ts</span><span class="cc-live">Learning &middot; Coming Soon</span></div>
+      <div class="cc-body hub-card-top">
+        <span class="cc-l"><span class="c">// (08)</span></span>
+        <span class="cc-l"><span class="k">export const</span></span>
+        <span class="cc-l cc-nl"><h3 class="cc-name">ENGLISH <span>SEEKHO</span></h3> = <span class="s">`</span></span>
+        <span class="cc-l i1"><span class="s">Learn to speak English the</span></span>
+        <span class="cc-l i1"><span class="s">easy way. Practise real</span></span>
+        <span class="cc-l i1"><span class="s">conversations with &lsquo;Didi&rsquo;,</span></span>
+        <span class="cc-l i1"><span class="s">a warm, patient AI teacher.</span></span>
+        <span class="cc-l i1"><span class="s">Made for Hindi speakers who</span></span>
+        <span class="cc-l i1"><span class="s">want confidence, not grammar</span></span>
+        <span class="cc-l i1"><span class="s">drills.</span></span>
+        <span class="cc-l"><span class="s">`</span>;</span>
+        <span class="cc-l"><span class="cc-caret"></span></span>
       </div>
-      <div class="hub-foot">
+      <div class="hub-foot cc-foot">
         <span class="hub-meta">Android &amp; iOS</span>
         <span class="hub-soon-pill">Coming Soon</span>
       </div>
@@ -654,10 +774,10 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
     <div class="reveal">
       <div class="featured-eyebrow">Our Fuel &amp; Mileage App</div>
       <h3 class="featured-name">BHARO<span style="color:#FFDF00">METER</span></h3>
-      <p class="featured-desc">The mileage on the brochure isn&#39;t what your vehicle actually does. Bharometer logs every fill-up in seconds and turns it into <strong style="color:var(--linen);font-weight:400">true tank-to-tank mileage, monthly spending and cost per kilometre</strong> &mdash; built for the way India drives.</p>
+      <p class="featured-desc">The mileage on the brochure isn&#39;t what your vehicle actually does. Bharometer logs every fill-up in seconds and turns it into <strong style="color:var(--linen);font-weight:400">true tank-to-tank mileage, monthly spending and cost per kilometre</strong>, built for the way India drives.</p>
       <ul class="featured-bullets">
         <li>Pump-scan photographs the pump screen and auto-fills litres, amount and rate</li>
-        <li>True tank-to-tank mileage &mdash; the honest answer to &ldquo;kitna deti hai?&rdquo;</li>
+        <li>True tank-to-tank mileage, the honest answer to &ldquo;kitna deti hai?&rdquo;</li>
         <li>Petrol, diesel, CNG and EV, with city-level daily fuel prices</li>
         <li>Free to start, no ads, no account. Your data stays on-device plus iCloud</li>
       </ul>
@@ -695,10 +815,10 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
     <div class="reveal">
       <div class="featured-eyebrow">Our Clipboard App</div>
       <h3 class="featured-name">PASTE<span style="color:#B5651D">KARO</span></h3>
-      <p class="featured-desc">Your phone only remembers the <strong style="color:var(--linen);font-weight:400">last thing you copied</strong>. PasteKaro keeps all of it &mdash; a permanent, searchable history of every link, address, phone number, hex code, and snippet, neatly auto-sorted and pasteable from inside any app via its keyboard.</p>
+      <p class="featured-desc">Your phone only remembers the <strong style="color:var(--linen);font-weight:400">last thing you copied</strong>. PasteKaro keeps all of it in a permanent, searchable history of every link, address, phone number, hex code, and snippet, neatly auto-sorted and pasteable from inside any app via its keyboard.</p>
       <ul class="featured-bullets">
         <li>Auto-captures everything you copy into a searchable, organised history</li>
-        <li>Smart categories &mdash; Links, Personal, Hex Codes, Code &mdash; plus your own</li>
+        <li>Smart categories like Links, Personal, Hex Codes and Code, plus your own</li>
         <li>Keyboard extension pastes saved snippets straight into any app</li>
         <li>Fully on-device. No account, no server, nothing leaves your phone</li>
       </ul>
@@ -805,16 +925,16 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
   <div class="contact-grid">
     <div class="reveal">
       <h2 class="contact-title">CONTACT<br><em>We&#39;re here to help</em></h2>
-      <p class="contact-sub">Questions, bugs, feedback, or feature ideas for any of our apps &mdash; send us a note and we&#39;ll get back to you. This is the support inbox for <strong style="color:var(--linen);font-weight:400">every Positiva Studios app</strong>.</p>
+      <p class="contact-sub">Questions, bugs, feedback, or feature ideas for any of our apps? Send us a note and we&#39;ll get back to you. This is the support inbox for <strong style="color:var(--linen);font-weight:400">every Positiva Studios app</strong>.</p>
       <div class="contact-details">
         <div class="cd-row"><span class="cd-label">Maker</span><span class="cd-val">Positiva Studios &middot; Mumbai, India</span></div>
-        <div class="cd-row"><span class="cd-label">Reply</span><span class="cd-val">Usually within 1&ndash;2 working days</span></div>
+        <div class="cd-row"><span class="cd-label">Reply</span><span class="cd-val">Usually within 1 to 2 working days</span></div>
       </div>
     </div>
     <div class="reveal">
       <!-- Formspree: shared inbox with the website contact form; _subject tags these as app support -->
       <form class="form" id="contactForm" action="https://formspree.io/f/xgonvlyb" method="POST">
-        <input type="hidden" name="_subject" value="App Support — Positiva Studios" />
+        <input type="hidden" name="_subject" value="App Support | Positiva Studios" />
         <div class="form-row">
           <div class="form-field"><label for="contact-name">Name</label><input type="text" id="contact-name" name="name" placeholder="Your name" required /></div>
           <div class="form-field"><label for="contact-email">Email</label><input type="email" id="contact-email" name="email" placeholder="your@email.com" required /></div>
@@ -914,6 +1034,169 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
       btn.disabled = false; btn.textContent = 'Send Message';
     });
   }
+</script>
+<script>
+/* Hero background: code about our apps types itself across the whole hero */
+(function(){
+  const host = document.getElementById('codeBg');
+  if (!host) return;
+  const SNIPPETS = [
+`// Bharometer: mileage from two fill-ups
+export function mileage(prev, next) {
+  const km = next.odometer - prev.odometer;
+  const litres = next.litres;
+  if (km <= 0 || litres <= 0) return null;
+  return round(km / litres, 1);  // km per litre
+}
+
+const avg = fills.slice(1)
+  .map((f, i) => mileage(fills[i], f))
+  .filter(Boolean);`,
+`// PasteKaro: keep what you copy
+clipboard.onChange(async (text) => {
+  if (!text || text === last) return;
+  last = text;
+  await db.clips.insert({
+    text,
+    kind: detectKind(text),   // link, phone, otp
+    pinned: false,
+    at: Date.now(),
+  });
+});`,
+`// Gyaan Daily: today's verse
+const day = daysSince(EPOCH) % verses.length;
+const verse = verses[day];
+
+return (
+  <VerseCard
+    sanskrit={verse.sa}
+    tamil={verse.ta}
+    hindi={verse.hi}
+    english={verse.en}
+  />
+);`,
+`// Ride Saathi: who's in the group
+socket.on('position', ({ rider, lat, lng }) => {
+  group.update(rider, { lat, lng, at: now() });
+  map.moveMarker(rider, [lat, lng]);
+  if (group.gap(rider) > 2000) {
+    notify(rider.name + ' has fallen behind');
+  }
+});`,
+`// SuperGrade: lift the shadows, keep the skin
+float3 grade(float3 rgb, Params p) {
+  float luma = dot(rgb, LUMA_709);
+  float lift = p.shadows * (1.0 - smoothstep(0.0, 0.4, luma));
+  rgb += lift;
+  return mix(rgb, protectSkin(rgb), p.skin);
+}`,
+`// Daily reminder at the user's chosen hour
+export async function scheduleDaily(hour) {
+  await Notifications.cancelAllScheduledAsync();
+  return Notifications.scheduleAsync({
+    content: { title: 'Your verse is ready' },
+    trigger: { hour, minute: 0, repeats: true },
+  });
+}`,
+`// Back up to the user's own cloud, never ours
+async function backup(store) {
+  const data = JSON.stringify(await store.export());
+  const file = 'backup-' + today() + '.json';
+  await cloud.write(file, encrypt(data, key));
+  return { file, bytes: data.length };
+}`
+  ];
+  const KW = /\b(export|function|const|return|if|await|async|let|null|false|true|float|float3)\b/g;
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  function paint(line){
+    const ci = line.indexOf('//');
+    const code = ci >= 0 ? line.slice(0, ci) : line;
+    const cm = ci >= 0 ? line.slice(ci) : '';
+    let h = esc(code)
+      .replace(/('[^']*'?)/g,'<span class="st">$1</span>')
+      .replace(KW,'<span class="kw">$1</span>')
+      .replace(/\b([a-zA-Z_]+)(?=\()/g,'<span class="fn">$1</span>');
+    if (cm) h += '<span class="cm">' + esc(cm) + '</span>';
+    return h;
+  }
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let cols = [], visible = true, built = 0;
+
+  function build(){
+    const w = host.clientWidth;
+    const n = w < 700 ? 1 : w < 1100 ? 2 : 3;
+    if (n === built) return;
+    built = n;
+    host.style.setProperty('--cols', n);
+    host.innerHTML = '';
+    cols = [];
+    for (let i = 0; i < n; i++) {
+      const el = document.createElement('div');
+      el.className = 'col';
+      host.appendChild(el);
+      cols.push({ el, si: (i * 2) % SNIPPETS.length, pos: 0, lineNo: 0, cur: null, delay: i * 900 });
+    }
+    // start with every column already full, then keep typing below it
+    const rows = Math.ceil(host.clientHeight / 24) + 4;
+    cols.forEach(c => {
+      while (c.el.children.length < rows) {
+        SNIPPETS[c.si].split('\n').forEach(l => addLine(c, l));
+        addLine(c, '');
+        c.si = (c.si + 1) % SNIPPETS.length;
+      }
+      if (!reduce) setTimeout(() => type(c), c.delay);
+    });
+  }
+
+  function addLine(c, text){
+    c.lineNo++;
+    const ln = document.createElement('span');
+    ln.className = 'ln';
+    c.el.appendChild(ln);
+    c.cur = ln;
+    setLine(c, text || '', false);
+    // drop lines that have scrolled out of the top
+    while (c.el.children.length > 60) c.el.removeChild(c.el.firstChild);
+  }
+  function setLine(c, text, caret){
+    c.cur.innerHTML = '<span class="n">' + c.lineNo + '</span>' + paint(text) + (caret ? '<span class="caret"></span>' : '');
+  }
+
+  function type(c){
+    if (!c.el.isConnected) return;
+    if (!visible || document.hidden) { setTimeout(() => type(c), 400); return; }
+    const s = SNIPPETS[c.si];
+    if (c.pos === 0) addLine(c, '');
+    if (c.pos < s.length) {
+      const ch = s.charAt(c.pos++);
+      if (ch === '\n') {
+        setLine(c, c.cur.dataset.t || '', false);
+        addLine(c, '');
+        c.cur.dataset.t = '';
+        setTimeout(() => type(c), 160 + Math.random() * 200);
+      } else {
+        c.cur.dataset.t = (c.cur.dataset.t || '') + ch;
+        setLine(c, c.cur.dataset.t, true);
+        setTimeout(() => type(c), 18 + Math.random() * 40);
+      }
+    } else {
+      // finished a snippet: blank line, then the next one
+      setLine(c, c.cur.dataset.t || '', false);
+      addLine(c, '');
+      c.pos = 0;
+      c.si = (c.si + cols.length) % SNIPPETS.length;
+      setTimeout(() => type(c), 1400 + Math.random() * 1200);
+    }
+  }
+
+  build();
+  let rt;
+  window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(build, 250); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(e => { visible = e[0].isIntersecting; }).observe(host);
+  }
+})();
 </script>
 </body>
 </html>

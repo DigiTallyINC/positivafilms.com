@@ -21,8 +21,12 @@ Cinematic production, drone/aerial work, weddings, travel films and documentary 
   - Site: https://pastekaro.positivafilms.com
   - App Store: https://apps.apple.com/us/app/copy-paste-karo/id6768088006
   - Google Play (free): https://play.google.com/store/apps/details?id=com.positivafilms.pastekaro
-- **Gyaan Daily** — a daily verse from the classical traditions of India, in Sanskrit, Tamil, Hindi and English. Each language keeps its own script and its own catalogue, so nothing in the app is a translation of another line in it; every verse carries a plain translation, a note on what it means, and its source. Widgets, shareable cards, no account and no analytics. iPhone, not yet released.
+- **Gyaan Daily** — a daily verse from the classical traditions of India, in Sanskrit, Tamil, Hindi and English. Each language keeps its own script and its own catalogue, so nothing in the app is a translation of another line in it; every verse carries a plain translation, a note on what it means, and its source. Widgets, shareable cards, no account and no analytics. iPhone and Android, on the App Store and Google Play.
   - Site: https://gyaandaily.positivafilms.com
+  - App Store: https://apps.apple.com/in/app/id6795878325
+  - Google Play: https://play.google.com/store/apps/details?id=com.digitallyinc.dailyquotes
+- **Ride Saathi** — a group riding app for India, from the makers of Bharometer. Every rider in the group on one live map, an alert to the group if a fall looks serious, and family can follow along if the rider chooses. iPhone and Android, coming soon.
+  - Site: https://ridesaathi.positivafilms.com
 - More apps in progress: https://positivafilms.com/apps.html
 
 ## Filmmaker tools
