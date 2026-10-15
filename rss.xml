@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Positiva Films &mdash; Field Notes &amp; Color Craft</title>
+    <title>Positiva Films | Field Notes &amp; Color Craft</title>
     <link>https://positivafilms.com/blog.html</link>
     <atom:link href="https://positivafilms.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Color grading, LUT craft, and field notes for filmmakers shooting weddings, travel, and aerial work across India.</description>
@@ -52,7 +52,7 @@
       <title>Should You Switch to an EV? Run the Rupees-Per-Kilometre on Your Actual Driving First</title>
       <link>https://positivafilms.com/posts/ev-vs-petrol-rupees-per-kilometre-india-cost-comparison.html</link>
       <guid>https://positivafilms.com/posts/ev-vs-petrol-rupees-per-kilometre-india-cost-comparison.html</guid>
-      <description>Before you switch to an EV, run the actual ₹/km math on your current driving. The numbers depend on where you charge, how you drive, and what your petrol car really costs you today.</description>
+      <description>Before you switch to an EV, run the ₹/km math on your current driving. The numbers depend on where you charge, how you drive, and what your petrol car really costs you today.</description>
       <pubDate>Mon, 31 Aug 2026 10:36:47 +0530</pubDate>
       <category>Apps</category>
     </item>
@@ -108,7 +108,7 @@
       <title>Logging a Fill-Up in One Tap: Scanning the Pump Screen Instead of Typing Numbers</title>
       <link>https://positivafilms.com/posts/logging-fill-up-scan-pump-screen-bharometer.html</link>
       <guid>https://positivafilms.com/posts/logging-fill-up-scan-pump-screen-bharometer.html</guid>
-      <description>Typing pump numbers at the forecourt is where most fuel logs die. Bharometer's pump-scan feature photographs the screen and fills the numbers for you, here's exactly how it works.</description>
+      <description>Typing pump numbers at the forecourt is where most fuel logs die. Bharometer's pump-scan feature photographs the screen and fills the numbers for you. Here's how it works.</description>
       <pubDate>Fri, 14 Aug 2026 10:09:14 +0530</pubDate>
       <category>Apps</category>
     </item>
@@ -116,7 +116,7 @@
       <title>Petrol vs Diesel in 2026: The Break-Even Kilometres Math Before Your Next Car</title>
       <link>https://positivafilms.com/posts/petrol-vs-diesel-break-even-km-math-2026.html</link>
       <guid>https://positivafilms.com/posts/petrol-vs-diesel-break-even-km-math-2026.html</guid>
-      <description>Diesel cars cost ₹1–2 lakh more at the showroom. To justify that premium, you need to drive enough kilometres for the fuel savings to cover it. Here's the exact math for 2026.</description>
+      <description>Diesel cars cost ₹1 to 2 lakh more at the showroom. To justify that premium, you need to drive enough kilometres for the fuel savings to cover it. Here's the exact math for 2026.</description>
       <pubDate>Wed, 12 Aug 2026 10:17:50 +0530</pubDate>
       <category>Apps</category>
     </item>
@@ -124,7 +124,7 @@
       <title>Running an Older Car or Bike on E20: A Practical Care Checklist</title>
       <link>https://positivafilms.com/posts/older-car-bike-e20-practical-care-checklist.html</link>
       <guid>https://positivafilms.com/posts/older-car-bike-e20-practical-care-checklist.html</guid>
-      <description>Every tank is now E20. If your car or bike is pre-2023, here's the practical maintenance checklist that keeps it running cleanly and tells you exactly what changed in your mileage.</description>
+      <description>Every tank is now E20. If your car or bike is pre-2023, here's the practical maintenance checklist that keeps it running cleanly and tells you what changed in your mileage.</description>
       <pubDate>Mon, 10 Aug 2026 10:25:00 +0530</pubDate>
       <category>Apps</category>
     </item>
@@ -132,7 +132,7 @@
       <title>Monsoon Mileage Drop: What August Traffic and Rain Do to Your km/l (And How to See It in Your Own Log)</title>
       <link>https://positivafilms.com/posts/monsoon-mileage-drop-august-traffic-rain-km-per-litre.html</link>
       <guid>https://positivafilms.com/posts/monsoon-mileage-drop-august-traffic-rain-km-per-litre.html</guid>
-      <description>August rains don't just slow your commute, they quietly drain 10–18% from your fuel tank. Here's the physics behind it, and how to read the proof in your own fill-up log.</description>
+      <description>August rains slow your commute and quietly drain 10 to 18% from your fuel tank. Here's the physics behind it, and how to read the proof in your own fill-up log.</description>
       <pubDate>Fri, 07 Aug 2026 09:59:22 +0530</pubDate>
       <category>Apps</category>
     </item>
@@ -140,7 +140,7 @@
       <title>CNG vs Petrol in 2026: The Rupees-Per-Kilometre Math Nobody Shows You at the Showroom</title>
       <link>https://positivafilms.com/posts/cng-vs-petrol-cost-per-km-rupees-math-2026.html</link>
       <guid>https://positivafilms.com/posts/cng-vs-petrol-cost-per-km-rupees-math-2026.html</guid>
-      <description>CNG looks cheaper at the pump, but the real number is rupees per kilometre, not price per kg. Here's the full math, including mileage drop, conversion cost, and fill-up hassle.</description>
+      <description>CNG looks cheaper at the pump, but the number that counts is rupees per kilometre. Here's the full math, including mileage drop, conversion cost, and fill-up hassle.</description>
       <pubDate>Wed, 05 Aug 2026 09:51:47 +0530</pubDate>
       <category>Apps</category>
     </item>
@@ -148,7 +148,7 @@
       <title>Petrol Prices Reset Every Morning at 6 AM: Why City-Level Rates Change Your Mileage Math</title>
       <link>https://positivafilms.com/posts/petrol-prices-reset-6am-city-level-rates-mileage-math.html</link>
       <guid>https://positivafilms.com/posts/petrol-prices-reset-6am-city-level-rates-mileage-math.html</guid>
-      <description>Petrol prices reset at 6 AM every day, and the rate at your pump can differ by ₹2–4 from a city 80 km away. Here's why that gap matters more than you think.</description>
+      <description>Petrol prices reset at 6 AM every day, and the rate at your pump can differ by ₹2 to 4 from a city 80 km away. Here's what that gap does to your cost per kilometre.</description>
       <pubDate>Mon, 03 Aug 2026 10:32:57 +0530</pubDate>
       <category>Apps</category>
     </item>
@@ -180,7 +180,7 @@
       <title>Why Your Car's Dashboard Average Lies (By 5 to 15 Percent), and the Pump Method That Doesn't</title>
       <link>https://positivafilms.com/posts/dashboard-mileage-wrong-pump-method-real-average.html</link>
       <guid>https://positivafilms.com/posts/dashboard-mileage-wrong-pump-method-real-average.html</guid>
-      <description>Your car's dashboard MID shows 18.4 km/l. The pump says otherwise. Here's why the onboard computer lies by 5–15%, and the only method that gives you a true number.</description>
+      <description>Your car's dashboard MID shows 18.4 km/l. The pump says otherwise. Here's why the onboard computer lies by 5 to 15%, and the only method that gives you a true number.</description>
       <pubDate>Fri, 24 Jul 2026 09:58:25 +0530</pubDate>
       <category>Apps</category>
     </item>
@@ -188,7 +188,7 @@
       <title>Is Your Car or Bike E20-Compatible? The April 2023 Rule of Thumb</title>
       <link>https://positivafilms.com/posts/e20-compatible-cars-bikes-india-april-2023-rule.html</link>
       <guid>https://positivafilms.com/posts/e20-compatible-cars-bikes-india-april-2023-rule.html</guid>
-      <description>Since April 2026, every petrol pump in India dispenses E20. Here is how to check whether your car or bike is compatible, what the fuel-lid sticker actually means, and why your own log matters more than any average.</description>
+      <description>Since April 2026, every petrol pump in India dispenses E20. Here is how to check whether your car or bike is compatible, what the fuel-lid sticker means, and why your own log matters more than any average.</description>
       <pubDate>Wed, 22 Jul 2026 10:05:03 +0530</pubDate>
       <category>Apps</category>
     </item>
@@ -196,7 +196,7 @@
       <title>What Your Car Actually Costs Per Kilometre in India (It's Not the Mileage Number)</title>
       <link>https://positivafilms.com/posts/car-cost-per-kilometre-india-beyond-mileage.html</link>
       <guid>https://positivafilms.com/posts/car-cost-per-kilometre-india-beyond-mileage.html</guid>
-      <description>Mileage tells you litres per kilometre. It doesn't tell you what a kilometre actually costs. Here's how to build the real number, fuel, service, tyres, depreciation, and what to do with it.</description>
+      <description>Mileage tells you litres per kilometre. It doesn't tell you what a kilometre actually costs. Here's how to build the real number (fuel, service, tyres, depreciation) and what to do with it.</description>
       <pubDate>Mon, 20 Jul 2026 09:43:34 +0530</pubDate>
       <category>Apps</category>
     </item>
@@ -225,7 +225,7 @@
       <category>Travel & Place</category>
     </item>
     <item>
-      <title>Why You Cannot Fly a Drone at the Taj Mahal: And What You Can Shoot from Mehtab Bagh Instead</title>
+      <title>Why You Cannot Fly a Drone at the Taj Mahal, and What You Can Shoot from Mehtab Bagh Instead</title>
       <link>https://positivafilms.com/posts/drone-taj-mahal-ban-mehtab-bagh-alternatives.html</link>
       <guid>https://positivafilms.com/posts/drone-taj-mahal-ban-mehtab-bagh-alternatives.html</guid>
       <description>Flying a drone at the Taj Mahal will get it seized on the spot. Here is exactly where to shoot from Mehtab Bagh, what permits actually cover, and how to get the aerial you are after.</description>
