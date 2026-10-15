@@ -1,5 +1,16 @@
 # Gyaan Daily: a verse-led trilingual blog, on the existing cron
 
+> **Update 2026-10-15: the first run did NOT work, and it froze the whole blog for five
+> weeks.** From Mon 14 Sep every run threw before calling the model: the Anthropic SDK
+> refuses a non-streaming call at `max_tokens: 24000` ("Streaming is required for
+> operations that may take longer than 10 minutes"). The topic sat first in the queue,
+> so nothing published on positivafilms.com from 11 Sep to 15 Oct. Fixed in `4bf518e`
+> (stream + `finalMessage()`); first post "The One Word That Changes the Whole Couplet"
+> live in en/hi/ta on 15 Oct. That run took ~250 s of the 300 s limit, so `12065b1`
+> made retries rewrite only the rejected language inside a 250 s budget. The "watch the
+> first run" warning below is now settled. Next check: the run time of the next Gyaan
+> Daily topic.
+
 **Status: DONE. 8 of 8. Built and pushed 2026-09-07 (commit `8956c3b`), deployed
 on Vercel and verified READY, so the new cron code is live.**
 First Gyaan Daily post publishes **Monday 14 September** (Wed 9 and Fri 11 are the
