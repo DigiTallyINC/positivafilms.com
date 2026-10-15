@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Positiva Studios &mdash; Apps &amp; software by Positiva Films</title>
-  <meta name="description" content="Positiva Studios is the software arm of Positiva Films &mdash; every app and tool we build ships under one banner. PasteKaro, a smart clipboard, Bharometer, a fuel &amp; mileage tracker, and Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, are all live." />
+  <meta name="description" content="Positiva Studios is the software arm of Positiva Films &mdash; every app and tool we build ships under one banner. PasteKaro, a smart clipboard, Bharometer, a fuel &amp; mileage tracker, and Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, are all live. Ride Saathi, a group riding app, is coming soon." />
   <meta property="og:title" content="Positiva Studios — Apps by Positiva Films" />
-  <meta property="og:description" content="The software studio inside Positiva Films. Every app we build ships under the Positiva Studios banner: PasteKaro smart clipboard, Bharometer fuel tracker and Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, are all live." />
+  <meta property="og:description" content="The software studio inside Positiva Films. Every app we build ships under the Positiva Studios banner: PasteKaro smart clipboard, Bharometer fuel tracker and Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, are all live. Ride Saathi, a group riding app, is coming soon." />
   <meta property="og:image" content="https://positivafilms.com/positiva-studios-badge-dark.png" />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://positivafilms.com/apps.html" />
   <meta property="og:url" content="https://positivafilms.com/apps.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Positiva Studios — Apps by Positiva Films" />
-  <meta name="twitter:description" content="The software studio inside Positiva Films. Every app we build ships under the Positiva Studios banner: PasteKaro smart clipboard, Bharometer fuel tracker and Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, are all live." />
+  <meta name="twitter:description" content="The software studio inside Positiva Films. Every app we build ships under the Positiva Studios banner: PasteKaro smart clipboard, Bharometer fuel tracker and Gyaan Daily, a daily verse in Sanskrit, Tamil, Hindi and English, are all live. Ride Saathi, a group riding app, is coming soon." />
   <meta name="twitter:image" content="https://positivafilms.com/positiva-studios-badge-dark.png" />
   <link rel="icon" type="image/png" href="positiva-studios-badge-dark.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -116,6 +116,14 @@ nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to b
 .f-gyaan .featured-eyebrow{color:#E0B25F}
 .f-gyaan .featured-eyebrow::before{background:#E0B25F}
 .f-gyaan .featured-bullets li::before{color:#E0B25F}
+/* Ride Saathi — graphite ground, orange accent, from ridesaathi.positivafilms.com tokens.json. Not in the stores yet,
+   so the actions row carries a coming-soon marker in place of store badges. Swap in the badges on launch day. */
+.featured.f-rs{background:linear-gradient(180deg,#151517 0%,#1B1B1D 55%,#151517 100%);border-bottom:1px solid rgba(255,85,26,0.22)}
+.f-rs .featured-eyebrow{color:#FF551A}
+.f-rs .featured-eyebrow::before{background:#FF551A}
+.f-rs .featured-bullets li::before{color:#FF551A}
+.rs-soon{display:inline-flex;align-items:center;gap:9px;font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:1.6px;text-transform:uppercase;padding:13px 18px;border-radius:4px;color:#FFFFFF;background:rgba(255,85,26,0.12);border:1px solid rgba(255,85,26,0.5)}
+.rs-soon::before{content:'';width:7px;height:7px;border-radius:50%;background:#FF551A;box-shadow:0 0 0 4px rgba(255,85,26,0.18)}
 .gd-card{position:relative;z-index:2;width:100%;max-width:430px;padding:38px 36px 32px;background:linear-gradient(160deg,#1E1C18 0%,#141310 100%);border:1px solid #38342C;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,0.66)}
 .gd-label{font-family:'DM Mono',monospace;font-size:9px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:rgba(224,178,95,0.85);margin-bottom:12px}
 .gd-verse{font-family:'Noto Serif Tamil','Nirmala UI','Latha','Noto Sans Tamil',serif;font-size:clamp(19px,2.1vw,24px);line-height:1.75;color:#F3E3C8;margin-bottom:14px}
@@ -441,7 +449,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
       "description": "Lines from the classical traditions of India in Sanskrit, Tamil, Hindi and English, each in its own script, with a plain translation, what it means, and where it came from. Four independent catalogues, not translations of one another. No account, no analytics, no tracking.",
       "url": "https://gyaandaily.positivafilms.com",
       "installUrl": "https://apps.apple.com/in/app/id6795878325",
-      "operatingSystem": "iOS",
+      "operatingSystem": "iOS, Android",
       "applicationCategory": "EducationApplication",
       "inLanguage": ["sa", "ta", "hi", "en"],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" },
@@ -504,7 +512,7 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
 <header class="page-hero">
   <div class="page-eyebrow"><span class="num">( 01 )</span> &nbsp;The software studio at Positiva Films</div>
   <h1 class="page-title">Positiva<em>Studios</em></h1>
-  <p class="page-lede">Positiva Studios is where Positiva Films builds software. Every app and plugin we make &mdash; small, sharp, useful, made in India &mdash; ships under one banner. <strong>PasteKaro</strong>, a smart clipboard for iPhone &amp; Android, <strong>Bharometer</strong>, a fuel &amp; mileage tracker for iPhone &amp; Android, and <strong>Gyaan Daily</strong>, a daily verse in Sanskrit, Tamil, Hindi and English, are all live.</p>
+  <p class="page-lede">Positiva Studios is where Positiva Films builds software. Every app and plugin we make &mdash; small, sharp, useful, made in India &mdash; ships under one banner. <strong>PasteKaro</strong>, a smart clipboard for iPhone &amp; Android, <strong>Bharometer</strong>, a fuel &amp; mileage tracker for iPhone &amp; Android, and <strong>Gyaan Daily</strong>, a daily verse in Sanskrit, Tamil, Hindi and English, are all live. <strong>Ride Saathi</strong>, a group riding app, is coming soon.</p>
 </header>
 
 <section class="hub">
@@ -544,12 +552,12 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
     <a href="https://gyaandaily.positivafilms.com" target="_blank" rel="noopener" class="hub-card app-gyaandaily reveal">
       <div class="hub-card-top">
         <div class="hub-num">(03)</div>
-        <span class="hub-tag">iPhone &middot; Live</span>
+        <span class="hub-tag">iPhone &amp; Android &middot; Live</span>
         <h3 class="hub-name">GYAAN <span>DAILY</span></h3>
         <p class="hub-desc">Lines from the classical traditions of India in Sanskrit, Tamil, Hindi and English, each in its own script, with a plain translation, what it means, and where it came from. <em style="color:var(--linen-dim);font-style:italic">Four catalogues, not one.</em></p>
       </div>
       <div class="hub-foot">
-        <span class="hub-meta">iPhone &middot; On the App Store</span>
+        <span class="hub-meta">App Store &amp; Google Play</span>
         <div class="hub-arrow">&#8599;</div>
       </div>
     </a>
@@ -708,7 +716,7 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
     <div class="section-tag">Featured</div>
     <div class="section-num">( 05 )</div>
   </div>
-  <h2 class="section-title reveal">NOW ON IPHONE<em>Every line with its meaning underneath</em></h2>
+  <h2 class="section-title reveal">NOW ON IPHONE &amp; ANDROID<em>Every line with its meaning underneath</em></h2>
 
   <div class="featured-grid">
     <div class="featured-col reveal">
@@ -725,7 +733,7 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
         </div>
       </div>
       <div class="featured-chips">
-        <span class="featured-chip solid" style="background:#E0B25F;border-color:#E0B25F;color:#0C0C0B">iPhone</span>
+        <span class="featured-chip solid" style="background:#E0B25F;border-color:#E0B25F;color:#0C0C0B">iOS &amp; Android</span>
         <span class="featured-chip" style="background:rgba(127,166,216,0.14);border-color:rgba(127,166,216,0.4);color:#F3E3C8">Made in India</span>
         <span class="featured-chip" style="background:rgba(127,166,216,0.14);border-color:rgba(127,166,216,0.4);color:#F3E3C8">No account, no analytics</span>
       </div>
@@ -742,7 +750,48 @@ posthog.init('phc_Di3sSNihjKuSxRTJGDLgeN8K3cvfx54cEQGcX2xu3ULb',{
       </ul>
       <div class="featured-actions">
         <a href="https://apps.apple.com/in/app/id6795878325" target="_blank" rel="noopener" class="store-badge"><img src="images/badges/app-store-badge.svg" alt="Download on the App Store" height="54" loading="lazy"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.digitallyinc.dailyquotes" target="_blank" rel="noopener" class="store-badge"><img src="images/badges/google-play-badge.svg" alt="Get it on Google Play" height="54" loading="lazy"></a>
         <a href="https://gyaandaily.positivafilms.com" target="_blank" rel="noopener" class="btn-ghost">Read the site <span class="arrow">&#8599;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured f-rs" id="ridesaathi">
+  <div class="section-header reveal">
+    <div class="section-tag">Coming Soon</div>
+    <div class="section-num">( 06 )</div>
+  </div>
+  <h2 class="section-title reveal">COMING TO IPHONE &amp; ANDROID<em>Your whole riding group on one map</em></h2>
+
+  <div class="featured-grid">
+    <div class="featured-col reveal">
+      <div class="featured-visual" style="background:linear-gradient(135deg,#212123 0%,#151517 100%);border-color:rgba(255,85,26,0.24)">
+        <div class="featured-grid-bg"></div>
+        <div class="featured-logo-wrap" style="text-align:center">
+          <div style="font-family:var(--display);font-size:clamp(44px,7vw,84px);letter-spacing:0.04em;color:#FFFFFF;text-transform:uppercase;line-height:0.9">Ride <span style="color:#FF551A">Saathi</span></div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:16px">Ride together &middot; Stay together</div>
+        </div>
+      </div>
+      <div class="featured-chips">
+        <span class="featured-chip solid" style="background:#FF551A;border-color:#FF551A;color:#FFFFFF">Coming Soon</span>
+        <span class="featured-chip" style="background:rgba(0,170,229,0.12);border-color:rgba(0,170,229,0.4);color:#FFFFFF">Made in India</span>
+        <span class="featured-chip" style="background:rgba(0,170,229,0.12);border-color:rgba(0,170,229,0.4);color:#FFFFFF">Solo or group rides</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="featured-eyebrow">Our Group Riding App</div>
+      <h3 class="featured-name">RIDE <span style="color:#FF551A">SAATHI</span></h3>
+      <p class="featured-desc">On a group ride, somebody always drops back and somebody always ends up calling round to find them. Ride Saathi puts <strong style="color:var(--linen);font-weight:400">every rider in the group on one shared map</strong>, so you can see who is ahead and who is behind without picking up the phone.</p>
+      <ul class="featured-bullets">
+        <li>One map for the whole ride, with the captain up front and the sweep at the back</li>
+        <li>Mark a pothole, speed breaker or road works, and the riders behind you get a warning as they approach</li>
+        <li>Crash alerts, when you switch them on, sound an alarm you can cancel. If nobody does, your group and chosen family contacts are told</li>
+        <li>Family can follow the rides you choose to share, from home</li>
+      </ul>
+      <div class="featured-actions">
+        <span class="rs-soon">Coming soon to iPhone &amp; Android</span>
+        <a href="https://ridesaathi.positivafilms.com" target="_blank" rel="noopener" class="btn-ghost">Visit Ride Saathi <span class="arrow">&#8599;</span></a>
       </div>
     </div>
   </div>
