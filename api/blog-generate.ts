@@ -477,15 +477,21 @@ async function runGyaanDaily(opts: {
           lastError +
           "\"\nRegenerate all three languages and fix the problem.";
 
-    const response = await anthropic.messages.create({
-      model: MODEL,
-      // Three languages of prose, not one. Sized up from the positiva path's 8K.
-      max_tokens: 24000,
-      system: systemPrompt(agentMd),
-      tools: [GYAAN_PUBLISH_TOOL as unknown as Anthropic.Tool],
-      tool_choice: { type: "tool", name: "publish_gyaandaily_post" },
-      messages: [{ role: "user", content }],
-    });
+    // Streamed, not create(): at 24K max_tokens the SDK refuses a non-streaming call
+    // outright ("Streaming is required for operations that may take longer than 10
+    // minutes"), before any request is sent. That silently stalled the whole queue
+    // from 14 Sep to 15 Oct 2026. finalMessage() returns the same Message shape.
+    const response = await anthropic.messages
+      .stream({
+        model: MODEL,
+        // Three languages of prose, not one. Sized up from the positiva path's 8K.
+        max_tokens: 24000,
+        system: systemPrompt(agentMd),
+        tools: [GYAAN_PUBLISH_TOOL as unknown as Anthropic.Tool],
+        tool_choice: { type: "tool", name: "publish_gyaandaily_post" },
+        messages: [{ role: "user", content }],
+      })
+      .finalMessage();
 
     const toolUse = response.content.find((c) => c.type === "tool_use");
     if (!toolUse || toolUse.type !== "tool_use") {
