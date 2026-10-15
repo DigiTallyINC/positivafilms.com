@@ -279,6 +279,22 @@ export const GYAAN_PUBLISH_TOOL = {
   },
 } as const;
 
+const GYAAN_LANG_LABEL = { en: "English", hi: "Hindi (Devanagari script)", ta: "Tamil" } as const;
+
+/**
+ * The repair tool: ONE language, not three. When validation rejects a single
+ * language's copy, rewriting all three costs a full second generation (~2 min),
+ * and two of those overrun the 300 s function limit. Fixing only the rejected
+ * language is about a third of the output.
+ */
+export function gyaanRepairTool(lang: keyof typeof GYAAN_LANG_LABEL) {
+  return {
+    name: "submit_gyaandaily_language",
+    description: `Resubmit the ${GYAAN_LANG_LABEL[lang]} copy of the Gyaan Daily post, corrected. The other two languages were accepted and are kept as they are.`,
+    input_schema: gyaanLangSchema(GYAAN_LANG_LABEL[lang]),
+  } as const;
+}
+
 /** Which tool this topic publishes through. */
 export function toolFor(topic: QueuedTopic) {
   return topic.product === "gyaandaily" ? GYAAN_PUBLISH_TOOL : PUBLISH_TOOL;

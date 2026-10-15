@@ -23,6 +23,7 @@ import {
   gyaanUserPrompt,
   PUBLISH_TOOL,
   GYAAN_PUBLISH_TOOL,
+  gyaanRepairTool,
   SLOP_PHRASES,
 } from "./_lib/prompt.js";
 import {
@@ -409,6 +410,48 @@ function validateOutput(out: ToolOutput): void {
 
 const VERSE_LANGUAGE_ROTATION = ["ta", "hi", "sa"] as const;
 
+/** Model time allowed per run, leaving ~45 s of the 300 s limit for reads and commits. */
+const GYAAN_GEN_BUDGET_MS = 250_000;
+
+/** Repairs the cheap failures locally, then validates. Returns the error, or "" if it passes. */
+function checkGyaan(out: GyaanOutput, verse: VerseRow): string {
+  repairGyaanOutput(out);
+  try {
+    validateGyaanOutput(out, verse);
+    return "";
+  } catch (err) {
+    return err instanceof Error ? err.message : String(err);
+  }
+}
+
+/**
+ * Fixes what needs no model: banned dashes in the bodies, and a missing or malformed
+ * slug, which is rebuilt from the English title.
+ */
+export function repairGyaanOutput(out: GyaanOutput): void {
+  if (!out) return;
+  for (const lang of LANGS) {
+    const copy = out[lang];
+    if (copy && typeof copy.body_html === "string") copy.body_html = stripBannedDashes(copy.body_html);
+  }
+  const slugOk = typeof out.slug === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(out.slug) && out.slug.length <= 70;
+  if (!slugOk && out.en && typeof out.en.title === "string") {
+    const fromTitle = out.en.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 60)
+      .replace(/-+$/, "");
+    if (fromTitle) out.slug = fromTitle;
+  }
+}
+
+/** The language a validation error is about, read off its prefix ("hi.body_html ..."). */
+export function failingLanguage(error: string): LangCode | null {
+  const m = /^(en|hi|ta)\./.exec(error) || /missing the (en|hi|ta) copy/.exec(error);
+  return m ? (m[1] as LangCode) : null;
+}
+
 async function runGyaanDaily(opts: {
   anthropic: Anthropic;
   agentMd: string;
@@ -418,6 +461,7 @@ async function runGyaanDaily(opts: {
   isoDate: string;
   istNow: Date;
 }) {
+  const started = Date.now();
   const { anthropic, agentMd, queueMd, topic, published, isoDate, istNow } = opts;
 
   // Which language the VERSE is drawn from. The prose is always all three; this
@@ -464,58 +508,102 @@ async function runGyaanDaily(opts: {
     ta: formatLocalDate(istNow, "ta-IN"),
   } as Record<LangCode, string>;
 
-  // 2. Generate. Two attempts, same as the positiva path.
-  const base = gyaanUserPrompt({ topic, verse, prettyDate: prettyDate.en, isoDate });
-  let out: GyaanOutput | null = null;
-  let lastError = "";
-  for (let attempt = 1; attempt <= 2; attempt++) {
-    const content =
-      attempt === 1
-        ? base
-        : base +
-          "\n\nIMPORTANT: your previous attempt was REJECTED by automated validation with this error:\n\"" +
-          lastError +
-          "\"\nRegenerate all three languages and fix the problem.";
-
-    // Streamed, not create(): at 24K max_tokens the SDK refuses a non-streaming call
-    // outright ("Streaming is required for operations that may take longer than 10
-    // minutes"), before any request is sent. That silently stalled the whole queue
-    // from 14 Sep to 15 Oct 2026. finalMessage() returns the same Message shape.
-    const response = await anthropic.messages
-      .stream({
-        model: MODEL,
-        // Three languages of prose, not one. Sized up from the positiva path's 8K.
-        max_tokens: 24000,
-        system: systemPrompt(agentMd),
-        tools: [GYAAN_PUBLISH_TOOL as unknown as Anthropic.Tool],
-        tool_choice: { type: "tool", name: "publish_gyaandaily_post" },
-        messages: [{ role: "user", content }],
-      })
-      .finalMessage();
-
-    const toolUse = response.content.find((c) => c.type === "tool_use");
-    if (!toolUse || toolUse.type !== "tool_use") {
-      lastError = "Model did not call publish_gyaandaily_post. Stop reason: " + response.stop_reason;
-      continue;
+  // 2. Generate, inside a time budget. Vercel kills the function at 300 s and one full
+  // three-language generation takes about 2 minutes, so two full calls do not fit
+  // (15 Oct 2026: one full call plus one full retry took ~250 s). Instead: one full
+  // call, then fix ONLY the language validation rejected, which is a third of the
+  // output. Every call is aborted at the deadline, so a slow run fails with a clear
+  // error and the topic still queued, rather than being killed mid-flight.
+  const deadline = started + GYAAN_GEN_BUDGET_MS;
+  const system = systemPrompt(agentMd);
+  const callTool = async (
+    tool: { name: string },
+    content: string,
+    maxTokens: number,
+  ): Promise<unknown> => {
+    const left = deadline - Date.now();
+    if (left < 20_000) {
+      throw new Error(
+        "out of time before calling " + tool.name + " (" + Math.round((Date.now() - started) / 1000) +
+          " s in); the topic stays queued for the next run",
+      );
     }
-
-    const candidate = toolUse.input as GyaanOutput;
-    for (const lang of LANGS) {
-      const copy = candidate[lang];
-      if (copy && typeof copy.body_html === "string") copy.body_html = stripBannedDashes(copy.body_html);
-    }
-
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), left);
     try {
-      validateGyaanOutput(candidate, verse);
-      out = candidate;
-      break;
+      // Streamed, not create(): at this max_tokens the SDK refuses a non-streaming call
+      // outright ("Streaming is required for operations that may take longer than 10
+      // minutes"), before any request is sent. That silently stalled the whole queue
+      // from 14 Sep to 15 Oct 2026.
+      const msg = await anthropic.messages
+        .stream(
+          {
+            model: MODEL,
+            max_tokens: maxTokens,
+            system,
+            tools: [tool as unknown as Anthropic.Tool],
+            tool_choice: { type: "tool", name: tool.name },
+            messages: [{ role: "user", content }],
+          },
+          { signal: ctrl.signal },
+        )
+        .finalMessage();
+      const toolUse = msg.content.find((c) => c.type === "tool_use");
+      if (!toolUse || toolUse.type !== "tool_use") {
+        throw new Error("model did not call " + tool.name + "; stop reason: " + msg.stop_reason);
+      }
+      return toolUse.input;
     } catch (err) {
-      lastError = err instanceof Error ? err.message : String(err);
-      console.warn("[blog-generate] gyaandaily attempt " + attempt + " failed validation: " + lastError);
+      if (ctrl.signal.aborted) {
+        throw new Error(
+          tool.name + " was cut off at the " + GYAAN_GEN_BUDGET_MS / 1000 + " s budget; the topic stays queued for the next run",
+        );
+      }
+      throw err;
+    } finally {
+      clearTimeout(timer);
     }
+  };
+
+  const base = gyaanUserPrompt({ topic, verse, prettyDate: prettyDate.en, isoDate });
+  let candidate = (await callTool(GYAAN_PUBLISH_TOOL, base, 24000)) as GyaanOutput;
+  let lastError = checkGyaan(candidate, verse);
+
+  // Up to two one-language repairs. An error that names no language (it can only be
+  // the slug, and repairGyaanOutput already rebuilds a bad slug) falls through.
+  for (let i = 0; lastError && i < 2; i++) {
+    const lang = failingLanguage(lastError);
+    if (!lang) break;
+    console.warn("[blog-generate] gyaandaily " + lang + " copy rejected, repairing that language only: " + lastError);
+    const rejected = candidate[lang]
+      ? "Here is the rejected copy, as JSON:\n" + JSON.stringify(candidate[lang])
+      : "It was missing entirely. Write it.";
+    const fixed = (await callTool(
+      gyaanRepairTool(lang),
+      base +
+        "\n\nYour submission was accepted EXCEPT the " + lang + " copy, which automated validation REJECTED with this error:\n\"" +
+        lastError + "\"\n\n" + rejected +
+        "\n\nResubmit ONLY that one language, corrected, via the submit_gyaandaily_language tool. Fix the problem; keep the rest of it as it was.",
+      10000,
+    )) as GyaanOutput[LangCode];
+    candidate = { ...candidate, [lang]: fixed };
+    lastError = checkGyaan(candidate, verse);
   }
-  if (!out) throw new Error("Both Gyaan Daily attempts failed validation. Last error: " + lastError);
-  const result: GyaanOutput = out;
+
+  // Last resort, only if the budget still has room for it (it usually will not).
+  if (lastError) {
+    console.warn("[blog-generate] gyaandaily repair did not pass, regenerating all three: " + lastError);
+    candidate = (await callTool(
+      GYAAN_PUBLISH_TOOL,
+      base +
+        "\n\nIMPORTANT: your previous attempt was REJECTED by automated validation with this error:\n\"" +
+        lastError + "\"\nRegenerate all three languages and fix the problem.",
+      24000,
+    )) as GyaanOutput;
+    lastError = checkGyaan(candidate, verse);
+  }
+  if (lastError) throw new Error("Gyaan Daily output failed validation: " + lastError);
+  const result: GyaanOutput = candidate;
 
   // 3. Idempotency guard. If the English post already exists, a previous run got as
   // far as committing and then failed before marking the queue. Publishing again
