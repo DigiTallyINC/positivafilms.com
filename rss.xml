@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>Cloud Backup for Wedding Footage: Backblaze vs Tresorit vs a 4-Bay NAS</title>
+      <link>https://positivafilms.com/posts/wedding-footage-backup-backblaze-tresorit-nas-comparison.html</link>
+      <guid>https://positivafilms.com/posts/wedding-footage-backup-backblaze-tresorit-nas-comparison.html</guid>
+      <description>Wedding footage has no safety net after the day ends. Here's how working cinematographers structure backups across Backblaze B2, Tresorit, and a 4-bay NAS before a single drive fails.</description>
+      <pubDate>Fri, 16 Oct 2026 10:36:47 +0530</pubDate>
+      <category>Field Notes</category>
+    </item>
+    <item>
       <title>"Kitna Deti Hai" Is the Wrong Question: Cost Per Kilometre Is the Answer</title>
       <link>https://positivafilms.com/posts/kitna-deti-hai-wrong-question-cost-per-kilometre-answer.html</link>
       <guid>https://positivafilms.com/posts/kitna-deti-hai-wrong-question-cost-per-kilometre-answer.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Wed, 17 Jun 2026 09:53:56 +0530</pubDate>
       <category>Aerial & FPV</category>
     </item>
-    <item>
-      <title>Skin Tone Recovery for Underexposed Indian Bride Closeups</title>
-      <link>https://positivafilms.com/posts/skin-tone-recovery-underexposed-indian-bride-closeups.html</link>
-      <guid>https://positivafilms.com/posts/skin-tone-recovery-underexposed-indian-bride-closeups.html</guid>
-      <description>Underexposed bride closeups from tungsten-heavy wedding halls are fixable, but only if you attack them in the right order: denoise first, then lift, then qualify skin.</description>
-      <pubDate>Wed, 10 Jun 2026 10:28:00 +0530</pubDate>
-      <category>Indian Wedding</category>
-    </item>
-                                                                              </channel>
+                                                                                  </channel>
 </rss>

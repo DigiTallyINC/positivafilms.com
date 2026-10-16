@@ -58,7 +58,6 @@ Every run in this section is `product: bharometer` (auto dual-published to bharo
 Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` field; the post must feature that product (fact sheets in AGENT.md).
 
 ### Week of July 6, 2026 (remaining runs)
-- [ ] category: field   | type: BROADER  | title: **Cloud Backup for Wedding Footage: Backblaze vs Tresorit vs a 4-Bay NAS** | intent: "wedding footage backup", "cloud storage filmmaker"
 
 ### Week of July 13, 2026
 - [ ] category: travel  | type: LUT      | title: **Grading Ladakh's Cold Blue Shadows Without Cyan-Shifting Skin** | intent: "ladakh color grade", "cold shadow warm skin"
@@ -299,6 +298,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-10-16 | slug: wedding-footage-backup-backblaze-tresorit-nas-comparison | category: field | title: **Cloud Backup for Wedding Footage: Backblaze vs Tresorit vs a 4-Bay NAS**
 - [x] 2026-10-15 | slug: five-doors-one-word-thirukkural-6 | category: apps | product: gyaandaily | verse: fbf587db-8a42-4ac0-aff5-218942dbee3d | title: **What One Word Does to a Line You Thought You Understood**
 - [x] 2026-09-11 | slug: kitna-deti-hai-wrong-question-cost-per-kilometre-answer | category: apps | product: bharometer | title: **"Kitna Deti Hai" Is the Wrong Question: Cost Per Kilometre Is the Answer**
 - [x] 2026-09-09 | slug: bike-vs-car-commute-cost-rupees-per-kilometre-india | category: apps | product: bharometer | title: **Bike vs Car for the Daily Commute: The Honest Rupees-Per-Kilometre Comparison**
