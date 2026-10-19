@@ -9,6 +9,14 @@
     <copyright>&#169; 2026 Positiva Films</copyright>
     <!-- ITEMS_BELOW — agent prepends new <item> entries here, newest first -->
     <item>
+      <title>Grading Ladakh's Cold Blue Shadows Without Cyan-Shifting Skin</title>
+      <link>https://positivafilms.com/posts/grading-ladakh-cold-blue-shadows-skin-tone.html</link>
+      <guid>https://positivafilms.com/posts/grading-ladakh-cold-blue-shadows-skin-tone.html</guid>
+      <description>Ladakh's shadows run cold blue at altitude. Here's a precise Resolve workflow for pulling warmth back into skin without cyan-shifting everything else in the frame.</description>
+      <pubDate>Mon, 19 Oct 2026 10:36:47 +0530</pubDate>
+      <category>Travel & Place</category>
+    </item>
+    <item>
       <title>Cloud Backup for Wedding Footage: Backblaze vs Tresorit vs a 4-Bay NAS</title>
       <link>https://positivafilms.com/posts/wedding-footage-backup-backblaze-tresorit-nas-comparison.html</link>
       <guid>https://positivafilms.com/posts/wedding-footage-backup-backblaze-tresorit-nas-comparison.html</guid>
@@ -240,13 +248,5 @@
       <pubDate>Fri, 19 Jun 2026 09:39:53 +0530</pubDate>
       <category>Travel & Place</category>
     </item>
-    <item>
-      <title>Why Drone Footage Looks Hazy at 400 Feet: A Dehaze + Contrast Recipe</title>
-      <link>https://positivafilms.com/posts/drone-footage-hazy-dehaze-contrast-recipe.html</link>
-      <guid>https://positivafilms.com/posts/drone-footage-hazy-dehaze-contrast-recipe.html</guid>
-      <description>Altitude haze kills aerial footage before you even land. Here's the exact dehaze, contrast, and saturation recipe to cut through atmospheric scatter and restore depth.</description>
-      <pubDate>Wed, 17 Jun 2026 09:53:56 +0530</pubDate>
-      <category>Aerial & FPV</category>
-    </item>
-                                                                                  </channel>
+                                                                                      </channel>
 </rss>

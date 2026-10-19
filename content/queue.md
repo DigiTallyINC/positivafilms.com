@@ -60,7 +60,6 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 ### Week of July 6, 2026 (remaining runs)
 
 ### Week of July 13, 2026
-- [ ] category: travel  | type: LUT      | title: **Grading Ladakh's Cold Blue Shadows Without Cyan-Shifting Skin** | intent: "ladakh color grade", "cold shadow warm skin"
 - [ ] category: wedding | type: BROADER  | title: **The Christian Wedding Coverage Plan That Doesn't Work for Hindu Weddings (And Vice Versa)** | intent: "christian vs hindu wedding shot list", "ceremony coverage india"
 
 ### Week of July 20, 2026
@@ -298,6 +297,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-10-19 | slug: grading-ladakh-cold-blue-shadows-skin-tone | category: travel | title: **Grading Ladakh's Cold Blue Shadows Without Cyan-Shifting Skin**
 - [x] 2026-10-16 | slug: wedding-footage-backup-backblaze-tresorit-nas-comparison | category: field | title: **Cloud Backup for Wedding Footage: Backblaze vs Tresorit vs a 4-Bay NAS**
 - [x] 2026-10-15 | slug: five-doors-one-word-thirukkural-6 | category: apps | product: gyaandaily | verse: fbf587db-8a42-4ac0-aff5-218942dbee3d | title: **What One Word Does to a Line You Thought You Understood**
 - [x] 2026-09-11 | slug: kitna-deti-hai-wrong-question-cost-per-kilometre-answer | category: apps | product: bharometer | title: **"Kitna Deti Hai" Is the Wrong Question: Cost Per Kilometre Is the Answer**
