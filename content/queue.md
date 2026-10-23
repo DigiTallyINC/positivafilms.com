@@ -62,7 +62,6 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 ### Week of July 13, 2026
 
 ### Week of July 20, 2026
-- [ ] category: apps | type: APP | product: gyaandaily | verse: auto | title: **The Advice in Old Verses Is Smaller Than You Expect** | intent: "practical wisdom sanskrit verse", "daily verse meaning app"
 - [ ] category: apps | type: APP | product: pastekaro | title: **Paste Any Saved Snippet into Any iPhone App: The Keyboard Trick Most People Miss** | intent: "ios paste snippets any app", "iphone keyboard clipboard"
 - [ ] category: tools | type: TOOL | product: clipengine | title: **Why Stock Footage Gets Rejected: The Metadata Mistakes Killing Your Shutterstock and BlackBox Submissions** | intent: "stock footage rejected metadata", "shutterstock keywords rejection"
 - [ ] category: aerial  | type: BROADER  | title: **ND Filter Math for 24fps Drone Cinema: A Cheat Sheet for the Mavic 3** | intent: "drone nd filter 24fps", "mavic 3 nd math"
@@ -296,6 +295,7 @@ Apps lead every week. `type: APP` and `type: TOOL` lines carry a `product:` fiel
 
 ## Published
 
+- [x] 2026-10-23 | slug: the-advice-in-old-verses-is-smaller-than-you-expect | category: apps | product: gyaandaily | verse: 2fd84cd3-9d63-4103-8337-9a64a5c1ff35 | title: **The Advice in Old Verses Is Smaller Than You Expect**
 - [x] 2026-10-21 | slug: christian-vs-hindu-wedding-coverage-plan-india | category: wedding | title: **The Christian Wedding Coverage Plan That Doesn't Work for Hindu Weddings (And Vice Versa)**
 - [x] 2026-10-19 | slug: grading-ladakh-cold-blue-shadows-skin-tone | category: travel | title: **Grading Ladakh's Cold Blue Shadows Without Cyan-Shifting Skin**
 - [x] 2026-10-16 | slug: wedding-footage-backup-backblaze-tresorit-nas-comparison | category: field | title: **Cloud Backup for Wedding Footage: Backblaze vs Tresorit vs a 4-Bay NAS**
